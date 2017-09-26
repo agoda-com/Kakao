@@ -1,0 +1,42 @@
+apply from: "$rootDir/buildsystem/dependencies.gradle"
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName '1.0.0'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.res.srcDirs += 'src/main/res'
+
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "https://maven.google.com" }
+}
+
+dependencies {
+    compile libraries.kotlin_stdlib
+    compile libraries.appcompat
+    compile libraries.recyclerview
+
+    testCompile libraries.junit
+
+    androidTestCompile project(':kakao')
+    androidTestCompile libraries.annotations
+    androidTestCompile libraries.espresso_runner
+    androidTestCompile libraries.espresso_rules
+    androidTestCompile libraries.espresso_core
+}

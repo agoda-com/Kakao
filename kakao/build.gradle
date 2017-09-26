@@ -1,0 +1,114 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+apply from: "$rootDir/buildsystem/dependencies.gradle"
+apply from: "$rootDir/buildsystem/dokka.gradle"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName kakao.version
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.res.srcDirs += 'src/main/res'
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "https://maven.google.com" }
+}
+
+dependencies {
+    compile libraries.kotlin_stdlib
+    compile libraries.appcompat
+    compile libraries.recyclerview
+    compile libraries.espresso_core
+    compile libraries.espresso_web
+    compile (libraries.espresso_contrib) {
+        exclude group: 'com.android.support'
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                groupId kakao.group
+                artifactId kakao.artifact
+
+                name kakao.name
+                description kakao.description
+                url kakao.site
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'agoda'
+                        name 'Ilya Lim'
+                        email 'ilya.lim@agoda.com'
+                    }
+                }
+
+                scm {
+                    connection kakao.git
+                    developerConnection kakao.git
+                    url kakao.site
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadocJar(type: Jar, dependsOn: dokka) {
+    classifier = 'javadoc'
+    from dokka.outputDirectory
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+
+    configurations = ['archives']
+
+    pkg {
+        repo = 'maven'
+        name = kakao.name
+        desc = kakao.description
+        vcsUrl = kakao.git
+
+        licenses = ['Apache-2.0']
+
+        version {
+            name = kakao.version
+            desc = kakao.version_desc
+            released = new Date()
+        }
+    }
+}

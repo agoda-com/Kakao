@@ -1,0 +1,41 @@
+ext.versions = [
+        kotlin         : '1.1.3',
+        dokka          : '0.9.15',
+        android_gradle : '2.3.3',
+        bintray        : '1.7.3',
+        maven          : '1.5',
+        support_library: '25.4.0',
+        espresso       : '3.0.1',
+        espresso_rules : '1.0.1',
+        espresso_runner: '1.0.1',
+        junit          : '4.12'
+]
+
+ext.libraries = [
+        kotlin          : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        kotlin_stdlib   : "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin",
+        dokka           : "org.jetbrains.dokka:dokka-android-gradle-plugin:$versions.dokka",
+        android_gradle  : "com.android.tools.build:gradle:$versions.android_gradle",
+        bintray         : "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.bintray",
+        maven           : "com.github.dcendents:android-maven-gradle-plugin:$versions.maven",
+        appcompat       : "com.android.support:appcompat-v7:$versions.support_library",
+        recyclerview    : "com.android.support:recyclerview-v7:$versions.support_library",
+        annotations     : "com.android.support:support-annotations:$versions.support_library",
+        espresso_runner : "com.android.support.test:runner:$versions.espresso_runner",
+        espresso_rules  : "com.android.support.test:rules:$versions.espresso_rules",
+        espresso_core   : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+        espresso_web    : "com.android.support.test.espresso:espresso-web:$versions.espresso",
+        espresso_contrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+        junit           : "junit:junit:$versions.junit"
+]
+
+ext.kakao = [
+        group           : 'com.agoda.kakao',
+        artifact        : 'kakao',
+        name            : 'Kakao',
+        description     : 'Kotlin based DSL for fluent AT with Espresso',
+        version         : '1.0.0-SNAPSHOT',
+        version_desc    : 'Kakao 1.0.0 snapshot',
+        site            : 'https://github.com/agoda/Kakao',
+        github          : 'https://github.com/agoda/Kakao.git'
+]

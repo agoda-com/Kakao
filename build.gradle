@@ -1,0 +1,21 @@
+buildscript {
+    apply from: "$rootDir/buildsystem/dependencies.gradle"
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath libraries.android_gradle
+        classpath libraries.kotlin
+        classpath libraries.bintray
+        classpath libraries.maven
+        classpath libraries.dokka
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
