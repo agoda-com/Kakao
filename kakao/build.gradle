@@ -1,7 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 
 apply from: "$rootDir/buildsystem/dependencies.gradle"
 apply from: "$rootDir/buildsystem/dokka.gradle"
@@ -39,42 +37,40 @@ dependencies {
     }
 }
 
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = kakao.group
+
 install {
     repositories.mavenInstaller {
-        pom {
-            project {
-                packaging 'aar'
-                groupId kakao.group
-                artifactId kakao.artifact
+        pom.project {
+            packaging 'aar'
+            groupId kakao.group
+            artifactId kakao.artifact
 
-                name kakao.name
-                description kakao.description
+            name kakao.name
+            description kakao.description
+            url kakao.site
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+
+            scm {
+                connection kakao.github
+                developerConnection kakao.github
                 url kakao.site
-
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'agoda'
-                        name 'Ilya Lim'
-                        email 'ilya.lim@agoda.com'
-                    }
-                }
-
-                scm {
-                    connection kakao.git
-                    developerConnection kakao.git
-                    url kakao.site
-                }
             }
         }
     }
 }
+
+apply plugin: 'com.jfrog.bintray'
+
+version = kakao.version
 
 task sourcesJar(type: Jar) {
     classifier = 'sources'
@@ -101,13 +97,16 @@ bintray {
         repo = 'maven'
         name = kakao.name
         desc = kakao.description
-        vcsUrl = kakao.git
+        vcsUrl = kakao.github
+        publish = true
+        publicDownloadNumbers = true
 
         licenses = ['Apache-2.0']
 
         version {
             name = kakao.version
             desc = kakao.version_desc
+            vcsTag = kakao.version
             released = new Date()
         }
     }
