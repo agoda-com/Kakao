@@ -36,6 +36,6 @@ ext.kakao = [
         description     : 'Kotlin based DSL for fluent AT with Espresso',
         version         : '1.0.0-alpha1',
         version_desc    : 'Kakao 1.0.0 Alpha 1',
-        site            : 'https://github.com/agoda/Kakao',
-        github          : 'https://github.com/agoda/Kakao.git'
+        site            : 'https://github.com/agoda-com/Kakao',
+        github          : 'https://github.com/agoda-com/Kakao.git'
 ]
