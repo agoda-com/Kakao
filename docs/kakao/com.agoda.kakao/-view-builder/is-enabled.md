@@ -1,13 +1,12 @@
 ---
 title: ViewBuilder.isEnabled - kakao
-layout: api
 ---
 
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">ViewBuilder</a> / <a href=".">isEnabled</a></div>
+[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [isEnabled](.)
 
 # isEnabled
 
-<div class="signature"><code><span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+`fun isEnabled(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Matches the view if it is in ENABLED state
 

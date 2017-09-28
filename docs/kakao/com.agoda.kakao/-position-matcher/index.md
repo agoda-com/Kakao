@@ -1,71 +1,27 @@
 ---
 title: PositionMatcher - kakao
-layout: api
 ---
 
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href=".">PositionMatcher</a></div>
+[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [PositionMatcher](.)
 
 # PositionMatcher
 
-<div class="signature"><code><span class="keyword">class </span><span class="identifier">PositionMatcher</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BoundedMatcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">,</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span></code></div>
+`class PositionMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`View`](https://developer.android.com/reference/android/view/View.html)`>`
 
 Matches RecyclerView descendant at given position in adapter
 
 ### Parameters
 
-<code>parent</code> - Matcher of the recycler view
+`parent` - Matcher of the recycler view
 
-<code>position</code> - Position of item in adapter
+`position` - Position of item in adapter
 
 ### Constructors
 
-<table class="api-docs-table">
-<tbody>
-<tr>
-<td markdown="1">
-
-<a href="-init-.html">&lt;init&gt;</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="identifier">PositionMatcher</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.PositionMatcher$<init>(org.hamcrest.Matcher((android.view.View)), kotlin.Int)/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">Matcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="parameterName" id="com.agoda.kakao.PositionMatcher$<init>(org.hamcrest.Matcher((android.view.View)), kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></div>
-
-Matches RecyclerView descendant at given position in adapter
-
-
-</td>
-</tr>
-</tbody>
-</table>
+| [&lt;init&gt;](-init-.html) | `PositionMatcher(parent: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`<br>Matches RecyclerView descendant at given position in adapter |
 
 ### Functions
 
-<table class="api-docs-table">
-<tbody>
-<tr>
-<td markdown="1">
+| [describeTo](describe-to.html) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [matchesSafely](matches-safely.html) | `fun matchesSafely(view: `[`View`](https://developer.android.com/reference/android/view/View.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 
-<a href="describe-to.html">describeTo</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">fun </span><span class="identifier">describeTo</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.PositionMatcher$describeTo(org.hamcrest.Description)/desc">desc</span><span class="symbol">:</span>&nbsp;<span class="identifier">Description</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
-
-</td>
-</tr>
-<tr>
-<td markdown="1">
-
-<a href="matches-safely.html">matchesSafely</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">fun </span><span class="identifier">matchesSafely</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.PositionMatcher$matchesSafely(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></div>
-
-</td>
-</tr>
-</tbody>
-</table>

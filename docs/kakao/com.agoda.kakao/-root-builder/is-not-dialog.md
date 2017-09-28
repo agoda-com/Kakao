@@ -1,13 +1,12 @@
 ---
 title: RootBuilder.isNotDialog - kakao
-layout: api
 ---
 
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">RootBuilder</a> / <a href=".">isNotDialog</a></div>
+[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [isNotDialog](.)
 
 # isNotDialog
 
-<div class="signature"><code><span class="keyword">fun </span><span class="identifier">isNotDialog</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+`fun isNotDialog(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Matches root that is not dialog
 

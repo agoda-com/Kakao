@@ -1,4 +1,4 @@
-$dokka.format:kotlin-website
+$dokka.format:jekyll
 $dokka.linkExtension:html
 
 com.agoda.kakao

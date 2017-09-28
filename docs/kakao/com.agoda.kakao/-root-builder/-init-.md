@@ -1,13 +1,12 @@
 ---
 title: RootBuilder.<init> - kakao
-layout: api
 ---
 
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">RootBuilder</a> / <a href=".">&lt;init&gt;</a></div>
+[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 
-<div class="signature"><code><span class="identifier">RootBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
+`RootBuilder()`
 
 Class for building root matchers
 
@@ -17,5 +16,5 @@ and after that all of them will be combined with help of AllOf.allOf()
 
 **See Also**
 
-<a href="#">AllOf.allOf</a>
+[AllOf.allOf](#)
 
