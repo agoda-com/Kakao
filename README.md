@@ -8,6 +8,8 @@ onView(allOf(withId(R.id.price_item), hasDescendant(withText("Standard Rate"))))
 ```
 This is an example just to check the visibility of the view and you can see that is not look that good. The readabiblity is decreasing as our tests are growing. As Agoda developer, we want to improve not just our codebase quality, but also our implementation of tests as well. This is why we are introducing Kakao. The library that will make you enjoy writing automated tests like you are drinking a hot chocolate.
 
+![coco](https://user-images.githubusercontent.com/2812510/30947310-3825724c-a433-11e7-8a0d-3c3bfe00d584.png)
+
 #### Benefits
 - Readabbility
 - Reuseabbility
