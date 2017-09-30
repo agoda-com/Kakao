@@ -1,16 +1,11 @@
----
-title: ScreenActions.view - kakao
-layout: api
----
-
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">ScreenActions</a> / <a href=".">view</a></div>
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [view](.)
 
 # view
 
-<div class="signature"><code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">view</span><span class="symbol">: </span><span class="identifier">ViewInteraction</span></code></div>
+`abstract val view: ViewInteraction`
 
 ViewInteraction on which all actions are performed (root view by default)
 
 ### Property
 
-<code>view</code> - ViewInteraction on which all actions are performed (root view by default)
+`view` - ViewInteraction on which all actions are performed (root view by default)

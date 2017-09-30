@@ -1,13 +1,8 @@
----
-title: Screen - kakao
-layout: api
----
-
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href=".">Screen</a></div>
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [Screen](.)
 
 # Screen
 
-<div class="signature"><code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Screen</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Screen</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-screen-actions/index.html"><span class="identifier">ScreenActions</span></a></code></div>
+`open class Screen<out T : Screen<T>> : `[`ScreenActions`](../-screen-actions/index.md)
 
 Container class for UI elements.
 
@@ -16,123 +11,34 @@ such as tapBack() and closeSoftKeyboard()
 
 ### Parameters
 
-<code>T</code> - type of your screen, done to enable invoke() for its children
+`T` - type of your screen, done to enable invoke() for its children
 
 **See Also**
 
-<a href="../-screen-actions/index.html">ScreenActions</a>
+[ScreenActions](../-screen-actions/index.md)
 
 ### Constructors
 
-<table class="api-docs-table">
-<tbody>
-<tr>
-<td markdown="1">
-
-<a href="-init-.html">&lt;init&gt;</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="identifier">Screen</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
-
-Container class for UI elements.
-
-
-</td>
-</tr>
-</tbody>
-</table>
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `Screen()`<br>Container class for UI elements. |
 
 ### Properties
 
-<table class="api-docs-table">
-<tbody>
-<tr>
-<td markdown="1">
-
-<a href="view.html">view</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">view</span><span class="symbol">: </span><span class="identifier">ViewInteraction</span></code></div>
-
-ViewInteraction on which all actions are performed (root view by default)
-
-
-</td>
-</tr>
-</tbody>
-</table>
+| Name | Summary |
+|---|---|
+| [view](view.md) | `open val view: ViewInteraction`<br>ViewInteraction on which all actions are performed (root view by default) |
 
 ### Functions
 
-<table class="api-docs-table">
-<tbody>
-<tr>
-<td markdown="1">
-
-<a href="invoke.html">invoke</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.Screen$invoke(kotlin.Function1((com.agoda.kakao.Screen.T, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
-
-</td>
-</tr>
-</tbody>
-</table>
+| Name | Summary |
+|---|---|
+| [invoke](invoke.md) | `operator fun invoke(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 
 ### Inherited Functions
 
-<table class="api-docs-table">
-<tbody>
-<tr>
-<td markdown="1">
-
-<a href="../-screen-actions/close-soft-keyboard.html">closeSoftKeyboard</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">closeSoftKeyboard</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
-
-Closes soft keyboard, if opened
-
-
-</td>
-</tr>
-<tr>
-<td markdown="1">
-
-<a href="../-screen-actions/idle.html">idle</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">idle</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.ScreenActions$idle(kotlin.Long)/duration">duration</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1000L<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
-
-Idles for given amount of time
-
-
-</td>
-</tr>
-<tr>
-<td markdown="1">
-
-<a href="../-screen-actions/press-back.html">pressBack</a>
-
-
-</td>
-<td markdown="1">
-<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">pressBack</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
-
-Performs click on device's back button
-
-
-</td>
-</tr>
-</tbody>
-</table>
+| Name | Summary |
+|---|---|
+| [closeSoftKeyboard](../-screen-actions/close-soft-keyboard.md) | `open fun closeSoftKeyboard(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Closes soft keyboard, if opened |
+| [idle](../-screen-actions/idle.md) | `open fun idle(duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 1000L): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Idles for given amount of time |
+| [pressBack](../-screen-actions/press-back.md) | `open fun pressBack(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs click on device's back button |

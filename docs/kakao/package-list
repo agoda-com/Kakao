@@ -1,4 +1,4 @@
-$dokka.format:kotlin-website
-$dokka.linkExtension:html
+$dokka.format:gfm
+$dokka.linkExtension:md
 
 com.agoda.kakao

@@ -1,13 +1,8 @@
----
-title: ScrollViewActions.getSize - kakao
-layout: api
----
-
-<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">ScrollViewActions</a> / <a href=".">getSize</a></div>
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollViewActions](index.md) / [getSize](.)
 
 # getSize
 
-<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></div>
+`open fun getSize(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Returns the size of ScrollView
 
@@ -16,7 +11,7 @@ size of adapter
 
 **See Also**
 
-<a href="https://developer.android.com/reference/android/widget/ScrollView.html">ScrollView</a>
+[ScrollView](https://developer.android.com/reference/android/widget/ScrollView.html)
 
-<a href="https://developer.android.com/reference/android/widget/AdapterView.html">AdapterView</a>
+[AdapterView](https://developer.android.com/reference/android/widget/AdapterView.html)
 
