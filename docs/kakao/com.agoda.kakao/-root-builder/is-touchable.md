@@ -1,8 +1,4 @@
----
-title: RootBuilder.isTouchable - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [isTouchable](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isTouchable](.)
 
 # isTouchable
 

@@ -1,9 +1,5 @@
----
-title: KListView.builder - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KListView](index.html) / [builder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](index.md) / [builder](.)
 
 # builder
 
-`val builder: `[`ViewBuilder`](../-view-builder/index.html)
+`val builder: `[`ViewBuilder`](../-view-builder/index.md)

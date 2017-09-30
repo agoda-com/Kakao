@@ -1,12 +1,8 @@
----
-title: KListView.children - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KListView](index.html) / [children](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](index.md) / [children](.)
 
 # children
 
-`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> children(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> children(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Performs given actions/assertion on all children in adapter
 

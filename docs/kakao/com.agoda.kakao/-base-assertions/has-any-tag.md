@@ -1,8 +1,4 @@
----
-title: BaseAssertions.hasAnyTag - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [hasAnyTag](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [hasAnyTag](.)
 
 # hasAnyTag
 

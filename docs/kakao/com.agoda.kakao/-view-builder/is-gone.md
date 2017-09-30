@@ -1,8 +1,4 @@
----
-title: ViewBuilder.isGone - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [isGone](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isGone](.)
 
 # isGone
 

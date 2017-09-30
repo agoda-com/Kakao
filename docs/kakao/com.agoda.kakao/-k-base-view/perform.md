@@ -1,8 +1,4 @@
----
-title: KBaseView.perform - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KBaseView](index.html) / [perform](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KBaseView](index.md) / [perform](.)
 
 # perform
 

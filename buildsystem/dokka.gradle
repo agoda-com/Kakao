@@ -2,6 +2,6 @@ apply plugin: 'org.jetbrains.dokka-android'
 
 dokka {
     moduleName = 'kakao'
-    outputFormat = 'kotlin-website'
+    outputFormat = 'gfm'
     outputDirectory = "$rootDir/docs/"
 }

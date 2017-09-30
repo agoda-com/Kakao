@@ -1,8 +1,4 @@
----
-title: BaseAssertions.isNotFocusable - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [isNotFocusable](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isNotFocusable](.)
 
 # isNotFocusable
 

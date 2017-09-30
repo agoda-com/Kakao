@@ -1,8 +1,4 @@
----
-title: BaseAssertions.assert - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [assert](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [assert](.)
 
 # assert
 

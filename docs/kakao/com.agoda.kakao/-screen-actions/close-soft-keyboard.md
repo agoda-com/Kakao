@@ -1,8 +1,4 @@
----
-title: ScreenActions.closeSoftKeyboard - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ScreenActions](index.html) / [closeSoftKeyboard](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [closeSoftKeyboard](.)
 
 # closeSoftKeyboard
 

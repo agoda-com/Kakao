@@ -1,12 +1,8 @@
----
-title: ViewBuilder.withParent - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [withParent](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [withParent](.)
 
 # withParent
 
-`fun withParent(function: `[`ViewBuilder`](index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`fun withParent(function: `[`ViewBuilder`](index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Matches the view which has parent with given matcher
 

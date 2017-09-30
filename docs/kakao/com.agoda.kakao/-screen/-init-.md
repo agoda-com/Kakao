@@ -1,8 +1,4 @@
----
-title: Screen.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [Screen](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [Screen](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 
@@ -19,5 +15,5 @@ such as tapBack() and closeSoftKeyboard()
 
 **See Also**
 
-[ScreenActions](../-screen-actions/index.html)
+[ScreenActions](../-screen-actions/index.md)
 

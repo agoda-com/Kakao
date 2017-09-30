@@ -1,8 +1,4 @@
----
-title: ViewBuilder.isCompletelyDisplayed - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [isCompletelyDisplayed](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isCompletelyDisplayed](.)
 
 # isCompletelyDisplayed
 

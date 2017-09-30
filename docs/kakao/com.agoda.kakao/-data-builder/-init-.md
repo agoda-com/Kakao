@@ -1,8 +1,4 @@
----
-title: DataBuilder.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DataBuilder](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 

@@ -1,8 +1,4 @@
----
-title: WebAssertions.ref - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebAssertions](index.html) / [ref](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebAssertions](index.md) / [ref](.)
 
 # ref
 

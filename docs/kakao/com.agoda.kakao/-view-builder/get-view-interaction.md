@@ -1,8 +1,4 @@
----
-title: ViewBuilder.getViewInteraction - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [getViewInteraction](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [getViewInteraction](.)
 
 # getViewInteraction
 

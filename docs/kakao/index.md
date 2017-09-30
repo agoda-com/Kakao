@@ -1,13 +1,11 @@
----
-title: kakao
----
-
 [kakao](.)
 
 ### Packages
 
-| [com.agoda.kakao](com.agoda.kakao/index.html) |  |
+| Name | Summary |
+|---|---|
+| [com.agoda.kakao](com.agoda.kakao/index.md) |  |
 
 ### Index
 
-[All Types](alltypes/index.html)
+[All Types](alltypes/index.md)

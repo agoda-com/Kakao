@@ -1,8 +1,4 @@
----
-title: ViewPagerAssertions.isAtPage - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewPagerAssertions](index.html) / [isAtPage](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewPagerAssertions](index.md) / [isAtPage](.)
 
 # isAtPage
 

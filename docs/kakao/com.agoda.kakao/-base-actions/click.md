@@ -1,8 +1,4 @@
----
-title: BaseActions.click - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseActions](index.html) / [click](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](index.md) / [click](.)
 
 # click
 

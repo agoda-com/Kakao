@@ -1,8 +1,4 @@
----
-title: BaseActions.scrollTo - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseActions](index.html) / [scrollTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](index.md) / [scrollTo](.)
 
 # scrollTo
 

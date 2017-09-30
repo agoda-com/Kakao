@@ -1,12 +1,8 @@
----
-title: BaseAssertions.inRoot - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [inRoot](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [inRoot](.)
 
 # inRoot
 
-`open fun inRoot(function: `[`RootBuilder`](../-root-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`open fun inRoot(function: `[`RootBuilder`](../-root-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Check if the view is in given root
 
@@ -16,5 +12,5 @@ Check if the view is in given root
 
 **See Also**
 
-[RootBuilder](../-root-builder/index.html)
+[RootBuilder](../-root-builder/index.md)
 

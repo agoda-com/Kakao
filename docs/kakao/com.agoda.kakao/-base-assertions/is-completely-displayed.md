@@ -1,8 +1,4 @@
----
-title: BaseAssertions.isCompletelyDisplayed - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [isCompletelyDisplayed](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isCompletelyDisplayed](.)
 
 # isCompletelyDisplayed
 

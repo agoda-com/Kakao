@@ -1,8 +1,4 @@
----
-title: DataBuilder.getDataMatcher - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DataBuilder](index.html) / [getDataMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [getDataMatcher](.)
 
 # getDataMatcher
 

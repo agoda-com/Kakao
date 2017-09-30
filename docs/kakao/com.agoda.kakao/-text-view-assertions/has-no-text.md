@@ -1,8 +1,4 @@
----
-title: TextViewAssertions.hasNoText - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [TextViewAssertions](index.html) / [hasNoText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewAssertions](index.md) / [hasNoText](.)
 
 # hasNoText
 

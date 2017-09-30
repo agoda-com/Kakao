@@ -1,8 +1,4 @@
----
-title: PositionMatcher.describeTo - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [PositionMatcher](index.html) / [describeTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [PositionMatcher](index.md) / [describeTo](.)
 
 # describeTo
 

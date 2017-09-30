@@ -1,12 +1,8 @@
----
-title: KRecyclerView.perform - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerView](index.html) / [perform](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [perform](.)
 
 # perform
 
-`infix fun perform(function: `[`KRecyclerView`](index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KRecyclerView`](index.html)
+`infix fun perform(function: `[`KRecyclerView`](index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KRecyclerView`](index.md)
 
 Infix function for invoking lambda on your view
 

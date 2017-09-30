@@ -1,8 +1,4 @@
----
-title: DrawerActions.close - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawerActions](index.html) / [close](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawerActions](index.md) / [close](.)
 
 # close
 

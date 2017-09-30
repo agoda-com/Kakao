@@ -1,8 +1,4 @@
----
-title: KAdapterItem.invoke - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItem](index.html) / [invoke](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItem](index.md) / [invoke](.)
 
 # invoke
 

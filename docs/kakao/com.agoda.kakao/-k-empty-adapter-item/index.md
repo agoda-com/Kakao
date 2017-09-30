@@ -1,12 +1,8 @@
----
-title: KEmptyAdapterItem - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KEmptyAdapterItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KEmptyAdapterItem](.)
 
 # KEmptyAdapterItem
 
-`class KEmptyAdapterItem : `[`KAdapterItem`](../-k-adapter-item/index.html)`<KEmptyAdapterItem>`
+`class KEmptyAdapterItem : `[`KAdapterItem`](../-k-adapter-item/index.md)`<KEmptyAdapterItem>`
 
 Empty implementation of KAdapterItem
 
@@ -18,13 +14,16 @@ Use this if you want to perform/assert on the root view of adapter item
 
 **See Also**
 
-[KAdapterItem](../-k-adapter-item/index.html)
+[KAdapterItem](../-k-adapter-item/index.md)
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KEmptyAdapterItem(parent: DataInteraction)`<br>Empty implementation of KAdapterItem |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `KEmptyAdapterItem(parent: DataInteraction)`<br>Empty implementation of KAdapterItem |
 
 ### Inherited Properties
 
-| [view](../-k-adapter-item/view.html) | `open val view: ViewInteraction` |
-
+| Name | Summary |
+|---|---|
+| [view](../-k-adapter-item/view.md) | `open val view: ViewInteraction` |

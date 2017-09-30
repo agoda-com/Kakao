@@ -1,8 +1,4 @@
----
-title: ImageViewAssertions.hasDrawable - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ImageViewAssertions](index.html) / [hasDrawable](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ImageViewAssertions](index.md) / [hasDrawable](.)
 
 # hasDrawable
 

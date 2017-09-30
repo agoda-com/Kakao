@@ -1,8 +1,4 @@
----
-title: KRecyclerItem.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItem](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItem](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 
@@ -20,5 +16,5 @@ Please extend this class to provide custom recycler view item types
 
 **See Also**
 
-[KRecyclerItemTypeBuilder](../-k-recycler-item-type-builder/index.html)
+[KRecyclerItemTypeBuilder](../-k-recycler-item-type-builder/index.md)
 

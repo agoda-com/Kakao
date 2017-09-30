@@ -1,8 +1,4 @@
----
-title: KRecyclerItemTypeBuilder.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItemTypeBuilder](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemTypeBuilder](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 
@@ -16,7 +12,7 @@ KEmptyRecyclerItem is added by default.
 
 **See Also**
 
-[itemType](item-type.html)
+[itemType](item-type.md)
 
-[KEmptyRecyclerItem](../-k-empty-recycler-item/index.html)
+[KEmptyRecyclerItem](../-k-empty-recycler-item/index.md)
 

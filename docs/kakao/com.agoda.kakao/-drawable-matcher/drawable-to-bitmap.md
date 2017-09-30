@@ -1,8 +1,4 @@
----
-title: DrawableMatcher.drawableToBitmap - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawableMatcher](index.html) / [drawableToBitmap](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawableMatcher](index.md) / [drawableToBitmap](.)
 
 # drawableToBitmap
 

@@ -1,8 +1,4 @@
----
-title: TextViewAssertions.startsWithText - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [TextViewAssertions](index.html) / [startsWithText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewAssertions](index.md) / [startsWithText](.)
 
 # startsWithText
 

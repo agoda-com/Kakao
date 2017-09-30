@@ -1,8 +1,4 @@
----
-title: RootBuilder.isNotFocusable - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [isNotFocusable](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isNotFocusable](.)
 
 # isNotFocusable
 

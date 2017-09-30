@@ -1,8 +1,4 @@
----
-title: EditableActions.replaceText - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [EditableActions](index.html) / [replaceText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [replaceText](.)
 
 # replaceText
 

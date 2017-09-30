@@ -1,12 +1,8 @@
----
-title: BaseAssertions.hasNotSibling - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [hasNotSibling](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [hasNotSibling](.)
 
 # hasNotSibling
 
-`open fun hasNotSibling(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`open fun hasNotSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Checks if the view has not given sibling
 
@@ -16,5 +12,5 @@ Checks if the view has not given sibling
 
 **See Also**
 
-[ViewBuilder](../-view-builder/index.html)
+[ViewBuilder](../-view-builder/index.md)
 

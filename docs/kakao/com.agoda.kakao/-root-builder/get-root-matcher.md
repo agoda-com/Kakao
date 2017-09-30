@@ -1,8 +1,4 @@
----
-title: RootBuilder.getRootMatcher - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [getRootMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [getRootMatcher](.)
 
 # getRootMatcher
 

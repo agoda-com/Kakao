@@ -1,8 +1,4 @@
----
-title: Screen.invoke - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [Screen](index.html) / [invoke](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [Screen](index.md) / [invoke](.)
 
 # invoke
 

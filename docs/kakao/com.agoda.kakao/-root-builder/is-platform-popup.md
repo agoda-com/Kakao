@@ -1,8 +1,4 @@
----
-title: RootBuilder.isPlatformPopup - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [isPlatformPopup](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isPlatformPopup](.)
 
 # isPlatformPopup
 

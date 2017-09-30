@@ -1,8 +1,4 @@
----
-title: DataBuilder.isInstanceOf - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DataBuilder](index.html) / [isInstanceOf](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [isInstanceOf](.)
 
 # isInstanceOf
 

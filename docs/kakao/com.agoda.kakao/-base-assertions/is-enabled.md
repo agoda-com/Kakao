@@ -1,8 +1,4 @@
----
-title: BaseAssertions.isEnabled - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [isEnabled](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isEnabled](.)
 
 # isEnabled
 

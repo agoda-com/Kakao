@@ -1,8 +1,4 @@
----
-title: SwipeableActions.swipeRight - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [SwipeableActions](index.html) / [swipeRight](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeableActions](index.md) / [swipeRight](.)
 
 # swipeRight
 

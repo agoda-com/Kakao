@@ -1,8 +1,4 @@
----
-title: KEmptyAdapterItem.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KEmptyAdapterItem](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KEmptyAdapterItem](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 
@@ -18,5 +14,5 @@ Use this if you want to perform/assert on the root view of adapter item
 
 **See Also**
 
-[KAdapterItem](../-k-adapter-item/index.html)
+[KAdapterItem](../-k-adapter-item/index.md)
 

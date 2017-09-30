@@ -1,8 +1,4 @@
----
-title: WebAssertions.containsText - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebAssertions](index.html) / [containsText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebAssertions](index.md) / [containsText](.)
 
 # containsText
 

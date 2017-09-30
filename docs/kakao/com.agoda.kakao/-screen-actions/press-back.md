@@ -1,8 +1,4 @@
----
-title: ScreenActions.pressBack - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ScreenActions](index.html) / [pressBack](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [pressBack](.)
 
 # pressBack
 

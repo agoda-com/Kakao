@@ -1,8 +1,4 @@
----
-title: WebActions.ref - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebActions](index.html) / [ref](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [ref](.)
 
 # ref
 

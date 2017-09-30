@@ -1,8 +1,4 @@
----
-title: BaseAssertions.isSelected - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [isSelected](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isSelected](.)
 
 # isSelected
 

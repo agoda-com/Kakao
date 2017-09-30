@@ -1,12 +1,8 @@
----
-title: KRecyclerView.childWith - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerView](index.html) / [childWith](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [childWith](.)
 
 # childWith
 
-`inline fun <reified T : `[`KRecyclerItem`](../-k-recycler-item/index.html)`<*>> childWith(noinline childMatcher: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`
+`inline fun <reified T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> childWith(noinline childMatcher: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`
 
 Performs given actions/assertion on child that matches given matcher
 

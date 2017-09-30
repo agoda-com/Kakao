@@ -1,8 +1,4 @@
----
-title: CheckableAssertions.isNotChecked - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [CheckableAssertions](index.html) / [isNotChecked](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [CheckableAssertions](index.md) / [isNotChecked](.)
 
 # isNotChecked
 

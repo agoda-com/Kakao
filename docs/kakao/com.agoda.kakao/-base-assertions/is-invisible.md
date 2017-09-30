@@ -1,8 +1,4 @@
----
-title: BaseAssertions.isInvisible - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [isInvisible](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isInvisible](.)
 
 # isInvisible
 

@@ -1,26 +1,25 @@
----
-title: KView - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KView](.)
 
 # KView
 
-`class KView : `[`KBaseView`](../-k-base-view/index.html)`<KView>`
+`class KView : `[`KBaseView`](../-k-base-view/index.md)`<KView>`
 
 Simple view with BaseActions and BaseAssertions
 
 **See Also**
 
-[BaseActions](../-base-actions/index.html)
+[BaseActions](../-base-actions/index.md)
 
-[BaseAssertions](../-base-assertions/index.html)
+[BaseAssertions](../-base-assertions/index.md)
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KView(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>`KView(parent: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>`KView(parent: DataInteraction, function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)` |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `KView(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>`KView(parent: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>`KView(parent: DataInteraction, function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)` |
 
 ### Inherited Properties
 
-| [view](../-k-base-view/view.html) | `open val view: ViewInteraction` |
-
+| Name | Summary |
+|---|---|
+| [view](../-k-base-view/view.md) | `open val view: ViewInteraction` |

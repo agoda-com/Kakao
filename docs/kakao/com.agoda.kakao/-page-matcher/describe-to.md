@@ -1,8 +1,4 @@
----
-title: PageMatcher.describeTo - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [PageMatcher](index.html) / [describeTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [PageMatcher](index.md) / [describeTo](.)
 
 # describeTo
 

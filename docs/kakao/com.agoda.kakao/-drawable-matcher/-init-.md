@@ -1,8 +1,4 @@
----
-title: DrawableMatcher.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawableMatcher](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawableMatcher](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 

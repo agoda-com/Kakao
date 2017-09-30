@@ -1,8 +1,4 @@
----
-title: SwipeableActions.swipeDown - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [SwipeableActions](index.html) / [swipeDown](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeableActions](index.md) / [swipeDown](.)
 
 # swipeDown
 

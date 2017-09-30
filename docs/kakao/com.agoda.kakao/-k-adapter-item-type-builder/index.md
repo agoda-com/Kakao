@@ -1,8 +1,4 @@
----
-title: KAdapterItemTypeBuilder - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItemTypeBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](.)
 
 # KAdapterItemTypeBuilder
 
@@ -16,19 +12,24 @@ KEmptyAdapterItem is added by default.
 
 **See Also**
 
-[itemType](item-type.html)
+[itemType](item-type.md)
 
-[KEmptyAdapterItem](../-k-empty-adapter-item/index.html)
+[KEmptyAdapterItem](../-k-empty-adapter-item/index.md)
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KAdapterItemTypeBuilder()`<br>Class that maps types to providing functions |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `KAdapterItemTypeBuilder()`<br>Class that maps types to providing functions |
 
 ### Properties
 
-| [itemTypes](item-types.html) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>>, `[`KAdapterItemType`](../-k-adapter-item-type/index.html)`<`[`KAdapterItem`](../-k-adapter-item/index.html)`<*>>>` |
+| Name | Summary |
+|---|---|
+| [itemTypes](item-types.md) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>, `[`KAdapterItemType`](../-k-adapter-item-type/index.md)`<`[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>>` |
 
 ### Functions
 
-| [itemType](item-type.html) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> itemType(provideItem: (DataInteraction) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KListView to automatically build child views |
-
+| Name | Summary |
+|---|---|
+| [itemType](item-type.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> itemType(provideItem: (DataInteraction) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KListView to automatically build child views |

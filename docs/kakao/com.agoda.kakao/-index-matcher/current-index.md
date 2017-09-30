@@ -1,8 +1,4 @@
----
-title: IndexMatcher.currentIndex - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [IndexMatcher](index.html) / [currentIndex](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IndexMatcher](index.md) / [currentIndex](.)
 
 # currentIndex
 

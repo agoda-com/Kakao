@@ -1,8 +1,4 @@
----
-title: RootBuilder.isNotDialog - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RootBuilder](index.html) / [isNotDialog](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isNotDialog](.)
 
 # isNotDialog
 

@@ -1,8 +1,4 @@
----
-title: DrawableMatcher.describeTo - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawableMatcher](index.html) / [describeTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawableMatcher](index.md) / [describeTo](.)
 
 # describeTo
 

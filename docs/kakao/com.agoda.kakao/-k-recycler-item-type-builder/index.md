@@ -1,8 +1,4 @@
----
-title: KRecyclerItemTypeBuilder - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItemTypeBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemTypeBuilder](.)
 
 # KRecyclerItemTypeBuilder
 
@@ -16,19 +12,24 @@ KEmptyRecyclerItem is added by default.
 
 **See Also**
 
-[itemType](item-type.html)
+[itemType](item-type.md)
 
-[KEmptyRecyclerItem](../-k-empty-recycler-item/index.html)
+[KEmptyRecyclerItem](../-k-empty-recycler-item/index.md)
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KRecyclerItemTypeBuilder()`<br>Class that maps types to providing functions |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `KRecyclerItemTypeBuilder()`<br>Class that maps types to providing functions |
 
 ### Properties
 
-| [itemTypes](item-types.html) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KRecyclerItem`](../-k-recycler-item/index.html)`<*>>, `[`KRecyclerItemType`](../-k-recycler-item-type/index.html)`<`[`KRecyclerItem`](../-k-recycler-item/index.html)`<*>>>` |
+| Name | Summary |
+|---|---|
+| [itemTypes](item-types.md) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>>, `[`KRecyclerItemType`](../-k-recycler-item-type/index.md)`<`[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>>>` |
 
 ### Functions
 
-| [itemType](item-type.html) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.html)`<*>> itemType(provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KRecyclerView to automatically build child views |
-
+| Name | Summary |
+|---|---|
+| [itemType](item-type.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> itemType(provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KRecyclerView to automatically build child views |

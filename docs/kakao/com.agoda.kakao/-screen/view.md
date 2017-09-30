@@ -1,14 +1,10 @@
----
-title: Screen.view - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [Screen](index.html) / [view](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [Screen](index.md) / [view](.)
 
 # view
 
 `open val view: ViewInteraction`
 
-Overrides [ScreenActions.view](../-screen-actions/view.html)
+Overrides [ScreenActions.view](../-screen-actions/view.md)
 
 ViewInteraction on which all actions are performed (root view by default)
 

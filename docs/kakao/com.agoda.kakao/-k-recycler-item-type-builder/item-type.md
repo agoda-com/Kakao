@@ -1,12 +1,8 @@
----
-title: KRecyclerItemTypeBuilder.itemType - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItemTypeBuilder](index.html) / [itemType](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemTypeBuilder](index.md) / [itemType](.)
 
 # itemType
 
-`inline fun <reified T : `[`KRecyclerItem`](../-k-recycler-item/index.html)`<*>> itemType(noinline provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`inline fun <reified T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> itemType(noinline provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Adds entry that helps KRecyclerView to automatically build child views
 

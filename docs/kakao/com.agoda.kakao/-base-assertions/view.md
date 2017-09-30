@@ -1,8 +1,4 @@
----
-title: BaseAssertions.view - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [view](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [view](.)
 
 # view
 

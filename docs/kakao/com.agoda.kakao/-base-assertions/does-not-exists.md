@@ -1,8 +1,4 @@
----
-title: BaseAssertions.doesNotExists - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [doesNotExists](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [doesNotExists](.)
 
 # doesNotExists
 

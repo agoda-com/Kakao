@@ -1,12 +1,8 @@
----
-title: BaseAssertions.hasSibling - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [hasSibling](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [hasSibling](.)
 
 # hasSibling
 
-`open fun hasSibling(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`open fun hasSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Checks if the view has given sibling
 
@@ -16,5 +12,5 @@ Checks if the view has given sibling
 
 **See Also**
 
-[ViewBuilder](../-view-builder/index.html)
+[ViewBuilder](../-view-builder/index.md)
 

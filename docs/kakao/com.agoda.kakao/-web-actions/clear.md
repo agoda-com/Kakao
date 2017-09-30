@@ -1,8 +1,4 @@
----
-title: WebActions.clear - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebActions](index.html) / [clear](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [clear](.)
 
 # clear
 

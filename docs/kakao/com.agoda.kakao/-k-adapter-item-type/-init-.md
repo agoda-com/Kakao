@@ -1,8 +1,4 @@
----
-title: KAdapterItemType.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItemType](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemType](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 

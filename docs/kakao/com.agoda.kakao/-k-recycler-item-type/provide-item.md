@@ -1,8 +1,4 @@
----
-title: KRecyclerItemType.provideItem - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItemType](index.html) / [provideItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemType](index.md) / [provideItem](.)
 
 # provideItem
 

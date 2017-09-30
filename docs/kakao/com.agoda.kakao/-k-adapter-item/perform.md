@@ -1,8 +1,4 @@
----
-title: KAdapterItem.perform - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItem](index.html) / [perform](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItem](index.md) / [perform](.)
 
 # perform
 

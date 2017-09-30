@@ -1,8 +1,4 @@
----
-title: KRecyclerView.matcher - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerView](index.html) / [matcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [matcher](.)
 
 # matcher
 

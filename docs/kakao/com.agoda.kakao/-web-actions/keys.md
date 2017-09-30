@@ -1,8 +1,4 @@
----
-title: WebActions.keys - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebActions](index.html) / [keys](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [keys](.)
 
 # keys
 

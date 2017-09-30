@@ -1,8 +1,4 @@
----
-title: ViewBuilder.withResourceName - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [withResourceName](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [withResourceName](.)
 
 # withResourceName
 

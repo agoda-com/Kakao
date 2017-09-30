@@ -1,8 +1,4 @@
----
-title: DataBuilder.equals - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DataBuilder](index.html) / [equals](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [equals](.)
 
 # equals
 

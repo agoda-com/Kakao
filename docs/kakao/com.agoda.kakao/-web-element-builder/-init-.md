@@ -1,8 +1,4 @@
----
-title: WebElementBuilder.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebElementBuilder](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebElementBuilder](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 

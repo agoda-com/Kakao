@@ -1,12 +1,8 @@
----
-title: KListView.childAt - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KListView](index.html) / [childAt](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](index.md) / [childAt](.)
 
 # childAt
 
-`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Performs given actions/assertion on child at given position
 

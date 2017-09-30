@@ -1,8 +1,4 @@
----
-title: RecyclerActions.getSize - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RecyclerActions](index.html) / [getSize](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](index.md) / [getSize](.)
 
 # getSize
 

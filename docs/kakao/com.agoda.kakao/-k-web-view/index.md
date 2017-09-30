@@ -1,8 +1,4 @@
----
-title: KWebView - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KWebView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KWebView](.)
 
 # KWebView
 
@@ -16,9 +12,12 @@ Class for interacting with WebViews
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KWebView(matcher: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)` = null)`<br>Class for interacting with WebViews |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `KWebView(matcher: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)` = null)`<br>Class for interacting with WebViews |
 
 ### Functions
 
-| [invoke](invoke.html) | `operator fun invoke(function: `[`WebElementBuilder`](../-web-element-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
-
+| Name | Summary |
+|---|---|
+| [invoke](invoke.md) | `operator fun invoke(function: `[`WebElementBuilder`](../-web-element-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |

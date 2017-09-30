@@ -1,8 +1,4 @@
----
-title: EditableActions.typeText - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [EditableActions](index.html) / [typeText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [typeText](.)
 
 # typeText
 

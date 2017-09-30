@@ -1,8 +1,4 @@
----
-title: KEmptyRecyclerItem.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KEmptyRecyclerItem](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KEmptyRecyclerItem](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 
@@ -18,5 +14,5 @@ Use this if you want to perform/assert on the root view of view holder
 
 **See Also**
 
-[KRecyclerItem](../-k-recycler-item/index.html)
+[KRecyclerItem](../-k-recycler-item/index.md)
 

@@ -1,8 +1,4 @@
----
-title: BaseActions.doubleClick - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseActions](index.html) / [doubleClick](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](index.md) / [doubleClick](.)
 
 # doubleClick
 

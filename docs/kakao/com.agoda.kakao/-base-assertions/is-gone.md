@@ -1,8 +1,4 @@
----
-title: BaseAssertions.isGone - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [isGone](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isGone](.)
 
 # isGone
 

@@ -1,8 +1,4 @@
----
-title: IndexMatcher.matchesSafely - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [IndexMatcher](index.html) / [matchesSafely](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IndexMatcher](index.md) / [matchesSafely](.)
 
 # matchesSafely
 

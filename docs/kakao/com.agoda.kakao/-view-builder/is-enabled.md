@@ -1,8 +1,4 @@
----
-title: ViewBuilder.isEnabled - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [isEnabled](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isEnabled](.)
 
 # isEnabled
 

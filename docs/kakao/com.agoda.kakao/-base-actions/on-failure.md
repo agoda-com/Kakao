@@ -1,8 +1,4 @@
----
-title: BaseActions.onFailure - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseActions](index.html) / [onFailure](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](index.md) / [onFailure](.)
 
 # onFailure
 

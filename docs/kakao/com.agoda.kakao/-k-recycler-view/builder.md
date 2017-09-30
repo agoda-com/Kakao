@@ -1,9 +1,5 @@
----
-title: KRecyclerView.builder - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerView](index.html) / [builder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [builder](.)
 
 # builder
 
-`val builder: `[`ViewBuilder`](../-view-builder/index.html)
+`val builder: `[`ViewBuilder`](../-view-builder/index.md)

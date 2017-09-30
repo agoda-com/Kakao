@@ -1,8 +1,4 @@
----
-title: ViewBuilder.containsText - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [containsText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [containsText](.)
 
 # containsText
 

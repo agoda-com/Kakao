@@ -1,8 +1,4 @@
----
-title: ScrollViewActions.getSize - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ScrollViewActions](index.html) / [getSize](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollViewActions](index.md) / [getSize](.)
 
 # getSize
 

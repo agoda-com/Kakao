@@ -1,8 +1,4 @@
----
-title: WebActions.scroll - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebActions](index.html) / [scroll](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [scroll](.)
 
 # scroll
 

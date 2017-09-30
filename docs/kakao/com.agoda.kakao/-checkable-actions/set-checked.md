@@ -1,8 +1,4 @@
----
-title: CheckableActions.setChecked - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [CheckableActions](index.html) / [setChecked](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [CheckableActions](index.md) / [setChecked](.)
 
 # setChecked
 

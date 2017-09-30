@@ -1,8 +1,4 @@
----
-title: ViewBuilder.withContentDescription - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [withContentDescription](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [withContentDescription](.)
 
 # withContentDescription
 

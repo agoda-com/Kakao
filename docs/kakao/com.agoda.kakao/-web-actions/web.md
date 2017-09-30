@@ -1,8 +1,4 @@
----
-title: WebActions.web - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebActions](index.html) / [web](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [web](.)
 
 # web
 

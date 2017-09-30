@@ -1,8 +1,4 @@
----
-title: ScreenActions.idle - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ScreenActions](index.html) / [idle](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [idle](.)
 
 # idle
 

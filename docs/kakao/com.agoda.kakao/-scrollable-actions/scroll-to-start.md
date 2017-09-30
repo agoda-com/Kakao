@@ -1,8 +1,4 @@
----
-title: ScrollableActions.scrollToStart - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ScrollableActions](index.html) / [scrollToStart](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollableActions](index.md) / [scrollToStart](.)
 
 # scrollToStart
 

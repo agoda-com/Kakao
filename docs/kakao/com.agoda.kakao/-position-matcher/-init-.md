@@ -1,8 +1,4 @@
----
-title: PositionMatcher.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [PositionMatcher](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [PositionMatcher](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 

@@ -1,12 +1,8 @@
----
-title: KListView.invoke - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KListView](index.html) / [invoke](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](index.md) / [invoke](.)
 
 # invoke
 
-`operator fun invoke(function: `[`KListView`](index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`operator fun invoke(function: `[`KListView`](index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Operator that allows usage of DSL style
 

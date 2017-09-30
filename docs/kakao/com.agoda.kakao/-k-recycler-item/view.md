@@ -1,14 +1,10 @@
----
-title: KRecyclerItem.view - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItem](index.html) / [view](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItem](index.md) / [view](.)
 
 # view
 
 `open val view: ViewInteraction`
 
-Overrides [BaseActions.view](../-base-actions/view.html)
+Overrides [BaseActions.view](../-base-actions/view.md)
 
-Overrides [BaseAssertions.view](../-base-assertions/view.html)
+Overrides [BaseAssertions.view](../-base-assertions/view.md)
 

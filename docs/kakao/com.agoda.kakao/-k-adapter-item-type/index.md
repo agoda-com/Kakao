@@ -1,12 +1,8 @@
----
-title: KAdapterItemType - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItemType](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemType](.)
 
 # KAdapterItemType
 
-`class KAdapterItemType<out T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>>`
+`class KAdapterItemType<out T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>`
 
 For internal use. Don't use manually.
 
@@ -14,9 +10,12 @@ Holds type and corresponding provider function
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KAdapterItemType(provideItem: (DataInteraction) -> T)`<br>For internal use. Don't use manually. |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `KAdapterItemType(provideItem: (DataInteraction) -> T)`<br>For internal use. Don't use manually. |
 
 ### Properties
 
-| [provideItem](provide-item.html) | `val provideItem: (DataInteraction) -> T` |
-
+| Name | Summary |
+|---|---|
+| [provideItem](provide-item.md) | `val provideItem: (DataInteraction) -> T` |

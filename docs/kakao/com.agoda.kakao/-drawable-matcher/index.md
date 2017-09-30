@@ -1,8 +1,4 @@
----
-title: DrawableMatcher - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawableMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawableMatcher](.)
 
 # DrawableMatcher
 
@@ -20,11 +16,14 @@ Matches given drawable with current one
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `DrawableMatcher(resId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)` = -1, drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`? = null, toBitmap: (drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`) -> `[`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap.html)` = null)`<br>Matches given drawable with current one |
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `DrawableMatcher(resId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)` = -1, drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`? = null, toBitmap: (drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`) -> `[`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap.html)` = null)`<br>Matches given drawable with current one |
 
 ### Functions
 
-| [describeTo](describe-to.html) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [drawableToBitmap](drawable-to-bitmap.html) | `fun drawableToBitmap(drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`): `[`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap.html) |
-| [matchesSafely](matches-safely.html) | `fun matchesSafely(view: `[`View`](https://developer.android.com/reference/android/view/View.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-
+| Name | Summary |
+|---|---|
+| [describeTo](describe-to.md) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [drawableToBitmap](drawable-to-bitmap.md) | `fun drawableToBitmap(drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`): `[`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap.html) |
+| [matchesSafely](matches-safely.md) | `fun matchesSafely(view: `[`View`](https://developer.android.com/reference/android/view/View.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

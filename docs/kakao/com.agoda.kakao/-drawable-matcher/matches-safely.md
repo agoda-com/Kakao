@@ -1,8 +1,4 @@
----
-title: DrawableMatcher.matchesSafely - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawableMatcher](index.html) / [matchesSafely](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawableMatcher](index.md) / [matchesSafely](.)
 
 # matchesSafely
 

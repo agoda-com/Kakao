@@ -1,8 +1,4 @@
----
-title: KAdapterItemType.provideItem - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItemType](index.html) / [provideItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemType](index.md) / [provideItem](.)
 
 # provideItem
 

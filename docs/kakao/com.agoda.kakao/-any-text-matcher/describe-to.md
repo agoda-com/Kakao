@@ -1,8 +1,4 @@
----
-title: AnyTextMatcher.describeTo - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [AnyTextMatcher](index.html) / [describeTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [AnyTextMatcher](index.md) / [describeTo](.)
 
 # describeTo
 

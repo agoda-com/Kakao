@@ -1,8 +1,4 @@
----
-title: FirstViewMatcher.matchesSafely - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [FirstViewMatcher](index.html) / [matchesSafely](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [FirstViewMatcher](index.md) / [matchesSafely](.)
 
 # matchesSafely
 

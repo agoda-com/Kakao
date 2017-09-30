@@ -1,8 +1,4 @@
----
-title: EditableAssertions.hasHint - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [EditableAssertions](index.html) / [hasHint](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableAssertions](index.md) / [hasHint](.)
 
 # hasHint
 

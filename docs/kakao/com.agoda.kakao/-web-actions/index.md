@@ -1,8 +1,4 @@
----
-title: WebActions - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](.)
 
 # WebActions
 
@@ -16,17 +12,22 @@ Provides action for interacting with WebViews
 
 ### Properties
 
-| [ref](ref.html) | `abstract val ref: Atom<ElementReference>` |
-| [web](web.html) | `abstract val web: WebInteraction<*>` |
+| Name | Summary |
+|---|---|
+| [ref](ref.md) | `abstract val ref: Atom<ElementReference>` |
+| [web](web.md) | `abstract val web: WebInteraction<*>` |
 
 ### Functions
 
-| [clear](clear.html) | `open fun clear(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Clears the element |
-| [click](click.html) | `open fun click(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Clicks on element |
-| [keys](keys.html) | `open fun keys(text: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Input keys with element in focus |
-| [scroll](scroll.html) | `open fun scroll(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the element inside WebView |
+| Name | Summary |
+|---|---|
+| [clear](clear.md) | `open fun clear(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Clears the element |
+| [click](click.md) | `open fun click(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Clicks on element |
+| [keys](keys.md) | `open fun keys(text: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Input keys with element in focus |
+| [scroll](scroll.md) | `open fun scroll(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the element inside WebView |
 
 ### Inheritors
 
-| [KWebInteraction](../-web-element-builder/-k-web-interaction/index.html) | `inner class KWebInteraction : WebActions, `[`WebAssertions`](../-web-assertions/index.html) |
-
+| Name | Summary |
+|---|---|
+| [KWebInteraction](../-web-element-builder/-k-web-interaction/index.md) | `inner class KWebInteraction : WebActions, `[`WebAssertions`](../-web-assertions/index.md) |

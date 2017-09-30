@@ -1,8 +1,4 @@
----
-title: IndexMatcher.<init> - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [IndexMatcher](index.html) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IndexMatcher](index.md) / [&lt;init&gt;](.)
 
 # &lt;init&gt;
 

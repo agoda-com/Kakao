@@ -1,8 +1,4 @@
----
-title: KRecyclerItem.perform - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItem](index.html) / [perform](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItem](index.md) / [perform](.)
 
 # perform
 

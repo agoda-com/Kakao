@@ -1,8 +1,4 @@
----
-title: ViewBuilder.isNotDisplayed - kakao
----
-
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [isNotDisplayed](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isNotDisplayed](.)
 
 # isNotDisplayed
 
