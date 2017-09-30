@@ -1,14 +1,15 @@
 ---
 title: RecyclerActions.scrollToEnd - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [RecyclerActions](index.html) / [scrollToEnd](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">RecyclerActions</a> / <a href=".">scrollToEnd</a></div>
 
 # scrollToEnd
 
-`open fun scrollToEnd(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">scrollToEnd</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
-Overrides [ScrollableActions.scrollToEnd](../-scrollable-actions/scroll-to-end.html)
+Overrides <a href="../-scrollable-actions/scroll-to-end.html">ScrollableActions.scrollToEnd</a>
 
 Scrolls to the last position of the view
 

@@ -1,12 +1,13 @@
 ---
 title: Screen.<init> - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [Screen](index.html) / [&lt;init&gt;](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">Screen</a> / <a href=".">&lt;init&gt;</a></div>
 
 # &lt;init&gt;
 
-`Screen()`
+<div class="signature"><code><span class="identifier">Screen</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
 
 Container class for UI elements.
 
@@ -15,9 +16,9 @@ such as tapBack() and closeSoftKeyboard()
 
 ### Parameters
 
-`T` - type of your screen, done to enable invoke() for its children
+<code>T</code> - type of your screen, done to enable invoke() for its children
 
 **See Also**
 
-[ScreenActions](../-screen-actions/index.html)
+<a href="../-screen-actions/index.html">ScreenActions</a>
 

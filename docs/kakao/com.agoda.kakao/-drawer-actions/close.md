@@ -1,20 +1,21 @@
 ---
 title: DrawerActions.close - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [DrawerActions](index.html) / [close](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">DrawerActions</a> / <a href=".">close</a></div>
 
 # close
 
-`open fun close(gravity: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)` = Gravity.START): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.DrawerActions$close(kotlin.Int)/gravity">gravity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Gravity.START<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
 Closes the navigation drawer
 
 ### Parameters
 
-`gravity` - Gravity to use (Gravity.START by default)
+<code>gravity</code> - Gravity to use (Gravity.START by default)
 
 **See Also**
 
-[Gravity.START](https://developer.android.com/reference/android/view/Gravity.html#START)
+<a href="https://developer.android.com/reference/android/view/Gravity.html#START">Gravity.START</a>
 

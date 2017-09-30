@@ -1,15 +1,16 @@
 ---
 title: BaseActions.click - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseActions](index.html) / [click](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">BaseActions</a> / <a href=".">click</a></div>
 
 # click
 
-`open fun click(location: GeneralLocation = GeneralLocation.VISIBLE_CENTER): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">click</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.BaseActions$click(android.support.test.espresso.action.GeneralLocation)/location">location</span><span class="symbol">:</span>&nbsp;<span class="identifier">GeneralLocation</span>&nbsp;<span class="symbol">=</span>&nbsp;GeneralLocation.VISIBLE_CENTER<br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
 Performs click on view
 
 ### Parameters
 
-`location` - Location of view where it should be clicked (VISIBLE_CENTER by default)
+<code>location</code> - Location of view where it should be clicked (VISIBLE_CENTER by default)

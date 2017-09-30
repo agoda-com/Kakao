@@ -1,28 +1,29 @@
 ---
 title: KListView.<init> - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KListView](index.html) / [&lt;init&gt;](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">KListView</a> / <a href=".">&lt;init&gt;</a></div>
 
 # &lt;init&gt;
 
-`KListView(builder: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KAdapterItemTypeBuilder`](../-k-adapter-item-type-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`
+<div class="signature"><code><span class="identifier">KListView</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$<init>(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)), kotlin.Function1((com.agoda.kakao.KAdapterItemTypeBuilder, kotlin.Unit)))/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$<init>(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)), kotlin.Function1((com.agoda.kakao.KAdapterItemTypeBuilder, kotlin.Unit)))/itemTypeBuilder">itemTypeBuilder</span><span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item-type-builder/index.html"><span class="identifier">KAdapterItemTypeBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></code></div>
 
 View with ScrollViewActions and BaseAssertions. Gives access to it's children
 
 ### Parameters
 
-`builder` - ViewBuilder which will match your list view
+<code>builder</code> - ViewBuilder which will match your list view
 
-`itemTypeBuilder` - Lambda with receiver where you pass your item providers
+<code>itemTypeBuilder</code> - Lambda with receiver where you pass your item providers
 
 **See Also**
 
-[ScrollViewActions](../-scroll-view-actions/index.html)
+<a href="../-scroll-view-actions/index.html">ScrollViewActions</a>
 
-[BaseAssertions](../-base-assertions/index.html)
+<a href="../-base-assertions/index.html">BaseAssertions</a>
 
-[KAdapterItem](../-k-adapter-item/index.html)
+<a href="../-k-adapter-item/index.html">KAdapterItem</a>
 
-[KAdapterItemTypeBuilder](../-k-adapter-item-type-builder/index.html)
+<a href="../-k-adapter-item-type-builder/index.html">KAdapterItemTypeBuilder</a>
 

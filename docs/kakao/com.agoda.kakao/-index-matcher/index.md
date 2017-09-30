@@ -1,31 +1,90 @@
 ---
 title: IndexMatcher - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [IndexMatcher](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href=".">IndexMatcher</a></div>
 
 # IndexMatcher
 
-`class IndexMatcher : TypeSafeMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>`
+<div class="signature"><code><span class="keyword">class </span><span class="identifier">IndexMatcher</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TypeSafeMatcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span></code></div>
 
 Matches index'th view that matches given matcher
 
 ### Parameters
 
-`matcher` - Matcher that have several matching views
+<code>matcher</code> - Matcher that have several matching views
 
-`index` - index of view that must be matched
+<code>index</code> - index of view that must be matched
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `IndexMatcher(matcher: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, index: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`<br>Matches index'th view that matches given matcher |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="-init-.html">&lt;init&gt;</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="identifier">IndexMatcher</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.IndexMatcher$<init>(org.hamcrest.Matcher((android.view.View)), kotlin.Int)/matcher">matcher</span><span class="symbol">:</span>&nbsp;<span class="identifier">Matcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="parameterName" id="com.agoda.kakao.IndexMatcher$<init>(org.hamcrest.Matcher((android.view.View)), kotlin.Int)/index">index</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></div>
+
+Matches index'th view that matches given matcher
+
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Properties
 
-| [currentIndex](current-index.html) | `var currentIndex: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="current-index.html">currentIndex</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">var </span><span class="identifier">currentIndex</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Functions
 
-| [describeTo](describe-to.html) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [matchesSafely](matches-safely.html) | `fun matchesSafely(view: `[`View`](https://developer.android.com/reference/android/view/View.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
 
+<a href="describe-to.html">describeTo</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">describeTo</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.IndexMatcher$describeTo(org.hamcrest.Description)/desc">desc</span><span class="symbol">:</span>&nbsp;<span class="identifier">Description</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="matches-safely.html">matchesSafely</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">matchesSafely</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.IndexMatcher$matchesSafely(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>

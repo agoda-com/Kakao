@@ -1,12 +1,13 @@
 ---
 title: KRecyclerItemTypeBuilder.<init> - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KRecyclerItemTypeBuilder](index.html) / [&lt;init&gt;](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">KRecyclerItemTypeBuilder</a> / <a href=".">&lt;init&gt;</a></div>
 
 # &lt;init&gt;
 
-`KRecyclerItemTypeBuilder()`
+<div class="signature"><code><span class="identifier">KRecyclerItemTypeBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
 
 Class that maps types to providing functions
 
@@ -16,7 +17,7 @@ KEmptyRecyclerItem is added by default.
 
 **See Also**
 
-[itemType](item-type.html)
+<a href="item-type.html">itemType</a>
 
-[KEmptyRecyclerItem](../-k-empty-recycler-item/index.html)
+<a href="../-k-empty-recycler-item/index.html">KEmptyRecyclerItem</a>
 

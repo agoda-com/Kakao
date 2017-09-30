@@ -1,32 +1,98 @@
 ---
 title: WebElementBuilder - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebElementBuilder](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href=".">WebElementBuilder</a></div>
 
 # WebElementBuilder
 
-`class WebElementBuilder`
+<div class="signature"><code><span class="keyword">class </span><span class="identifier">WebElementBuilder</span></code></div>
 
 Class for building WebView element matchers
 
 ### Parameters
 
-`web` - WebInteraction where elements should be matched
+<code>web</code> - WebInteraction where elements should be matched
 
 ### Types
 
-| [KWebInteraction](-k-web-interaction/index.html) | `inner class KWebInteraction : `[`WebActions`](../-web-actions/index.html)`, `[`WebAssertions`](../-web-assertions/index.html) |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="-k-web-interaction/index.html">KWebInteraction</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">KWebInteraction</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-web-actions/index.html"><span class="identifier">WebActions</span></a><span class="symbol">, </span><a href="../-web-assertions/index.html"><span class="identifier">WebAssertions</span></a></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `WebElementBuilder(web: WebInteraction<*>)`<br>Class for building WebView element matchers |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="-init-.html">&lt;init&gt;</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="identifier">WebElementBuilder</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.WebElementBuilder$<init>(android.support.test.espresso.web.sugar.Web.WebInteraction((kotlin.Any)))/web">web</span><span class="symbol">:</span>&nbsp;<span class="identifier">WebInteraction</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></div>
+
+Class for building WebView element matchers
+
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Properties
 
-| [web](web.html) | `val web: WebInteraction<*>` |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="web.html">web</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">val </span><span class="identifier">web</span><span class="symbol">: </span><span class="identifier">WebInteraction</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Functions
 
-| [withElement](with-element.html) | `fun withElement(locator: Locator, value: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, interaction: `[`KWebInteraction`](-k-web-interaction/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Looks up web view element and performs actions/assertions on it |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
 
+<a href="with-element.html">withElement</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">withElement</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.WebElementBuilder$withElement(android.support.test.espresso.web.webdriver.Locator, kotlin.String, kotlin.Function1((com.agoda.kakao.WebElementBuilder.KWebInteraction, kotlin.Unit)))/locator">locator</span><span class="symbol">:</span>&nbsp;<span class="identifier">Locator</span><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.WebElementBuilder$withElement(android.support.test.espresso.web.webdriver.Locator, kotlin.String, kotlin.Function1((com.agoda.kakao.WebElementBuilder.KWebInteraction, kotlin.Unit)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.WebElementBuilder$withElement(android.support.test.espresso.web.webdriver.Locator, kotlin.String, kotlin.Function1((com.agoda.kakao.WebElementBuilder.KWebInteraction, kotlin.Unit)))/interaction">interaction</span><span class="symbol">:</span>&nbsp;<a href="-k-web-interaction/index.html"><span class="identifier">KWebInteraction</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Looks up web view element and performs actions/assertions on it
+
+
+</td>
+</tr>
+</tbody>
+</table>

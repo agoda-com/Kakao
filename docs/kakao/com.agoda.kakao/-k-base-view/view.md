@@ -1,14 +1,15 @@
 ---
 title: KBaseView.view - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KBaseView](index.html) / [view](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">KBaseView</a> / <a href=".">view</a></div>
 
 # view
 
-`open val view: ViewInteraction`
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">view</span><span class="symbol">: </span><span class="identifier">ViewInteraction</span></code></div>
 
-Overrides [BaseActions.view](../-base-actions/view.html)
+Overrides <a href="../-base-actions/view.html">BaseActions.view</a>
 
-Overrides [BaseAssertions.view](../-base-assertions/view.html)
+Overrides <a href="../-base-assertions/view.html">BaseAssertions.view</a>
 

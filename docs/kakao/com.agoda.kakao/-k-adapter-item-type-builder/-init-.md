@@ -1,12 +1,13 @@
 ---
 title: KAdapterItemTypeBuilder.<init> - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItemTypeBuilder](index.html) / [&lt;init&gt;](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">KAdapterItemTypeBuilder</a> / <a href=".">&lt;init&gt;</a></div>
 
 # &lt;init&gt;
 
-`KAdapterItemTypeBuilder()`
+<div class="signature"><code><span class="identifier">KAdapterItemTypeBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
 
 Class that maps types to providing functions
 
@@ -16,7 +17,7 @@ KEmptyAdapterItem is added by default.
 
 **See Also**
 
-[itemType](item-type.html)
+<a href="item-type.html">itemType</a>
 
-[KEmptyAdapterItem](../-k-empty-adapter-item/index.html)
+<a href="../-k-empty-adapter-item/index.html">KEmptyAdapterItem</a>
 

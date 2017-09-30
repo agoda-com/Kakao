@@ -1,12 +1,15 @@
 ---
 title: emptyFirstChild - kakao
+layout: api
 ---
 
-[kakao](../index.html) / [com.agoda.kakao](index.html) / [emptyFirstChild](.)
+<div class='api-docs-breadcrumbs'><a href="../index.html">kakao</a> / <a href="index.html">com.agoda.kakao</a> / <a href=".">emptyFirstChild</a></div>
 
 # emptyFirstChild
 
-`fun `[`KRecyclerView`](-k-recycler-view/index.html)`.emptyFirstChild(tail: `[`KEmptyRecyclerItem`](-k-empty-recycler-item/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+<div class="overload-group" markdown="1">
+
+<div class="signature"><code><span class="keyword">fun </span><a href="-k-recycler-view/index.html"><span class="identifier">KRecyclerView</span></a><span class="symbol">.</span><span class="identifier">emptyFirstChild</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyFirstChild(com.agoda.kakao.KRecyclerView, kotlin.Function1((com.agoda.kakao.KEmptyRecyclerItem, kotlin.Unit)))/tail">tail</span><span class="symbol">:</span>&nbsp;<a href="-k-empty-recycler-item/index.html"><span class="identifier">KEmptyRecyclerItem</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
 Calls firstChild() on your view with base child
 
@@ -14,13 +17,16 @@ Calls firstChild() on your KRecyclerView and casts received item to KEmptyRecycl
 
 ### Parameters
 
-`tail` - Lambda with KEmptyRecyclerItem receiver
+<code>tail</code> - Lambda with KEmptyRecyclerItem receiver
 
 **See Also**
 
-[KEmptyRecyclerItem](-k-empty-recycler-item/index.html)
+<a href="-k-empty-recycler-item/index.html">KEmptyRecyclerItem</a>
 
-`fun `[`KListView`](-k-list-view/index.html)`.emptyFirstChild(tail: `[`KEmptyAdapterItem`](-k-empty-adapter-item/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+</div>
+<div class="overload-group" markdown="1">
+
+<div class="signature"><code><span class="keyword">fun </span><a href="-k-list-view/index.html"><span class="identifier">KListView</span></a><span class="symbol">.</span><span class="identifier">emptyFirstChild</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyFirstChild(com.agoda.kakao.KListView, kotlin.Function1((com.agoda.kakao.KEmptyAdapterItem, kotlin.Unit)))/tail">tail</span><span class="symbol">:</span>&nbsp;<a href="-k-empty-adapter-item/index.html"><span class="identifier">KEmptyAdapterItem</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
 Calls firstChild() on your view with base child
 
@@ -28,9 +34,10 @@ Calls firstChild() on your KListView and casts received item to KEmptyAdapterIte
 
 ### Parameters
 
-`tail` - Lambda with KEmptyAdapterItem receiver
+<code>tail</code> - Lambda with KEmptyAdapterItem receiver
 
 **See Also**
 
-[KEmptyAdapterItem](-k-empty-adapter-item/index.html)
+<a href="-k-empty-adapter-item/index.html">KEmptyAdapterItem</a>
 
+</div>

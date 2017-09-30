@@ -1,9 +1,10 @@
 ---
 title: BaseAssertions.view - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [BaseAssertions](index.html) / [view](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">BaseAssertions</a> / <a href=".">view</a></div>
 
 # view
 
-`abstract val view: ViewInteraction`
+<div class="signature"><code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">view</span><span class="symbol">: </span><span class="identifier">ViewInteraction</span></code></div>

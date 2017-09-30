@@ -1,12 +1,13 @@
 ---
 title: ViewBuilder.isInvisible - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ViewBuilder](index.html) / [isInvisible](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">ViewBuilder</a> / <a href=".">isInvisible</a></div>
 
 # isInvisible
 
-`fun isInvisible(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">isInvisible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
 Matches the view with INVISIBLE visibility
 

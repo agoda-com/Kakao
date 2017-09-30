@@ -1,12 +1,13 @@
 ---
 title: KAdapterItem.perform - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KAdapterItem](index.html) / [perform](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">KAdapterItem</a> / <a href=".">perform</a></div>
 
 # perform
 
-`infix fun perform(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`
+<div class="signature"><code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">perform</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.KAdapterItem$perform(kotlin.Function1((com.agoda.kakao.KAdapterItem.T, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></div>
 
 Infix function for invoking lambda on your view
 
@@ -16,7 +17,7 @@ tail lambda of your fun/constructor. In such cases please use this function.
 
 ### Parameters
 
-`function` - Tail lambda with receiver which is your view
+<code>function</code> - Tail lambda with receiver which is your view
 
 **Return**
 This object

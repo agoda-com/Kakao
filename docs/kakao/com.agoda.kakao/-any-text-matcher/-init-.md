@@ -1,16 +1,17 @@
 ---
 title: AnyTextMatcher.<init> - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [AnyTextMatcher](index.html) / [&lt;init&gt;](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">AnyTextMatcher</a> / <a href=".">&lt;init&gt;</a></div>
 
 # &lt;init&gt;
 
-`AnyTextMatcher()`
+<div class="signature"><code><span class="identifier">AnyTextMatcher</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
 
 Matches TextView views which contains any text
 
 **See Also**
 
-[TextView](https://developer.android.com/reference/android/widget/TextView.html)
+<a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a>
 

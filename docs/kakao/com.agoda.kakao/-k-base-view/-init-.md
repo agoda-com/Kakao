@@ -1,48 +1,58 @@
 ---
 title: KBaseView.<init> - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KBaseView](index.html) / [&lt;init&gt;](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">KBaseView</a> / <a href=".">&lt;init&gt;</a></div>
 
 # &lt;init&gt;
 
-`KBaseView(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`
+<div class="overload-group" markdown="1">
+
+<div class="signature"><code><span class="identifier">KBaseView</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.KBaseView$<init>(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></code></div>
 
 Constructs view class with view interaction from given ViewBuilder
 
 ### Parameters
 
-`function` - ViewBuilder which will result in view's interaction
+<code>function</code> - ViewBuilder which will result in view's interaction
 
 **See Also**
 
-[ViewBuilder](../-view-builder/index.html)
+<a href="../-view-builder/index.html">ViewBuilder</a>
 
-`KBaseView(parent: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`
+</div>
+<div class="overload-group" markdown="1">
+
+<div class="signature"><code><span class="identifier">KBaseView</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KBaseView$<init>(org.hamcrest.Matcher((android.view.View)), kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">Matcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KBaseView$<init>(org.hamcrest.Matcher((android.view.View)), kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></code></div>
 
 Constructs view class with parent and view interaction from given ViewBuilder
 
 ### Parameters
 
-`parent` - Matcher that will be used as parent in isDescendantOfA() matcher
+<code>parent</code> - Matcher that will be used as parent in isDescendantOfA() matcher
 
-`function` - ViewBuilder which will result in view's interaction
+<code>function</code> - ViewBuilder which will result in view's interaction
 
 **See Also**
 
-[ViewBuilder](../-view-builder/index.html)
+<a href="../-view-builder/index.html">ViewBuilder</a>
 
-`KBaseView(parent: DataInteraction, function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`
+</div>
+<div class="overload-group" markdown="1">
+
+<div class="signature"><code><span class="identifier">KBaseView</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KBaseView$<init>(android.support.test.espresso.DataInteraction, kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">DataInteraction</span><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KBaseView$<init>(android.support.test.espresso.DataInteraction, kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></code></div>
 
 Constructs view class with parent and view interaction from given ViewBuilder
 
 ### Parameters
 
-`parent` - DataInteraction that will be used as parent to ViewBuilder
+<code>parent</code> - DataInteraction that will be used as parent to ViewBuilder
 
-`function` - ViewBuilder which will result in view's interaction
+<code>function</code> - ViewBuilder which will result in view's interaction
 
 **See Also**
 
-[ViewBuilder](../-view-builder/index.html)
+<a href="../-view-builder/index.html">ViewBuilder</a>
 
+</div>

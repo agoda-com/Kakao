@@ -1,9 +1,10 @@
 ---
 title: WebAssertions.web - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [WebAssertions](index.html) / [web](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">WebAssertions</a> / <a href=".">web</a></div>
 
 # web
 
-`abstract val web: WebInteraction<*>`
+<div class="signature"><code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">web</span><span class="symbol">: </span><span class="identifier">WebInteraction</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></div>

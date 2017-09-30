@@ -1,13 +1,28 @@
 ---
 title: kakao
+layout: api
 ---
 
-[kakao](.)
+
 
 ### Packages
 
-| [com.agoda.kakao](com.agoda.kakao/index.html) |  |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="com.agoda.kakao/index.html">com.agoda.kakao</a>
+
+
+</td>
+<td markdown="1">
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Index
 
-[All Types](alltypes/index.html)
+<a href="alltypes/index.html">All Types</a>

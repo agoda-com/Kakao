@@ -1,91 +1,771 @@
 ---
 title: KListView - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [KListView](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href=".">KListView</a></div>
 
 # KListView
 
-`class KListView : `[`ScrollViewActions`](../-scroll-view-actions/index.html)`, `[`BaseAssertions`](../-base-assertions/index.html)
+<div class="signature"><code><span class="keyword">class </span><span class="identifier">KListView</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-scroll-view-actions/index.html"><span class="identifier">ScrollViewActions</span></a><span class="symbol">, </span><a href="../-base-assertions/index.html"><span class="identifier">BaseAssertions</span></a></code></div>
 
 View with ScrollViewActions and BaseAssertions. Gives access to it's children
 
 ### Parameters
 
-`builder` - ViewBuilder which will match your list view
+<code>builder</code> - ViewBuilder which will match your list view
 
-`itemTypeBuilder` - Lambda with receiver where you pass your item providers
+<code>itemTypeBuilder</code> - Lambda with receiver where you pass your item providers
 
 **See Also**
 
-[ScrollViewActions](../-scroll-view-actions/index.html)
+<a href="../-scroll-view-actions/index.html">ScrollViewActions</a>
 
-[BaseAssertions](../-base-assertions/index.html)
+<a href="../-base-assertions/index.html">BaseAssertions</a>
 
-[KAdapterItem](../-k-adapter-item/index.html)
+<a href="../-k-adapter-item/index.html">KAdapterItem</a>
 
-[KAdapterItemTypeBuilder](../-k-adapter-item-type-builder/index.html)
+<a href="../-k-adapter-item-type-builder/index.html">KAdapterItemTypeBuilder</a>
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `KListView(builder: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KAdapterItemTypeBuilder`](../-k-adapter-item-type-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="-init-.html">&lt;init&gt;</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="identifier">KListView</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$<init>(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)), kotlin.Function1((com.agoda.kakao.KAdapterItemTypeBuilder, kotlin.Unit)))/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$<init>(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)), kotlin.Function1((com.agoda.kakao.KAdapterItemTypeBuilder, kotlin.Unit)))/itemTypeBuilder">itemTypeBuilder</span><span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item-type-builder/index.html"><span class="identifier">KAdapterItemTypeBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span></code></div>
+
+View with ScrollViewActions and BaseAssertions. Gives access to it's children
+
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Properties
 
-| [builder](builder.html) | `val builder: `[`ViewBuilder`](../-view-builder/index.html) |
-| [itemTypes](item-types.html) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>>, `[`KAdapterItemType`](../-k-adapter-item-type/index.html)`<`[`KAdapterItem`](../-k-adapter-item/index.html)`<*>>>` |
-| [matcher](matcher.html) | `val matcher: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
-| [view](view.html) | `val view: ViewInteraction` |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="builder.html">builder</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">val </span><span class="identifier">builder</span><span class="symbol">: </span><a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a></code></div>
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="item-types.html">itemTypes</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">val </span><span class="identifier">itemTypes</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="../-k-adapter-item-type/index.html"><span class="identifier">KAdapterItemType</span></a><span class="symbol">&lt;</span><a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></div>
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="matcher.html">matcher</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">val </span><span class="identifier">matcher</span><span class="symbol">: </span><span class="identifier">Matcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span></code></div>
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="view.html">view</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">val </span><span class="identifier">view</span><span class="symbol">: </span><span class="identifier">ViewInteraction</span></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Functions
 
-| [childAt](child-at.html) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on child at given position |
-| [childWith](child-with.html) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> childWith(childMatcher: `[`DataBuilder`](../-data-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`<br>Performs given actions/assertion on child that matches given matcher |
-| [children](children.html) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> children(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on all children in adapter |
-| [firstChild](first-child.html) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> firstChild(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on first child in adapter |
-| [invoke](invoke.html) | `operator fun invoke(function: KListView.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
-| [lastChild](last-child.html) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.html)`<*>> lastChild(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on last child in adapter |
-| [perform](perform.html) | `infix fun perform(function: KListView.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): KListView`<br>Infix function for invoking lambda on your view |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="child-at.html">childAt</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">childAt</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$childAt(kotlin.Int, kotlin.Function1((com.agoda.kakao.KListView.childAt.T, kotlin.Unit)))/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$childAt(kotlin.Int, kotlin.Function1((com.agoda.kakao.KListView.childAt.T, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Performs given actions/assertion on child at given position
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="child-with.html">childWith</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">childWith</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$childWith(kotlin.Function1((com.agoda.kakao.DataBuilder, kotlin.Unit)))/childMatcher">childMatcher</span><span class="symbol">:</span>&nbsp;<a href="../-data-builder/index.html"><span class="identifier">DataBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></div>
+
+Performs given actions/assertion on child that matches given matcher
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="children.html">children</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">children</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$children(kotlin.Function1((com.agoda.kakao.KListView.children.T, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Performs given actions/assertion on all children in adapter
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="first-child.html">firstChild</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">firstChild</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$firstChild(kotlin.Function1((com.agoda.kakao.KListView.firstChild.T, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Performs given actions/assertion on first child in adapter
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="invoke.html">invoke</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">invoke</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.KListView$invoke(kotlin.Function1((com.agoda.kakao.KListView, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">KListView</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Operator that allows usage of DSL style
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="last-child.html">lastChild</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-k-adapter-item/index.html"><span class="identifier">KAdapterItem</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">lastChild</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.KListView$lastChild(kotlin.Function1((com.agoda.kakao.KListView.lastChild.T, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Performs given actions/assertion on last child in adapter
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="perform.html">perform</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">perform</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.KListView$perform(kotlin.Function1((com.agoda.kakao.KListView, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">KListView</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">KListView</span></code></div>
+
+Infix function for invoking lambda on your view
+
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Inherited Functions
 
-| [assert](../-base-assertions/assert.html) | `open fun assert(function: () -> ViewAssertion): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check the view with the given custom assertion |
-| [doesNotExists](../-base-assertions/does-not-exists.html) | `open fun doesNotExists(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the matched view does not exists |
-| [getSize](../-scroll-view-actions/get-size.html) | `open fun getSize(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Returns the size of ScrollView |
-| [hasAnyTag](../-base-assertions/has-any-tag.html) | `open fun hasAnyTag(vararg tags: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has at least one of the given tags |
-| [hasDescendant](../-base-assertions/has-descendant.html) | `open fun hasDescendant(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given descendant |
-| [hasNotDescendant](../-base-assertions/has-not-descendant.html) | `open fun hasNotDescendant(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given descendant |
-| [hasNotSibling](../-base-assertions/has-not-sibling.html) | `open fun hasNotSibling(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given sibling |
-| [hasSibling](../-base-assertions/has-sibling.html) | `open fun hasSibling(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given sibling |
-| [hasTag](../-base-assertions/has-tag.html) | `open fun hasTag(tag: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given tag |
-| [inRoot](../-base-assertions/in-root.html) | `open fun inRoot(function: `[`RootBuilder`](../-root-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check if the view is in given root |
-| [isClickable](../-base-assertions/is-clickable.html) | `open fun isClickable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is clickable |
-| [isCompletelyDisplayed](../-base-assertions/is-completely-displayed.html) | `open fun isCompletelyDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is completely displayed |
-| [isDisabled](../-base-assertions/is-disabled.html) | `open fun isDisabled(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is disabled |
-| [isDisplayed](../-base-assertions/is-displayed.html) | `open fun isDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is displayed |
-| [isEnabled](../-base-assertions/is-enabled.html) | `open fun isEnabled(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is enabled |
-| [isFocusable](../-base-assertions/is-focusable.html) | `open fun isFocusable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is focusable |
-| [isFocused](../-base-assertions/is-focused.html) | `open fun isFocused(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is focused |
-| [isGone](../-base-assertions/is-gone.html) | `open fun isGone(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has GONE visibility |
-| [isInvisible](../-base-assertions/is-invisible.html) | `open fun isInvisible(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has INVISIBLE visibility |
-| [isNotClickable](../-base-assertions/is-not-clickable.html) | `open fun isNotClickable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is not clickable |
-| [isNotCompletelyDisplayed](../-base-assertions/is-not-completely-displayed.html) | `open fun isNotCompletelyDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is not completely displayed |
-| [isNotDisplayed](../-base-assertions/is-not-displayed.html) | `open fun isNotDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is not displayed |
-| [isNotFocusable](../-base-assertions/is-not-focusable.html) | `open fun isNotFocusable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is not focusable |
-| [isNotFocused](../-base-assertions/is-not-focused.html) | `open fun isNotFocused(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is not focused |
-| [isNotSelected](../-base-assertions/is-not-selected.html) | `open fun isNotSelected(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is not selected |
-| [isSelected](../-base-assertions/is-selected.html) | `open fun isSelected(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is selected |
-| [isVisible](../-base-assertions/is-visible.html) | `open fun isVisible(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has VISIBLE visibility |
-| [matches](../-base-assertions/matches.html) | `open fun matches(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check if the view matches given matcher |
-| [notMatches](../-base-assertions/not-matches.html) | `open fun notMatches(function: `[`ViewBuilder`](../-view-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check if the view does not match given matcher |
-| [scrollTo](../-scroll-view-actions/scroll-to.html) | `open fun scrollTo(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the specific position of the view |
-| [scrollToEnd](../-scroll-view-actions/scroll-to-end.html) | `open fun scrollToEnd(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the last position of the view |
-| [scrollToStart](../-scroll-view-actions/scroll-to-start.html) | `open fun scrollToStart(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the starting position of the view |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/assert.html">assert</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">assert</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.BaseAssertions$assert(kotlin.Function0((android.support.test.espresso.ViewAssertion)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">ViewAssertion</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Check the view with the given custom assertion
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/does-not-exists.html">doesNotExists</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">doesNotExists</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the matched view does not exists
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-scroll-view-actions/get-size.html">getSize</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></div>
+
+Returns the size of ScrollView
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/has-any-tag.html">hasAnyTag</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasAnyTag</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="parameterName" id="com.agoda.kakao.BaseAssertions$hasAnyTag(kotlin.Array((kotlin.String)))/tags">tags</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has at least one of the given tags
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/has-descendant.html">hasDescendant</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasDescendant</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.BaseAssertions$hasDescendant(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has given descendant
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/has-not-descendant.html">hasNotDescendant</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasNotDescendant</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.BaseAssertions$hasNotDescendant(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has not given descendant
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/has-not-sibling.html">hasNotSibling</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasNotSibling</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao.BaseAssertions$hasNotSibling(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has not given sibling
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/has-sibling.html">hasSibling</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasSibling</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.BaseAssertions$hasSibling(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has given sibling
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/has-tag.html">hasTag</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasTag</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.BaseAssertions$hasTag(kotlin.String)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has given tag
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/in-root.html">inRoot</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">inRoot</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.BaseAssertions$inRoot(kotlin.Function1((com.agoda.kakao.RootBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-root-builder/index.html"><span class="identifier">RootBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Check if the view is in given root
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-clickable.html">isClickable</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isClickable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is clickable
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-completely-displayed.html">isCompletelyDisplayed</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCompletelyDisplayed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is completely displayed
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-disabled.html">isDisabled</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDisabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is disabled
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-displayed.html">isDisplayed</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDisplayed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is displayed
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-enabled.html">isEnabled</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is enabled
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-focusable.html">isFocusable</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isFocusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is focusable
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-focused.html">isFocused</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isFocused</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is focused
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-gone.html">isGone</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isGone</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has GONE visibility
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-invisible.html">isInvisible</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isInvisible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has INVISIBLE visibility
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-not-clickable.html">isNotClickable</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNotClickable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is not clickable
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-not-completely-displayed.html">isNotCompletelyDisplayed</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNotCompletelyDisplayed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is not completely displayed
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-not-displayed.html">isNotDisplayed</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNotDisplayed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is not displayed
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-not-focusable.html">isNotFocusable</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNotFocusable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is not focusable
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-not-focused.html">isNotFocused</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNotFocused</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is not focused
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-not-selected.html">isNotSelected</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNotSelected</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is not selected
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-selected.html">isSelected</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSelected</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view is selected
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/is-visible.html">isVisible</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isVisible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Checks if the view has VISIBLE visibility
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/matches.html">matches</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">matches</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.BaseAssertions$matches(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Check if the view matches given matcher
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-base-assertions/not-matches.html">notMatches</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">notMatches</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.BaseAssertions$notMatches(kotlin.Function1((com.agoda.kakao.ViewBuilder, kotlin.Unit)))/function">function</span><span class="symbol">:</span>&nbsp;<a href="../-view-builder/index.html"><span class="identifier">ViewBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Check if the view does not match given matcher
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-scroll-view-actions/scroll-to.html">scrollTo</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">scrollTo</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.ScrollViewActions$scrollTo(kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Scrolls to the specific position of the view
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-scroll-view-actions/scroll-to-end.html">scrollToEnd</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">scrollToEnd</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Scrolls to the last position of the view
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../-scroll-view-actions/scroll-to-start.html">scrollToStart</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">scrollToStart</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Scrolls to the starting position of the view
+
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Extension Functions
 
-| [emptyChildAt](../empty-child-at.html) | `fun KListView.emptyChildAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls childAt() on your view with base child |
-| [emptyChildWith](../empty-child-with.html) | `fun KListView.emptyChildWith(builder: `[`DataBuilder`](../-data-builder/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.html)<br>Calls childWith() on your view with base child |
-| [emptyFirstChild](../empty-first-child.html) | `fun KListView.emptyFirstChild(tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls firstChild() on your view with base child |
-| [emptyLastChild](../empty-last-child.html) | `fun KListView.emptyLastChild(tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.html)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls lastChild() on your view with base child |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
 
+<a href="../empty-child-at.html">emptyChildAt</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">KListView</span><span class="symbol">.</span><span class="identifier">emptyChildAt</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyChildAt(com.agoda.kakao.KListView, kotlin.Int, kotlin.Function1((com.agoda.kakao.KEmptyAdapterItem, kotlin.Unit)))/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyChildAt(com.agoda.kakao.KListView, kotlin.Int, kotlin.Function1((com.agoda.kakao.KEmptyAdapterItem, kotlin.Unit)))/tail">tail</span><span class="symbol">:</span>&nbsp;<a href="../-k-empty-adapter-item/index.html"><span class="identifier">KEmptyAdapterItem</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Calls childAt() on your view with base child
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../empty-child-with.html">emptyChildWith</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">KListView</span><span class="symbol">.</span><span class="identifier">emptyChildWith</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyChildWith(com.agoda.kakao.KListView, kotlin.Function1((com.agoda.kakao.DataBuilder, kotlin.Unit)))/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="../-data-builder/index.html"><span class="identifier">DataBuilder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="../-k-empty-adapter-item/index.html"><span class="identifier">KEmptyAdapterItem</span></a></code></div>
+
+Calls childWith() on your view with base child
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../empty-first-child.html">emptyFirstChild</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">KListView</span><span class="symbol">.</span><span class="identifier">emptyFirstChild</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyFirstChild(com.agoda.kakao.KListView, kotlin.Function1((com.agoda.kakao.KEmptyAdapterItem, kotlin.Unit)))/tail">tail</span><span class="symbol">:</span>&nbsp;<a href="../-k-empty-adapter-item/index.html"><span class="identifier">KEmptyAdapterItem</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Calls firstChild() on your view with base child
+
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="../empty-last-child.html">emptyLastChild</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">KListView</span><span class="symbol">.</span><span class="identifier">emptyLastChild</span><span class="symbol">(</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameterName" id="com.agoda.kakao$emptyLastChild(com.agoda.kakao.KListView, kotlin.Function1((com.agoda.kakao.KEmptyAdapterItem, kotlin.Unit)))/tail">tail</span><span class="symbol">:</span>&nbsp;<a href="../-k-empty-adapter-item/index.html"><span class="identifier">KEmptyAdapterItem</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><br/><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+Calls lastChild() on your view with base child
+
+
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,17 +1,18 @@
 ---
 title: ScrollViewActions.scrollTo - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [ScrollViewActions](index.html) / [scrollTo](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href="index.html">ScrollViewActions</a> / <a href=".">scrollTo</a></div>
 
 # scrollTo
 
-`open fun scrollTo(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+<div class="signature"><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">scrollTo</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.ScrollViewActions$scrollTo(kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
 
-Overrides [ScrollableActions.scrollTo](../-scrollable-actions/scroll-to.html)
+Overrides <a href="../-scrollable-actions/scroll-to.html">ScrollableActions.scrollTo</a>
 
 Scrolls to the specific position of the view
 
 ### Parameters
 
-`position` - Scrolling destination
+<code>position</code> - Scrolling destination

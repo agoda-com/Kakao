@@ -1,25 +1,84 @@
 ---
 title: FirstViewMatcher - kakao
+layout: api
 ---
 
-[kakao](../../index.html) / [com.agoda.kakao](../index.html) / [FirstViewMatcher](.)
+<div class='api-docs-breadcrumbs'><a href="../../index.html">kakao</a> / <a href="../index.html">com.agoda.kakao</a> / <a href=".">FirstViewMatcher</a></div>
 
 # FirstViewMatcher
 
-`class FirstViewMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`View`](https://developer.android.com/reference/android/view/View.html)`>`
+<div class="signature"><code><span class="keyword">class </span><span class="identifier">FirstViewMatcher</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BoundedMatcher</span><span class="symbol">&lt;</span><a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">,</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">&gt;</span></code></div>
 
 Matches first view
 
 ### Constructors
 
-| [&lt;init&gt;](-init-.html) | `FirstViewMatcher()`<br>Matches first view |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="-init-.html">&lt;init&gt;</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="identifier">FirstViewMatcher</span><span class="symbol">(</span><span class="symbol">)</span></code></div>
+
+Matches first view
+
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Properties
 
-| [matched](matched.html) | `var matched: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
+
+<a href="matched.html">matched</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">var </span><span class="identifier">matched</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Functions
 
-| [describeTo](describe-to.html) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [matchesSafely](matches-safely.html) | `fun matchesSafely(view: `[`View`](https://developer.android.com/reference/android/view/View.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+<table class="api-docs-table">
+<tbody>
+<tr>
+<td markdown="1">
 
+<a href="describe-to.html">describeTo</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">describeTo</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.FirstViewMatcher$describeTo(org.hamcrest.Description)/desc">desc</span><span class="symbol">:</span>&nbsp;<span class="identifier">Description</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></div>
+
+</td>
+</tr>
+<tr>
+<td markdown="1">
+
+<a href="matches-safely.html">matchesSafely</a>
+
+
+</td>
+<td markdown="1">
+<div class="signature"><code><span class="keyword">fun </span><span class="identifier">matchesSafely</span><span class="symbol">(</span><span class="parameterName" id="com.agoda.kakao.FirstViewMatcher$matchesSafely(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></div>
+
+</td>
+</tr>
+</tbody>
+</table>
