@@ -16,7 +16,7 @@ class ListTest {
     val screen = TestListScreen()
 
     @Test
-    fun test() {
+    fun testContentItemsListView() {
         screen {
             list {
                 isVisible()

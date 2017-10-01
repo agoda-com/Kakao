@@ -16,7 +16,7 @@ class TestActivityTest {
     val screen = TestActivityScreen()
 
     @Test
-    fun test() {
+    fun testContentScreen() {
         screen {
             content {
                 isVisible()
