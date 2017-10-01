@@ -17,7 +17,7 @@ class WebTest {
     private val screen = TestWebScreen()
 
     @Test
-    fun test() {
+    fun testWebViewHasTextHelloAndClickLink() {
         screen {
             webView {
                 withElement(Locator.ID, "text") {

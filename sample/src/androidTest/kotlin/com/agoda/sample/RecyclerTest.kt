@@ -16,7 +16,7 @@ class RecyclerTest {
     val screen = TestRecyclerScreen()
 
     @Test
-    fun test() {
+    fun testContentItemsRecyclerView() {
         screen {
             recycler {
                 isVisible()
