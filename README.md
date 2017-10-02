@@ -1,7 +1,7 @@
 # Kakao
 
 ### Introduction
-At Agoda, we have more that 800 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the example of how we write the test. 
+At Agoda, we have more that 1000 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the example of how we write the test. 
 ```Java
 onView(allOf(withId(R.id.price_item), hasDescendant(withText("Standard Rate"))))
         .check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
@@ -17,12 +17,11 @@ This is an example just to check the visibility of the view and you can see that
 
 ### How to use it
 #### Create Screen
-Create your entity `Screen` from where you will add the views involved in the interactions in 
-the tests:
+Create your entity `Screen` where you will add the views involved in the interactions of the tests:
 ```Kotlin
 class FormScreen : Screen<FormScreen>(){}
 ```
- `Screen` can represents the whole user interface or a portion of UI.
+ `Screen` can represent the whole user interface or a portion of UI.
 If you are using Page Object pattern you can put the interactions of Kakao inside the Page Objects.
 
 #### Create KViews
@@ -34,7 +33,7 @@ class FormScreen : Screen<FormScreen>(){
   val submit = KButton { withId(R.id.submit)}
 }
 ```
-Kakao provides different types depending of the type of view:
+Kakao provides different types depending on the type of view:
 * KView
 * KEditText
 * KTextView
@@ -50,7 +49,6 @@ by Kakao:
 
 * withId
 * withText
-* withContentDescription
 * withContentDescription
 * withDrawable
 
@@ -68,7 +66,7 @@ And you can use your custom matchers:
 ```Kotlin
   val email = KEditTex { 
                withId(R.id.email)
-               matches { MyCustomMatcher.matches(position)}
+               matches { MyCustomMatcher.matches(position) }
   }
 
 ```
@@ -80,23 +78,23 @@ the actions or assertions like in Espresso:
 ```Kotlin
 val screen = FormScreen()
 screen {
-    phone{
+    phone {
        hasText("971201771")
     }
-    button{
+    button {
        click()
     }
 }
 ```
-Kakao provides multiple actions/assertions based in Espresso and like the matchers you can combine. 
+Kakao provides multiple actions/assertions based on Espresso. Furthermore, you can combine them, just like the matchers. 
 You can use your custom assertions or your custom actions too:
 ```Kotlin
 val screen = FormScreen()
 screen {
-    phone{
+    phone {
        assert { MyCustomAssertion.isThaiNumber() }
     }
-    button{
+    button {
        act { MyCustomAction.clickOnTheCorner() }
     }
 }
@@ -113,13 +111,13 @@ Inside your `Screen` create the KView matching with your view:
 
 For `KListView`:
 ```Kotlin
-val list = KListView(
-            builder = { withId(R.id.list) }
+val list = KListView ({
+            builder = { withId(R.id.list) } }
 ```
 For `KRecyclerView`:
 ```Kotlin
-val myList = KRecyclerView({
-                     withId(R.id.recycler_view)
+val myList = KRecyclerView ({
+             builder = { withId(R.id.recycler_view) } }
 ```
 
 You can combine different matchers to retrieve your view.
@@ -175,30 +173,20 @@ Kakao provides different accessors in the adapter:
 * firstChild
 * lastChild
 * childWith
-* child
 
 
 ##### Custom KViews
-If you have custom Views in your tests and you want to create your own `KView` follow this example:
+If you have custom Views in your tests and you want to create your own `KView`. We have KBaseView, just extend 
+this class and implement as much additional Action/Assertion interfaces as you want. 
+You also need to override constructors that you need.
 
 ```Kotlin
-class KCustomValidateView(builder: ViewBuilder.() -> Unit) : EditableActions, BaseActions, BaseAssertions {
-    override val view: ViewInteraction = ViewBuilder().apply(builder).getViewInteraction()
-
-   private val editText = KEditText {
-        withId(R.id.textbox_validation_field)
-        isDescendantOfA(builder)
-    }
-
-   operator fun invoke(function: KCustomValidateView.() -> Unit) {
-        function.invoke(this)
-    }
-
-   override fun replaceText(text: String) {
-        editText.replaceText(text)
-    }
+class KMyView : KBaseView<KView>, MyActions, MyAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
 ```
-
  
 ### Setup
 Maven
