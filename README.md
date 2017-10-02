@@ -22,7 +22,7 @@ Create your entity `Screen` where you will add the views involved in the interac
 class FormScreen : Screen<FormScreen>(){}
 ```
  `Screen` can represent the whole user interface or a portion of UI.
-If you are using Page Object pattern you can put the interactions of Kakao inside the Page Objects.
+If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject.html) you can put the interactions of Kakao inside the Page Objects.
 
 #### Create KViews
 `Screen` contains `KViews`, these are the Android Framework views where you want to do the interactions:
