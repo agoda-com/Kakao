@@ -22,11 +22,11 @@ the tests:
 ```Kotlin
 class FormScreen : Screen<FormScreen>(){}
 ```
- `Screen` can represents the whole user interface or a portion of one user interface.
-If you are using Page Object pattern you can place the interactions of Kakao inside the Page Objects.
+ `Screen` can represents the whole user interface or a portion of UI.
+If you are using Page Object pattern you can put the interactions of Kakao inside the Page Objects.
 
 #### Create KViews
- Create the `KViews` within your `Screen` of the Screen you want to provide interactions
+`Screen` contains `KViews`, these are the Android Framework views where you want to do the interactions:
 ```Kotlin
 class FormScreen : Screen<FormScreen>(){
   val phone = KView { withId(R.id.phone)}
@@ -44,11 +44,9 @@ Kakao provides different types depending of the type of view:
 * KCheckbox
 * KViewPager
 
-If you want to create your custom type for your interactions
 
-Every KView contains matchers to retrieve the view involved in the ViewInteraction. The matchers provided
-by Kakao are very similar from the ones provided by Espresso:
-
+Every KView contains matchers to retrieve the view involved in the ViewInteraction. Some examples of matchers provided
+by Kakao:
 
 * withId
 * withText
@@ -56,16 +54,29 @@ by Kakao are very similar from the ones provided by Espresso:
 * withContentDescription
 * withDrawable
 
-You can check more ViewMatchers in Builders. KT
+Like in Espresso you can combine different matchers:
+```Kotlin
+  val email = KEditTex { 
+               withId(R.id.email)
+               withText(R.string.email)
+   }
 
+```
 
+And you can use your custom matchers:
 
-// TODO CREATE CUSTOM VIEW 
+```Kotlin
+  val email = KEditTex { 
+               withId(R.id.email)
+               matches { MyCustomMatcher.matches(position)}
+  }
+
+```
 
 #### Write the interaction. 
 
-The final syntax of the test with Kakao is very easy, once you have the `Screen` and the views you only have to apply 
-the ViewActions or ViewAssertions like in Espresso. 
+The syntax of the test with Kakao is very easy, once you have the `Screen` and the `KViews` defined, you only have to apply 
+the actions or assertions like in Espresso: 
 ```Kotlin
 val screen = FormScreen()
 screen {
@@ -77,30 +88,68 @@ screen {
     }
 }
 ```
+Kakao provides multiple actions/assertions based in Espresso and like the matchers you can combine. 
+You can use your custom assertions or your custom actions too:
+```Kotlin
+val screen = FormScreen()
+screen {
+    phone{
+       assert { MyCustomAssertion.isThaiNumber() }
+    }
+    button{
+       act { MyCustomAction.clickOnTheCorner() }
+    }
+}
+```
 
 #### Advanced 
 
 ##### ListViews/RecyclersViews
 
-Espresso includes different ways to , Kakao offers an easy way to interact  
-Kakao offers this way to interact with the ListViews/RecyclerViews
+Kakao offers an easy way to interact with yout RecyclerViews and ListViews  
 
-- Inside your screen create KListView/KRecyclerView matching with your view:
+###### Create the KListView/KRecyclerView 
+Inside your `Screen` create the KView matching with your view:
+
+For `KListView`:
+```Kotlin
+val list = KListView(
+            builder = { withId(R.id.list) }
+```
+For `KRecyclerView`:
 ```Kotlin
 val myList = KRecyclerView({
                      withId(R.id.recycler_view)
-             }
 ```
--- Create as many KRecycler/KList items as you have on your adapter. Each of them is represented by a class.
-If your adapter contains multiple Items/ViewHolders but your interactions in your tests only works with 
+
+You can combine different matchers to retrieve your view.
+
+###### Create KAdapterItem/KRecyclerItem 
+
+Every adapter contains different Items, Kakao provides an easy way to define the different items of your adapter 
+with `KAdapterItem` and `KRecyclerItem`.
+If your adapter contains multiple Items but your interactions in your tests only works with 
 one is not required to create all of them. 
+
+`KAdapterItem`
+```Kotlin
+class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
+        val title = KTextView(i) { withId(R.id.title) }
+        val subtitle = KTextView(i) { withId(R.id.subtitle) }
+        val button = KButton(i) { withId(R.id.button) }
+}
+```
+    
+`KRecyclerItem`    
 ```Kotlin
    class Item(parent: Matcher<View>) : KRecyclerItem<Item>(parent) {
         val title: KTextView = KTextView(parent) { withId(R.id.title) }
         val subtitle: KTextView = KTextView(parent) { withId(R.id.subtitle) }
-    }
+}
 ```
--- You have to update the KRecyclerView telling which Items you want to use
+
+The `KView` defined in the Item corresponds views used on the Item. You can assign the `KItems` to the
+ `KListView`/ `KRecyclerView` like:
 
 ```Kotlin
   val recycler: KRecyclerView = KRecyclerView({
@@ -110,7 +159,7 @@ one is not required to create all of them.
     })
 ```
 
-What is the last 
+And finally your final interaction will be:
 ```Kotlin
    screen {
             recycler {
@@ -121,7 +170,7 @@ What is the last
              }
    }
 ```
-
+Kakao provides different accessors in the adapter:
 * childAt
 * firstChild
 * lastChild
@@ -130,6 +179,25 @@ What is the last
 
 
 ##### Custom KViews
+If you have custom Views in your tests and you want to create your own `KView` follow this example:
+
+```Kotlin
+class KCustomValidateView(builder: ViewBuilder.() -> Unit) : EditableActions, BaseActions, BaseAssertions {
+    override val view: ViewInteraction = ViewBuilder().apply(builder).getViewInteraction()
+
+   private val editText = KEditText {
+        withId(R.id.textbox_validation_field)
+        isDescendantOfA(builder)
+    }
+
+   operator fun invoke(function: KCustomValidateView.() -> Unit) {
+        function.invoke(this)
+    }
+
+   override fun replaceText(text: String) {
+        editText.replaceText(text)
+    }
+```
 
  
 ### Setup
@@ -156,3 +224,14 @@ dependencies {
 TBD
 
 ### Thanks to
+@Alviere
+
+@Judrummer
+
+@tagantroy
+
+@vacxe
+
+@VerachadW
+
+@zoey-juan
