@@ -176,7 +176,7 @@ Kakao provides different accessors in the adapter:
 
 
 ##### Custom KViews
-If you have custom Views in your tests and you want to create your own `KView`. We have KBaseView, just extend 
+If you have custom Views in your tests and you want to create your own `KView`, we have KBaseView. Just extend 
 this class and implement as much additional Action/Assertion interfaces as you want. 
 You also need to override constructors that you need.
 
