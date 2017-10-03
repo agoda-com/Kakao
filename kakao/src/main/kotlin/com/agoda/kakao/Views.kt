@@ -223,7 +223,7 @@ class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTy
      */
     inline fun <reified T : KAdapterItem<*>> childAt(position: Int, function: T.() -> Unit) {
         val provideItem = itemTypes.getOrElse(T::class) {
-            throw IllegalStateException("${T::class.qualifiedName} did not register to KListView")
+            throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
         }.provideItem
 
         val interaction = Espresso
@@ -275,7 +275,7 @@ class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTy
      */
     inline fun <reified T : KAdapterItem<*>> childWith(childMatcher: DataBuilder.() -> Unit): T {
         val provideItem = itemTypes.getOrElse(T::class) {
-            throw IllegalStateException("${T::class.qualifiedName} did not register to KListView")
+            throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
         }.provideItem
 
         val interaction = Espresso
@@ -340,7 +340,7 @@ class KRecyclerView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerI
      */
     inline fun <reified T : KRecyclerItem<*>> childAt(position: Int, function: T.() -> Unit) {
         val provideItem = itemTypes.getOrElse(T::class) {
-            throw IllegalStateException("${T::class.qualifiedName} did not register to KRecyclerView")
+            throw IllegalStateException("${T::class.java.simpleName} did not register to KRecyclerView")
         }.provideItem
 
         try {
@@ -391,7 +391,7 @@ class KRecyclerView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerI
      */
     inline fun <reified T : KRecyclerItem<*>> childWith(noinline childMatcher: ViewBuilder.() -> Unit): T {
         val provideItem = itemTypes.getOrElse(T::class) {
-            throw IllegalStateException("${T::class.qualifiedName} did not register to KRecyclerView")
+            throw IllegalStateException("${T::class.java.simpleName} did not register to KRecyclerView")
         }.provideItem
 
         try {
