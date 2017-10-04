@@ -212,14 +212,16 @@ dependencies {
 TBD
 
 ### Thanks to
-@Alviere
 
-@Judrummer
+* [Alviere](https://github.com/Alviere) - **Ilya Lim** 
 
-@tagantroy
+* [Tagantroy](https://github.com/Tagantroy) - **Ivan Balaksha**  
 
-@vacxe
+* [VerachadW](https://github.com/VerachadW) - **Verachad Wongsawangtham** 
 
-@VerachadW
+* [Сdsap](https://github.com/cdsap) - **Inaki Villar** 
 
-@zoey-juan
+* [Vacxe](https://github.com/Vacxe) - **Konstantin Aksenov** 
+
+* [Zoey-juan](https://github.com/Zoey-juan) - **Zoey Juan** 
+
