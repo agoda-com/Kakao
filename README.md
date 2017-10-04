@@ -214,16 +214,8 @@ TBD
 ### Thanks to
 
 * [Alviere](https://github.com/Alviere) - **Ilya Lim** 
-
-* [Tagantroy](https://github.com/Tagantroy) - **Ivan Balaksha**  
-
-* [VerachadW](https://github.com/VerachadW) - **Verachad Wongsawangtham** 
-
+* [VerachadW](https://github.com/VerachadW) - **Verachad Wongsawangtham**
 * [Сdsap](https://github.com/cdsap) - **Inaki Villar** 
-
 * [Vacxe](https://github.com/Vacxe) - **Konstantin Aksenov** 
-
-* [Zoey-juan](https://github.com/Zoey-juan) - **Zoey Juan** 
-
 * [JuDrummer](https://github.com/judrummer) - **Tipatai Puthanukunkit** 
 
