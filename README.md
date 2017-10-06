@@ -208,8 +208,16 @@ dependencies {
 }
 ```
 
-### Contibution Policy
+### Contribution Policy
 TBD
+
+### Code of Conduct
+
+Please refer to [Code of Conduct](https://github.com/agoda-com/Kakao/blob/master/CODE_OF_CONDUCT.md) document.
+
+### License
+
+Kakao is open source and available under the [Apache License, Version 2.0](https://github.com/agoda-com/Kakao/blob/master/LICENSE).
 
 ### Thanks to
 
