@@ -1,5 +1,7 @@
 # Kakao
 
+Nice and simple DSL for Espresso in Kotlin
+
 ### Introduction
 At Agoda, we have more that 1000 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the example of how we write the test. 
 ```Java
