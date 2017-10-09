@@ -465,7 +465,7 @@ class DataBuilder {
  *
  * @param web WebInteraction where elements should be matched
  */
-class WebElementBuilder(val web: Web.WebInteraction<*>) {
+class WebElementBuilder(private val web: Web.WebInteraction<*>) {
     /**
      * Looks up web view element and performs actions/assertions on it
      *

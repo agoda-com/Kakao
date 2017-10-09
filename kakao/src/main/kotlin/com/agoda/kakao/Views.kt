@@ -620,7 +620,7 @@ class KEmptyAdapterItem(parent: DataInteraction) : KAdapterItem<KEmptyAdapterIte
  * @param matcher ViewBuilder which will result in matcher of web view
  */
 open class KWebView(matcher: (ViewBuilder.() -> Unit)? = null) {
-    internal val web: Web.WebInteraction<*> = if (matcher != null) {
+    private val web: Web.WebInteraction<*> = if (matcher != null) {
         Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())
     } else {
         Web.onWebView()
