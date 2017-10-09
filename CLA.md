@@ -1,4 +1,4 @@
-![Agoda Logo](https://github.com/agoda-com/kakao/blob/master/logo.png)
+![Agoda Logo](https://avatars3.githubusercontent.com/u/19235448?v=4&s=200)
 
 # INDIVIDUAL CONTRIBUTOR LICENSE AGREEMENT
 
