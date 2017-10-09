@@ -1,6 +1,10 @@
 # Kakao
+[![CircleCI](https://circleci.com/gh/agoda-com/Kakao/tree/master.svg?style=shield&circle-token=0d0ed659625be4efe54fe706c16894cd54213690)](https://circleci.com/gh/agoda-com/Kakao/tree/master)
+[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.1.51-blue.svg)](http://kotlinlang.org/)
 
-### Introduction
+Nice and simple DSL for Espresso in Kotlin
+
+### Introduction test
 At Agoda, we have more that 1000 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the example of how we write the test. 
 ```Java
 onView(allOf(withId(R.id.price_item), hasDescendant(withText("Standard Rate"))))
@@ -112,12 +116,12 @@ Inside your `Screen` create the KView matching with your view:
 For `KListView`:
 ```Kotlin
 val list = KListView ({
-            builder = { withId(R.id.list) } }
+            builder = { withId(R.id.list) } })
 ```
 For `KRecyclerView`:
 ```Kotlin
 val myList = KRecyclerView ({
-             builder = { withId(R.id.recycler_view) } }
+             builder = { withId(R.id.recycler_view) } })
 ```
 
 You can combine different matchers to retrieve your view.
@@ -208,18 +212,25 @@ dependencies {
 }
 ```
 
-### Contibution Policy
-TBD
+### Contribution Policy
+
+**Kakao** is an open source project, and depends on its users to improve it. We are more than happy to find you interested in taking the project forward.
+
+Kindly refer to the [Contribution Guidelines](https://github.com/agoda-com/kakao/blob/master/CONTRIBUTING.md) for detailed information.
+
+### Code of Conduct
+
+Please refer to [Code of Conduct](https://github.com/agoda-com/Kakao/blob/master/CODE_OF_CONDUCT.md) document.
+
+### License
+
+Kakao is open source and available under the [Apache License, Version 2.0](https://github.com/agoda-com/Kakao/blob/master/LICENSE).
 
 ### Thanks to
-@Alviere
 
-@Judrummer
+* [Alviere](https://github.com/Alviere) - **Ilya Lim** 
+* [VerachadW](https://github.com/VerachadW) - **Verachad Wongsawangtham**
+* [Сdsap](https://github.com/cdsap) - **Inaki Villar** 
+* [Vacxe](https://github.com/Vacxe) - **Konstantin Aksenov** 
+* [JuDrummer](https://github.com/judrummer) - **Tipatai Puthanukunkit** 
 
-@tagantroy
-
-@vacxe
-
-@VerachadW
-
-@zoey-juan
