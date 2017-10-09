@@ -116,12 +116,12 @@ Inside your `Screen` create the KView matching with your view:
 For `KListView`:
 ```Kotlin
 val list = KListView ({
-            builder = { withId(R.id.list) } }
+            builder = { withId(R.id.list) } })
 ```
 For `KRecyclerView`:
 ```Kotlin
 val myList = KRecyclerView ({
-             builder = { withId(R.id.recycler_view) } }
+             builder = { withId(R.id.recycler_view) } })
 ```
 
 You can combine different matchers to retrieve your view.
