@@ -33,7 +33,7 @@ If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject
 ```Kotlin
 class FormScreen : Screen<FormScreen>(){
   val phone = KView { withId(R.id.phone)}
-  val email = KEditTex { withId(R.id.email)}
+  val email = KEditText { withId(R.id.email)}
   val submit = KButton { withId(R.id.submit)}
 }
 ```
@@ -58,7 +58,7 @@ by Kakao:
 
 Like in Espresso you can combine different matchers:
 ```Kotlin
-  val email = KEditTex { 
+  val email = KEditText { 
                withId(R.id.email)
                withText(R.string.email)
    }
@@ -68,7 +68,7 @@ Like in Espresso you can combine different matchers:
 And you can use your custom matchers:
 
 ```Kotlin
-  val email = KEditTex { 
+  val email = KEditText { 
                withId(R.id.email)
                matches { MyCustomMatcher.matches(position) }
   }
