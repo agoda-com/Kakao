@@ -30,7 +30,7 @@ jobs:
           command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
       - run:
           name: Setup project ID
-          command:  sudo gcloud config set project $PROJECT_ID
+          command:  sudo gcloud config set project $GCLOUD_PROJECT_ID
       - run:
           name: Install kubernetes
           command:  sudo apt-get install kubectl
