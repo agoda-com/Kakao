@@ -208,7 +208,11 @@ repositories {
     jcenter()
 }
 dependencies {
-    compile 'com.agoda.kakao:kakao:1.0.0'
+    //for Gradle Version below 3.0.0
+    androidTestCompile 'com.agoda.kakao:kakao:1.0.0'
+
+    //for Gradle Version 3.0.0 or above
+    androidTestImplementation 'com.agoda.kakao:kakao:1.0.0'
 }
 ```
 
