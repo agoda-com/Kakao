@@ -213,7 +213,10 @@ dependencies {
 ```
 
 ### Contribution Policy
-TBD
+
+**Kakao** is an open source project, and depends on its users to improve it. We are more than happy to find you interested in taking the project forward.
+
+Kindly refer to the [Contribution Guidelines](https://github.com/agoda-com/kakao/blob/master/CONTRIBUTING.md) for detailed information.
 
 ### Code of Conduct
 
