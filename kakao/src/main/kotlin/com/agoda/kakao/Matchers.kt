@@ -29,7 +29,8 @@ class AnyTextMatcher : BoundedMatcher<View, TextView>(TextView::class.java) {
         desc.appendText("which has any text")
     }
 
-    override fun matchesSafely(view: TextView?): Boolean = view?.text?.toString()?.isNotEmpty() ?: false
+    override fun matchesSafely(view: TextView?): Boolean =
+            view?.text?.toString()?.isNotEmpty() ?: false
 }
 
 /**
@@ -48,9 +49,9 @@ class PositionMatcher(private val parent: Matcher<View>, private val position: I
 
     override fun matchesSafely(view: View?): Boolean {
         view?.let {
-            if (parent.matches(view.parent) && view.parent is RecyclerView) {
-                val holder = (view.parent as RecyclerView).findViewHolderForAdapterPosition(position)
-                return holder?.itemView === view
+            if (parent.matches(it.parent) && it.parent is RecyclerView) {
+                val holder = (it.parent as RecyclerView).findViewHolderForAdapterPosition(position)
+                return holder?.itemView === it
             }
         }
 
@@ -78,9 +79,9 @@ class ItemMatcher(private val parent: Matcher<View>, private val item: Matcher<V
 
     override fun matchesSafely(view: View?): Boolean {
         view?.let {
-            if (parent.matches(view.parent) && view.parent is RecyclerView) {
-                if (item.matches(view)) {
-                    position = (view.parent as RecyclerView).getChildAdapterPosition(view)
+            if (parent.matches(it.parent) && it.parent is RecyclerView) {
+                if (item.matches(it)) {
+                    position = (it.parent as RecyclerView).getChildAdapterPosition(it)
                     return true
                 }
             }
@@ -94,7 +95,7 @@ class ItemMatcher(private val parent: Matcher<View>, private val item: Matcher<V
  * Matches first view
  */
 class FirstViewMatcher : BoundedMatcher<View, View>(View::class.java) {
-    var matched: Boolean = false
+    private var matched: Boolean = false
 
     override fun describeTo(desc: Description) {
         desc.appendText("first view")
@@ -120,7 +121,8 @@ class PageMatcher(private val index: Int) : BoundedMatcher<View, ViewPager>(View
         desc.appendText("with current page index = $index")
     }
 
-    override fun matchesSafely(view: ViewPager?): Boolean = view?.let { it.currentItem == index } ?: false
+    override fun matchesSafely(view: ViewPager?): Boolean =
+            view?.let { it.currentItem == index } ?: false
 }
 
 /**
@@ -130,16 +132,15 @@ class PageMatcher(private val index: Int) : BoundedMatcher<View, ViewPager>(View
  * @param index index of view that must be matched
  */
 class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) : TypeSafeMatcher<View>() {
-    var currentIndex = 0
+    private var currentIndex = 0
 
     override fun describeTo(desc: Description) {
         desc.appendText("${index}th view with: ")
                 .appendDescriptionOf(matcher)
     }
 
-    public override fun matchesSafely(view: View): Boolean {
-        return matcher.matches(view) && currentIndex++ == index
-    }
+    public override fun matchesSafely(view: View): Boolean =
+            matcher.matches(view) && currentIndex++ == index
 }
 
 /**
@@ -160,14 +161,14 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
     override fun matchesSafely(view: View?): Boolean {
         if (view !is ImageView && drawable == null) {
             return false
-        } else
+        }
 
-            if (resId < 0 && drawable == null) {
-                return (view as ImageView).drawable == null
-            }
+        if (resId < 0 && drawable == null) {
+            return (view as ImageView).drawable == null
+        }
 
         return view?.let {
-            var expectedDrawable: Drawable? = AppCompatDrawableManager.get().getDrawable(view.context, resId)
+            var expectedDrawable: Drawable? = AppCompatDrawableManager.get().getDrawable(it.context, resId)
 
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP && expectedDrawable != null) {
                 expectedDrawable = DrawableCompat.wrap(expectedDrawable).mutate()
@@ -177,7 +178,7 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
                 return false
             }
 
-            val convertDrawable = drawable ?: (view as ImageView).drawable
+            val convertDrawable = drawable ?: (it as ImageView).drawable
             val bitmap = toBitmap?.invoke(convertDrawable) ?: drawableToBitmap(convertDrawable)
             val otherBitmap = toBitmap?.invoke(expectedDrawable) ?: drawableToBitmap(expectedDrawable)
 
@@ -185,13 +186,10 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
         } ?: false
     }
 
-    fun drawableToBitmap(drawable: Drawable): Bitmap {
-        var drawable = drawable
-
+    private fun drawableToBitmap(drawable: Drawable): Bitmap {
         if (drawable is BitmapDrawable) {
-            val bitmapDrawable = drawable
-            if (bitmapDrawable.bitmap != null) {
-                return bitmapDrawable.bitmap
+            if (drawable.bitmap != null) {
+                return drawable.bitmap
             }
         }
 
@@ -204,9 +202,7 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
             }
         }
 
-        val bitmap: Bitmap
-
-        bitmap = if (drawable.intrinsicWidth <= 0 || drawable.intrinsicHeight <= 0) {
+        val bitmap = if (drawable.intrinsicWidth <= 0 || drawable.intrinsicHeight <= 0) {
             Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888) // Single color bitmap will be created of 1x1 pixel
         } else {
             Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
