@@ -4,7 +4,7 @@
 
 Nice and simple DSL for Espresso in Kotlin
 
-### Introduction
+### Introduction test
 At Agoda, we have more that 1000 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the example of how we write the test. 
 ```Java
 onView(allOf(withId(R.id.price_item), hasDescendant(withText("Standard Rate"))))
@@ -213,7 +213,10 @@ dependencies {
 ```
 
 ### Contribution Policy
-TBD
+
+**Kakao** is an open source project, and depends on its users to improve it. We are more than happy to find you interested in taking the project forward.
+
+Kindly refer to the [Contribution Guidelines](https://github.com/agoda-com/kakao/blob/master/CONTRIBUTING.md) for detailed information.
 
 ### Code of Conduct
 
