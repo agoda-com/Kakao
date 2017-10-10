@@ -2,6 +2,7 @@ package com.agoda.kakao
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.test.espresso.ViewAssertion
@@ -289,6 +290,26 @@ interface BaseAssertions {
      */
     fun inRoot(function: RootBuilder.() -> Unit) {
         view.inRoot(RootBuilder().apply(function).getRootMatcher())
+    }
+
+    /**
+     *  Checks if the view has given background color
+     *
+     * @param resId Color resource to be matched
+     *
+     */
+    fun hasBackgroundColor(@ColorRes resId: Int) {
+        view.check(ViewAssertions.matches(BackgroundColorMatcher(resId = resId)))
+    }
+
+    /**
+     *  Checks if the view has given background color
+     *
+     * @param colorCode Color string code to be matched
+     *
+     */
+    fun hasBackgroundColor(colorCode: String) {
+        view.check(ViewAssertions.matches(BackgroundColorMatcher(colorCode = colorCode)))
     }
 }
 
