@@ -251,6 +251,6 @@ class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
     }
 
     override fun describeTo(description: Description) {
-        description.appendText("with background color resource or provided color code")
+        description.appendText("with background color: $resId or provided color code")
     }
 }
