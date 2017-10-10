@@ -2,6 +2,8 @@ package com.agoda.kakao
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.support.annotation.ColorInt
+import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.test.espresso.Espresso
@@ -175,11 +177,29 @@ class ViewBuilder {
     /**
      * Matches the view with given drawable
      *
-     * @param resId Drawable to match
+     * @param drawable Drawable to match
      * @param toBitmap Lambda with custom Drawable -> Bitmap converter (default is null)
      */
     fun withDrawable(drawable: Drawable, toBitmap: ((drawable: Drawable) -> Bitmap)? = null) {
         viewMatchers.add(DrawableMatcher(drawable = drawable, toBitmap = toBitmap))
+    }
+
+    /**
+     * Matches the view with given background color
+     *
+     * @param resId Color to match
+     */
+    fun withBackgroundColor(@ColorRes resId: Int) {
+        viewMatchers.add(BackgroundColorMatcher(resId = resId))
+    }
+
+    /**
+     * Matches the view with given background color code
+     *
+     * @param colorCode Color code to match
+     */
+    fun withBackgroundColor(colorCode: String) {
+        viewMatchers.add(BackgroundColorMatcher(colorCode = colorCode))
     }
 
     /**
