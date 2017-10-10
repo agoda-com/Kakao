@@ -274,7 +274,7 @@ interface RecyclerActions : ScrollableActions {
      * @param viewBuilder Builder that will be used to match view to scroll
      */
     fun scrollTo(viewBuilder: ViewBuilder.() -> Unit) {
-        scrollTo(ViewBuilder().apply(viewBuilder).getViewMatcher())
+        scrollTo(ViewBuilder().apply { withIndex(0, viewBuilder) }.getViewMatcher())
     }
 
     /**
