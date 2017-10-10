@@ -8,16 +8,12 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.os.Build
-import android.support.annotation.ColorInt
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
-import android.support.test.espresso.core.internal.deps.guava.base.Strings
 import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v4.view.ViewPager
-import android.support.v7.content.res.AppCompatResources
-import android.support.v7.widget.AppCompatDrawableManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
@@ -25,6 +21,7 @@ import android.widget.TextView
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.TypeSafeMatcher
+import kotlin.text.isNullOrEmpty
 
 /**
  * Matches TextView views which contains any text
@@ -233,7 +230,7 @@ class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
                              private val colorCode: String? = null) : TypeSafeMatcher<View>() {
 
     override fun matchesSafely(item: View?): Boolean {
-        if (resId == -1 && Strings.isNullOrEmpty(colorCode)) {
+        if (resId == -1 && colorCode.isNullOrEmpty()) {
             return item?.background == null
         }
 
