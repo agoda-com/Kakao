@@ -232,10 +232,24 @@ class ViewBuilder {
     }
 
     /**
-     * Matchers the view that is not completely displayed
+     * Matches the view that is not completely displayed
      */
     fun isNotCompletelyDisplayed() {
         viewMatchers.add(Matchers.not(ViewMatchers.isCompletelyDisplayed()))
+    }
+
+    /**
+     * Matches the view that is clickable
+     */
+    fun isClickable() {
+        viewMatchers.add(ViewMatchers.isClickable())
+    }
+
+    /**
+     * Matches the view that is not clickable
+     */
+    fun isNotClickable() {
+        viewMatchers.add(Matchers.not(ViewMatchers.isClickable()))
     }
 
     /**
