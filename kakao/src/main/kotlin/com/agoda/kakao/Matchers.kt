@@ -2,14 +2,21 @@ package com.agoda.kakao
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.os.Build
+import android.support.annotation.ColorInt
+import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
+import android.support.test.espresso.core.internal.deps.guava.base.Strings
 import android.support.test.espresso.matcher.BoundedMatcher
+import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v4.view.ViewPager
+import android.support.v7.content.res.AppCompatResources
 import android.support.v7.widget.AppCompatDrawableManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -152,7 +159,7 @@ class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) :
  */
 class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val drawable: Drawable? = null,
                       private val toBitmap: ((drawable: Drawable) -> Bitmap)? = null)
-        : TypeSafeMatcher<View>(View::class.java) {
+    : TypeSafeMatcher<View>(View::class.java) {
 
     override fun describeTo(desc: Description) {
         desc.appendText("with drawable id $resId or provided instance")
@@ -168,7 +175,7 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
         }
 
         return view?.let {
-            var expectedDrawable: Drawable? = AppCompatDrawableManager.get().getDrawable(it.context, resId)
+            var expectedDrawable: Drawable? = ContextCompat.getDrawable(it.context, resId)
 
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP && expectedDrawable != null) {
                 expectedDrawable = DrawableCompat.wrap(expectedDrawable).mutate()
@@ -212,5 +219,38 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
         drawable.setBounds(0, 0, canvas.width, canvas.height)
         drawable.draw(canvas)
         return bitmap
+    }
+}
+
+
+/**
+ * Matches given background color with the current one
+ *
+ * @param resId Background color resource to be matched (default is -1)
+ * @param colorCode Background color string code to be matched (default is null)
+ */
+class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
+                             private val colorCode: String? = null) : TypeSafeMatcher<View>() {
+
+    override fun matchesSafely(item: View?): Boolean {
+        if (resId == -1 && Strings.isNullOrEmpty(colorCode)) {
+            return item?.background == null
+        }
+
+        return item?.let{
+            val expectedColor = if (resId != -1) {
+                ContextCompat.getColor(it.context, resId)
+            } else {
+                Color.parseColor(colorCode)
+            }
+
+            it.background != null &&
+            it.background.current is ColorDrawable &&
+            (it.background.current as ColorDrawable).color == expectedColor
+        }?: false
+    }
+
+    override fun describeTo(description: Description) {
+        description.appendText("with background color resource or provided color code")
     }
 }

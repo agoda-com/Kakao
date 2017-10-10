@@ -183,6 +183,24 @@ class ViewBuilder {
     }
 
     /**
+     * Matches the view with given background color
+     *
+     * @param resId Color to match
+     */
+    fun withBackgroundColor(@ColorRes resId: Int) {
+        viewMatchers.add(BackgroundColorMatcher(resId = resId))
+    }
+
+    /**
+     * Matches the view with given background color code
+     *
+     * @param colorCode Color code to match
+     */
+    fun withBackgroundColor(colorCode: String) {
+        viewMatchers.add(BackgroundColorMatcher(colorCode = colorCode))
+    }
+
+    /**
      * Matches the first view
      */
     fun isFirst() {
