@@ -28,7 +28,7 @@ class ListTest {
                     }
                     subtitle {
                         hasText("This is a test subtitle character sequence")
-                        matches { withBackgroundColor("#dfebf5") }
+                        hasBackgroundColor("#dfebf5")
                     }
                 }
 
@@ -40,7 +40,7 @@ class ListTest {
                 children<TestListScreen.Item> {
                     subtitle {
                         hasText("This is a test subtitle character sequence")
-                        matches { withBackgroundColor(R.color.background_color) }
+                        hasBackgroundColor(R.color.background_color)
                     }
                 }
 
