@@ -23,7 +23,13 @@ class ListTest {
 
                 firstChild<TestListScreen.Item> {
                     isVisible()
-                    title { hasText("Title 1") }
+                    title {
+                        hasText("Title 1")
+                    }
+                    subtitle {
+                        hasText("This is a test subtitle character sequence")
+                        hasBackgroundColor("#dfebf5")
+                    }
                 }
 
                 lastChild<TestListScreen.Item> {
@@ -32,7 +38,10 @@ class ListTest {
                 }
 
                 children<TestListScreen.Item> {
-                    subtitle { hasText("This is a test subtitle character sequence") }
+                    subtitle {
+                        hasText("This is a test subtitle character sequence")
+                        hasBackgroundColor(R.color.background_color)
+                    }
                 }
 
                 childWith<TestListScreen.Item> {
