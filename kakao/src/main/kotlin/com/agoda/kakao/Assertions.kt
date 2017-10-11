@@ -13,9 +13,9 @@ import android.support.test.espresso.web.model.Atom
 import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
-import org.hamcrest.CoreMatchers
-import org.hamcrest.Matcher
-import org.hamcrest.Matchers
+import android.view.View
+import android.widget.RatingBar
+import org.hamcrest.*
 
 /**
  * Base interface for asserting views
@@ -451,6 +451,30 @@ interface ViewPagerAssertions : BaseAssertions {
 }
 
 /**
+ * Provides assertios for RatingBar
+ */
+interface RatingBarAssertions : BaseAssertions {
+    /**
+     *  Checks If rating bar is have number of rating as expected
+     *  @param number rating as expected
+     */
+    fun expectedNumberOfStarAs(number: Float) {
+        view.check(ViewAssertions.matches(object : TypeSafeMatcher<View>() {
+            override fun matchesSafely(item: View): Boolean {
+                if (RatingBar::class.java.isAssignableFrom(item.javaClass)) {
+                    val ratingBar = item as RatingBar
+                    return ratingBar.rating == number
+                } else return false
+            }
+
+            override fun describeTo(description: Description) {
+                description.appendText("star rating is: " + number)
+            }
+        }))
+    }
+}
+
+/**
  * Provides assertion for image views
  */
 interface ImageViewAssertions : BaseAssertions {
@@ -475,40 +499,40 @@ interface ImageViewAssertions : BaseAssertions {
     }
 }
 
-/**
- * Interface that provides assertions for WebViews
- */
-interface WebAssertions {
-    val web: Web.WebInteraction<*>
-    val ref: Atom<ElementReference>
-
     /**
-     * Checks if element has given text
-     *
-     * @param text Text to be matched
+     * Interface that provides assertions for WebViews
      */
-    fun hasText(text: String) {
-        matches(DriverAtoms.getText(), Matchers.`is`(text))
-    }
+    interface WebAssertions {
+        val web: Web.WebInteraction<*>
+        val ref: Atom<ElementReference>
 
-    /**
-     * Checks if element contains given text
-     *
-     * @param text Text to be searched
-     */
-    fun containsText(text: String) {
-        matches(DriverAtoms.getText(), CoreMatchers.containsString(text))
-    }
+        /**
+         * Checks if element has given text
+         *
+         * @param text Text to be matched
+         */
+        fun hasText(text: String) {
+            matches(DriverAtoms.getText(), Matchers.`is`(text))
+        }
 
-    /**
-     * Checks if element matches given matcher
-     *
-     * @param T Type of value to be matched
-     * @param value Actual value to be matched
-     * @param matcher Matcher that matches given value
-     */
-    fun <T> matches(value: Atom<T>, matcher: Matcher<T>) {
-        web.withElement(ref)
-                .check(WebViewAssertions.webMatches(value, matcher))
+        /**
+         * Checks if element contains given text
+         *
+         * @param text Text to be searched
+         */
+        fun containsText(text: String) {
+            matches(DriverAtoms.getText(), CoreMatchers.containsString(text))
+        }
+
+        /**
+         * Checks if element matches given matcher
+         *
+         * @param T Type of value to be matched
+         * @param value Actual value to be matched
+         * @param matcher Matcher that matches given value
+         */
+        fun <T> matches(value: Atom<T>, matcher: Matcher<T>) {
+            web.withElement(ref)
+                    .check(WebViewAssertions.webMatches(value, matcher))
+        }
     }
-}
