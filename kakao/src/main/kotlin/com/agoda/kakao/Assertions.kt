@@ -13,9 +13,13 @@ import android.support.test.espresso.web.model.Atom
 import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
+import org.hamcrest.CoreMatchers
+import org.hamcrest.Matcher
+import org.hamcrest.Matchers
+import org.hamcrest.TypeSafeMatcher
+import org.hamcrest.Description
 import android.view.View
 import android.widget.RatingBar
-import org.hamcrest.*
 
 /**
  * Base interface for asserting views
