@@ -195,6 +195,7 @@ class KSwipeView : KBaseView<KSwipeView>, SwipeableActions {
 
 /**
  * View with RatingBarActions and RatingBarAssertions
+ *
  * @see RatingBarActions
  * @see RatingBarAssertions
  */

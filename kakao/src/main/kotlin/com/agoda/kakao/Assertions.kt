@@ -476,11 +476,12 @@ interface ViewPagerAssertions : BaseAssertions {
 }
 
 /**
- * Provides assertios for RatingBar
+ * Provides assertions for RatingBar
  */
 interface RatingBarAssertions : BaseAssertions {
     /**
      *  Checks If RatingBar has number of rating as expected
+     *
      *  @param number rating as expected
      */
     fun hasRating(number: Float) {

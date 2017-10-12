@@ -150,6 +150,7 @@ class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) :
 
 /**
  * Matcher of value rating of given matcher
+ * 
  * @param value of rating that matched the view which is RatingBar
  */
 class RatingBarMatcher(private val value: Float) : BoundedMatcher<View, RatingBar>(RatingBar::class.java) {
