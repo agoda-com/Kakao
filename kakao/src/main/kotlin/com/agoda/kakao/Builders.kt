@@ -175,8 +175,8 @@ class ViewBuilder {
     }
 
     /**
-     * Matches the view which is ratingBar with given value
-     * @param rating value of rating bar
+     * Matches the view which is RatingBar with given value
+     * @param rating value of RatingBar
      */
     fun withRating(rating: Float) {
         viewMatchers.add(RatingBarMatcher(rating))

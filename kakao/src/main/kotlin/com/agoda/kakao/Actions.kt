@@ -444,7 +444,7 @@ interface DrawerActions : BaseActions {
  */
 interface RatingBarActions : BaseActions {
     /**
-     * Set Rating for Rating Bar
+     * Set rating for RatingBar
      * @param number of rating to set for the RatingBar
      */
     fun setRatingAt(number: Float) {
