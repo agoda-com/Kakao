@@ -480,7 +480,7 @@ interface ViewPagerAssertions : BaseAssertions {
  */
 interface RatingBarAssertions : BaseAssertions {
     /**
-     *  Checks If RatingBar has number of rating as expected
+     *  Checks if RatingBar has number of rating as expected
      *
      *  @param number rating as expected
      */
