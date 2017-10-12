@@ -4,7 +4,7 @@ ext.versions = [
         android_gradle : '2.3.3',
         bintray        : '1.7.3',
         maven          : '1.5',
-        support_library: '25.4.0',
+        support_library: '26.1.0',
         espresso       : '3.0.1',
         espresso_rules : '1.0.1',
         espresso_runner: '1.0.1',
