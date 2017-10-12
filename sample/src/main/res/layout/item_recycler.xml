@@ -12,8 +12,9 @@
 
     <TextView
         android:id="@+id/subtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/background_color"
         android:text="This is a test subtitle character sequence" />
 
     <Button
