@@ -449,20 +449,14 @@ interface RatingBarActions : BaseActions {
      */
     fun setRatingAt(number: Float) {
         view.perform(object : ViewAction {
-            override fun getDescription() = "performing RatingBarAction: $number"
+            override fun getDescription() = "set rating value of rating bar as: $number"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(View::class.java),
-                    object : TypeSafeMatcher<View>() {
-                        override fun describeTo(description: Description) {
-                            description.appendText("is assignable from: " + RatingBar::class.java)
-                        }
-
-                        override fun matchesSafely(view: View) = RatingBar::class.java.isAssignableFrom(view.javaClass)
-                    })
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(RatingBar::class.java)
 
             override fun perform(uiController: UiController, view: View) {
-                val ratingBar = view as RatingBar
-                ratingBar.rating = number
+                if (view is RatingBar) {
+                    view.rating = number
+                }
             }
         })
     }

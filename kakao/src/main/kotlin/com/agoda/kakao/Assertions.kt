@@ -462,19 +462,8 @@ interface RatingBarAssertions : BaseAssertions {
      *  Checks If rating bar is have number of rating as expected
      *  @param number rating as expected
      */
-    fun expectedNumberOfStarAs(number: Float) {
-        view.check(ViewAssertions.matches(object : TypeSafeMatcher<View>() {
-            override fun matchesSafely(item: View): Boolean {
-                if (RatingBar::class.java.isAssignableFrom(item.javaClass)) {
-                    val ratingBar = item as RatingBar
-                    return ratingBar.rating == number
-                } else return false
-            }
-
-            override fun describeTo(description: Description) {
-                description.appendText("star rating is: " + number)
-            }
-        }))
+    fun hasRating(number: Float) {
+        view.check(ViewAssertions.matches(RatingBarMatcher(number)))
     }
 }
 

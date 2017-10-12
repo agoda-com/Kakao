@@ -173,6 +173,14 @@ class ViewBuilder {
     }
 
     /**
+     * Matches the view which is ratingBar with given value
+     * @param rating value of rating bar
+     */
+    fun withRating(rating: Float) {
+        viewMatchers.add(RatingBarMatcher(rating))
+    }
+    
+    /**
      * Matches the view with given drawable
      *
      * @param resId Drawable to match

@@ -14,6 +14,7 @@ import android.support.v7.widget.AppCompatDrawableManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -141,6 +142,18 @@ class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) :
 
     public override fun matchesSafely(view: View): Boolean =
             matcher.matches(view) && currentIndex++ == index
+}
+
+/**
+ * Matcher of value rating of given matcher
+ * @param value of rating that matched the view which is rating bar
+ */
+class RatingBarMatcher(private val value: Float) : BoundedMatcher<View, RatingBar>(RatingBar::class.java) {
+    override fun matchesSafely(view: RatingBar?) = view?.let { view.rating == value } ?: false
+
+    override fun describeTo(description: Description) {
+        description.appendText("rating value is: $value")
+    }
 }
 
 /**
