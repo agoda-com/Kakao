@@ -41,6 +41,12 @@ class TestActivityTest {
             button {
                 hasText("BUTTON")
             }
+
+            ratingbar {
+                hasRating(0f)
+                setRatingAt(3f)
+                hasRating(3f)
+            }
         }
     }
 }

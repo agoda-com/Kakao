@@ -34,8 +34,8 @@ ext.kakao = [
         artifact        : 'kakao',
         name            : 'kakao',
         description     : 'Kotlin based DSL for fluent AT with Espresso',
-        version         : '1.0.0',
-        version_desc    : 'Kakao 1.0.0',
+        version         : '1.0.1',
+        version_desc    : 'Kakao 1.0.1',
         site            : 'https://github.com/agoda-com/Kakao',
         github          : 'https://github.com/agoda-com/Kakao.git'
 ]

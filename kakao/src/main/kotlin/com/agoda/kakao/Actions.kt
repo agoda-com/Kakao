@@ -18,6 +18,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Checkable
+import android.widget.RatingBar
 import android.widget.ScrollView
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -435,6 +436,30 @@ interface DrawerActions : BaseActions {
      */
     fun close(gravity: Int = Gravity.START) {
         view.perform(DrawerActions.close(gravity))
+    }
+}
+
+/**
+ * Provides action for RatingBar
+ */
+interface RatingBarActions : BaseActions {
+    /**
+     * Set rating for RatingBar
+     *
+     * @param number of rating to set for the RatingBar
+     */
+    fun setRatingAt(number: Float) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "set rating value of rating bar as: $number"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(RatingBar::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is RatingBar) {
+                    view.rating = number
+                }
+            }
+        })
     }
 }
 
