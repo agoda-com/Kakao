@@ -15,4 +15,6 @@ open class TestActivityScreen: Screen<TestActivityScreen>() {
     val textViewSmall: KTextView = KTextView {
         withId(R.id.text_view_large)
     }
+
+    val ratingbar: KRatingBar = KRatingBar { withId(R.id.rating_bar) }
 }

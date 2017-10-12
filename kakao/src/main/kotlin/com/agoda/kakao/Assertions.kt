@@ -17,6 +17,10 @@ import android.support.test.espresso.web.webdriver.DriverAtoms
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
+import org.hamcrest.TypeSafeMatcher
+import org.hamcrest.Description
+import android.view.View
+import android.widget.RatingBar
 
 /**
  * Base interface for asserting views
@@ -468,6 +472,20 @@ interface ViewPagerAssertions : BaseAssertions {
      */
     fun isAtPage(index: Int) {
         view.check(ViewAssertions.matches(PageMatcher(index)))
+    }
+}
+
+/**
+ * Provides assertions for RatingBar
+ */
+interface RatingBarAssertions : BaseAssertions {
+    /**
+     *  Checks if RatingBar has number of rating as expected
+     *
+     *  @param number rating as expected
+     */
+    fun hasRating(number: Float) {
+        view.check(ViewAssertions.matches(RatingBarMatcher(number)))
     }
 }
 
