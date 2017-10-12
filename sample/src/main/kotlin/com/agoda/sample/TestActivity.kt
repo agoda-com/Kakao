@@ -15,10 +15,10 @@ class TestActivity: AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         findViewById<ImageView>(R.id.map).tag = "test_tag"
-        (findViewById<Button>(R.id.button)).setOnClickListener {
+        findViewById<Button>(R.id.button).setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
         }
-        (findViewById<Button>(R.id.web_button)).setOnClickListener {
+        findViewById<Button>(R.id.web_button).setOnClickListener {
             startActivity(Intent(this, WebAcitivty::class.java))
         }
     }

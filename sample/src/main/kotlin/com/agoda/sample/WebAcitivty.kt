@@ -9,7 +9,7 @@ class WebAcitivty : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web)
-        val webView = (findViewById<WebView>(R.id.webView)).apply {
+        val webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
         }
         webView.loadData("""
