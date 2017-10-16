@@ -1,6 +1,7 @@
 # Kakao
 [![CircleCI](https://circleci.com/gh/agoda-com/Kakao/tree/master.svg?style=shield&circle-token=0d0ed659625be4efe54fe706c16894cd54213690)](https://circleci.com/gh/agoda-com/Kakao/tree/master)
 [![Kotlin version badge](https://img.shields.io/badge/kotlin-1.1.51-blue.svg)](http://kotlinlang.org/)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Kakao-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6314)
 
 Nice and simple DSL for Espresso in Kotlin
 
@@ -198,7 +199,7 @@ Maven
 <dependency>
   <groupId>com.agoda.kakao</groupId>
   <artifactId>kakao</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -209,10 +210,10 @@ repositories {
 }
 dependencies {
     //for Gradle Version below 3.0.0
-    androidTestCompile 'com.agoda.kakao:kakao:1.0.0'
+    androidTestCompile 'com.agoda.kakao:kakao:1.0.1'
 
     //for Gradle Version 3.0.0 or above
-    androidTestImplementation 'com.agoda.kakao:kakao:1.0.0'
+    androidTestImplementation 'com.agoda.kakao:kakao:1.0.1'
 }
 ```
 
