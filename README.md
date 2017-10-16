@@ -33,9 +33,9 @@ If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject
 `Screen` contains `KViews`, these are the Android Framework views where you want to do the interactions:
 ```Kotlin
 class FormScreen : Screen<FormScreen>(){
-  val phone = KView { withId(R.id.phone)}
-  val email = KEditText { withId(R.id.email)}
-  val submit = KButton { withId(R.id.submit)}
+    val phone = KView { withId(R.id.phone)}
+    val email = KEditText { withId(R.id.email)}
+    val submit = KButton { withId(R.id.submit)}
 }
 ```
 Kakao provides different types depending on the type of view:
@@ -59,21 +59,19 @@ by Kakao:
 
 Like in Espresso you can combine different matchers:
 ```Kotlin
-  val email = KEditText { 
-               withId(R.id.email)
-               withText(R.string.email)
-   }
-
+val email = KEditText { 
+    withId(R.id.email)
+    withText(R.string.email)
+}
 ```
 
 And you can use your custom matchers:
 
 ```Kotlin
-  val email = KEditText { 
-               withId(R.id.email)
-               matches { MyCustomMatcher.matches(position) }
-  }
-
+val email = KEditText { 
+    withId(R.id.email)
+    matches { MyCustomMatcher.matches(position) }
+}
 ```
 
 #### Write the interaction. 
@@ -117,7 +115,7 @@ Inside your `Screen` create the KView matching with your view:
 For `KListView`:
 ```Kotlin
 val list = KListView ({
-            builder = { withId(R.id.list) } })
+           builder = { withId(R.id.list) } })
 ```
 For `KRecyclerView`:
 ```Kotlin
@@ -137,17 +135,17 @@ one is not required to create all of them.
 `KAdapterItem`
 ```Kotlin
 class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
-        val title = KTextView(i) { withId(R.id.title) }
-        val subtitle = KTextView(i) { withId(R.id.subtitle) }
-        val button = KButton(i) { withId(R.id.button) }
+    val title = KTextView(i) { withId(R.id.title) }
+    val subtitle = KTextView(i) { withId(R.id.subtitle) }
+    val button = KButton(i) { withId(R.id.button) }
 }
 ```
     
 `KRecyclerItem`    
 ```Kotlin
-   class Item(parent: Matcher<View>) : KRecyclerItem<Item>(parent) {
-        val title: KTextView = KTextView(parent) { withId(R.id.title) }
-        val subtitle: KTextView = KTextView(parent) { withId(R.id.subtitle) }
+class Item(parent: Matcher<View>) : KRecyclerItem<Item>(parent) {
+    val title: KTextView = KTextView(parent) { withId(R.id.title) }
+    val subtitle: KTextView = KTextView(parent) { withId(R.id.subtitle) }
 }
 ```
 
@@ -155,23 +153,23 @@ The `KView` defined in the Item corresponds views used on the Item. You can assi
  `KListView`/ `KRecyclerView` like:
 
 ```Kotlin
-  val recycler: KRecyclerView = KRecyclerView({
-        withId(R.id.recycler_view)
-    }, itemTypeBuilder = {
-        itemType(::Item)
-    })
+val recycler: KRecyclerView = KRecyclerView({
+    withId(R.id.recycler_view)
+}, itemTypeBuilder = {
+    itemType(::Item)
+})
 ```
 
 And finally your final interaction will be:
 ```Kotlin
-   screen {
-            recycler {
-                firstChild<TestRecyclerScreen.Item> {
-                    isVisible()
-                    title { hasText("Title 1") }
-                }
-             }
-   }
+screen {
+    recycler {
+        firstChild<TestRecyclerScreen.Item> {
+            isVisible()
+            title { hasText("Title 1") }
+        }
+    }
+}
 ```
 Kakao provides different accessors in the adapter:
 * childAt
@@ -209,10 +207,10 @@ repositories {
     jcenter()
 }
 dependencies {
-    //for Gradle Version below 3.0.0
+    // For Gradle Version below 3.0.0
     androidTestCompile 'com.agoda.kakao:kakao:1.0.1'
 
-    //for Gradle Version 3.0.0 or above
+    // For Gradle Version 3.0.0 or above
     androidTestImplementation 'com.agoda.kakao:kakao:1.0.1'
 }
 ```
