@@ -25,9 +25,9 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         init {
             with (itemView) {
-                title = findViewById(R.id.title) as TextView
-                subtitle = findViewById(R.id.subtitle) as TextView
-                button = findViewById(R.id.button) as Button
+                title = findViewById(R.id.title)
+                subtitle = findViewById(R.id.subtitle)
+                button = findViewById(R.id.button)
             }
         }
 

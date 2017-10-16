@@ -10,7 +10,7 @@ class RecyclerActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
 
-        val recycler = findViewById(R.id.recycler_view) as RecyclerView
+        val recycler: RecyclerView = findViewById(R.id.recycler_view)
         recycler.setHasFixedSize(true)
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = RecyclerAdapter()

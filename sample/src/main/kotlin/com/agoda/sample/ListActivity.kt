@@ -12,7 +12,7 @@ class ListActivity : AppCompatActivity() {
     val items = listOf("Title 1", "Title 2", "Title 3", "Title 4", "Title 5",
                        "Title 6", "Title 7", "Title 8", "Title 9", "Title 10")
 
-    val list: ListView by lazy { findViewById(R.id.list) as ListView }
+    val list: ListView by lazy { findViewById<ListView>(R.id.list) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class ListActivity : AppCompatActivity() {
                     convertView.tag as ViewHolder
                 } else {
                     view = layoutInflater.inflate(R.layout.item_recycler, null)
-                    ViewHolder(view.findViewById(R.id.title) as TextView).apply { view.tag = this }
+                    ViewHolder(view.findViewById(R.id.title)).apply { view.tag = this }
                 }
 
                 vh.title.text = items[position]

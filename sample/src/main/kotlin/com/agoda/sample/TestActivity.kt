@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import android.widget.ImageView
 
 class TestActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,11 +14,11 @@ class TestActivity: AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        findViewById(R.id.map).tag = "test_tag"
-        (findViewById(R.id.button) as Button).setOnClickListener {
+        findViewById<ImageView>(R.id.map).tag = "test_tag"
+        findViewById<Button>(R.id.button).setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
         }
-        (findViewById(R.id.web_button) as Button).setOnClickListener {
+        findViewById<Button>(R.id.web_button).setOnClickListener {
             startActivity(Intent(this, WebAcitivty::class.java))
         }
     }
