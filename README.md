@@ -56,6 +56,7 @@ by Kakao:
 * withText
 * withContentDescription
 * withDrawable
+* withBackgroundColor
 
 Like in Espresso you can combine different matchers:
 ```Kotlin
