@@ -6,7 +6,7 @@
 Nice and simple DSL for Espresso in Kotlin
 
 ### Introduction
-At Agoda, we have more that 1000 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the example of how we write the test. 
+At Agoda, we have more than 1000 automated tests to ensure our application's quality and give our best experience to the user. All of them are written with Espresso from Google. Even though Espresso is working really well with our test, the code readability is quite low. Let's look at some of the examples of how we write the test. 
 ```Java
 onView(allOf(withId(R.id.price_item), hasDescendant(withText("Standard Rate"))))
         .check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
@@ -130,7 +130,7 @@ You can combine different matchers to retrieve your view.
 
 Every adapter contains different Items, Kakao provides an easy way to define the different items of your adapter 
 with `KAdapterItem` and `KRecyclerItem`.
-If your adapter contains multiple Items but your interactions in your tests only works with 
+If your adapter contains multiple Items but your interactions in your tests only work with 
 one is not required to create all of them. 
 
 `KAdapterItem`
