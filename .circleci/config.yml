@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build-job:
     working_directory: ~/code
     docker:
       - image: circleci/android:api-25-alpha
@@ -25,27 +25,95 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
-      - run:
-          name: Prepare files
-          command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
-      - run:
-          name: Setup project ID
-          command:  sudo gcloud config set project $PROJECT_ID
-      - run:
-          name: Install kubernetes
-          command:  sudo apt-get install kubectl
-      - run:
-          name: Install Google cloud sdk
-          command:  sudo apt-get install google-cloud-sdk
-      - run:
-          name: Auth in GCS
-          command:  sudo gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
-      - run:
-          name: Build assembleDebug
-          command: ./gradlew :sample:assembleDebug -PdisablePreDex
-      - run:
-          name: Build assembleAndroidTest
-          command: ./gradlew :sample:assembleAndroidTest
-      - run:
-          name: Run AT
-          command:  sudo gcloud firebase test android run --type instrumentation --app sample/build/outputs/apk/sample-debug.apk --test sample/build/outputs/apk/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
+
+  deploy-job:
+      working_directory: ~/code
+      docker:
+        - image: circleci/android:api-25-alpha
+      environment:
+        JVM_OPTS: -Xmx3200m
+      steps:
+        - checkout
+        - restore_cache:
+            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+        - run:
+            name: Download Dependencies
+            command: ./gradlew androidDependencies
+        - save_cache:
+            paths:
+              - ~/.gradle
+            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+        - run:
+            name: Run Tests
+            command: ./gradlew test
+        - store_artifacts:
+            path: app/build/reports
+            destination: reports
+        - store_test_results:
+            path: app/build/test-results
+        - deploy:
+            name: Upload snapshot artifact
+            filters:
+              branches:
+                only: master
+            command: ./gradlew clean install artifactoryPublish
+
+  automation-tests-job:
+      working_directory: ~/code
+      docker:
+        - image: circleci/android:api-25-alpha
+      environment:
+                JVM_OPTS: -Xmx3200m
+      steps:
+        - checkout
+        - restore_cache:
+            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+        - run:
+            name: Download Dependencies
+            command: ./gradlew androidDependencies
+        - save_cache:
+            paths:
+              - ~/.gradle
+            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+        - run:
+            name: Prepare files
+            command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
+        - run:
+            name: Setup project ID
+            command:  sudo gcloud config set project $PROJECT_ID
+        - run:
+            name: Install kubernetes
+            command:  sudo apt-get install kubectl
+        - run:
+            name: Install Google cloud sdk
+            command:  sudo apt-get install google-cloud-sdk
+        - run:
+            name: Auth in GCS
+            command:  sudo gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
+        - run:
+            name: Build assembleDebug
+            command: ./gradlew :sample:assembleDebug -PdisablePreDex
+        - run:
+            name: Build assembleAndroidTest
+            command: ./gradlew :sample:assembleAndroidTest
+        - run:
+            name: Run AT
+            command:  sudo gcloud firebase test android run --type instrumentation --app sample/build/outputs/apk/sample-debug.apk --test sample/build/outputs/apk/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job
+      - automation-tests-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              ignore: master
+      - deploy-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: master
