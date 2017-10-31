@@ -4,6 +4,7 @@ ext.versions = [
         android_gradle : '2.3.3',
         bintray        : '1.7.3',
         maven          : '1.5',
+        oss            : '4.5.4',
         support_library: '26.1.0',
         espresso       : '3.0.1',
         espresso_rules : '1.0.1',
@@ -18,6 +19,7 @@ ext.libraries = [
         android_gradle  : "com.android.tools.build:gradle:$versions.android_gradle",
         bintray         : "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.bintray",
         maven           : "com.github.dcendents:android-maven-gradle-plugin:$versions.maven",
+        oss             : "org.jfrog.buildinfo:build-info-extractor-gradle:$versions.oss",
         appcompat       : "com.android.support:appcompat-v7:$versions.support_library",
         recyclerview    : "com.android.support:recyclerview-v7:$versions.support_library",
         annotations     : "com.android.support:support-annotations:$versions.support_library",
@@ -29,13 +31,19 @@ ext.libraries = [
         junit           : "junit:junit:$versions.junit"
 ]
 
+def alias = System.getenv('BINTRAY_ALIAS')
+
+if (alias == null) {
+    alias = ''
+}
+
 ext.kakao = [
         group           : 'com.agoda.kakao',
         artifact        : 'kakao',
         name            : 'kakao',
         description     : 'Kotlin based DSL for fluent AT with Espresso',
-        version         : '1.0.1',
-        version_desc    : 'Kakao 1.0.1',
+        version         : "1.0.1$alias",
+        version_desc    : "Kakao 1.0.1$alias",
         site            : 'https://github.com/agoda-com/Kakao',
         github          : 'https://github.com/agoda-com/Kakao.git'
 ]
