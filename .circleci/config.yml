@@ -51,11 +51,8 @@ jobs:
             destination: reports
         - store_test_results:
             path: app/build/test-results
-        - deploy:
+        - run:
             name: Upload snapshot artifact
-            filters:
-              branches:
-                only: master
             command: ./gradlew clean install artifactoryPublish
 
   automation-tests-job:
