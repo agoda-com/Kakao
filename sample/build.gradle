@@ -28,15 +28,15 @@ repositories {
 }
 
 dependencies {
-    compile libraries.kotlin_stdlib
-    compile libraries.appcompat
-    compile libraries.recyclerview
+    implementation libraries.kotlin_stdlib
+    implementation libraries.appcompat
+    implementation libraries.recyclerview
 
-    testCompile libraries.junit
+    testImplementation libraries.junit
 
-    androidTestCompile project(':kakao')
-    androidTestCompile libraries.annotations
-    androidTestCompile libraries.espresso_runner
-    androidTestCompile libraries.espresso_rules
-    androidTestCompile libraries.espresso_core
+    androidTestImplementation project(':kakao')
+    androidTestImplementation libraries.annotations
+    androidTestImplementation libraries.espresso_runner
+    androidTestImplementation libraries.espresso_rules
+    androidTestImplementation libraries.espresso_core
 }
