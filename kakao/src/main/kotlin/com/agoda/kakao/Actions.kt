@@ -1,5 +1,6 @@
 package com.agoda.kakao
 
+import android.support.design.widget.BottomNavigationView
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
@@ -446,7 +447,7 @@ interface RatingBarActions : BaseActions {
     /**
      * Set rating for RatingBar
      *
-     * @param number of rating to set for the RatingBar
+     * @param number rating to set for the RatingBar
      */
     fun setRatingAt(number: Float) {
         view.perform(object : ViewAction {
@@ -460,6 +461,55 @@ interface RatingBarActions : BaseActions {
                 }
             }
         })
+    }
+}
+
+/**
+ * Provides actions for BottomNavigationView
+ */
+interface BottomNavigationViewActions : BaseActions {
+    /**
+     * Sets the given item id as selected
+     *
+     * @param id menu item id to be set
+     */
+    fun setSelectedItem(id: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "Sets given item id as selected: $id"
+
+            override fun getConstraints() = ViewMatchers
+                    .isAssignableFrom(BottomNavigationView::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is BottomNavigationView) {
+                    view.selectedItemId = id
+                }
+            }
+        })
+    }
+
+    /**
+     * Returns the currently selected item id
+     *
+     * @return selected menu item id
+     */
+    fun getSelectedItem(): Int {
+        var id = 0
+
+        view.perform(object : ViewAction {
+            override fun getDescription() = "Gets selected item id"
+
+            override fun getConstraints() = ViewMatchers
+                    .isAssignableFrom(BottomNavigationView::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is BottomNavigationView) {
+                    id = view.selectedItemId
+                }
+            }
+        })
+
+        return id
     }
 }
 
