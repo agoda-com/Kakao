@@ -535,7 +535,7 @@ interface BottomNavigationViewAssertions : BaseAssertions {
                 }
             } else {
                 notFoundException?.let {
-                    throw AssertionError(notFoundException)
+                    throw AssertionError(it)
                 }
             }
         }
