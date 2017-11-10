@@ -16,10 +16,7 @@ import android.view.Gravity
 import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
-import android.widget.AdapterView
-import android.widget.Checkable
-import android.widget.RatingBar
-import android.widget.ScrollView
+import android.widget.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -436,6 +433,30 @@ interface DrawerActions : BaseActions {
      */
     fun close(gravity: Int = Gravity.START) {
         view.perform(DrawerActions.close(gravity))
+    }
+}
+
+/**
+ * Provides action for ProgressBar
+ */
+interface ProgressBarActions : BaseActions {
+    /**
+     * Set progress for ProgressBar
+     *
+     * @param number of progress to set for the ProgressBar
+     */
+    fun setProgress(number: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "set progress value of progress bar as: $number"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(ProgressBar::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is ProgressBar) {
+                    view.progress = number
+                }
+            }
+        })
     }
 }
 

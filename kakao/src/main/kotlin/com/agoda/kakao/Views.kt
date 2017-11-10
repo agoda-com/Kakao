@@ -194,6 +194,18 @@ class KSwipeView : KBaseView<KSwipeView>, SwipeableActions {
 }
 
 /**
+ * View with ProgressBarActions and ProgressBarAssertions
+ *
+ * @see ProgressBarActions
+ * @see ProgressBarAssertions
+ */
+class KProgressBar : KBaseView<KProgressBar>, ProgressBarActions, ProgressBarAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with RatingBarActions and RatingBarAssertions
  *
  * @see RatingBarActions

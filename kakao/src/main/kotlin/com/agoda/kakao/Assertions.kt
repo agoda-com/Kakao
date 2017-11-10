@@ -17,10 +17,6 @@ import android.support.test.espresso.web.webdriver.DriverAtoms
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
-import org.hamcrest.TypeSafeMatcher
-import org.hamcrest.Description
-import android.view.View
-import android.widget.RatingBar
 
 /**
  * Base interface for asserting views
@@ -472,6 +468,20 @@ interface ViewPagerAssertions : BaseAssertions {
      */
     fun isAtPage(index: Int) {
         view.check(ViewAssertions.matches(PageMatcher(index)))
+    }
+}
+
+/**
+ * Provides assertions for progress bar
+ */
+interface ProgressBarAssertions : BaseAssertions {
+    /**
+     *  Checks if view has number of progress as expected
+     *
+     *  @param number progress as expected
+     */
+    fun hasProgress(number: Int) {
+        view.check(ViewAssertions.matches(ProgressMatcher(number)))
     }
 }
 
