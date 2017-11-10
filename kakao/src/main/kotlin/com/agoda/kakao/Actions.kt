@@ -1,5 +1,6 @@
 package com.agoda.kakao
 
+import android.net.Uri
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
@@ -44,6 +45,34 @@ interface ScreenActions {
      */
     fun closeSoftKeyboard() {
         view.perform(ViewActions.closeSoftKeyboard())
+    }
+
+    /**
+     * Presses IME action, if supported view is in focus
+     */
+    fun pressImeAction() {
+        view.perform(ViewActions.pressImeActionButton())
+    }
+
+    /**
+     * Presses a key with corresponding KeyCode
+     */
+    fun pressKey(keyCode: Int) {
+        view.perform(ViewActions.pressKey(keyCode))
+    }
+
+    /**
+     * Presses a key with correspondingKeyCode and modifiers
+     */
+    fun pressKey(key: EspressoKey) {
+        view.perform(ViewActions.pressKey(key))
+    }
+
+    /**
+     * Presses the hardware menu key
+     */
+    fun pressMenuKey() {
+        view.perform(ViewActions.pressMenuKey())
     }
 
     /**
@@ -130,6 +159,60 @@ interface BaseActions {
      */
     fun onFailure(function: (error: Throwable, matcher: Matcher<View>) -> Unit) {
         view.withFailureHandler(function)
+    }
+
+    /**
+     * Repeats given action on the view until this view will match the given matcher
+     *
+     * @param maxAttempts Maximum repeat count of the action
+     * @param action Action to be performed
+     * @param matcher ViewBuilder that will be used as matcher
+     *
+     * @see ViewActions.repeatedlyUntil
+     */
+    fun repeatUntil(maxAttempts: Int = 1, action: () -> ViewAction, matcher: ViewBuilder.() -> Unit) {
+        view.perform(ViewActions.repeatedlyUntil(action(),
+                ViewBuilder().apply(matcher).getViewMatcher(), maxAttempts))
+    }
+}
+
+/**
+ * Provides actions for TextViews
+ */
+interface TextViewActions : BaseActions {
+    /**
+     * @see ViewActions.openLinkWithText
+     */
+    fun openLinkWithText(text: String) {
+        view.perform(ViewActions.openLinkWithText(text))
+    }
+
+    /**
+     * @see ViewActions.openLinkWithText
+     */
+    fun openLinkWithText(text: Matcher<String>) {
+        view.perform(ViewActions.openLinkWithText(text))
+    }
+
+    /**
+     * @see ViewActions.openLinkWithUri
+     */
+    fun openLinkWithUri(uri: String) {
+        view.perform(ViewActions.openLinkWithUri(uri))
+    }
+
+    /**
+     * @see ViewActions.openLinkWithUri
+     */
+    fun openLinkWithUri(uri: Matcher<Uri>) {
+        view.perform(ViewActions.openLinkWithUri(uri))
+    }
+
+    /**
+     * @see ViewActions.openLink
+     */
+    fun openLink(text: Matcher<String>, uri: Matcher<Uri>) {
+        view.perform(ViewActions.openLink(text, uri))
     }
 }
 

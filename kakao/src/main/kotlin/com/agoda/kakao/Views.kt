@@ -112,9 +112,10 @@ class KButton : KBaseView<KButton>, TextViewAssertions {
  * View with BaseActions and TextViewAssertions
  *
  * @see BaseActions
+ * @see TextViewActions
  * @see TextViewAssertions
  */
-class KTextView : KBaseView<KTextView>, TextViewAssertions {
+class KTextView : KBaseView<KTextView>, TextViewActions, TextViewAssertions {
     constructor(function: ViewBuilder.() -> Unit) : super(function)
     constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
