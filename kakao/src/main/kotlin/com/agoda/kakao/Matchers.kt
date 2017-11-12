@@ -10,6 +10,7 @@ import android.graphics.drawable.StateListDrawable
 import android.os.Build
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
+import android.support.design.widget.NavigationView
 import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
@@ -146,6 +147,20 @@ class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) :
 
     public override fun matchesSafely(view: View): Boolean =
             matcher.matches(view) && currentIndex++ == index
+}
+
+/**
+ * Matches NavigationView with given item id checked
+ *
+ * @param id menu item id to be checked
+ */
+class NavigationItemMatcher(private val id: Int) : BoundedMatcher<View, NavigationView>(NavigationView::class.java) {
+    override fun describeTo(desc: Description) {
+        desc.appendText("Matches view with menu item checked: $id")
+    }
+
+    override fun matchesSafely(view: NavigationView)
+            = view.menu.getItem(id)?.isChecked ?: false
 }
 
 /**

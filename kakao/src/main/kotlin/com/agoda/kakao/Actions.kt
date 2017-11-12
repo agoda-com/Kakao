@@ -6,6 +6,7 @@ import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.*
 import android.support.test.espresso.contrib.DrawerActions
+import android.support.test.espresso.contrib.NavigationViewActions
 import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.web.model.Atom
@@ -519,6 +520,20 @@ interface DrawerActions : BaseActions {
      */
     fun close(gravity: Int = Gravity.START) {
         view.perform(DrawerActions.close(gravity))
+    }
+}
+
+/**
+ * Provides actions for navigation view
+ */
+interface NavigationViewActions : BaseActions {
+    /**
+     * Clicks on the navigation view menu item with given id
+     *
+     * @param id Menu id to be navigated to
+     */
+    fun navigateTo(id: Int) {
+        view.perform(NavigationViewActions.navigateTo(id))
     }
 }
 

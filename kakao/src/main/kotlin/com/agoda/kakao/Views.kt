@@ -195,6 +195,18 @@ class KSwipeView : KBaseView<KSwipeView>, SwipeableActions {
 }
 
 /**
+ * View with NavigationViewActions and NavigationViewAssertions
+ *
+ * @see NavigationViewActions
+ * @see NavigationViewAssertions
+ */
+class KNavigationView : KBaseView<KNavigationView>, NavigationViewActions, NavigationViewAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with RatingBarActions and RatingBarAssertions
  *
  * @see RatingBarActions
