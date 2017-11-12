@@ -207,6 +207,18 @@ class KRatingBar : KBaseView<KRatingBar>, RatingBarActions, RatingBarAssertions 
 }
 
 /**
+ * View with TabLayoutActions and TabLayoutAssertions
+ *
+ * @see TabLayoutActions
+ * @see TabLayoutAssertions
+ */
+class KTabLayout : KBaseView<KTabLayout>, TabLayoutActions, TabLayoutAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with ScrollViewActions and BaseAssertions. Gives access to it's children
  *
  * @see ScrollViewActions
