@@ -1,11 +1,16 @@
 package com.agoda.kakao
 
+import android.support.design.widget.Snackbar
 import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.web.sugar.Web
+import android.support.v7.widget.AppCompatButton
+import android.support.v7.widget.AppCompatTextView
 import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -213,6 +218,35 @@ class KProgressBar : KBaseView<KProgressBar>, ProgressBarActions, ProgressBarAss
  * @see RatingBarAssertions
  */
 class KRatingBar : KBaseView<KRatingBar>, RatingBarActions, RatingBarAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
+ * View with internal TextView and a Button
+ *
+ * @see Snackbar
+ */
+class KSnackbar : KBaseView<KSnackbar>({ isInstanceOf(Snackbar.SnackbarLayout::class.java) }) {
+    val text = KTextView {
+        isDescendantOfA { isInstanceOf(Snackbar.SnackbarLayout::class.java) }
+        isInstanceOf(AppCompatTextView::class.java)
+    }
+
+    val action = KButton {
+        isDescendantOfA { isInstanceOf(Snackbar.SnackbarLayout::class.java) }
+        isInstanceOf(AppCompatButton::class.java)
+    }
+}
+
+/**
+ * View with TabLayoutActions and TabLayoutAssertions
+ *
+ * @see TabLayoutActions
+ * @see TabLayoutAssertions
+ */
+class KTabLayout : KBaseView<KTabLayout>, TabLayoutActions, TabLayoutAssertions {
     constructor(function: ViewBuilder.() -> Unit) : super(function)
     constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)

@@ -47,6 +47,23 @@ class TestActivityTest {
                 setRatingAt(3f)
                 hasRating(3f)
             }
+
+            snackbarButton {
+                click()
+            }
+
+            snackbar {
+                isDisplayed()
+
+                text { hasText("This is snackbar!") }
+                action {
+                    hasText("DISMISS")
+                    click()
+                    idle(500)
+                }
+
+                doesNotExists()
+            }
         }
     }
 }

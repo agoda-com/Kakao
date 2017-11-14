@@ -30,6 +30,7 @@ dependencies {
     compile libraries.kotlin_stdlib
     compile libraries.appcompat
     compile libraries.recyclerview
+    compile libraries.design
     compile libraries.espresso_core
     compile libraries.espresso_web
     compile (libraries.espresso_contrib) {
