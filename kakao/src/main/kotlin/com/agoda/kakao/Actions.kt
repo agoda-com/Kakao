@@ -605,7 +605,7 @@ interface BottomNavigationViewActions : BaseActions {
                     view.selectedItemId = id
                 }
             }
-        }
+        })
     }
 }
                      
