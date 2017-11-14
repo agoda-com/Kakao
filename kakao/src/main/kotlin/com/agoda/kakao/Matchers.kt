@@ -18,6 +18,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.RatingBar
 import android.widget.TextView
 import org.hamcrest.Description
@@ -161,6 +162,19 @@ class NavigationItemMatcher(private val id: Int) : BoundedMatcher<View, Navigati
 
     override fun matchesSafely(view: NavigationView)
             = view.menu.getItem(id)?.isChecked ?: false
+}
+
+/**
+ * Matcher of value progress of given matcher
+ *
+ * @param value of progress that matched the view which is ProgressBar
+ */
+class ProgressMatcher(private val value: Int) : BoundedMatcher<View, ProgressBar>(ProgressBar::class.java) {
+    override fun matchesSafely(view: ProgressBar?) = view?.let { it.progress == value } ?: false
+
+    override fun describeTo(description: Description) {
+        description.appendText("progress value is: $value")
+    }
 }
 
 /**

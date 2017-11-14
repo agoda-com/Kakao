@@ -1,6 +1,7 @@
 package com.agoda.kakao
 
 import android.net.Uri
+import android.support.design.widget.TabLayout
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
@@ -18,10 +19,7 @@ import android.view.Gravity
 import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
-import android.widget.AdapterView
-import android.widget.Checkable
-import android.widget.RatingBar
-import android.widget.ScrollView
+import android.widget.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -538,6 +536,30 @@ interface NavigationViewActions : BaseActions {
 }
 
 /**
+ * Provides action for ProgressBar
+ */
+interface ProgressBarActions : BaseActions {
+    /**
+     * Set progress for ProgressBar
+     *
+     * @param number of progress to set for the ProgressBar
+     */
+    fun setProgress(number: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "set progress value of progress bar as: $number"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(ProgressBar::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is ProgressBar) {
+                    view.progress = number
+                }
+            }
+        })
+    }
+}
+
+/**
  * Provides action for RatingBar
  */
 interface RatingBarActions : BaseActions {
@@ -555,6 +577,30 @@ interface RatingBarActions : BaseActions {
             override fun perform(uiController: UiController, view: View) {
                 if (view is RatingBar) {
                     view.rating = number
+                }
+            }
+        })
+    }
+}
+
+/**
+ * Provides action for TabLayout
+ */
+interface TabLayoutActions : BaseActions {
+    /**
+     * Selects tab at given index
+     *
+     * @param index tab index to be selected
+     */
+    fun selectTab(index: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "Selects the tab at index: $index"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(TabLayout::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is TabLayout) {
+                    view.getTabAt(index)!!.select()
                 }
             }
         })
