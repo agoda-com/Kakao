@@ -33,6 +33,11 @@
                 android:label="Recycler Activity"
                 android:theme="@style/AppTheme" />
 
+        <activity
+            android:name=".TextInputLayoutActivity"
+            android:label="Recycler Activity"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>
