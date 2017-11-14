@@ -474,6 +474,20 @@ interface ViewPagerAssertions : BaseAssertions {
 }
 
 /**
+ * Provides assertions for progress bar
+ */
+interface ProgressBarAssertions : BaseAssertions {
+    /**
+     *  Checks if view has number of progress as expected
+     *
+     *  @param number progress as expected
+     */
+    fun hasProgress(number: Int) {
+        view.check(ViewAssertions.matches(ProgressMatcher(number)))
+    }
+}
+
+/**
  * Provides assertions for RatingBar
  */
 interface RatingBarAssertions : BaseAssertions {
