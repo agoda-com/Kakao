@@ -35,6 +35,12 @@
             android:layout_height="wrap_content"
             android:text="WEB_BUTTON" />
 
+    <Button
+        android:id="@+id/snackbar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SNACKBAR" />
+
     <RatingBar
             android:id="@+id/rating_bar"
             android:layout_width="wrap_content"

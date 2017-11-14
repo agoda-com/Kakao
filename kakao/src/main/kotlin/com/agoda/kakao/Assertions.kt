@@ -6,6 +6,7 @@ import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.TabLayout
 import android.support.test.espresso.ViewAssertion
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
@@ -478,6 +479,34 @@ interface ViewPagerAssertions : BaseAssertions {
 }
 
 /**
+ * Provides assertions for NavigationView
+ */
+interface NavigationViewAssertions : BaseAssertions {
+    /**
+     * Checks if NavigationView has checked given item id
+     *
+     * @param id menu item expected to be checked
+     */
+    fun isItemChecked(id: Int) {
+        view.check(ViewAssertions.matches(NavigationItemMatcher(id)))
+    }
+}
+
+/**
+ * Provides assertions for progress bar
+ */
+interface ProgressBarAssertions : BaseAssertions {
+    /**
+     *  Checks if view has number of progress as expected
+     *
+     *  @param number progress as expected
+     */
+    fun hasProgress(number: Int) {
+        view.check(ViewAssertions.matches(ProgressMatcher(number)))
+    }
+}
+
+/**
  * Provides assertions for RatingBar
  */
 interface RatingBarAssertions : BaseAssertions {
@@ -488,6 +517,29 @@ interface RatingBarAssertions : BaseAssertions {
      */
     fun hasRating(number: Float) {
         view.check(ViewAssertions.matches(RatingBarMatcher(number)))
+    }
+}
+
+/**
+ * Provides assertions for TabLayout
+ */
+interface TabLayoutAssertions : BaseAssertions {
+    /**
+     * Checks if TabLayout have selected tab with given index
+     *
+     * @param index tab index to be checked
+     */
+    fun isTabSelected(index: Int) {
+        view.check { view, notFoundException ->
+            if (view is TabLayout) {
+                if (view.selectedTabPosition != index) {
+                    throw AssertionError("Expected selected item index is $index," +
+                            " but actual is ${view.selectedTabPosition}")
+                }
+            } else {
+                notFoundException?.let { throw AssertionError(it) }
+            }
+        }
     }
 }
 
