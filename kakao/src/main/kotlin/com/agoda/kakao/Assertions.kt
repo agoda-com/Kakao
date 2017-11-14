@@ -6,7 +6,6 @@ import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.design.widget.BottomNavigationView
-import android.support.test.espresso.NoMatchingViewException
 import android.support.test.espresso.ViewAssertion
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
