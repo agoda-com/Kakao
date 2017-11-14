@@ -474,6 +474,20 @@ interface ViewPagerAssertions : BaseAssertions {
 }
 
 /**
+ * Provides assertions for NavigationView
+ */
+interface NavigationViewAssertions : BaseAssertions {
+    /**
+     * Checks if NavigationView has checked given item id
+     *
+     * @param id menu item expected to be checked
+     */
+    fun isItemChecked(id: Int) {
+        view.check(ViewAssertions.matches(NavigationItemMatcher(id)))
+    }
+}
+
+/**
  * Provides assertions for progress bar
  */
 interface ProgressBarAssertions : BaseAssertions {
