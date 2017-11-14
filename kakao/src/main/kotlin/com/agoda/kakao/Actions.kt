@@ -1,10 +1,13 @@
 package com.agoda.kakao
 
+import android.net.Uri
+import android.support.design.widget.TabLayout
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.*
 import android.support.test.espresso.contrib.DrawerActions
+import android.support.test.espresso.contrib.NavigationViewActions
 import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.web.model.Atom
@@ -16,10 +19,7 @@ import android.view.Gravity
 import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
-import android.widget.AdapterView
-import android.widget.Checkable
-import android.widget.RatingBar
-import android.widget.ScrollView
+import android.widget.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -47,6 +47,34 @@ interface ScreenActions {
      */
     fun closeSoftKeyboard() {
         view.perform(ViewActions.closeSoftKeyboard())
+    }
+
+    /**
+     * Presses IME action, if supported view is in focus
+     */
+    fun pressImeAction() {
+        view.perform(ViewActions.pressImeActionButton())
+    }
+
+    /**
+     * Presses a key with corresponding KeyCode
+     */
+    fun pressKey(keyCode: Int) {
+        view.perform(ViewActions.pressKey(keyCode))
+    }
+
+    /**
+     * Presses a key with correspondingKeyCode and modifiers
+     */
+    fun pressKey(key: EspressoKey) {
+        view.perform(ViewActions.pressKey(key))
+    }
+
+    /**
+     * Presses the hardware menu key
+     */
+    fun pressMenuKey() {
+        view.perform(ViewActions.pressMenuKey())
     }
 
     /**
@@ -133,6 +161,60 @@ interface BaseActions {
      */
     fun onFailure(function: (error: Throwable, matcher: Matcher<View>) -> Unit) {
         view.withFailureHandler(function)
+    }
+
+    /**
+     * Repeats given action on the view until this view will match the given matcher
+     *
+     * @param maxAttempts Maximum repeat count of the action
+     * @param action Action to be performed
+     * @param matcher ViewBuilder that will be used as matcher
+     *
+     * @see ViewActions.repeatedlyUntil
+     */
+    fun repeatUntil(maxAttempts: Int = 1, action: () -> ViewAction, matcher: ViewBuilder.() -> Unit) {
+        view.perform(ViewActions.repeatedlyUntil(action(),
+                ViewBuilder().apply(matcher).getViewMatcher(), maxAttempts))
+    }
+}
+
+/**
+ * Provides actions for TextViews
+ */
+interface TextViewActions : BaseActions {
+    /**
+     * @see ViewActions.openLinkWithText
+     */
+    fun openLinkWithText(text: String) {
+        view.perform(ViewActions.openLinkWithText(text))
+    }
+
+    /**
+     * @see ViewActions.openLinkWithText
+     */
+    fun openLinkWithText(text: Matcher<String>) {
+        view.perform(ViewActions.openLinkWithText(text))
+    }
+
+    /**
+     * @see ViewActions.openLinkWithUri
+     */
+    fun openLinkWithUri(uri: String) {
+        view.perform(ViewActions.openLinkWithUri(uri))
+    }
+
+    /**
+     * @see ViewActions.openLinkWithUri
+     */
+    fun openLinkWithUri(uri: Matcher<Uri>) {
+        view.perform(ViewActions.openLinkWithUri(uri))
+    }
+
+    /**
+     * @see ViewActions.openLink
+     */
+    fun openLink(text: Matcher<String>, uri: Matcher<Uri>) {
+        view.perform(ViewActions.openLink(text, uri))
     }
 }
 
@@ -440,6 +522,44 @@ interface DrawerActions : BaseActions {
 }
 
 /**
+ * Provides actions for navigation view
+ */
+interface NavigationViewActions : BaseActions {
+    /**
+     * Clicks on the navigation view menu item with given id
+     *
+     * @param id Menu id to be navigated to
+     */
+    fun navigateTo(id: Int) {
+        view.perform(NavigationViewActions.navigateTo(id))
+    }
+}
+
+/**
+ * Provides action for ProgressBar
+ */
+interface ProgressBarActions : BaseActions {
+    /**
+     * Set progress for ProgressBar
+     *
+     * @param number of progress to set for the ProgressBar
+     */
+    fun setProgress(number: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "set progress value of progress bar as: $number"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(ProgressBar::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is ProgressBar) {
+                    view.progress = number
+                }
+            }
+        })
+    }
+}
+
+/**
  * Provides action for RatingBar
  */
 interface RatingBarActions : BaseActions {
@@ -457,6 +577,30 @@ interface RatingBarActions : BaseActions {
             override fun perform(uiController: UiController, view: View) {
                 if (view is RatingBar) {
                     view.rating = number
+                }
+            }
+        })
+    }
+}
+
+/**
+ * Provides action for TabLayout
+ */
+interface TabLayoutActions : BaseActions {
+    /**
+     * Selects tab at given index
+     *
+     * @param index tab index to be selected
+     */
+    fun selectTab(index: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "Selects the tab at index: $index"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(TabLayout::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is TabLayout) {
+                    view.getTabAt(index)!!.select()
                 }
             }
         })

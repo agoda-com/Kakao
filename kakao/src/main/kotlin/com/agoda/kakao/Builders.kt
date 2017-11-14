@@ -45,6 +45,15 @@ class ViewBuilder {
     }
 
     /**
+     * Matches only root views
+     *
+     * @see ViewMatchers.isRoot
+     */
+    fun isRoot() {
+        viewMatchers.add(ViewMatchers.isRoot())
+    }
+
+    /**
      * Matches the view with given resource id
      *
      * @param id Resource id to match

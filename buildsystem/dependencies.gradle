@@ -22,6 +22,7 @@ ext.libraries = [
         oss             : "org.jfrog.buildinfo:build-info-extractor-gradle:$versions.oss",
         appcompat       : "com.android.support:appcompat-v7:$versions.support_library",
         recyclerview    : "com.android.support:recyclerview-v7:$versions.support_library",
+        design          : "com.android.support:design:$versions.support_library",
         annotations     : "com.android.support:support-annotations:$versions.support_library",
         espresso_runner : "com.android.support.test:runner:$versions.espresso_runner",
         espresso_rules  : "com.android.support.test:rules:$versions.espresso_rules",

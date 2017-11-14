@@ -2,6 +2,7 @@ package com.agoda.sample
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageView
@@ -15,11 +16,24 @@ class TestActivity: AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         findViewById<ImageView>(R.id.map).tag = "test_tag"
+
         findViewById<Button>(R.id.button).setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
         }
+
         findViewById<Button>(R.id.web_button).setOnClickListener {
             startActivity(Intent(this, WebAcitivty::class.java))
+        }
+
+        findViewById<Button>(R.id.snackbar_button).setOnClickListener {
+            val snackbar = Snackbar.make(findViewById(android.R.id.content),
+                    "This is snackbar!", Snackbar.LENGTH_LONG)
+
+            snackbar.setAction("DISMISS") {
+                snackbar.dismiss()
+            }
+
+            snackbar.show()
         }
     }
 }
