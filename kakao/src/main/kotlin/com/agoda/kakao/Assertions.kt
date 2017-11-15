@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
+import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.TabLayout
 import android.support.design.widget.TextInputLayout
 import android.support.test.espresso.ViewAssertion
@@ -19,6 +20,10 @@ import android.support.test.espresso.web.webdriver.DriverAtoms
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
+import org.hamcrest.TypeSafeMatcher
+import org.hamcrest.Description
+import android.view.View
+import android.widget.RatingBar
 import java.lang.AssertionError
 
 /**
@@ -634,6 +639,31 @@ interface ImageViewAssertions : BaseAssertions {
      */
     fun hasDrawable(drawable: Drawable, toBitmap: ((drawable: Drawable) -> Bitmap)? = null) {
         view.check(ViewAssertions.matches(DrawableMatcher(drawable = drawable, toBitmap = toBitmap)))
+    }
+}
+
+/**
+ * Provides assertion for BottomNavigationview
+ */
+interface BottomNavigationViewAssertions : BaseAssertions {
+    /**
+     * Checks if the view's selected item id matches given one
+     *
+     * @param id Menu item id to be checked
+     */
+    fun hasSelectedItem(id: Int) {
+        view.check { view, notFoundException ->
+            if (view is BottomNavigationView) {
+                if (view.selectedItemId != id) {
+                    throw AssertionError("Expected selected item id is $id," +
+                            " but actual is ${ view.selectedItemId }")
+                }
+            } else {
+                notFoundException?.let {
+                    throw AssertionError(it)
+                }
+            }
+        }
     }
 }
 

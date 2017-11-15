@@ -237,6 +237,19 @@ class KRatingBar : KBaseView<KRatingBar>, RatingBarActions, RatingBarAssertions 
 }
 
 /**
+ * View for acting and asserting on BottomNavigationView
+ *
+ * @see BottomNavigationViewActions
+ * @see BottomNavigationViewAssertions
+ */
+class KBottomNavigationView : KBaseView<KBottomNavigationView>,
+        BottomNavigationViewActions, BottomNavigationViewAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with internal TextView and a Button
  *
  * @see Snackbar
