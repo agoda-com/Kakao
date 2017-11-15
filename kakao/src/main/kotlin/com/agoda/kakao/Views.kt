@@ -1,6 +1,7 @@
 package com.agoda.kakao
 
 import android.support.design.widget.Snackbar
+import android.support.design.widget.TextInputEditText
 import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.ViewInteraction
@@ -262,6 +263,36 @@ class KTabLayout : KBaseView<KTabLayout>, TabLayoutActions, TabLayoutAssertions 
     constructor(function: ViewBuilder.() -> Unit) : super(function)
     constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
+ * View with TextInputLayoutAssertions
+ *
+ * @see TextInputLayoutAssertions
+ */
+class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions {
+    val edit: KEditText
+
+    constructor(function: ViewBuilder.() -> Unit) : super(function) {
+        edit = KEditText {
+            isDescendantOfA(function)
+            isInstanceOf(TextInputEditText::class.java)
+        }
+    }
+
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function) {
+        edit = KEditText {
+            isDescendantOfA(function)
+            isInstanceOf(TextInputEditText::class.java)
+        }
+    }
+
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function) {
+        edit = KEditText {
+            isDescendantOfA(function)
+            isInstanceOf(TextInputEditText::class.java)
+        }
+    }
 }
 
 /**
