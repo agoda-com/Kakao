@@ -95,7 +95,7 @@ jobs:
             command: ./gradlew :sample:assembleAndroidTest
         - run:
             name: Run AT
-            command:  sudo gcloud firebase test android run --type instrumentation --app sample/build/outputs/apk/sample-debug.apk --test sample/build/outputs/apk/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
+            command:  sudo gcloud firebase test android run --type instrumentation --app sample/build/outputs/apk/debug/sample-debug.apk --test sample/build/outputs/apk/androidTest/debug/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
 
 workflows:
   version: 2

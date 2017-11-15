@@ -27,13 +27,13 @@ repositories {
 }
 
 dependencies {
-    compile libraries.kotlin_stdlib
-    compile libraries.appcompat
-    compile libraries.recyclerview
-    compile libraries.design
-    compile libraries.espresso_core
-    compile libraries.espresso_web
-    compile (libraries.espresso_contrib) {
+    implementation libraries.kotlin_stdlib
+    implementation libraries.appcompat
+    implementation libraries.recyclerview
+    implementation libraries.design
+    implementation libraries.espresso_core
+    implementation libraries.espresso_web
+    implementation (libraries.espresso_contrib) {
         exclude group: 'com.android.support'
     }
 }
