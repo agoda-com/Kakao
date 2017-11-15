@@ -15,6 +15,7 @@ import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v4.view.ViewPager
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
@@ -292,5 +293,20 @@ class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
 
     override fun describeTo(description: Description) {
         description.appendText("with background color: $resId or $colorCode")
+    }
+}
+
+class SwipeRefreshLayoutMatcher(private val refreshing: Boolean) : TypeSafeMatcher<View>() {
+    override fun matchesSafely(item: View?): Boolean {
+        return item?.let {
+            if (item is SwipeRefreshLayout) {
+                item.isRefreshing == refreshing
+            } else false
+        } ?: false
+    }
+
+    override fun describeTo(desc: Description) {
+        desc.appendText("with refreshing state: ")
+                .appendValue(refreshing)
     }
 }

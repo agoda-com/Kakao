@@ -564,6 +564,25 @@ interface ImageViewAssertions : BaseAssertions {
 }
 
 /**
+ * Provides assertion for SwipeRefreshLayout
+ */
+interface SwipeRefreshLayoutAssertions : BaseAssertions {
+    /**
+     * Checks if the SwipeRefreshLayout is refreshing
+     */
+    fun isRefreshing() {
+        view.check(ViewAssertions.matches(SwipeRefreshLayoutMatcher(true)))
+    }
+
+    /**
+     * Checks if the SwipeRefreshLayout is not refreshing
+     */
+    fun isNotRefresing() {
+        view.check(ViewAssertions.matches(SwipeRefreshLayoutMatcher(false)))
+    }
+}
+
+/**
  * Interface that provides assertions for WebViews
  */
 interface WebAssertions {
