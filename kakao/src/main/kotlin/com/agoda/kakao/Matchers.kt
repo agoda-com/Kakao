@@ -11,6 +11,7 @@ import android.os.Build
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.design.widget.NavigationView
+import android.support.design.widget.TextInputLayout
 import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
@@ -263,6 +264,50 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
     }
 }
 
+class TextInputLayoutHintEnabledMatcher(private val enabled: Boolean) : TypeSafeMatcher<View>() {
+    override fun matchesSafely(item: View?): Boolean {
+        return item?.let {
+            if (item is TextInputLayout) {
+                item.isHintEnabled == enabled
+            } else false
+        } ?: false
+    }
+
+    override fun describeTo(desc: Description) {
+        desc.appendText("with hint state: ")
+                .appendValue(enabled)
+    }
+}
+
+class TextInputLayoutErrorEnabledMatcher(private val enabled: Boolean) : TypeSafeMatcher<View>() {
+    override fun matchesSafely(item: View?): Boolean {
+        return item?.let {
+            if (item is TextInputLayout) {
+                item.isErrorEnabled == enabled
+            } else false
+        } ?: false
+    }
+
+    override fun describeTo(desc: Description) {
+        desc.appendText("with error state: ")
+                .appendValue(enabled)
+    }
+}
+
+class TextInputLayoutCounterEnabledMatcher(private val enabled: Boolean) : TypeSafeMatcher<View>() {
+    override fun matchesSafely(item: View?): Boolean {
+        return item?.let {
+            if (item is TextInputLayout) {
+                item.isCounterEnabled == enabled
+            } else false
+        } ?: false
+    }
+
+    override fun describeTo(desc: Description) {
+        desc.appendText("with counter state: ")
+                .appendValue(enabled)
+    }
+}
 
 /**
  * Matches given background color with the current one
