@@ -15,6 +15,7 @@ import android.support.test.espresso.web.model.Atom
 import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
 import android.view.Gravity
 import android.view.InputDevice
@@ -654,6 +655,30 @@ interface TabLayoutActions : BaseActions {
         })
 
         return id
+    }
+}
+
+/**
+ * Provides actions for SwipeRefreshLayout
+ */
+interface SwipeRefreshLayoutActions : SwipeableActions {
+    /**
+     * Sets the refreshing state of SwipeRefreshLayout
+     *
+     * @param refreshing state to be set
+     */
+    fun setRefreshing(refreshing: Boolean) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "Sets the refreshing state to $refreshing"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(SwipeRefreshLayout::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is SwipeRefreshLayout) {
+                    view.isRefreshing = refreshing
+                }
+            }
+        })
     }
 }
 

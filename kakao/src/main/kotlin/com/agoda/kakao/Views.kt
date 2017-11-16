@@ -279,6 +279,18 @@ class KTabLayout : KBaseView<KTabLayout>, TabLayoutActions, TabLayoutAssertions 
 }
 
 /**
+ * View with SwipeRefreshLayoutActions and SwipeRefreshLayoutAssertions
+ *
+ * @see SwipeRefreshLayoutActions
+ * @see SwipeRefreshLayoutAssertions
+ */
+class KSwipeRefreshLayout : KBaseView<KSwipeRefreshLayout>, SwipeRefreshLayoutActions, SwipeRefreshLayoutAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with TextInputLayoutAssertions
  *
  * @see TextInputLayoutAssertions
