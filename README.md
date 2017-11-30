@@ -209,10 +209,10 @@ repositories {
 }
 dependencies {
     // For Gradle Version below 3.0.0
-    androidTestCompile 'com.agoda.kakao:kakao:1.0.1'
+    androidTestCompile 'com.agoda.kakao:kakao:1.1.0'
 
     // For Gradle Version 3.0.0 or above
-    androidTestImplementation 'com.agoda.kakao:kakao:1.0.1'
+    androidTestImplementation 'com.agoda.kakao:kakao:1.1.0'
 }
 ```
 
