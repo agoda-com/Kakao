@@ -562,6 +562,56 @@ interface ProgressBarActions : BaseActions {
 }
 
 /**
+ * Provides action for SeekBar
+ */
+interface SeekBarActions : ProgressBarActions {
+    /**
+     * Drags progress to defined position.
+     * Please note that this dragging is emulated via Espresso's swipe action
+     * and might not be accurate, if progress max value is too high or device's
+     * density is too low.
+     *
+     * @param number of progress to drag to
+     *
+     * @see GeneralSwipeAction
+     */
+    fun dragProgressTo(number: Int) {
+        view.perform(object : ViewAction {
+            override fun getDescription() = "drags progress of seek bar to: $number"
+
+            override fun getConstraints() = ViewMatchers.isAssignableFrom(SeekBar::class.java)
+
+            override fun perform(uiController: UiController, view: View) {
+                if (view is SeekBar) {
+                    view.takeIf { it.width > 0 }?.run {
+                        val position = IntArray(2).apply {
+                            view.getLocationOnScreen(this)
+                        }
+
+                        val start = CoordinatesProvider {
+                            floatArrayOf(
+                                    (position[0] + paddingLeft + (width - paddingRight) / max * progress).toFloat(),
+                                    (position[1] + height / 2).toFloat()
+                            )
+                        }
+
+                        val end = CoordinatesProvider {
+                            floatArrayOf(
+                                    (position[0] + paddingLeft + (width -paddingRight) / max * number).toFloat(),
+                                    (position[1] + height / 2).toFloat()
+                            )
+                        }
+
+                        GeneralSwipeAction(Swipe.SLOW, start, end, Press.FINGER)
+                                .perform(uiController, view)
+                    }
+                }
+            }
+        })
+    }
+}
+
+/**
  * Provides action for RatingBar
  */
 interface RatingBarActions : BaseActions {

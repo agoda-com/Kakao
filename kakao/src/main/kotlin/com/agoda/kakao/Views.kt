@@ -225,6 +225,18 @@ class KProgressBar : KBaseView<KProgressBar>, ProgressBarActions, ProgressBarAss
 }
 
 /**
+ * View with SeekBarActions and ProgressBarAssertions
+ *
+ * @see SeekBarActions
+ * @see ProgressBarAssertions
+ */
+class KSeekBar : KBaseView<KSeekBar>, SeekBarActions, ProgressBarAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with RatingBarActions and RatingBarAssertions
  *
  * @see RatingBarActions
