@@ -39,5 +39,6 @@ dependencies {
     androidTestImplementation libraries.annotations
     androidTestImplementation libraries.espresso_runner
     androidTestImplementation libraries.espresso_rules
+    androidTestImplementation libraries.espresso_intents
     androidTestImplementation libraries.espresso_core
 }
