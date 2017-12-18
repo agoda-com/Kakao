@@ -588,21 +588,27 @@ interface SeekBarActions : ProgressBarActions {
                             view.getLocationOnScreen(this)
                         }
 
+                        val realWidth = (width - paddingLeft - paddingRight).toFloat()
+                        val realHeight = (height - paddingTop - paddingBottom).toFloat()
+
+                        position[0] += paddingLeft
+                        position[1] += paddingTop
+
                         val start = CoordinatesProvider {
                             floatArrayOf(
-                                    (position[0] + paddingLeft + (width - paddingRight) / max * progress).toFloat(),
-                                    (position[1] + height / 2).toFloat()
+                                    position[0].toFloat() + realWidth / max * progress,
+                                    position[1].toFloat() + realHeight / 2
                             )
                         }
 
                         val end = CoordinatesProvider {
                             floatArrayOf(
-                                    (position[0] + paddingLeft + (width -paddingRight) / max * number).toFloat(),
-                                    (position[1] + height / 2).toFloat()
+                                    position[0].toFloat() + realWidth / max * number,
+                                    position[1].toFloat() + realHeight / 2
                             )
                         }
 
-                        GeneralSwipeAction(Swipe.SLOW, start, end, Press.FINGER)
+                        GeneralSwipeAction(Swipe.FAST, start, end, Press.FINGER)
                                 .perform(uiController, view)
                     }
                 }
