@@ -20,16 +20,16 @@ class IntentActivityTest {
         screen {
             resultText { hasText("No result") }
 
-            intentButton { click() }
+            startActivityButton { click() }
             normalIntent { intended() }
             pressBack()
 
             okResultIntent { intending() }
-            intentResultButton { click() }
+            startActivityForResultButton { click() }
             resultText { hasText("SUCCESS") }
 
             errorResultIntent { intending() }
-            intentResultButton { click() }
+            startActivityForResultButton { click() }
             resultText { hasText("null") }
         }
     }

@@ -46,6 +46,15 @@ class KIntent(builder: IntentBuilder.() -> Unit) {
                 " at declaration site or pass as parameter!")
     }
 
+    /**
+     * Mocks next coming intent that will match with provided result.
+     *
+     * @param result Builder for activity result to return when matching intent is sent
+     */
+    fun intending(result: ActivityResultBuilder.() -> Unit) {
+        Intents.intending(matcher).respondWith(ActivityResultBuilder().apply(result).getResult())
+    }
+
     operator fun invoke(function: KIntent.() -> Unit) {
         function(this)
     }

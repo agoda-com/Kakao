@@ -10,8 +10,8 @@ import com.agoda.sample.R
 
 class IntentActivityScreen : Screen<IntentActivityScreen>() {
     val resultText = KTextView { withId(R.id.result_text) }
-    val intentButton = KButton { withId(R.id.intent_button) }
-    val intentResultButton = KButton { withId(R.id.intent_result_button) }
+    val startActivityButton = KButton { withId(R.id.intent_button) }
+    val startActivityForResultButton = KButton { withId(R.id.intent_result_button) }
 
     val normalIntent = KIntent {
         hasAction("ACTION_TEST")
