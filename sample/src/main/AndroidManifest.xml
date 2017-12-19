@@ -8,7 +8,7 @@
 
         <activity
             android:name=".TestActivity"
-            android:label="Test activity"
+            android:label="Test Activity"
             android:theme="@style/AppTheme" >
 
             <intent-filter>
@@ -30,12 +30,17 @@
 
         <activity
                 android:name=".ListActivity"
-                android:label="Recycler Activity"
+                android:label="List Activity"
                 android:theme="@style/AppTheme" />
 
         <activity
             android:name=".TextInputLayoutActivity"
-            android:label="Recycler Activity"
+            android:label="TextInputLayout Activity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".IntentActivity"
+            android:label="Intent Activity"
             android:theme="@style/AppTheme" />
 
     </application>

@@ -10,8 +10,6 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass

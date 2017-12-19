@@ -29,6 +29,7 @@ ext.libraries = [
         espresso_core   : "com.android.support.test.espresso:espresso-core:$versions.espresso",
         espresso_web    : "com.android.support.test.espresso:espresso-web:$versions.espresso",
         espresso_contrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+        espresso_intents: "com.android.support.test.espresso:espresso-intents:$versions.espresso",
         junit           : "junit:junit:$versions.junit"
 ]
 
