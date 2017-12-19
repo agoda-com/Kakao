@@ -608,7 +608,7 @@ interface SeekBarActions : ProgressBarActions {
                             )
                         }
 
-                        GeneralSwipeAction(Swipe.FAST, start, end, Press.FINGER)
+                        GeneralSwipeAction(Swipe.SLOW, start, end, Press.PINPOINT)
                                 .perform(uiController, view)
                     }
                 }
