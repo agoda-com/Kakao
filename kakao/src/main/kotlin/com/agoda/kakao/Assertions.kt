@@ -206,7 +206,7 @@ interface BaseAssertions {
     /**
      * Checks if the matched view does not exists
      */
-    fun doesNotExists() {
+    fun doesNotExist() {
         view.check(ViewAssertions.doesNotExist())
     }
 
