@@ -62,7 +62,13 @@ class TestActivityTest {
                     idle(500)
                 }
 
-                doesNotExists()
+                doesNotExist()
+            }
+
+            seekbar {
+                hasProgress(70)
+                dragProgressTo(30)
+                hasProgress(30)
             }
         }
     }
