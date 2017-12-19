@@ -64,6 +64,12 @@ class TestActivityTest {
 
                 doesNotExist()
             }
+
+            seekbar {
+                hasProgress(70)
+                dragProgressTo(30)
+                hasProgress(30)
+            }
         }
     }
 }

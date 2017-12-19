@@ -49,4 +49,13 @@
             android:stepSize="1"
             android:rating="0"/>
 
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:max="100"
+        android:progress="70" />
+
 </LinearLayout>
