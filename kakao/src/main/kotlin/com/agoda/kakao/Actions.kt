@@ -3,6 +3,7 @@ package com.agoda.kakao
 import android.support.design.widget.BottomNavigationView
 import android.net.Uri
 import android.support.design.widget.TabLayout
+import android.support.test.espresso.PerformException
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
@@ -11,16 +12,14 @@ import android.support.test.espresso.contrib.DrawerActions
 import android.support.test.espresso.contrib.NavigationViewActions
 import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers
+import android.support.test.espresso.util.HumanReadables
 import android.support.test.espresso.web.model.Atom
 import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
-import android.view.Gravity
-import android.view.InputDevice
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
 import android.widget.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -608,7 +607,7 @@ interface SeekBarActions : ProgressBarActions {
                             )
                         }
 
-                        GeneralSwipeAction(Swipe.SLOW, start, end, Press.PINPOINT)
+                        GeneralSwipeAction(PreciseSwipe, start, end, Press.PINPOINT)
                                 .perform(uiController, view)
                     }
                 }
