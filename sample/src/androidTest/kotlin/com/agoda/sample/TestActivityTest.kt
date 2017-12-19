@@ -62,7 +62,7 @@ class TestActivityTest {
                     idle(500)
                 }
 
-                doesNotExists()
+                doesNotExist()
             }
         }
     }
