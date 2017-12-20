@@ -10,8 +10,6 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -219,6 +217,18 @@ class KNavigationView : KBaseView<KNavigationView>, NavigationViewActions, Navig
  * @see ProgressBarAssertions
  */
 class KProgressBar : KBaseView<KProgressBar>, ProgressBarActions, ProgressBarAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
+ * View with SeekBarActions and ProgressBarAssertions
+ *
+ * @see SeekBarActions
+ * @see ProgressBarAssertions
+ */
+class KSeekBar : KBaseView<KSeekBar>, SeekBarActions, ProgressBarAssertions {
     constructor(function: ViewBuilder.() -> Unit) : super(function)
     constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)

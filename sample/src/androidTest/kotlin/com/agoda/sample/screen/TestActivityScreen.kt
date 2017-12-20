@@ -18,6 +18,7 @@ open class TestActivityScreen: Screen<TestActivityScreen>() {
     }
 
     val ratingbar: KRatingBar = KRatingBar { withId(R.id.rating_bar) }
+    val seekbar: KSeekBar = KSeekBar { withId(R.id.seek_bar) }
 
     val snackbar: KSnackbar = KSnackbar()
 }

@@ -1,14 +1,23 @@
 package com.agoda.kakao
 
+import android.app.Activity
+import android.app.Instrumentation.ActivityResult
+import android.content.ComponentName
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.support.annotation.ColorInt
+import android.net.Uri
+import android.os.Bundle
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Root
 import android.support.test.espresso.ViewInteraction
+import android.support.test.espresso.intent.matcher.BundleMatchers
+import android.support.test.espresso.intent.matcher.ComponentNameMatchers
+import android.support.test.espresso.intent.matcher.IntentMatchers
+import android.support.test.espresso.intent.matcher.UriMatchers
 import android.support.test.espresso.matcher.RootMatchers
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.web.model.Atom
@@ -359,7 +368,7 @@ class ViewBuilder {
      *
      * @return Matcher<View>
      */
-    fun getViewMatcher() = AllOf.allOf(viewMatchers)!!
+    fun getViewMatcher(): Matcher<View> = AllOf.allOf(viewMatchers)
 }
 
 /**
@@ -453,7 +462,7 @@ class RootBuilder {
      *
      * @return Matcher<Root>
      */
-    fun getRootMatcher() = AllOf.allOf(rootMatchers)!!
+    fun getRootMatcher(): Matcher<Root> = AllOf.allOf(rootMatchers)
 }
 
 /**
@@ -509,7 +518,7 @@ class DataBuilder {
      *
      * @return Matcher<Any>
      */
-    fun getDataMatcher() = if (matchers.isNotEmpty()) AllOf.allOf(matchers)!! else Matchers.anything()!!
+    fun getDataMatcher(): Matcher<Any> = if (matchers.isNotEmpty()) AllOf.allOf(matchers) else Matchers.anything()
 }
 
 /**
@@ -534,3 +543,558 @@ class WebElementBuilder(private val web: Web.WebInteraction<*>) {
             WebActions, WebAssertions
 }
 
+/**
+ * Class for building Intent matchers
+ */
+class IntentBuilder {
+    private val matchers = arrayListOf<Matcher<Intent>>()
+    private lateinit var anyMatcher: Matcher<Intent>
+    private lateinit var result: ActivityResult
+
+    /**
+     * Matches any intent
+     */
+    fun any() {
+        anyMatcher = IntentMatchers.anyIntent()
+    }
+
+    /**
+     * Matches intent with given action
+     *
+     * @param action Action to be matched
+     */
+    fun hasAction(action: String) {
+        matchers.add(IntentMatchers.hasAction(action))
+    }
+
+    /**
+     * Matches intent with given action
+     *
+     * @param action Matcher for action string
+     */
+    fun hasAction(action: Matcher<String>) {
+        matchers.add(IntentMatchers.hasAction(action))
+    }
+
+    /**
+     * Matches intent with given categories
+     *
+     * @param categories Categories to be matched
+     */
+    fun hasCategories(vararg categories: String) {
+        matchers.add(IntentMatchers.hasCategories(categories.toHashSet()))
+    }
+
+    /**
+     * Matches intent with given categories
+     *
+     * @param categories Matcher for categories list
+     */
+    fun hasCategories(categories: Matcher<out Iterable<String>>) {
+        matchers.add(IntentMatchers.hasCategories(categories))
+    }
+
+    /**
+     * Matches intent which component has given class name
+     *
+     * @param className Class name to be matched in intent's component
+     */
+    fun hasComponent(className: String) {
+        matchers.add(IntentMatchers.hasComponent(className))
+    }
+
+    /**
+     * Matches intent with given component
+     *
+     * @param component Component name to be matched
+     */
+    fun hasComponent(component: ComponentName) {
+        matchers.add(IntentMatchers.hasComponent(component))
+    }
+
+    /**
+     * Matches intent with given component
+     *
+     * @param component Matcher for component name
+     */
+    fun hasComponent(component: Matcher<ComponentName>) {
+        matchers.add(IntentMatchers.hasComponent(component))
+    }
+
+    /**
+     * Matches intent with given component
+     *
+     * @param function Builder for a component to match
+     */
+    fun hasComponent(function: ComponentNameBuilder.() -> Unit) {
+        matchers.add(IntentMatchers.hasComponent(ComponentNameBuilder().apply(function).getMatcher()))
+    }
+
+    /**
+     * Matches intent with given data
+     *
+     * @param uri Uri to be matched
+     */
+    fun hasData(uri: String) {
+        matchers.add(IntentMatchers.hasData(uri))
+    }
+
+    /**
+     * Matches intent with given data
+     *
+     * @param uri Uri to be matched
+     */
+    fun hasData(uri: Uri) {
+        matchers.add(IntentMatchers.hasData(uri))
+    }
+
+    /**
+     * Matches intent with given data
+     *
+     * @param uri Matcher for the uri
+     */
+    fun hasData(uri: Matcher<Uri>) {
+        matchers.add(IntentMatchers.hasData(uri))
+    }
+
+    /**
+     * Matches intent with given data
+     *
+     * @param function Builder for a uri to match
+     */
+    fun hasData(function: UriBuilder.() -> Unit) {
+        matchers.add(IntentMatchers.hasData(UriBuilder().apply(function).getMatcher()))
+    }
+
+    /**
+     * Matches intent with given extra
+     *
+     * @param key Extra key
+     * @param value Extra value
+     */
+    fun hasExtra(key: String, value: Any) {
+        matchers.add(IntentMatchers.hasExtra(key, value))
+    }
+
+    /**
+     * Matches intent with given extra
+     *
+     * @param key Matcher for extra key
+     * @param value Matcher for extra value
+     */
+    fun hasExtra(key: Matcher<String>, value: Matcher<Any>) {
+        matchers.add(IntentMatchers.hasExtra(key, value))
+    }
+
+    /**
+     * Matches intent with given extra key
+     *
+     * @param key Extra key
+     */
+    fun hasExtraWithKey(key: String) {
+        matchers.add(IntentMatchers.hasExtraWithKey(key))
+    }
+
+    /**
+     * Matches intent with given extra key
+     *
+     * @param key Matcher for extra key
+     */
+    fun hasExtraWithKey(key: Matcher<String>) {
+        matchers.add(IntentMatchers.hasExtraWithKey(key))
+    }
+
+    /**
+     * Matches intent with given extras
+     *
+     * @param extras Matched for extras bundle
+     */
+    fun hasExtras(extras: Matcher<Bundle>) {
+        matchers.add(IntentMatchers.hasExtras(extras))
+    }
+
+    /**
+     * Matches intent with given extras
+     *
+     * @param function Builder for a bundle to match
+     */
+    fun hasExtras(function: BundleBuilder.() -> Unit) {
+        matchers.add(IntentMatchers.hasExtras(BundleBuilder().apply(function).getMatcher()))
+    }
+
+    /**
+     * Matches intent with given flag
+     *
+     * @param flag Flag to be matched
+     */
+    fun hasFlag(flag: Int) {
+        matchers.add(IntentMatchers.hasFlag(flag))
+    }
+
+    /**
+     * Matches intent with given flags
+     *
+     * @param flags Flags to be matched
+     */
+    fun hasFlags(flags: Int) {
+        matchers.add(IntentMatchers.hasFlags(flags))
+    }
+
+    /**
+     * Matches intent with given flags
+     *
+     * @param flags Flags to be matched
+     */
+    fun hasFlags(vararg flags: Int) {
+        matchers.add(IntentMatchers.hasFlags(*flags))
+    }
+
+    /**
+     * Matches intent with given type
+     *
+     * @param type Type to match
+     */
+    fun hasType(type: String) {
+        matchers.add(IntentMatchers.hasType(type))
+    }
+
+    /**
+     * Matches intent with given type
+     *
+     * @param type Matcher for type
+     */
+    fun hasType(type: Matcher<String>) {
+        matchers.add(IntentMatchers.hasType(type))
+    }
+
+    /**
+     * Matches intent with given package
+     *
+     * @param packageName Package name to match
+     */
+    fun hasPackage(packageName: String) {
+        matchers.add(IntentMatchers.hasPackage(packageName))
+    }
+
+    /**
+     * Matches intent with given package
+     *
+     * @param packageName Matcher for a package name
+     */
+    fun hasPackage(packageName: Matcher<String>) {
+        matchers.add(IntentMatchers.hasPackage(packageName))
+    }
+
+    /**
+     * Matches intent which addresses to given package
+     *
+     * @param packageName Package name to match
+     */
+    fun toPackage(packageName: String) {
+        matchers.add(IntentMatchers.toPackage(packageName))
+    }
+
+    /**
+     * Matches any internal intent
+     */
+    fun isInternal() {
+        matchers.add(IntentMatchers.isInternal())
+    }
+
+    /**
+     * Invoke this function if you want to set default result for intending intents
+     *
+     * @param function Builder for activity result
+     */
+    fun withResult(function: ActivityResultBuilder.() -> Unit) {
+        result = ActivityResultBuilder().apply(function).getResult()
+    }
+
+    fun getMatcher(): Matcher<Intent> = if (::anyMatcher.isInitialized) anyMatcher else AllOf.allOf(matchers)
+
+    fun getResult(): ActivityResult? = if (::result.isInitialized) result else null
+}
+
+/**
+ * Class for building Uri matchers
+ */
+class UriBuilder {
+    private val matchers = arrayListOf<Matcher<Uri>>()
+
+    /**
+     * Matches uri with given host
+     *
+     * @param host Host to be matched
+     */
+    fun hasHost(host: String) {
+        matchers.add(UriMatchers.hasHost(host))
+    }
+
+    /**
+     * Matches uri with given host
+     *
+     * @param host Matcher for a host
+     */
+    fun hasHost(host: Matcher<String>) {
+        matchers.add(UriMatchers.hasHost(host))
+    }
+
+    /**
+     * Matches uri with given path
+     *
+     * @param path Path to be matched
+     */
+    fun hasPath(path: String) {
+        matchers.add(UriMatchers.hasPath(path))
+    }
+
+    /**
+     * Matches uri with given path
+     *
+     * @param path Matcher for a path
+     */
+    fun hasPath(path: Matcher<String>) {
+        matchers.add(UriMatchers.hasPath(path))
+    }
+
+    /**
+     * Matches uri with given scheme
+     *
+     * @param scheme Scheme to be matched
+     */
+    fun hasScheme(scheme: String) {
+        matchers.add(UriMatchers.hasScheme(scheme))
+    }
+
+    /**
+     * Matches uri with given scheme
+     *
+     * @param scheme Matcher for a scheme
+     */
+    fun hasScheme(scheme: Matcher<String>) {
+        matchers.add(UriMatchers.hasScheme(scheme))
+    }
+
+    /**
+     * Matches uri with given parameter name
+     *
+     * @param name Parameter name to be matched
+     */
+    fun hasParamWithName(name: String) {
+        matchers.add(UriMatchers.hasParamWithName(name))
+    }
+
+    /**
+     * Matches uri with given parameter name
+     *
+     * @param name Matcher for a parameter name
+     */
+    fun hasParamWithName(name: Matcher<String>) {
+        matchers.add(UriMatchers.hasParamWithName(name))
+    }
+
+    /**
+     * Matches uri with given parameter name and value
+     *
+     * @param name Parameter name to be matched
+     * @param value Parameter value to be matched
+     */
+    fun hasParamWithValue(name: String, value: String) {
+        matchers.add(UriMatchers.hasParamWithValue(name, value))
+    }
+
+    /**
+     * Matches uri with given parameter name and value
+     *
+     * @param name Matcher for a parameter name
+     * @param value Matcher for a paratemer value
+     */
+    fun hasParamWithValue(name: Matcher<String>, value: Matcher<String>) {
+        matchers.add(UriMatchers.hasParamWithValue(name, value))
+    }
+
+    /**
+     * Matches uri with given scheme and specific part
+     *
+     * @param scheme Scheme to be matched
+     * @param part Specific part to be matched
+     */
+    fun hasSchemeSpecificPart(scheme: String, part: String) {
+        matchers.add(UriMatchers.hasSchemeSpecificPart(scheme, part))
+    }
+
+    /**
+     * Matches uri with given scheme and specific part
+     *
+     * @param scheme Matcher for a scheme
+     * @param part Matcher for a specific part
+     */
+    fun hasSchemeSpecificPart(scheme: Matcher<String>, part: Matcher<String>) {
+        matchers.add(UriMatchers.hasSchemeSpecificPart(scheme, part))
+    }
+
+    fun getMatcher(): Matcher<Uri> = AllOf.allOf(matchers)
+}
+
+/**
+ * Class for building ComponentName matchers
+ */
+class ComponentNameBuilder {
+    private val matchers = arrayListOf<Matcher<ComponentName>>()
+
+    /**
+     * Matches component name with given class
+     *
+     * @param className Class name to be matched
+     */
+    fun hasClassName(className: String) {
+        matchers.add(ComponentNameMatchers.hasClassName(className))
+    }
+
+    /**
+     * Matches component name with given class
+     *
+     * @param className Matcher for a class name
+     */
+    fun hasClassName(className: Matcher<String>) {
+        matchers.add(ComponentNameMatchers.hasClassName(className))
+    }
+
+    /**
+     * Matches component name if it's package name the same as your app's
+     */
+    fun hasMyPackageName() {
+        matchers.add(ComponentNameMatchers.hasMyPackageName())
+    }
+
+    /**
+     * Matches component name with given package
+     *
+     * @param packageName Package name to be matched
+     */
+    fun hasPackageName(packageName: String) {
+        matchers.add(ComponentNameMatchers.hasPackageName(packageName))
+    }
+
+    /**
+     * Matches component name with given package
+     *
+     * @param packageName Matcher for a package name
+     */
+    fun hasPackageName(packageName: Matcher<String>) {
+        matchers.add(ComponentNameMatchers.hasPackageName(packageName))
+    }
+
+    /**
+     * Matches component name with given short class name
+     *
+     * @param className Short class name to be matched
+     */
+    fun hasShortClassName(className: String) {
+        matchers.add(ComponentNameMatchers.hasShortClassName(className))
+    }
+
+    /**
+     * Matches component name with given short class name
+     *
+     * @param className Matcher for a short class name
+     */
+    fun hasShortClassName(className: Matcher<String>) {
+        matchers.add(ComponentNameMatchers.hasShortClassName(className))
+    }
+
+    fun getMatcher(): Matcher<ComponentName> = AllOf.allOf(matchers)
+}
+
+/**
+ * Class for building Bundle matchers
+ */
+class BundleBuilder {
+    private val matchers = arrayListOf<Matcher<Bundle>>()
+
+    /**
+     * Matches bundle with given key
+     *
+     * @param key Key to be matched
+     */
+    fun hasKey(key: String) {
+        matchers.add(BundleMatchers.hasKey(key))
+    }
+
+    /**
+     * Matches bundle with given key
+     *
+     * @param key Matcher for a key
+     */
+    fun hasKey(key: Matcher<String>) {
+        matchers.add(BundleMatchers.hasKey(key))
+    }
+
+    /**
+     * Matches bundle with given value
+     *
+     * @param value Value to be matched
+     */
+    fun hasValue(value: Any) {
+        matchers.add(BundleMatchers.hasValue(value))
+    }
+
+    /**
+     * Matches bundle with given value
+     *
+     * @param value Matcher for a value
+     */
+    fun hasValue(value: Matcher<Any>) {
+        matchers.add(BundleMatchers.hasValue(value))
+    }
+
+    /**
+     * Matches bundle with given entry
+     *
+     * @param key Key to be matched
+     * @param value Value to be matched
+     */
+    fun hasEntry(key: String, value: Any) {
+        matchers.add(BundleMatchers.hasEntry(key, value))
+    }
+
+    /**
+     * Matches bundle with given entry
+     *
+     * @param key Matcher for a key
+     * @param value Matcher for a value
+     */
+    fun hasEntry(key: Matcher<String>, value: Matcher<Any>) {
+        matchers.add(BundleMatchers.hasEntry(key, value))
+    }
+
+    fun getMatcher(): Matcher<Bundle> = AllOf.allOf(matchers)
+}
+
+/**
+ * Class for building ActivityResult
+ */
+class ActivityResultBuilder {
+    private var code = Activity.RESULT_OK
+    private var data: Intent? = null
+
+    /**
+     * Sets given result code
+     *
+     * @param code Result code to be saved
+     */
+    fun withCode(code: Int) {
+        this.code = code
+    }
+
+    /**
+     * Sets given result data
+     *
+     * @param data Result data to be saved
+     */
+    fun withData(data: Intent) {
+        this.data = data
+    }
+
+    fun getResult() = ActivityResult(code, data)
+}

@@ -5,12 +5,11 @@ apply from: "$rootDir/buildsystem/dependencies.gradle"
 apply from: "$rootDir/buildsystem/dokka.gradle"
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName kakao.version
     }
@@ -33,6 +32,7 @@ dependencies {
     implementation libraries.design
     implementation libraries.espresso_core
     implementation libraries.espresso_web
+    implementation libraries.espresso_intents
     implementation (libraries.espresso_contrib) {
         exclude group: 'com.android.support'
     }
