@@ -48,6 +48,7 @@ Kakao provides different types depending on the type of view:
 * KWebView
 * KCheckbox
 * KViewPager
+* KSeekBar
 
 
 Every KView contains matchers to retrieve the view involved in the ViewInteraction. Some examples of matchers provided
