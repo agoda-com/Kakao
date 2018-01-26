@@ -174,6 +174,15 @@ class ViewBuilder {
     }
 
     /**
+     * Matches the view with given content description
+     *
+     * @param resourceId Resource id of content description to match
+     */
+    fun withContentDescription(resourceId: Int) {
+        viewMatchers.add(ViewMatchers.withContentDescription(resourceId))
+    }
+
+    /**
      * Matches the view which has parent with given matcher
      *
      * @param function ViewBuilder which will result in parent matcher
