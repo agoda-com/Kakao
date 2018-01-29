@@ -178,7 +178,7 @@ class ViewBuilder {
      *
      * @param resourceId Resource id of content description to match
      */
-    fun withContentDescription(resourceId: Int) {
+    fun withContentDescription(@StringRes resourceId: Int) {
         viewMatchers.add(ViewMatchers.withContentDescription(resourceId))
     }
 
