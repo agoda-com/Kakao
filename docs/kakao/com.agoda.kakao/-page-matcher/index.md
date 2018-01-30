@@ -2,7 +2,7 @@
 
 # PageMatcher
 
-`class PageMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`ViewPager`](https://developer.android.com/reference/android/support/v4/view/ViewPager.html)`>`
+`class PageMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, ViewPager>`
 
 Matches ViewPager which page index equals given
 
@@ -21,4 +21,4 @@ Matches ViewPager which page index equals given
 | Name | Summary |
 |---|---|
 | [describeTo](describe-to.md) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [matchesSafely](matches-safely.md) | `fun matchesSafely(view: `[`ViewPager`](https://developer.android.com/reference/android/support/v4/view/ViewPager.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [matchesSafely](matches-safely.md) | `fun matchesSafely(view: ViewPager?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

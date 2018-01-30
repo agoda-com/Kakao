@@ -10,7 +10,7 @@ Provides ScrollableActions implementation for RecyclerView
 
 [ScrollableActions](../-scrollable-actions/index.md)
 
-[RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
+[RecyclerView](#)
 
 ### Functions
 

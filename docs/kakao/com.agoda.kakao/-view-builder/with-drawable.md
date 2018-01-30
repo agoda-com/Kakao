@@ -16,6 +16,6 @@ Matches the view with given drawable
 
 ### Parameters
 
-`resId` - Drawable to match
+`drawable` - Drawable to match
 
 `toBitmap` - Lambda with custom Drawable -&gt; Bitmap converter (default is null)

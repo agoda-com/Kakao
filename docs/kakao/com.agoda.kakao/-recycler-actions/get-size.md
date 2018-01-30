@@ -11,5 +11,5 @@ size of adapter
 
 **See Also**
 
-[RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
+[RecyclerView](#)
 
