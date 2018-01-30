@@ -49,13 +49,6 @@ interface ScreenActions {
     }
 
     /**
-     * Presses IME action, if supported view is in focus
-     */
-    fun pressImeAction() {
-        view.perform(ViewActions.pressImeActionButton())
-    }
-
-    /**
      * Presses a key with corresponding KeyCode
      */
     fun pressKey(keyCode: Int) {
@@ -135,6 +128,13 @@ interface BaseActions {
     fun longClick(location: GeneralLocation = GeneralLocation.VISIBLE_CENTER) {
         view.perform(GeneralClickAction(Tap.LONG, location, Press.FINGER,
                 InputDevice.SOURCE_UNKNOWN, MotionEvent.BUTTON_PRIMARY))
+    }
+
+    /**
+     * Presses IME action, if supported view is in focus
+     */
+    fun pressImeAction() {
+        view.perform(ViewActions.pressImeActionButton())
     }
 
     /**
