@@ -18,12 +18,6 @@ Matches index'th view that matches given matcher
 |---|---|
 | [&lt;init&gt;](-init-.md) | `IndexMatcher(matcher: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, index: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`<br>Matches index'th view that matches given matcher |
 
-### Properties
-
-| Name | Summary |
-|---|---|
-| [currentIndex](current-index.md) | `var currentIndex: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-
 ### Functions
 
 | Name | Summary |

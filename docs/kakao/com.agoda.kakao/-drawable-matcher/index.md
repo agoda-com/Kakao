@@ -25,5 +25,4 @@ Matches given drawable with current one
 | Name | Summary |
 |---|---|
 | [describeTo](describe-to.md) | `fun describeTo(desc: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [drawableToBitmap](drawable-to-bitmap.md) | `fun drawableToBitmap(drawable: `[`Drawable`](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)`): `[`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap.html) |
 | [matchesSafely](matches-safely.md) | `fun matchesSafely(view: `[`View`](https://developer.android.com/reference/android/view/View.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

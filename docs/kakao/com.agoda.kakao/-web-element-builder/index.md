@@ -22,12 +22,6 @@ Class for building WebView element matchers
 |---|---|
 | [&lt;init&gt;](-init-.md) | `WebElementBuilder(web: WebInteraction<*>)`<br>Class for building WebView element matchers |
 
-### Properties
-
-| Name | Summary |
-|---|---|
-| [web](web.md) | `val web: WebInteraction<*>` |
-
 ### Functions
 
 | Name | Summary |

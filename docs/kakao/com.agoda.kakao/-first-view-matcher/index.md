@@ -12,12 +12,6 @@ Matches first view
 |---|---|
 | [&lt;init&gt;](-init-.md) | `FirstViewMatcher()`<br>Matches first view |
 
-### Properties
-
-| Name | Summary |
-|---|---|
-| [matched](matched.md) | `var matched: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-
 ### Functions
 
 | Name | Summary |

@@ -4,5 +4,5 @@
 
 `fun isNotCompletelyDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
-Matchers the view that is not completely displayed
+Matches the view that is not completely displayed
 

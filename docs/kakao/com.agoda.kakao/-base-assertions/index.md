@@ -31,8 +31,9 @@ Provides basic assertions that can be performed on any view
 | Name | Summary |
 |---|---|
 | [assert](assert.md) | `open fun assert(function: () -> ViewAssertion): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check the view with the given custom assertion |
-| [doesNotExists](does-not-exists.md) | `open fun doesNotExists(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the matched view does not exists |
+| [doesNotExist](does-not-exist.md) | `open fun doesNotExist(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the matched view does not exists |
 | [hasAnyTag](has-any-tag.md) | `open fun hasAnyTag(vararg tags: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has at least one of the given tags |
+| [hasBackgroundColor](has-background-color.md) | `open fun hasBackgroundColor(resId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>`open fun hasBackgroundColor(colorCode: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given background color |
 | [hasDescendant](has-descendant.md) | `open fun hasDescendant(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given descendant |
 | [hasNotDescendant](has-not-descendant.md) | `open fun hasNotDescendant(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given descendant |
 | [hasNotSibling](has-not-sibling.md) | `open fun hasNotSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given sibling |
@@ -63,6 +64,7 @@ Provides basic assertions that can be performed on any view
 
 | Name | Summary |
 |---|---|
+| [BottomNavigationViewAssertions](../-bottom-navigation-view-assertions/index.md) | `interface BottomNavigationViewAssertions : BaseAssertions`<br>Provides assertion for BottomNavigationview |
 | [CheckableAssertions](../-checkable-assertions/index.md) | `interface CheckableAssertions : BaseAssertions`<br>Provides checkable based assertions for views |
 | [ImageViewAssertions](../-image-view-assertions/index.md) | `interface ImageViewAssertions : BaseAssertions`<br>Provides assertion for image views |
 | [KAdapterItem](../-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](../-base-actions/index.md)`, BaseAssertions`<br>Base class for KRecyclerView adapter items |
@@ -70,5 +72,11 @@ Provides basic assertions that can be performed on any view
 | [KListView](../-k-list-view/index.md) | `class KListView : `[`ScrollViewActions`](../-scroll-view-actions/index.md)`, BaseAssertions`<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
 | [KRecyclerItem](../-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](../-base-actions/index.md)`, BaseAssertions`<br>Base class for KRecyclerView adapter items |
 | [KRecyclerView](../-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](../-recycler-actions/index.md)`, BaseAssertions`<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
+| [NavigationViewAssertions](../-navigation-view-assertions/index.md) | `interface NavigationViewAssertions : BaseAssertions`<br>Provides assertions for NavigationView |
+| [ProgressBarAssertions](../-progress-bar-assertions/index.md) | `interface ProgressBarAssertions : BaseAssertions`<br>Provides assertions for progress bar |
+| [RatingBarAssertions](../-rating-bar-assertions/index.md) | `interface RatingBarAssertions : BaseAssertions`<br>Provides assertions for RatingBar |
+| [SwipeRefreshLayoutAssertions](../-swipe-refresh-layout-assertions/index.md) | `interface SwipeRefreshLayoutAssertions : BaseAssertions`<br>Provides assertion for SwipeRefreshLayout |
+| [TabLayoutAssertions](../-tab-layout-assertions/index.md) | `interface TabLayoutAssertions : BaseAssertions`<br>Provides assertions for TabLayout |
+| [TextInputLayoutAssertions](../-text-input-layout-assertions/index.md) | `interface TextInputLayoutAssertions : BaseAssertions`<br>Provides assertions for TextInputLayout |
 | [TextViewAssertions](../-text-view-assertions/index.md) | `interface TextViewAssertions : BaseAssertions`<br>Provides text based assertions for views |
 | [ViewPagerAssertions](../-view-pager-assertions/index.md) | `interface ViewPagerAssertions : BaseAssertions`<br>Provides assertions for view pagers |

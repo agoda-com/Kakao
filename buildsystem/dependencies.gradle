@@ -1,5 +1,5 @@
 ext.versions = [
-        kotlin         : '1.2.10',
+        kotlin         : '1.2.21',
         dokka          : '0.9.15',
         android_gradle : '3.0.1',
         bintray        : '1.7.3',
@@ -44,8 +44,8 @@ ext.kakao = [
         artifact        : 'kakao',
         name            : 'kakao',
         description     : 'Kotlin based DSL for fluent AT with Espresso',
-        version         : "1.2.0$alias",
-        version_desc    : "Kakao 1.2.0$alias",
+        version         : "1.2.1$alias",
+        version_desc    : "Kakao 1.2.1$alias",
         site            : 'https://github.com/agoda-com/Kakao',
         github          : 'https://github.com/agoda-com/Kakao.git'
 ]
