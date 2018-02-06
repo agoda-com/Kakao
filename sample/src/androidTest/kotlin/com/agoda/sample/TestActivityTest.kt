@@ -33,6 +33,10 @@ class TestActivityTest {
                 hasAnyText()
             }
 
+            textViewColored {
+                hasTextColor(R.color.background_color)
+            }
+
             map {
                 click()
                 hasAnyTag("test_tag", "non_test_tag")
