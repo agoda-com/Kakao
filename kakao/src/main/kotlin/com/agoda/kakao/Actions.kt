@@ -1,7 +1,7 @@
 package com.agoda.kakao
 
-import android.support.design.widget.BottomNavigationView
 import android.net.Uri
+import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.TabLayout
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
@@ -17,7 +17,10 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
-import android.view.*
+import android.view.Gravity
+import android.view.InputDevice
+import android.view.MotionEvent
+import android.view.View
 import android.widget.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -311,9 +314,10 @@ interface ScrollableActions : BaseActions {
  * Provides ScrollableActions implementation for RecyclerView
  *
  * @see ScrollableActions
+ * @see SwipeableActions
  * @see RecyclerView
  */
-interface RecyclerActions : ScrollableActions {
+interface RecyclerActions : ScrollableActions, SwipeableActions {
     override fun scrollToStart() {
         view.perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(0))
     }
