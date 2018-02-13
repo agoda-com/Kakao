@@ -17,6 +17,10 @@ open class TestActivityScreen: Screen<TestActivityScreen>() {
         withId(R.id.text_view_large)
     }
 
+    val textViewColored: KTextView = KTextView {
+        withId(R.id.text_view_colored)
+    }
+
     val ratingbar: KRatingBar = KRatingBar { withId(R.id.rating_bar) }
     val seekbar: KSeekBar = KSeekBar { withId(R.id.seek_bar) }
 
