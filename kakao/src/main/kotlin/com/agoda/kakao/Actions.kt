@@ -394,9 +394,10 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
  * Provides ScrollableActions implementation for ScrollView
  *
  * @see ScrollableActions
+ * @see SwipeableActions
  * @see ScrollView
  */
-interface ScrollViewActions : ScrollableActions {
+interface ScrollViewActions : ScrollableActions, SwipeableActions {
     override fun scrollToStart() {
         view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to start"
