@@ -18,6 +18,13 @@
         android:layout_height="wrap_content"
         android:text="small" />
 
+    <TextView
+        android:id="@+id/text_view_colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="colored"
+        android:textColor="@color/background_color"/>
+
     <ImageView
         android:id="@+id/map"
         android:layout_width="100dp"

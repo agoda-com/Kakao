@@ -370,6 +370,16 @@ interface TextViewAssertions : BaseAssertions {
     }
 
     /**
+     * Checks if the view has given text color
+     *
+     * @param resId Color resource to be matched
+     */
+    fun hasTextColor(@ColorRes resId: Int) {
+        view.check(ViewAssertions.matches(
+                ViewMatchers.hasTextColor(resId)))
+    }
+
+    /**
      * Checks if the view does not have a given text
      *
      * @param text Text to be matched
