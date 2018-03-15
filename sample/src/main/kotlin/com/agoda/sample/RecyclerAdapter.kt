@@ -11,12 +11,12 @@ import android.widget.TextView
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun getItemCount() = 10
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.bind(position)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(position)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int) =
-            ViewHolder(parent?.inflate(R.layout.item_recycler)!!)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+            ViewHolder(parent.inflate(R.layout.item_recycler))
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         lateinit var title: TextView
