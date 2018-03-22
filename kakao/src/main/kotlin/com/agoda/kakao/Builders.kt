@@ -44,10 +44,16 @@ class ViewBuilder {
     private val viewMatchers = arrayListOf<Matcher<View>>()
 
     /**
-     * Matches only view at given index, if there are multiple views that matches
+     * Matches only view at given [index], if there are multiple views that matches
+     *
+     * IMPORTANT: this matcher is single-use only, since it does not reset it's
+     * index counter due to specific espresso's matching process.
+     *
+     * If you need to match view with index multiple times, each time you should match
+     * with new instance of [withIndex]
      *
      * @param index Index of the view to match
-     * @param function ViewBuilder that will result in matcher
+     * @param function [ViewBuilder] that will result in matcher
      */
     fun withIndex(index: Int, function: ViewBuilder.() -> Unit) {
         viewMatchers.add(IndexMatcher(ViewBuilder().apply(function).getViewMatcher(), index))
