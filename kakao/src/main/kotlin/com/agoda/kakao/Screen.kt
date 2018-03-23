@@ -14,6 +14,7 @@ import android.support.test.espresso.matcher.ViewMatchers
  *
  * @see ScreenActions
  */
+@Suppress("UNCHECKED_CAST")
 open class Screen<out T: Screen<T>>: ScreenActions {
     override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
     operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
