@@ -23,6 +23,7 @@ import kotlin.reflect.KClass
  *
  * @param T Type of your custom view. Needs to be defined to enable invoke() and perform() for descendants
  */
+@Suppress("UNCHECKED_CAST")
 open class KBaseView<out T> : BaseActions, BaseAssertions {
     override val view: ViewInteraction
 
@@ -345,7 +346,8 @@ class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions 
 class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit)
     : ScrollViewActions, BaseAssertions {
 
-    val builder = ViewBuilder().apply(builder)
+    private val builder = ViewBuilder().apply(builder)
+
     val matcher = this.builder.getViewMatcher()
     val itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
 
@@ -462,7 +464,8 @@ class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTy
 class KRecyclerView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit)
     : RecyclerActions, BaseAssertions {
 
-    val builder = ViewBuilder().apply(builder)
+    private val builder = ViewBuilder().apply(builder)
+
     val matcher = this.builder.getViewMatcher()
     val itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
 
@@ -665,6 +668,7 @@ class KAdapterItemType<out T : KAdapterItem<*>>(val provideItem: (DataInteractio
  *
  * @see KRecyclerItemTypeBuilder
  */
+@Suppress("UNCHECKED_CAST")
 open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions {
     override val view = Espresso.onView(matcher)
 
@@ -713,6 +717,7 @@ class KEmptyRecyclerItem(parent: Matcher<View>) : KRecyclerItem<KEmptyRecyclerIt
  *
  * @see KRecyclerItemTypeBuilder
  */
+@Suppress("UNCHECKED_CAST")
 open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
     override val view = interaction.check(ViewAssertions.matches(Matchers.anything()))
 
