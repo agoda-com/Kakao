@@ -16,7 +16,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            ViewHolder(parent.inflate(R.layout.item_recycler)!!)
+            ViewHolder(parent.inflate(R.layout.item_recycler))
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         lateinit var title: TextView
