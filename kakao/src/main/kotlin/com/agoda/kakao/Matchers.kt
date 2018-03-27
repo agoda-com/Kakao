@@ -193,6 +193,20 @@ class RatingBarMatcher(private val value: Float) : BoundedMatcher<View, RatingBa
 }
 
 /**
+ * Matches RecyclerView with count of childs
+ *
+ * @param size of childs count in RecyclerView
+ */
+class RecyclerViewMatcher(private val size: Int) : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
+    override fun matchesSafely(view: RecyclerView?) = view?.let {
+        it.adapter.itemCount == size } ?: false
+
+    override fun describeTo(description: Description) {
+        description.appendText("recycle view size is: $size")
+    }
+}
+
+/**
  * Matches given drawable with current one
  *
  * @param resId Drawable resource to be matched (default is -1)

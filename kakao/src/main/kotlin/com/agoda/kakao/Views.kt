@@ -462,7 +462,7 @@ class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTy
  * @see KRecyclerItemTypeBuilder
  */
 class KRecyclerView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit)
-    : RecyclerActions, BaseAssertions {
+    : RecyclerActions, RecyclerAssertions, BaseAssertions {
 
     private val builder = ViewBuilder().apply(builder)
 

@@ -490,6 +490,20 @@ interface ViewPagerAssertions : BaseAssertions {
 }
 
 /**
+ * Provides assertions for recyclerView
+ */
+interface RecyclerAssertions : BaseAssertions {
+    /**
+     * Check size of recycler view
+     *
+     * @param size expected child count size in recycler view
+     */
+    fun hasSize(size: Int) {
+        view.check(ViewAssertions.matches(RecyclerViewMatcher(size)))
+    }
+}
+
+/**
  * Provides assertions for NavigationView
  */
 interface NavigationViewAssertions : BaseAssertions {
