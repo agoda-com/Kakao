@@ -26,7 +26,6 @@ import android.widget.TextView
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.TypeSafeMatcher
-import kotlin.text.isNullOrEmpty
 
 /**
  * Matches TextView views which contains any text
@@ -148,8 +147,14 @@ class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) :
                 .appendDescriptionOf(matcher)
     }
 
-    public override fun matchesSafely(view: View): Boolean =
-            matcher.matches(view) && currentIndex++ == index
+    public override fun matchesSafely(view: View): Boolean {
+        if (matcher.matches(view) && currentIndex++ == index) {
+            currentIndex = 0
+            return true
+        }
+
+        return false
+    }
 }
 
 /**
