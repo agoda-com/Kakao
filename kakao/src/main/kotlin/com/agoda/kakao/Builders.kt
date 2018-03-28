@@ -47,10 +47,31 @@ class ViewBuilder {
      * Matches only view at given [index], if there are multiple views that matches
      *
      * IMPORTANT: this matcher is single-use only, since it does not reset it's
-     * index counter due to specific espresso's matching process.
+     * index counter due to specific espresso's matching process. Thus only one action
+     * and/or assertion can be performed on such a [KView].
      *
      * If you need to match view with index multiple times, each time you should match
      * with new instance of [withIndex]
+     *
+     * Take a look at the example:
+     * ```
+     *  class InputScreen : Screen<InputScreen>() {
+     *      fun inputLayout(lambda: KEditText.() -> Unit) = KEditText { withIndex(0, { withId(R.id.input_layout) }) }.invoke(lambda)
+     *  }
+     *
+     *  @Test
+     *  fun test() {
+     *      screen {
+     *          inputLayout {
+     *              replaceText("EXAMPLE")
+     *          }
+     *
+     *          inputLayout {
+     *              hasAnyText()
+     *          }
+     *      }
+     *  }
+     * ```
      *
      * @param index Index of the view to match
      * @param function [ViewBuilder] that will result in matcher
