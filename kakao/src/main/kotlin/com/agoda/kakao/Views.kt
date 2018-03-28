@@ -337,21 +337,69 @@ class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions 
  * @see ScrollViewActions
  * @see BaseAssertions
  *
- * @param builder ViewBuilder which will match your list view
- * @param itemTypeBuilder Lambda with receiver where you pass your item providers
- *
  * @see KAdapterItem
  * @see KAdapterItemTypeBuilder
  */
-class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit)
-    : ScrollViewActions, BaseAssertions {
+class KListView : ScrollViewActions, BaseAssertions {
+    val matcher: Matcher<View>
+    val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
-    private val builder = ViewBuilder().apply(builder)
+    override val view: ViewInteraction
 
-    val matcher = this.builder.getViewMatcher()
-    val itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
+    /**
+     * Constructs view class with view interaction from given ViewBuilder
+     *
+     * @param function ViewBuilder which will result in view's interaction
+     * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+     *
+     * @see ViewBuilder
+     */
+    constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
+        val vb = ViewBuilder().apply(builder)
+        matcher = vb.getViewMatcher()
+        view = vb.getViewInteraction()
+        itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
+    }
 
-    override val view = this.builder.getViewInteraction()
+    /**
+     * Constructs view class with parent and view interaction from given ViewBuilder
+     *
+     * @param parent Matcher that will be used as parent in isDescendantOfA() matcher
+     * @param function ViewBuilder which will result in view's interaction
+     * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+     *
+     * @see ViewBuilder
+     */
+    constructor(parent: Matcher<View>, builder: ViewBuilder.() -> Unit,
+                itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) : this({
+        isDescendantOfA { withMatcher(parent) }
+        builder(this)
+    }, itemTypeBuilder)
+
+    /**
+     * Constructs view class with parent and view interaction from given ViewBuilder
+     *
+     * @param parent DataInteraction that will be used as parent to ViewBuilder
+     * @param function ViewBuilder which will result in view's interaction
+     * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+     *
+     * @see ViewBuilder
+     */
+    @Suppress("UNCHECKED_CAST")
+    constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
+                itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
+        val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
+        val parentMatcher = makeTargetMatcher.invoke(parent)
+
+        val vb = ViewBuilder().apply {
+            isDescendantOfA { withMatcher(parentMatcher as Matcher<View>) }
+            builder(this)
+        }
+
+        matcher = vb.getViewMatcher()
+        view = vb.getViewInteraction()
+        itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
+    }
 
     /**
      * Performs given actions/assertion on child at given position
@@ -456,20 +504,71 @@ class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTy
  * @see BaseAssertions
  *
  * @param builder ViewBuilder which will match your list view
- * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+
  *
  * @see KRecyclerItem
  * @see KRecyclerItemTypeBuilder
  */
-class KRecyclerView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit)
-    : RecyclerActions, BaseAssertions {
+class KRecyclerView : RecyclerActions, BaseAssertions {
+    val matcher: Matcher<View>
+    val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 
-    private val builder = ViewBuilder().apply(builder)
+    override val view: ViewInteraction
 
-    val matcher = this.builder.getViewMatcher()
-    val itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
+    /**
+     * Constructs view class with view interaction from given ViewBuilder
+     *
+     * @param function ViewBuilder which will result in view's interaction
+     * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+     *
+     * @see ViewBuilder
+     */
+    constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
+        val vb = ViewBuilder().apply(builder)
+        matcher = vb.getViewMatcher()
+        view = vb.getViewInteraction()
+        itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
+    }
 
-    override val view = this.builder.getViewInteraction()
+    /**
+     * Constructs view class with parent and view interaction from given ViewBuilder
+     *
+     * @param parent Matcher that will be used as parent in isDescendantOfA() matcher
+     * @param function ViewBuilder which will result in view's interaction
+     * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+     *
+     * @see ViewBuilder
+     */
+    constructor(parent: Matcher<View>, builder: ViewBuilder.() -> Unit,
+                itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) : this({
+        isDescendantOfA { withMatcher(parent) }
+        builder(this)
+    }, itemTypeBuilder)
+
+    /**
+     * Constructs view class with parent and view interaction from given ViewBuilder
+     *
+     * @param parent DataInteraction that will be used as parent to ViewBuilder
+     * @param function ViewBuilder which will result in view's interaction
+     * @param itemTypeBuilder Lambda with receiver where you pass your item providers
+     *
+     * @see ViewBuilder
+     */
+    @Suppress("UNCHECKED_CAST")
+    constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
+                itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
+        val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
+        val parentMatcher = makeTargetMatcher.invoke(parent)
+
+        val vb = ViewBuilder().apply {
+            isDescendantOfA { withMatcher(parentMatcher as Matcher<View>) }
+            builder(this)
+        }
+
+        matcher = vb.getViewMatcher()
+        view = vb.getViewInteraction()
+        itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
+    }
 
     /**
      * Performs given actions/assertion on child at given position

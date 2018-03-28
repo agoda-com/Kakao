@@ -21,9 +21,9 @@ class NestedRecyclerAdapter : RecyclerView.Adapter<NestedRecyclerAdapter.ViewHol
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
-            if (itemView is RecyclerView) {
-                itemView.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
-                itemView.adapter = RecyclerAdapter()
+            itemView.findViewById<RecyclerView>(R.id.nested_recycler_view).run {
+                layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
+                adapter = RecyclerAdapter()
             }
         }
     }
