@@ -1,7 +1,7 @@
 # Kakao
 [![Github tag version](https://img.shields.io/github/tag/agoda-com/kakao.svg?label=version)](https://bintray.com/agoda/maven/kakao)
 [![CircleCI](https://circleci.com/gh/agoda-com/Kakao/tree/master.svg?style=shield&circle-token=0d0ed659625be4efe54fe706c16894cd54213690)](https://circleci.com/gh/agoda-com/Kakao/tree/master)
-[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.2.21-blue.svg)](http://kotlinlang.org/)
+[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.2.31-blue.svg)](http://kotlinlang.org/)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Kakao-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6314)
 
 Nice and simple DSL for Espresso in Kotlin
@@ -49,6 +49,7 @@ Kakao provides different types depending on the type of view:
 * KCheckbox
 * KViewPager
 * KSeekBar
+* <b>and more</b>
 
 
 Every KView contains matchers to retrieve the view involved in the ViewInteraction. Some examples of matchers provided
@@ -59,6 +60,7 @@ by Kakao:
 * withContentDescription
 * withDrawable
 * withBackgroundColor
+* <b>and more</b>
 
 Like in Espresso you can combine different matchers:
 ```Kotlin
