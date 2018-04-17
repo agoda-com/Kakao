@@ -340,7 +340,7 @@ class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions 
  * @see KAdapterItem
  * @see KAdapterItemTypeBuilder
  */
-class KListView : ScrollViewActions, BaseAssertions {
+class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
@@ -509,7 +509,7 @@ class KListView : ScrollViewActions, BaseAssertions {
  * @see KRecyclerItem
  * @see KRecyclerItemTypeBuilder
  */
-class KRecyclerView : RecyclerActions, BaseAssertions {
+class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 

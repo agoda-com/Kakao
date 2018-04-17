@@ -20,6 +20,7 @@ class ListTest {
         screen {
             list {
                 isVisible()
+                hasSize(10)
 
                 firstChild<TestListScreen.Item> {
                     isVisible()

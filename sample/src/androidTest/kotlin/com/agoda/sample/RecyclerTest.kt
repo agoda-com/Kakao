@@ -20,6 +20,7 @@ class RecyclerTest {
         screen {
             recycler {
                 isVisible()
+                hasSize(10)
 
                 firstChild<TestRecyclerScreen.Item> {
                     isVisible()

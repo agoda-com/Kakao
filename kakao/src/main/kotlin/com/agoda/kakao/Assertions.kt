@@ -20,10 +20,6 @@ import android.support.test.espresso.web.webdriver.DriverAtoms
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
-import org.hamcrest.TypeSafeMatcher
-import org.hamcrest.Description
-import android.view.View
-import android.widget.RatingBar
 import java.lang.AssertionError
 
 /**
@@ -486,6 +482,43 @@ interface ViewPagerAssertions : BaseAssertions {
      */
     fun isAtPage(index: Int) {
         view.check(ViewAssertions.matches(PageMatcher(index)))
+    }
+}
+
+/**
+ * Provides assertions for view with adapters
+ *
+ * @see RecyclerAdapterAssertions
+ */
+interface AdapterAssertions {
+    val view: ViewInteraction
+}
+
+/**
+ * Provides assertions for recyclerView adapter
+ */
+interface RecyclerAdapterAssertions : AdapterAssertions {
+    /**
+     * Check size of recycler view
+     *
+     * @param size expected child count size in recycler view
+     */
+    fun hasSize(size: Int) {
+        view.check(ViewAssertions.matches(RecyclerViewAdapterSizeMatcher(size)))
+    }
+}
+
+/**
+ * Provides assertions for listView adapter
+ */
+interface ListViewAdapterAssertions : AdapterAssertions {
+    /**
+     * Check size of recycler view
+     *
+     * @param size expected child count size in recycler view
+     */
+    fun hasSize(size: Int) {
+        view.check(ViewAssertions.matches(ListViewViewAdapterSizeMatcher(size)))
     }
 }
 

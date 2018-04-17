@@ -19,10 +19,7 @@ import android.support.v4.view.ViewPager
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.RatingBar
-import android.widget.TextView
+import android.widget.*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.TypeSafeMatcher
@@ -189,6 +186,34 @@ class RatingBarMatcher(private val value: Float) : BoundedMatcher<View, RatingBa
 
     override fun describeTo(description: Description) {
         description.appendText("rating value is: $value")
+    }
+}
+
+/**
+ * Matches RecyclerView with count of childs
+ *
+ * @param size of childs count in RecyclerView
+ */
+class RecyclerViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
+    override fun matchesSafely(view: RecyclerView?) = view?.adapter?.let {
+        it.itemCount == size } ?: false
+
+    override fun describeTo(description: Description) {
+        description.appendText("recycle view size is: $size")
+    }
+}
+
+/**
+ * Matches ListView with count of childs
+ *
+ * @param size of childs count in ListView
+ */
+class ListViewViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, ListView>(ListView::class.java) {
+    override fun matchesSafely(view: ListView?) = view?.adapter?.let {
+        it.count == size } ?: false
+
+    override fun describeTo(description: Description) {
+        description.appendText("recycle view size is: $size")
     }
 }
 
