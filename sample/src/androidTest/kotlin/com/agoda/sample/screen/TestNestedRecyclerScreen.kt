@@ -6,18 +6,10 @@ import com.agoda.sample.R
 import org.hamcrest.Matcher
 
 class TestNestedRecyclerScreen : Screen<TestNestedRecyclerScreen>() {
-    val recycler = KRecyclerView({
-        withId(R.id.recycler_view)
-    }, {
-        itemType(::RecyclerItem)
-    })
+    val recycler = KRecyclerView({ withId(R.id.recycler_view) }, { itemType(::RecyclerItem) })
 
     class RecyclerItem(parent: Matcher<View>) : KRecyclerItem<RecyclerItem>(parent) {
-        val nested = KRecyclerView({
-            withMatcher(parent)
-        }, {
-            itemType(::NestedItem)
-        })
+        val nested = KRecyclerView(parent, { withId(R.id.nested_recycler_view) }, { itemType(::NestedItem) })
     }
 
     class NestedItem(parent: Matcher<View>) : KRecyclerItem<NestedItem>(parent) {
