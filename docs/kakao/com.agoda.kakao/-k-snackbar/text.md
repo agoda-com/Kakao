@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KSnackbar](index.md) / [text](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KSnackbar](index.md) / [text](./text.md)
 
 # text
 

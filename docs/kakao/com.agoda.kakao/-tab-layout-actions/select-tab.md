@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TabLayoutActions](index.md) / [selectTab](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TabLayoutActions](index.md) / [selectTab](./select-tab.md)
 
 # selectTab
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [typeText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [typeText](./type-text.md)
 
 # typeText
 

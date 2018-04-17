@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ProgressBarActions](index.md) / [setProgress](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ProgressBarActions](index.md) / [setProgress](./set-progress.md)
 
 # setProgress
 

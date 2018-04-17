@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [hasDescendant](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [hasDescendant](./has-descendant.md)
 
 # hasDescendant
 

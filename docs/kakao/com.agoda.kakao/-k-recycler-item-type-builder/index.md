@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemTypeBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemTypeBuilder](./index.md)
 
 # KRecyclerItemTypeBuilder
 
@@ -32,4 +32,4 @@ KEmptyRecyclerItem is added by default.
 
 | Name | Summary |
 |---|---|
-| [itemType](item-type.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> itemType(provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KRecyclerView to automatically build child views |
+| [itemType](item-type.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> itemType(provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> `[`T`](item-type.md#T)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KRecyclerView to automatically build child views |

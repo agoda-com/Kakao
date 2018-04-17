@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [view](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [view](./view.md)
 
 # view
 

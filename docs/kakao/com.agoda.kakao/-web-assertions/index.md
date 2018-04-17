@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebAssertions](./index.md)
 
 # WebAssertions
 
@@ -19,10 +19,10 @@ Interface that provides assertions for WebViews
 |---|---|
 | [containsText](contains-text.md) | `open fun containsText(text: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if element contains given text |
 | [hasText](has-text.md) | `open fun hasText(text: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if element has given text |
-| [matches](matches.md) | `open fun <T> matches(value: Atom<T>, matcher: Matcher<T>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if element matches given matcher |
+| [matches](matches.md) | `open fun <T> matches(value: Atom<`[`T`](matches.md#T)`>, matcher: Matcher<`[`T`](matches.md#T)`>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if element matches given matcher |
 
 ### Inheritors
 
 | Name | Summary |
 |---|---|
-| [KWebInteraction](../-web-element-builder/-k-web-interaction/index.md) | `inner class KWebInteraction : `[`WebActions`](../-web-actions/index.md)`, WebAssertions` |
+| [KWebInteraction](../-web-element-builder/-k-web-interaction/index.md) | `inner class KWebInteraction : `[`WebActions`](../-web-actions/index.md)`, `[`WebAssertions`](./index.md) |

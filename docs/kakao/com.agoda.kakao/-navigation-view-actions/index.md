@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [NavigationViewActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [NavigationViewActions](./index.md)
 
 # NavigationViewActions
 
@@ -35,4 +35,4 @@ Provides actions for navigation view
 
 | Name | Summary |
 |---|---|
-| [KNavigationView](../-k-navigation-view/index.md) | `class KNavigationView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KNavigationView`](../-k-navigation-view/index.md)`>, NavigationViewActions, `[`NavigationViewAssertions`](../-navigation-view-assertions/index.md)<br>View with NavigationViewActions and NavigationViewAssertions |
+| [KNavigationView](../-k-navigation-view/index.md) | `class KNavigationView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KNavigationView`](../-k-navigation-view/index.md)`>, `[`NavigationViewActions`](./index.md)`, `[`NavigationViewAssertions`](../-navigation-view-assertions/index.md)<br>View with NavigationViewActions and NavigationViewAssertions |

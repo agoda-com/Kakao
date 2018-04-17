@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RatingBarAssertions](index.md) / [hasRating](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RatingBarAssertions](index.md) / [hasRating](./has-rating.md)
 
 # hasRating
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [getViewMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [getViewMatcher](./get-view-matcher.md)
 
 # getViewMatcher
 

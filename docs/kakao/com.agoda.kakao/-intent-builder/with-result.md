@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [withResult](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [withResult](./with-result.md)
 
 # withResult
 

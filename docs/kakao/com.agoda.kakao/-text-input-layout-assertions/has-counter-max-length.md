@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [hasCounterMaxLength](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [hasCounterMaxLength](./has-counter-max-length.md)
 
 # hasCounterMaxLength
 

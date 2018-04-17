@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItem](index.md) / [perform](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItem](index.md) / [perform](./perform.md)
 
 # perform
 
-`infix fun perform(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`
+`infix fun perform(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](index.md#T)
 
 Infix function for invoking lambda on your view
 

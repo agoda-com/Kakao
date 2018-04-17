@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [notEquals](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [notEquals](./not-equals.md)
 
 # notEquals
 

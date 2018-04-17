@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KTextInputLayout](index.md) / [edit](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KTextInputLayout](index.md) / [edit](./edit.md)
 
 # edit
 

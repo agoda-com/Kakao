@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](./index.md)
 
 # UriBuilder
 

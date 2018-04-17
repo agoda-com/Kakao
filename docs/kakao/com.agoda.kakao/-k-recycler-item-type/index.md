@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemType](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItemType](./index.md)
 
 # KRecyclerItemType
 
@@ -12,10 +12,10 @@ Holds type and corresponding provider function
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `KRecyclerItemType(provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T)`<br>For internal use. Don't use manually. |
+| [&lt;init&gt;](-init-.md) | `KRecyclerItemType(provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> `[`T`](index.md#T)`)`<br>For internal use. Don't use manually. |
 
 ### Properties
 
 | Name | Summary |
 |---|---|
-| [provideItem](provide-item.md) | `val provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> T` |
+| [provideItem](provide-item.md) | `val provideItem: (Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>) -> `[`T`](index.md#T) |

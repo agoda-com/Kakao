@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](index.md) / [childWith](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](index.md) / [childWith](./child-with.md)
 
 # childWith
 
-`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childWith(childMatcher: `[`DataBuilder`](../-data-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`
+`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childWith(childMatcher: `[`DataBuilder`](../-data-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](child-with.md#T)
 
 Performs given actions/assertion on child that matches given matcher
 

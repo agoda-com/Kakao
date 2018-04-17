@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [getMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [getMatcher](./get-matcher.md)
 
 # getMatcher
 

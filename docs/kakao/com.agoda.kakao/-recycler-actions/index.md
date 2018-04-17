@@ -1,14 +1,16 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](./index.md)
 
 # RecyclerActions
 
-`interface RecyclerActions : `[`ScrollableActions`](../-scrollable-actions/index.md)
+`interface RecyclerActions : `[`ScrollableActions`](../-scrollable-actions/index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)
 
 Provides ScrollableActions implementation for RecyclerView
 
 **See Also**
 
 [ScrollableActions](../-scrollable-actions/index.md)
+
+[SwipeableActions](../-swipeable-actions/index.md)
 
 [RecyclerView](#)
 
@@ -21,8 +23,17 @@ Provides ScrollableActions implementation for RecyclerView
 | [scrollToEnd](scroll-to-end.md) | `open fun scrollToEnd(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the last position of the view |
 | [scrollToStart](scroll-to-start.md) | `open fun scrollToStart(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Scrolls to the starting position of the view |
 
+### Inherited Functions
+
+| Name | Summary |
+|---|---|
+| [swipeDown](../-swipeable-actions/swipe-down.md) | `open fun swipeDown(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes down on the view |
+| [swipeLeft](../-swipeable-actions/swipe-left.md) | `open fun swipeLeft(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes left on the view |
+| [swipeRight](../-swipeable-actions/swipe-right.md) | `open fun swipeRight(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes right on the view |
+| [swipeUp](../-swipeable-actions/swipe-up.md) | `open fun swipeUp(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes up on the view |
+
 ### Inheritors
 
 | Name | Summary |
 |---|---|
-| [KRecyclerView](../-k-recycler-view/index.md) | `class KRecyclerView : RecyclerActions, `[`BaseAssertions`](../-base-assertions/index.md)<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
+| [KRecyclerView](../-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](./index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)`, `[`RecyclerAdapterAssertions`](../-recycler-adapter-assertions/index.md)<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |

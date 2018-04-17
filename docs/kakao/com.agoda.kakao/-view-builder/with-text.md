@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [withText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [withText](./with-text.md)
 
 # withText
 

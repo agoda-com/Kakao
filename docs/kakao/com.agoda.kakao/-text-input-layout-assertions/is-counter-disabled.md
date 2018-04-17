@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [isCounterDisabled](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [isCounterDisabled](./is-counter-disabled.md)
 
 # isCounterDisabled
 

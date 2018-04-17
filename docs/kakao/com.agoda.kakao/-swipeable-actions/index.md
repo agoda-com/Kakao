@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeableActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeableActions](./index.md)
 
 # SwipeableActions
 
@@ -38,6 +38,8 @@ Provides swipe actions for views
 
 | Name | Summary |
 |---|---|
-| [KSwipeView](../-k-swipe-view/index.md) | `class KSwipeView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KSwipeView`](../-k-swipe-view/index.md)`>, SwipeableActions`<br>View with SwipeableActions and BaseAssertions |
-| [KViewPager](../-k-view-pager/index.md) | `class KViewPager : `[`KBaseView`](../-k-base-view/index.md)`<`[`KViewPager`](../-k-view-pager/index.md)`>, SwipeableActions, `[`ViewPagerAssertions`](../-view-pager-assertions/index.md)<br>View with SwipeableActions and ViewPagerAssertions |
-| [SwipeRefreshLayoutActions](../-swipe-refresh-layout-actions/index.md) | `interface SwipeRefreshLayoutActions : SwipeableActions`<br>Provides actions for SwipeRefreshLayout |
+| [KSwipeView](../-k-swipe-view/index.md) | `class KSwipeView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KSwipeView`](../-k-swipe-view/index.md)`>, `[`SwipeableActions`](./index.md)<br>View with SwipeableActions and BaseAssertions |
+| [KViewPager](../-k-view-pager/index.md) | `class KViewPager : `[`KBaseView`](../-k-base-view/index.md)`<`[`KViewPager`](../-k-view-pager/index.md)`>, `[`SwipeableActions`](./index.md)`, `[`ViewPagerAssertions`](../-view-pager-assertions/index.md)<br>View with SwipeableActions and ViewPagerAssertions |
+| [RecyclerActions](../-recycler-actions/index.md) | `interface RecyclerActions : `[`ScrollableActions`](../-scrollable-actions/index.md)`, `[`SwipeableActions`](./index.md)<br>Provides ScrollableActions implementation for RecyclerView |
+| [ScrollViewActions](../-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](../-scrollable-actions/index.md)`, `[`SwipeableActions`](./index.md)<br>Provides ScrollableActions implementation for ScrollView |
+| [SwipeRefreshLayoutActions](../-swipe-refresh-layout-actions/index.md) | `interface SwipeRefreshLayoutActions : `[`SwipeableActions`](./index.md)<br>Provides actions for SwipeRefreshLayout |

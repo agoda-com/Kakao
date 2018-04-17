@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IndexMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IndexMatcher](./index.md)
 
 # IndexMatcher
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isCompletelyDisplayed](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isCompletelyDisplayed](./is-completely-displayed.md)
 
 # isCompletelyDisplayed
 

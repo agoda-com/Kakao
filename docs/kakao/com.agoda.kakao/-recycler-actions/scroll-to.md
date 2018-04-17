@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](index.md) / [scrollTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](index.md) / [scrollTo](./scroll-to.md)
 
 # scrollTo
 

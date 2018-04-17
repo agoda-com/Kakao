@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](index.md) / [longClick](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](index.md) / [longClick](./long-click.md)
 
 # longClick
 

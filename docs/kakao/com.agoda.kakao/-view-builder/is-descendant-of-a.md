@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isDescendantOfA](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewBuilder](index.md) / [isDescendantOfA](./is-descendant-of-a.md)
 
 # isDescendantOfA
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TabLayoutAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TabLayoutAssertions](./index.md)
 
 # TabLayoutAssertions
 
@@ -56,4 +56,4 @@ Provides assertions for TabLayout
 
 | Name | Summary |
 |---|---|
-| [KTabLayout](../-k-tab-layout/index.md) | `class KTabLayout : `[`KBaseView`](../-k-base-view/index.md)`<`[`KTabLayout`](../-k-tab-layout/index.md)`>, `[`TabLayoutActions`](../-tab-layout-actions/index.md)`, TabLayoutAssertions`<br>View with TabLayoutActions and TabLayoutAssertions |
+| [KTabLayout](../-k-tab-layout/index.md) | `class KTabLayout : `[`KBaseView`](../-k-base-view/index.md)`<`[`KTabLayout`](../-k-tab-layout/index.md)`>, `[`TabLayoutActions`](../-tab-layout-actions/index.md)`, `[`TabLayoutAssertions`](./index.md)<br>View with TabLayoutActions and TabLayoutAssertions |

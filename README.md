@@ -202,7 +202,7 @@ Maven
 <dependency>
   <groupId>com.agoda.kakao</groupId>
   <artifactId>kakao</artifactId>
-  <version>1.2.0</version>
+  <version>1.3.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -213,10 +213,10 @@ repositories {
 }
 dependencies {
     // For Gradle Version below 3.0.0
-    androidTestCompile 'com.agoda.kakao:kakao:1.2.0'
+    androidTestCompile 'com.agoda.kakao:kakao:1.3.0'
 
     // For Gradle Version 3.0.0 or above
-    androidTestImplementation 'com.agoda.kakao:kakao:1.2.0'
+    androidTestImplementation 'com.agoda.kakao:kakao:1.3.0'
 }
 ```
 

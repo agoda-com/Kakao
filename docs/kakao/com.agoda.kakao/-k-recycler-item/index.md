@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerItem](./index.md)
 
 # KRecyclerItem
 
@@ -34,8 +34,8 @@ Please extend this class to provide custom recycler view item types
 
 | Name | Summary |
 |---|---|
-| [invoke](invoke.md) | `operator fun invoke(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
-| [perform](perform.md) | `infix fun perform(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`<br>Infix function for invoking lambda on your view |
+| [invoke](invoke.md) | `operator fun invoke(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [perform](perform.md) | `infix fun perform(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](index.md#T)<br>Infix function for invoking lambda on your view |
 
 ### Inherited Functions
 
@@ -83,4 +83,4 @@ Please extend this class to provide custom recycler view item types
 
 | Name | Summary |
 |---|---|
-| [KEmptyRecyclerItem](../-k-empty-recycler-item/index.md) | `class KEmptyRecyclerItem : KRecyclerItem<`[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`>`<br>Empty implementation of KRecyclerItem |
+| [KEmptyRecyclerItem](../-k-empty-recycler-item/index.md) | `class KEmptyRecyclerItem : `[`KRecyclerItem`](./index.md)`<`[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`>`<br>Empty implementation of KRecyclerItem |

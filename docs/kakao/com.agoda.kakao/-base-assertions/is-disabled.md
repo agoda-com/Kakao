@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isDisabled](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isDisabled](./is-disabled.md)
 
 # isDisabled
 

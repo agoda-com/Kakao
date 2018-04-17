@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [getPosition](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [getPosition](./get-position.md)
 
 # getPosition
 

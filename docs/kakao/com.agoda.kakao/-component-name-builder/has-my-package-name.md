@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ComponentNameBuilder](index.md) / [hasMyPackageName](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ComponentNameBuilder](index.md) / [hasMyPackageName](./has-my-package-name.md)
 
 # hasMyPackageName
 

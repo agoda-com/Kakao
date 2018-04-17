@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItem](./index.md)
 
 # KAdapterItem
 
@@ -34,8 +34,8 @@ Please extend this class to provide custom recycler view item types
 
 | Name | Summary |
 |---|---|
-| [invoke](invoke.md) | `operator fun invoke(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
-| [perform](perform.md) | `infix fun perform(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`<br>Infix function for invoking lambda on your view |
+| [invoke](invoke.md) | `operator fun invoke(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [perform](perform.md) | `infix fun perform(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](index.md#T)<br>Infix function for invoking lambda on your view |
 
 ### Inherited Functions
 
@@ -83,4 +83,4 @@ Please extend this class to provide custom recycler view item types
 
 | Name | Summary |
 |---|---|
-| [KEmptyAdapterItem](../-k-empty-adapter-item/index.md) | `class KEmptyAdapterItem : KAdapterItem<`[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`>`<br>Empty implementation of KAdapterItem |
+| [KEmptyAdapterItem](../-k-empty-adapter-item/index.md) | `class KEmptyAdapterItem : `[`KAdapterItem`](./index.md)`<`[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`>`<br>Empty implementation of KAdapterItem |

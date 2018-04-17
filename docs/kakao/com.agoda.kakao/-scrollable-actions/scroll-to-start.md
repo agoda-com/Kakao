@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollableActions](index.md) / [scrollToStart](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollableActions](index.md) / [scrollToStart](./scroll-to-start.md)
 
 # scrollToStart
 

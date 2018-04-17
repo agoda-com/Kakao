@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ActivityResultBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ActivityResultBuilder](./index.md)
 
 # ActivityResultBuilder
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isInvisible](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](index.md) / [isInvisible](./is-invisible.md)
 
 # isInvisible
 

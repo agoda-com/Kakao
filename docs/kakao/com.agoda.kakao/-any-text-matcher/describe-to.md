@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [AnyTextMatcher](index.md) / [describeTo](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [AnyTextMatcher](index.md) / [describeTo](./describe-to.md)
 
 # describeTo
 

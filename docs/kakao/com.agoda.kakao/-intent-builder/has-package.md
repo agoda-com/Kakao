@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [hasPackage](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [hasPackage](./has-package.md)
 
 # hasPackage
 

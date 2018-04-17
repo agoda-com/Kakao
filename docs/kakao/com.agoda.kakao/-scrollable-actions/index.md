@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollableActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScrollableActions](./index.md)
 
 # ScrollableActions
 
@@ -45,5 +45,5 @@ Important: does not hold any implementation
 
 | Name | Summary |
 |---|---|
-| [RecyclerActions](../-recycler-actions/index.md) | `interface RecyclerActions : ScrollableActions`<br>Provides ScrollableActions implementation for RecyclerView |
-| [ScrollViewActions](../-scroll-view-actions/index.md) | `interface ScrollViewActions : ScrollableActions`<br>Provides ScrollableActions implementation for ScrollView |
+| [RecyclerActions](../-recycler-actions/index.md) | `interface RecyclerActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for RecyclerView |
+| [ScrollViewActions](../-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for ScrollView |

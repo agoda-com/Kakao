@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RatingBarAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RatingBarAssertions](./index.md)
 
 # RatingBarAssertions
 
@@ -56,4 +56,4 @@ Provides assertions for RatingBar
 
 | Name | Summary |
 |---|---|
-| [KRatingBar](../-k-rating-bar/index.md) | `class KRatingBar : `[`KBaseView`](../-k-base-view/index.md)`<`[`KRatingBar`](../-k-rating-bar/index.md)`>, `[`RatingBarActions`](../-rating-bar-actions/index.md)`, RatingBarAssertions`<br>View with RatingBarActions and RatingBarAssertions |
+| [KRatingBar](../-k-rating-bar/index.md) | `class KRatingBar : `[`KBaseView`](../-k-base-view/index.md)`<`[`KRatingBar`](../-k-rating-bar/index.md)`>, `[`RatingBarActions`](../-rating-bar-actions/index.md)`, `[`RatingBarAssertions`](./index.md)<br>View with RatingBarActions and RatingBarAssertions |

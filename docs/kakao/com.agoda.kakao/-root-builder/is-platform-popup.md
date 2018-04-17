@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isPlatformPopup](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isPlatformPopup](./is-platform-popup.md)
 
 # isPlatformPopup
 

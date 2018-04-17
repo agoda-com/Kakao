@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [isInternal](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [IntentBuilder](index.md) / [isInternal](./is-internal.md)
 
 # isInternal
 

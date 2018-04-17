@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ComponentNameBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ComponentNameBuilder](./index.md)
 
 # ComponentNameBuilder
 

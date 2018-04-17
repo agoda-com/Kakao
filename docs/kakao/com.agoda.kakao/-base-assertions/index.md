@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseAssertions](./index.md)
 
 # BaseAssertions
 
@@ -64,19 +64,19 @@ Provides basic assertions that can be performed on any view
 
 | Name | Summary |
 |---|---|
-| [BottomNavigationViewAssertions](../-bottom-navigation-view-assertions/index.md) | `interface BottomNavigationViewAssertions : BaseAssertions`<br>Provides assertion for BottomNavigationview |
-| [CheckableAssertions](../-checkable-assertions/index.md) | `interface CheckableAssertions : BaseAssertions`<br>Provides checkable based assertions for views |
-| [ImageViewAssertions](../-image-view-assertions/index.md) | `interface ImageViewAssertions : BaseAssertions`<br>Provides assertion for image views |
-| [KAdapterItem](../-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](../-base-actions/index.md)`, BaseAssertions`<br>Base class for KRecyclerView adapter items |
-| [KBaseView](../-k-base-view/index.md) | `open class KBaseView<out T> : `[`BaseActions`](../-base-actions/index.md)`, BaseAssertions`<br>Base class for all Kakao views |
-| [KListView](../-k-list-view/index.md) | `class KListView : `[`ScrollViewActions`](../-scroll-view-actions/index.md)`, BaseAssertions`<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
-| [KRecyclerItem](../-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](../-base-actions/index.md)`, BaseAssertions`<br>Base class for KRecyclerView adapter items |
-| [KRecyclerView](../-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](../-recycler-actions/index.md)`, BaseAssertions`<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
-| [NavigationViewAssertions](../-navigation-view-assertions/index.md) | `interface NavigationViewAssertions : BaseAssertions`<br>Provides assertions for NavigationView |
-| [ProgressBarAssertions](../-progress-bar-assertions/index.md) | `interface ProgressBarAssertions : BaseAssertions`<br>Provides assertions for progress bar |
-| [RatingBarAssertions](../-rating-bar-assertions/index.md) | `interface RatingBarAssertions : BaseAssertions`<br>Provides assertions for RatingBar |
-| [SwipeRefreshLayoutAssertions](../-swipe-refresh-layout-assertions/index.md) | `interface SwipeRefreshLayoutAssertions : BaseAssertions`<br>Provides assertion for SwipeRefreshLayout |
-| [TabLayoutAssertions](../-tab-layout-assertions/index.md) | `interface TabLayoutAssertions : BaseAssertions`<br>Provides assertions for TabLayout |
-| [TextInputLayoutAssertions](../-text-input-layout-assertions/index.md) | `interface TextInputLayoutAssertions : BaseAssertions`<br>Provides assertions for TextInputLayout |
-| [TextViewAssertions](../-text-view-assertions/index.md) | `interface TextViewAssertions : BaseAssertions`<br>Provides text based assertions for views |
-| [ViewPagerAssertions](../-view-pager-assertions/index.md) | `interface ViewPagerAssertions : BaseAssertions`<br>Provides assertions for view pagers |
+| [BottomNavigationViewAssertions](../-bottom-navigation-view-assertions/index.md) | `interface BottomNavigationViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for BottomNavigationview |
+| [CheckableAssertions](../-checkable-assertions/index.md) | `interface CheckableAssertions : `[`BaseAssertions`](./index.md)<br>Provides checkable based assertions for views |
+| [ImageViewAssertions](../-image-view-assertions/index.md) | `interface ImageViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for image views |
+| [KAdapterItem](../-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](../-base-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>Base class for KRecyclerView adapter items |
+| [KBaseView](../-k-base-view/index.md) | `open class KBaseView<out T> : `[`BaseActions`](../-base-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>Base class for all Kakao views |
+| [KListView](../-k-list-view/index.md) | `class KListView : `[`ScrollViewActions`](../-scroll-view-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`ListViewAdapterAssertions`](../-list-view-adapter-assertions/index.md)<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
+| [KRecyclerItem](../-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](../-base-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>Base class for KRecyclerView adapter items |
+| [KRecyclerView](../-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](../-recycler-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`RecyclerAdapterAssertions`](../-recycler-adapter-assertions/index.md)<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
+| [NavigationViewAssertions](../-navigation-view-assertions/index.md) | `interface NavigationViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for NavigationView |
+| [ProgressBarAssertions](../-progress-bar-assertions/index.md) | `interface ProgressBarAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for progress bar |
+| [RatingBarAssertions](../-rating-bar-assertions/index.md) | `interface RatingBarAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for RatingBar |
+| [SwipeRefreshLayoutAssertions](../-swipe-refresh-layout-assertions/index.md) | `interface SwipeRefreshLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for SwipeRefreshLayout |
+| [TabLayoutAssertions](../-tab-layout-assertions/index.md) | `interface TabLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for TabLayout |
+| [TextInputLayoutAssertions](../-text-input-layout-assertions/index.md) | `interface TextInputLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for TextInputLayout |
+| [TextViewAssertions](../-text-view-assertions/index.md) | `interface TextViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides text based assertions for views |
+| [ViewPagerAssertions](../-view-pager-assertions/index.md) | `interface ViewPagerAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for view pagers |

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [isInstanceOf](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DataBuilder](index.md) / [isInstanceOf](./is-instance-of.md)
 
 # isInstanceOf
 

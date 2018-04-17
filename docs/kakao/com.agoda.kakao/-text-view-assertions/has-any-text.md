@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewAssertions](index.md) / [hasAnyText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewAssertions](index.md) / [hasAnyText](./has-any-text.md)
 
 # hasAnyText
 

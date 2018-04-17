@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](./index.md)
 
 # ScreenActions
 
@@ -28,4 +28,4 @@ Provides basic actions that can be performed on each and every screen
 
 | Name | Summary |
 |---|---|
-| [Screen](../-screen/index.md) | `open class Screen<out T : `[`Screen`](../-screen/index.md)`<T>> : ScreenActions`<br>Container class for UI elements. |
+| [Screen](../-screen/index.md) | `open class Screen<out T : `[`Screen`](../-screen/index.md)`<`[`T`](../-screen/index.md#T)`>> : `[`ScreenActions`](./index.md)<br>Container class for UI elements. |

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](index.md) / [hasPath](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](index.md) / [hasPath](./has-path.md)
 
 # hasPath
 

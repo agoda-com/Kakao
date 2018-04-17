@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](index.md) / [hasSchemeSpecificPart](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](index.md) / [hasSchemeSpecificPart](./has-scheme-specific-part.md)
 
 # hasSchemeSpecificPart
 

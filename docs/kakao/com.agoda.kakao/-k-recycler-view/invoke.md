@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [invoke](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [invoke](./invoke.md)
 
 # invoke
 

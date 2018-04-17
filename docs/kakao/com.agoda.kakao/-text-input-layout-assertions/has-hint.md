@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [hasHint](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [hasHint](./has-hint.md)
 
 # hasHint
 

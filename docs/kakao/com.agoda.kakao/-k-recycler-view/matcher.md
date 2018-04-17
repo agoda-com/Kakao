@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [matcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [matcher](./matcher.md)
 
 # matcher
 

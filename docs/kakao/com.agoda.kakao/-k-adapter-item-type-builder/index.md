@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](./index.md)
 
 # KAdapterItemTypeBuilder
 
@@ -32,4 +32,4 @@ KEmptyAdapterItem is added by default.
 
 | Name | Summary |
 |---|---|
-| [itemType](item-type.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> itemType(provideItem: (DataInteraction) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KListView to automatically build child views |
+| [itemType](item-type.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> itemType(provideItem: (DataInteraction) -> `[`T`](item-type.md#T)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Adds entry that helps KListView to automatically build child views |

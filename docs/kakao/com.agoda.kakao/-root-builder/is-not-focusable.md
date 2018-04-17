@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isNotFocusable](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [isNotFocusable](./is-not-focusable.md)
 
 # isNotFocusable
 
