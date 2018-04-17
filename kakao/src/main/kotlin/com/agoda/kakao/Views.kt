@@ -344,7 +344,7 @@ class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions 
  * @see KAdapterItemTypeBuilder
  */
 class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit)
-    : ScrollViewActions, BaseAssertions {
+    : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
 
     private val builder = ViewBuilder().apply(builder)
 
@@ -462,7 +462,7 @@ class KListView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTy
  * @see KRecyclerItemTypeBuilder
  */
 class KRecyclerView(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit)
-    : RecyclerActions, RecyclerAssertions, BaseAssertions {
+    : RecyclerActions, RecyclerAdapterAssertions, BaseAssertions {
 
     private val builder = ViewBuilder().apply(builder)
 
