@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ImageViewAssertions](index.md) / [hasDrawable](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ImageViewAssertions](index.md) / [hasDrawable](./has-drawable.md)
 
 # hasDrawable
 

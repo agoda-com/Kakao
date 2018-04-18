@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](index.md) / [getSize](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RecyclerActions](index.md) / [getSize](./get-size.md)
 
 # getSize
 

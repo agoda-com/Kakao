@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KSwipeView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KSwipeView](./index.md)
 
 # KSwipeView
 
-`class KSwipeView : `[`KBaseView`](../-k-base-view/index.md)`<KSwipeView>, `[`SwipeableActions`](../-swipeable-actions/index.md)
+`class KSwipeView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KSwipeView`](./index.md)`>, `[`SwipeableActions`](../-swipeable-actions/index.md)
 
 View with SwipeableActions and BaseAssertions
 
@@ -28,6 +28,8 @@ View with SwipeableActions and BaseAssertions
 
 | Name | Summary |
 |---|---|
+| [invoke](../-k-base-view/invoke.md) | `operator fun invoke(function: `[`T`](../-k-base-view/index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [perform](../-k-base-view/perform.md) | `infix fun perform(function: `[`T`](../-k-base-view/index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](../-k-base-view/index.md#T)<br>Infix function for invoking lambda on your view |
 | [swipeDown](../-swipeable-actions/swipe-down.md) | `open fun swipeDown(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes down on the view |
 | [swipeLeft](../-swipeable-actions/swipe-left.md) | `open fun swipeLeft(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes left on the view |
 | [swipeRight](../-swipeable-actions/swipe-right.md) | `open fun swipeRight(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Swipes right on the view |

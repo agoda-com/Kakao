@@ -1,4 +1,4 @@
-[kakao](.)
+[kakao](./index.md)
 
 ### Packages
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeRefreshLayoutAssertions](index.md) / [isRefreshing](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeRefreshLayoutAssertions](index.md) / [isRefreshing](./is-refreshing.md)
 
 # isRefreshing
 

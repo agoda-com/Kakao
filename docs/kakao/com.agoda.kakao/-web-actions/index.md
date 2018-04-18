@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](./index.md)
 
 # WebActions
 
@@ -30,4 +30,4 @@ Provides action for interacting with WebViews
 
 | Name | Summary |
 |---|---|
-| [KWebInteraction](../-web-element-builder/-k-web-interaction/index.md) | `inner class KWebInteraction : WebActions, `[`WebAssertions`](../-web-assertions/index.md) |
+| [KWebInteraction](../-web-element-builder/-k-web-interaction/index.md) | `inner class KWebInteraction : `[`WebActions`](./index.md)`, `[`WebAssertions`](../-web-assertions/index.md) |

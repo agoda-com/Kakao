@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [closeSoftKeyboard](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [closeSoftKeyboard](./close-soft-keyboard.md)
 
 # closeSoftKeyboard
 

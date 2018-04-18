@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](index.md) / [itemType](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](index.md) / [itemType](./item-type.md)
 
 # itemType
 
-`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> itemType(noinline provideItem: (DataInteraction) -> T): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`inline fun <reified T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> itemType(noinline provideItem: (DataInteraction) -> `[`T`](item-type.md#T)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Adds entry that helps KListView to automatically build child views
 

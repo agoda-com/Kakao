@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [clearText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [clearText](./clear-text.md)
 
 # clearText
 

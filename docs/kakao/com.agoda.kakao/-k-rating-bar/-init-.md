@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRatingBar](index.md) / [&lt;init&gt;](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRatingBar](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

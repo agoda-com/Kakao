@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ImageViewAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ImageViewAssertions](./index.md)
 
 # ImageViewAssertions
 
@@ -56,4 +56,4 @@ Provides assertion for image views
 
 | Name | Summary |
 |---|---|
-| [KImageView](../-k-image-view/index.md) | `class KImageView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KImageView`](../-k-image-view/index.md)`>, ImageViewAssertions`<br>View with BaseActions and ImageViewAssertions |
+| [KImageView](../-k-image-view/index.md) | `class KImageView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KImageView`](../-k-image-view/index.md)`>, `[`ImageViewAssertions`](./index.md)<br>View with BaseActions and ImageViewAssertions |

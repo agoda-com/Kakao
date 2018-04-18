@@ -1,4 +1,4 @@
-[kakao](../index.md) / [com.agoda.kakao](index.md) / [emptyFirstChild](.)
+[kakao](../index.md) / [com.agoda.kakao](index.md) / [emptyFirstChild](./empty-first-child.md)
 
 # emptyFirstChild
 

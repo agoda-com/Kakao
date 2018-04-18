@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [replaceText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](index.md) / [replaceText](./replace-text.md)
 
 # replaceText
 

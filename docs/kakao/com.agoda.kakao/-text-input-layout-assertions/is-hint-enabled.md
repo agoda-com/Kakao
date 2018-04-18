@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [isHintEnabled](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](index.md) / [isHintEnabled](./is-hint-enabled.md)
 
 # isHintEnabled
 

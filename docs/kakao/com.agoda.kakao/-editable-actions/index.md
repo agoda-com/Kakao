@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [EditableActions](./index.md)
 
 # EditableActions
 
@@ -37,4 +37,4 @@ Provides editable actions for views
 
 | Name | Summary |
 |---|---|
-| [KEditText](../-k-edit-text/index.md) | `class KEditText : `[`KBaseView`](../-k-base-view/index.md)`<`[`KEditText`](../-k-edit-text/index.md)`>, EditableActions, `[`EditableAssertions`](../-editable-assertions/index.md)<br>View with EditableActions and EditableAssertions |
+| [KEditText](../-k-edit-text/index.md) | `class KEditText : `[`KBaseView`](../-k-base-view/index.md)`<`[`KEditText`](../-k-edit-text/index.md)`>, `[`EditableActions`](./index.md)`, `[`EditableAssertions`](../-editable-assertions/index.md)<br>View with EditableActions and EditableAssertions |

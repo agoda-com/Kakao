@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](index.md) / [itemTypes](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemTypeBuilder](index.md) / [itemTypes](./item-types.md)
 
 # itemTypes
 

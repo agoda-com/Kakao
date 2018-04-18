@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [withDecorView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RootBuilder](index.md) / [withDecorView](./with-decor-view.md)
 
 # withDecorView
 

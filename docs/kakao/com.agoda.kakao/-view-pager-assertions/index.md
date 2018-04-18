@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewPagerAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ViewPagerAssertions](./index.md)
 
 # ViewPagerAssertions
 
@@ -56,4 +56,4 @@ Provides assertions for view pagers
 
 | Name | Summary |
 |---|---|
-| [KViewPager](../-k-view-pager/index.md) | `class KViewPager : `[`KBaseView`](../-k-base-view/index.md)`<`[`KViewPager`](../-k-view-pager/index.md)`>, `[`SwipeableActions`](../-swipeable-actions/index.md)`, ViewPagerAssertions`<br>View with SwipeableActions and ViewPagerAssertions |
+| [KViewPager](../-k-view-pager/index.md) | `class KViewPager : `[`KBaseView`](../-k-base-view/index.md)`<`[`KViewPager`](../-k-view-pager/index.md)`>, `[`SwipeableActions`](../-swipeable-actions/index.md)`, `[`ViewPagerAssertions`](./index.md)<br>View with SwipeableActions and ViewPagerAssertions |

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeRefreshLayoutMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeRefreshLayoutMatcher](./index.md)
 
 # SwipeRefreshLayoutMatcher
 

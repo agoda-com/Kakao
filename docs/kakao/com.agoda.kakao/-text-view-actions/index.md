@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewActions](./index.md)
 
 # TextViewActions
 
@@ -37,4 +37,4 @@ Provides actions for TextViews
 
 | Name | Summary |
 |---|---|
-| [KTextView](../-k-text-view/index.md) | `class KTextView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KTextView`](../-k-text-view/index.md)`>, TextViewActions, `[`TextViewAssertions`](../-text-view-assertions/index.md)<br>View with BaseActions and TextViewAssertions |
+| [KTextView](../-k-text-view/index.md) | `class KTextView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KTextView`](../-k-text-view/index.md)`>, `[`TextViewActions`](./index.md)`, `[`TextViewAssertions`](../-text-view-assertions/index.md)<br>View with BaseActions and TextViewAssertions |

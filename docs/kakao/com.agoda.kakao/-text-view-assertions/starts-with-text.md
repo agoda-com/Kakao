@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewAssertions](index.md) / [startsWithText](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextViewAssertions](index.md) / [startsWithText](./starts-with-text.md)
 
 # startsWithText
 

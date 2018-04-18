@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeableActions](index.md) / [swipeDown](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeableActions](index.md) / [swipeDown](./swipe-down.md)
 
 # swipeDown
 

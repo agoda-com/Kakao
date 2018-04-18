@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [CheckableActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [CheckableActions](./index.md)
 
 # CheckableActions
 
@@ -35,4 +35,4 @@ Provides action for checking views
 
 | Name | Summary |
 |---|---|
-| [KCheckBox](../-k-check-box/index.md) | `class KCheckBox : `[`KBaseView`](../-k-base-view/index.md)`<`[`KCheckBox`](../-k-check-box/index.md)`>, CheckableActions, `[`TextViewAssertions`](../-text-view-assertions/index.md)`, `[`CheckableAssertions`](../-checkable-assertions/index.md)<br>View with CheckableActions, CheckableAssertions and TextViewAssertions |
+| [KCheckBox](../-k-check-box/index.md) | `class KCheckBox : `[`KBaseView`](../-k-base-view/index.md)`<`[`KCheckBox`](../-k-check-box/index.md)`>, `[`CheckableActions`](./index.md)`, `[`TextViewAssertions`](../-text-view-assertions/index.md)`, `[`CheckableAssertions`](../-checkable-assertions/index.md)<br>View with CheckableActions, CheckableAssertions and TextViewAssertions |

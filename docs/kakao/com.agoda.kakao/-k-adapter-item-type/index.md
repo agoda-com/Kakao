@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemType](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KAdapterItemType](./index.md)
 
 # KAdapterItemType
 
@@ -12,10 +12,10 @@ Holds type and corresponding provider function
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `KAdapterItemType(provideItem: (DataInteraction) -> T)`<br>For internal use. Don't use manually. |
+| [&lt;init&gt;](-init-.md) | `KAdapterItemType(provideItem: (DataInteraction) -> `[`T`](index.md#T)`)`<br>For internal use. Don't use manually. |
 
 ### Properties
 
 | Name | Summary |
 |---|---|
-| [provideItem](provide-item.md) | `val provideItem: (DataInteraction) -> T` |
+| [provideItem](provide-item.md) | `val provideItem: (DataInteraction) -> `[`T`](index.md#T) |

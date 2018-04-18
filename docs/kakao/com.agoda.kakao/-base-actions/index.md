@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BaseActions](./index.md)
 
 # BaseActions
 
@@ -41,17 +41,17 @@ Provides a lot of basic action methods, such as click(), scrollTo(), etc.
 
 | Name | Summary |
 |---|---|
-| [BottomNavigationViewActions](../-bottom-navigation-view-actions/index.md) | `interface BottomNavigationViewActions : BaseActions`<br>Provides actions for BottomNavigationView |
-| [CheckableActions](../-checkable-actions/index.md) | `interface CheckableActions : BaseActions`<br>Provides action for checking views |
-| [DrawerActions](../-drawer-actions/index.md) | `interface DrawerActions : BaseActions`<br>Provides actions for navigation drawer |
-| [EditableActions](../-editable-actions/index.md) | `interface EditableActions : BaseActions`<br>Provides editable actions for views |
-| [KAdapterItem](../-k-adapter-item/index.md) | `open class KAdapterItem<out T> : BaseActions, `[`BaseAssertions`](../-base-assertions/index.md)<br>Base class for KRecyclerView adapter items |
-| [KBaseView](../-k-base-view/index.md) | `open class KBaseView<out T> : BaseActions, `[`BaseAssertions`](../-base-assertions/index.md)<br>Base class for all Kakao views |
-| [KRecyclerItem](../-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : BaseActions, `[`BaseAssertions`](../-base-assertions/index.md)<br>Base class for KRecyclerView adapter items |
-| [NavigationViewActions](../-navigation-view-actions/index.md) | `interface NavigationViewActions : BaseActions`<br>Provides actions for navigation view |
-| [ProgressBarActions](../-progress-bar-actions/index.md) | `interface ProgressBarActions : BaseActions`<br>Provides action for ProgressBar |
-| [RatingBarActions](../-rating-bar-actions/index.md) | `interface RatingBarActions : BaseActions`<br>Provides action for RatingBar |
-| [ScrollableActions](../-scrollable-actions/index.md) | `interface ScrollableActions : BaseActions`<br>Provides scrolling actions for view |
-| [SwipeableActions](../-swipeable-actions/index.md) | `interface SwipeableActions : BaseActions`<br>Provides swipe actions for views |
-| [TabLayoutActions](../-tab-layout-actions/index.md) | `interface TabLayoutActions : BaseActions`<br>Provides action for TabLayout |
-| [TextViewActions](../-text-view-actions/index.md) | `interface TextViewActions : BaseActions`<br>Provides actions for TextViews |
+| [BottomNavigationViewActions](../-bottom-navigation-view-actions/index.md) | `interface BottomNavigationViewActions : `[`BaseActions`](./index.md)<br>Provides actions for BottomNavigationView |
+| [CheckableActions](../-checkable-actions/index.md) | `interface CheckableActions : `[`BaseActions`](./index.md)<br>Provides action for checking views |
+| [DrawerActions](../-drawer-actions/index.md) | `interface DrawerActions : `[`BaseActions`](./index.md)<br>Provides actions for navigation drawer |
+| [EditableActions](../-editable-actions/index.md) | `interface EditableActions : `[`BaseActions`](./index.md)<br>Provides editable actions for views |
+| [KAdapterItem](../-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](./index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)<br>Base class for KRecyclerView adapter items |
+| [KBaseView](../-k-base-view/index.md) | `open class KBaseView<out T> : `[`BaseActions`](./index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)<br>Base class for all Kakao views |
+| [KRecyclerItem](../-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](./index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)<br>Base class for KRecyclerView adapter items |
+| [NavigationViewActions](../-navigation-view-actions/index.md) | `interface NavigationViewActions : `[`BaseActions`](./index.md)<br>Provides actions for navigation view |
+| [ProgressBarActions](../-progress-bar-actions/index.md) | `interface ProgressBarActions : `[`BaseActions`](./index.md)<br>Provides action for ProgressBar |
+| [RatingBarActions](../-rating-bar-actions/index.md) | `interface RatingBarActions : `[`BaseActions`](./index.md)<br>Provides action for RatingBar |
+| [ScrollableActions](../-scrollable-actions/index.md) | `interface ScrollableActions : `[`BaseActions`](./index.md)<br>Provides scrolling actions for view |
+| [SwipeableActions](../-swipeable-actions/index.md) | `interface SwipeableActions : `[`BaseActions`](./index.md)<br>Provides swipe actions for views |
+| [TabLayoutActions](../-tab-layout-actions/index.md) | `interface TabLayoutActions : `[`BaseActions`](./index.md)<br>Provides action for TabLayout |
+| [TextViewActions](../-text-view-actions/index.md) | `interface TextViewActions : `[`BaseActions`](./index.md)<br>Provides actions for TextViews |

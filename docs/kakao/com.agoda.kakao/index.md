@@ -1,4 +1,4 @@
-[kakao](../index.md) / [com.agoda.kakao](.)
+[kakao](../index.md) / [com.agoda.kakao](./index.md)
 
 ## Package com.agoda.kakao
 
@@ -7,6 +7,7 @@
 | Name | Summary |
 |---|---|
 | [ActivityResultBuilder](-activity-result-builder/index.md) | `class ActivityResultBuilder`<br>Class for building ActivityResult |
+| [AdapterAssertions](-adapter-assertions/index.md) | `interface AdapterAssertions`<br>Provides assertions for view with adapters |
 | [AnyTextMatcher](-any-text-matcher/index.md) | `class AnyTextMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`TextView`](https://developer.android.com/reference/android/widget/TextView.html)`>`<br>Matches TextView views which contains any text |
 | [BackgroundColorMatcher](-background-color-matcher/index.md) | `class BackgroundColorMatcher : TypeSafeMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>`<br>Matches given background color with the current one |
 | [BaseActions](-base-actions/index.md) | `interface BaseActions`<br>Base interface for performing actions on view |
@@ -40,14 +41,14 @@
 | [KEmptyRecyclerItem](-k-empty-recycler-item/index.md) | `class KEmptyRecyclerItem : `[`KRecyclerItem`](-k-recycler-item/index.md)`<`[`KEmptyRecyclerItem`](-k-empty-recycler-item/index.md)`>`<br>Empty implementation of KRecyclerItem |
 | [KImageView](-k-image-view/index.md) | `class KImageView : `[`KBaseView`](-k-base-view/index.md)`<`[`KImageView`](-k-image-view/index.md)`>, `[`ImageViewAssertions`](-image-view-assertions/index.md)<br>View with BaseActions and ImageViewAssertions |
 | [KIntent](-k-intent/index.md) | `class KIntent`<br>This class is intended to be used when you need to check if some intent has been sent or to mock specific intent with result |
-| [KListView](-k-list-view/index.md) | `class KListView : `[`ScrollViewActions`](-scroll-view-actions/index.md)`, `[`BaseAssertions`](-base-assertions/index.md)<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
+| [KListView](-k-list-view/index.md) | `class KListView : `[`ScrollViewActions`](-scroll-view-actions/index.md)`, `[`BaseAssertions`](-base-assertions/index.md)`, `[`ListViewAdapterAssertions`](-list-view-adapter-assertions/index.md)<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
 | [KNavigationView](-k-navigation-view/index.md) | `class KNavigationView : `[`KBaseView`](-k-base-view/index.md)`<`[`KNavigationView`](-k-navigation-view/index.md)`>, `[`NavigationViewActions`](-navigation-view-actions/index.md)`, `[`NavigationViewAssertions`](-navigation-view-assertions/index.md)<br>View with NavigationViewActions and NavigationViewAssertions |
 | [KProgressBar](-k-progress-bar/index.md) | `class KProgressBar : `[`KBaseView`](-k-base-view/index.md)`<`[`KProgressBar`](-k-progress-bar/index.md)`>, `[`ProgressBarActions`](-progress-bar-actions/index.md)`, `[`ProgressBarAssertions`](-progress-bar-assertions/index.md)<br>View with ProgressBarActions and ProgressBarAssertions |
 | [KRatingBar](-k-rating-bar/index.md) | `class KRatingBar : `[`KBaseView`](-k-base-view/index.md)`<`[`KRatingBar`](-k-rating-bar/index.md)`>, `[`RatingBarActions`](-rating-bar-actions/index.md)`, `[`RatingBarAssertions`](-rating-bar-assertions/index.md)<br>View with RatingBarActions and RatingBarAssertions |
 | [KRecyclerItem](-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](-base-actions/index.md)`, `[`BaseAssertions`](-base-assertions/index.md)<br>Base class for KRecyclerView adapter items |
 | [KRecyclerItemType](-k-recycler-item-type/index.md) | `class KRecyclerItemType<out T : `[`KRecyclerItem`](-k-recycler-item/index.md)`<*>>`<br>For internal use. Don't use manually. |
 | [KRecyclerItemTypeBuilder](-k-recycler-item-type-builder/index.md) | `class KRecyclerItemTypeBuilder`<br>Class that maps types to providing functions |
-| [KRecyclerView](-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](-recycler-actions/index.md)`, `[`BaseAssertions`](-base-assertions/index.md)<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
+| [KRecyclerView](-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](-recycler-actions/index.md)`, `[`BaseAssertions`](-base-assertions/index.md)`, `[`RecyclerAdapterAssertions`](-recycler-adapter-assertions/index.md)<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
 | [KSeekBar](-k-seek-bar/index.md) | `class KSeekBar : `[`KBaseView`](-k-base-view/index.md)`<`[`KSeekBar`](-k-seek-bar/index.md)`>, `[`SeekBarActions`](-seek-bar-actions/index.md)`, `[`ProgressBarAssertions`](-progress-bar-assertions/index.md)<br>View with SeekBarActions and ProgressBarAssertions |
 | [KSnackbar](-k-snackbar/index.md) | `class KSnackbar : `[`KBaseView`](-k-base-view/index.md)`<`[`KSnackbar`](-k-snackbar/index.md)`>`<br>View with internal TextView and a Button |
 | [KSwipeRefreshLayout](-k-swipe-refresh-layout/index.md) | `class KSwipeRefreshLayout : `[`KBaseView`](-k-base-view/index.md)`<`[`KSwipeRefreshLayout`](-k-swipe-refresh-layout/index.md)`>, `[`SwipeRefreshLayoutActions`](-swipe-refresh-layout-actions/index.md)`, `[`SwipeRefreshLayoutAssertions`](-swipe-refresh-layout-assertions/index.md)<br>View with SwipeRefreshLayoutActions and SwipeRefreshLayoutAssertions |
@@ -58,6 +59,8 @@
 | [KView](-k-view/index.md) | `class KView : `[`KBaseView`](-k-base-view/index.md)`<`[`KView`](-k-view/index.md)`>`<br>Simple view with BaseActions and BaseAssertions |
 | [KViewPager](-k-view-pager/index.md) | `class KViewPager : `[`KBaseView`](-k-base-view/index.md)`<`[`KViewPager`](-k-view-pager/index.md)`>, `[`SwipeableActions`](-swipeable-actions/index.md)`, `[`ViewPagerAssertions`](-view-pager-assertions/index.md)<br>View with SwipeableActions and ViewPagerAssertions |
 | [KWebView](-k-web-view/index.md) | `open class KWebView`<br>Class for interacting with WebViews |
+| [ListViewAdapterAssertions](-list-view-adapter-assertions/index.md) | `interface ListViewAdapterAssertions : `[`AdapterAssertions`](-adapter-assertions/index.md)<br>Provides assertions for listView adapter |
+| [ListViewViewAdapterSizeMatcher](-list-view-view-adapter-size-matcher/index.md) | `class ListViewViewAdapterSizeMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`ListView`](https://developer.android.com/reference/android/widget/ListView.html)`>`<br>Matches ListView with count of childs |
 | [NavigationItemMatcher](-navigation-item-matcher/index.md) | `class NavigationItemMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, NavigationView>`<br>Matches NavigationView with given item id checked |
 | [NavigationViewActions](-navigation-view-actions/index.md) | `interface NavigationViewActions : `[`BaseActions`](-base-actions/index.md)<br>Provides actions for navigation view |
 | [NavigationViewAssertions](-navigation-view-assertions/index.md) | `interface NavigationViewAssertions : `[`BaseAssertions`](-base-assertions/index.md)<br>Provides assertions for NavigationView |
@@ -70,11 +73,13 @@
 | [RatingBarActions](-rating-bar-actions/index.md) | `interface RatingBarActions : `[`BaseActions`](-base-actions/index.md)<br>Provides action for RatingBar |
 | [RatingBarAssertions](-rating-bar-assertions/index.md) | `interface RatingBarAssertions : `[`BaseAssertions`](-base-assertions/index.md)<br>Provides assertions for RatingBar |
 | [RatingBarMatcher](-rating-bar-matcher/index.md) | `class RatingBarMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`RatingBar`](https://developer.android.com/reference/android/widget/RatingBar.html)`>`<br>Matcher of value rating of given matcher |
-| [RecyclerActions](-recycler-actions/index.md) | `interface RecyclerActions : `[`ScrollableActions`](-scrollable-actions/index.md)<br>Provides ScrollableActions implementation for RecyclerView |
+| [RecyclerActions](-recycler-actions/index.md) | `interface RecyclerActions : `[`ScrollableActions`](-scrollable-actions/index.md)`, `[`SwipeableActions`](-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for RecyclerView |
+| [RecyclerAdapterAssertions](-recycler-adapter-assertions/index.md) | `interface RecyclerAdapterAssertions : `[`AdapterAssertions`](-adapter-assertions/index.md)<br>Provides assertions for recyclerView adapter |
+| [RecyclerViewAdapterSizeMatcher](-recycler-view-adapter-size-matcher/index.md) | `class RecyclerViewAdapterSizeMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, RecyclerView>`<br>Matches RecyclerView with count of childs |
 | [RootBuilder](-root-builder/index.md) | `class RootBuilder`<br>Class for building root matchers |
-| [Screen](-screen/index.md) | `open class Screen<out T : `[`Screen`](-screen/index.md)`<T>> : `[`ScreenActions`](-screen-actions/index.md)<br>Container class for UI elements. |
+| [Screen](-screen/index.md) | `open class Screen<out T : `[`Screen`](-screen/index.md)`<`[`T`](-screen/index.md#T)`>> : `[`ScreenActions`](-screen-actions/index.md)<br>Container class for UI elements. |
 | [ScreenActions](-screen-actions/index.md) | `interface ScreenActions`<br>Interface with common actions for all screens |
-| [ScrollViewActions](-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](-scrollable-actions/index.md)<br>Provides ScrollableActions implementation for ScrollView |
+| [ScrollViewActions](-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](-scrollable-actions/index.md)`, `[`SwipeableActions`](-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for ScrollView |
 | [ScrollableActions](-scrollable-actions/index.md) | `interface ScrollableActions : `[`BaseActions`](-base-actions/index.md)<br>Provides scrolling actions for view |
 | [SeekBarActions](-seek-bar-actions/index.md) | `interface SeekBarActions : `[`ProgressBarActions`](-progress-bar-actions/index.md)<br>Provides action for SeekBar |
 | [SwipeRefreshLayoutActions](-swipe-refresh-layout-actions/index.md) | `interface SwipeRefreshLayoutActions : `[`SwipeableActions`](-swipeable-actions/index.md)<br>Provides actions for SwipeRefreshLayout |

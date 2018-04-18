@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BottomNavigationViewActions](index.md) / [setSelectedItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BottomNavigationViewActions](index.md) / [setSelectedItem](./set-selected-item.md)
 
 # setSelectedItem
 

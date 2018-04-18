@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutCounterEnabledMatcher](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutCounterEnabledMatcher](./index.md)
 
 # TextInputLayoutCounterEnabledMatcher
 

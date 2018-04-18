@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [perform](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](index.md) / [perform](./perform.md)
 
 # perform
 

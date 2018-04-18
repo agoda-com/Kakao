@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TabLayoutActions](index.md) / [getSelectedItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TabLayoutActions](index.md) / [getSelectedItem](./get-selected-item.md)
 
 # getSelectedItem
 

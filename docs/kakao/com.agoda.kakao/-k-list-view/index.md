@@ -1,16 +1,10 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KListView](./index.md)
 
 # KListView
 
-`class KListView : `[`ScrollViewActions`](../-scroll-view-actions/index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)
+`class KListView : `[`ScrollViewActions`](../-scroll-view-actions/index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)`, `[`ListViewAdapterAssertions`](../-list-view-adapter-assertions/index.md)
 
 View with ScrollViewActions and BaseAssertions. Gives access to it's children
-
-### Parameters
-
-`builder` - ViewBuilder which will match your list view
-
-`itemTypeBuilder` - Lambda with receiver where you pass your item providers
 
 **See Also**
 
@@ -26,14 +20,13 @@ View with ScrollViewActions and BaseAssertions. Gives access to it's children
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `KListView(builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KAdapterItemTypeBuilder`](../-k-adapter-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
+| [&lt;init&gt;](-init-.md) | `KListView(builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KAdapterItemTypeBuilder`](../-k-adapter-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>Constructs view class with view interaction from given ViewBuilder`KListView(parent: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KAdapterItemTypeBuilder`](../-k-adapter-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>`KListView(parent: DataInteraction, builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KAdapterItemTypeBuilder`](../-k-adapter-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>Constructs view class with parent and view interaction from given ViewBuilder |
 
 ### Properties
 
 | Name | Summary |
 |---|---|
-| [builder](builder.md) | `val builder: `[`ViewBuilder`](../-view-builder/index.md) |
-| [itemTypes](item-types.md) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>, `[`KAdapterItemType`](../-k-adapter-item-type/index.md)`<`[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>>` |
+| [itemTypes](item-types.md) | `val itemTypes: `[`Map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>, `[`KAdapterItemType`](../-k-adapter-item-type/index.md)`<`[`KAdapterItem`](../-k-adapter-item/index.md)`<*>>>` |
 | [matcher](matcher.md) | `val matcher: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
 | [view](view.md) | `val view: ViewInteraction` |
 
@@ -41,13 +34,13 @@ View with ScrollViewActions and BaseAssertions. Gives access to it's children
 
 | Name | Summary |
 |---|---|
-| [childAt](child-at.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on child at given position |
-| [childWith](child-with.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childWith(childMatcher: `[`DataBuilder`](../-data-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`<br>Performs given actions/assertion on child that matches given matcher |
-| [children](children.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> children(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on all children in adapter |
-| [firstChild](first-child.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> firstChild(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on first child in adapter |
-| [invoke](invoke.md) | `operator fun invoke(function: KListView.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
-| [lastChild](last-child.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> lastChild(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on last child in adapter |
-| [perform](perform.md) | `infix fun perform(function: KListView.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): KListView`<br>Infix function for invoking lambda on your view |
+| [childAt](child-at.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: `[`T`](child-at.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on child at given position |
+| [childWith](child-with.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> childWith(childMatcher: `[`DataBuilder`](../-data-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](child-with.md#T)<br>Performs given actions/assertion on child that matches given matcher |
+| [children](children.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> children(function: `[`T`](children.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on all children in adapter |
+| [firstChild](first-child.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> firstChild(function: `[`T`](first-child.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on first child in adapter |
+| [invoke](invoke.md) | `operator fun invoke(function: `[`KListView`](./index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [lastChild](last-child.md) | `fun <T : `[`KAdapterItem`](../-k-adapter-item/index.md)`<*>> lastChild(function: `[`T`](last-child.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on last child in adapter |
+| [perform](perform.md) | `infix fun perform(function: `[`KListView`](./index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KListView`](./index.md)<br>Infix function for invoking lambda on your view |
 
 ### Inherited Functions
 
@@ -62,6 +55,7 @@ View with ScrollViewActions and BaseAssertions. Gives access to it's children
 | [hasNotDescendant](../-base-assertions/has-not-descendant.md) | `open fun hasNotDescendant(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given descendant |
 | [hasNotSibling](../-base-assertions/has-not-sibling.md) | `open fun hasNotSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given sibling |
 | [hasSibling](../-base-assertions/has-sibling.md) | `open fun hasSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given sibling |
+| [hasSize](../-list-view-adapter-assertions/has-size.md) | `open fun hasSize(size: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check size of recycler view |
 | [hasTag](../-base-assertions/has-tag.md) | `open fun hasTag(tag: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given tag |
 | [inRoot](../-base-assertions/in-root.md) | `open fun inRoot(function: `[`RootBuilder`](../-root-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check if the view is in given root |
 | [isClickable](../-base-assertions/is-clickable.md) | `open fun isClickable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is clickable |
@@ -91,7 +85,7 @@ View with ScrollViewActions and BaseAssertions. Gives access to it's children
 
 | Name | Summary |
 |---|---|
-| [emptyChildAt](../empty-child-at.md) | `fun KListView.emptyChildAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls childAt() on your view with base child |
-| [emptyChildWith](../empty-child-with.md) | `fun KListView.emptyChildWith(builder: `[`DataBuilder`](../-data-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)<br>Calls childWith() on your view with base child |
-| [emptyFirstChild](../empty-first-child.md) | `fun KListView.emptyFirstChild(tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls firstChild() on your view with base child |
-| [emptyLastChild](../empty-last-child.md) | `fun KListView.emptyLastChild(tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls lastChild() on your view with base child |
+| [emptyChildAt](../empty-child-at.md) | `fun `[`KListView`](./index.md)`.emptyChildAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls childAt() on your view with base child |
+| [emptyChildWith](../empty-child-with.md) | `fun `[`KListView`](./index.md)`.emptyChildWith(builder: `[`DataBuilder`](../-data-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)<br>Calls childWith() on your view with base child |
+| [emptyFirstChild](../empty-first-child.md) | `fun `[`KListView`](./index.md)`.emptyFirstChild(tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls firstChild() on your view with base child |
+| [emptyLastChild](../empty-last-child.md) | `fun `[`KListView`](./index.md)`.emptyLastChild(tail: `[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls lastChild() on your view with base child |

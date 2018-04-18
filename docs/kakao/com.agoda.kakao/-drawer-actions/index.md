@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawerActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [DrawerActions](./index.md)
 
 # DrawerActions
 
@@ -36,4 +36,4 @@ Provides actions for navigation drawer
 
 | Name | Summary |
 |---|---|
-| [KDrawerView](../-k-drawer-view/index.md) | `class KDrawerView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KDrawerView`](../-k-drawer-view/index.md)`>, DrawerActions`<br>View with DrawerActions and BaseAssertions |
+| [KDrawerView](../-k-drawer-view/index.md) | `class KDrawerView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KDrawerView`](../-k-drawer-view/index.md)`>, `[`DrawerActions`](./index.md)<br>View with DrawerActions and BaseAssertions |

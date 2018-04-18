@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](index.md) / [hasParamWithValue](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [UriBuilder](index.md) / [hasParamWithValue](./has-param-with-value.md)
 
 # hasParamWithValue
 

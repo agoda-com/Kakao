@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebAssertions](index.md) / [matches](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebAssertions](index.md) / [matches](./matches.md)
 
 # matches
 
-`open fun <T> matches(value: Atom<T>, matcher: Matcher<T>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`open fun <T> matches(value: Atom<`[`T`](matches.md#T)`>, matcher: Matcher<`[`T`](matches.md#T)`>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Checks if element matches given matcher
 

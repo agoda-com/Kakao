@@ -1,16 +1,14 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KRecyclerView](./index.md)
 
 # KRecyclerView
 
-`class KRecyclerView : `[`RecyclerActions`](../-recycler-actions/index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)
+`class KRecyclerView : `[`RecyclerActions`](../-recycler-actions/index.md)`, `[`BaseAssertions`](../-base-assertions/index.md)`, `[`RecyclerAdapterAssertions`](../-recycler-adapter-assertions/index.md)
 
 View with RecyclerActions and BaseAssertions. Gives access to it's children
 
 ### Parameters
 
 `builder` - ViewBuilder which will match your list view
-
-`itemTypeBuilder` - Lambda with receiver where you pass your item providers
 
 **See Also**
 
@@ -26,14 +24,13 @@ View with RecyclerActions and BaseAssertions. Gives access to it's children
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `KRecyclerView(builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KRecyclerItemTypeBuilder`](../-k-recycler-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>View with RecyclerActions and BaseAssertions. Gives access to it's children |
+| [&lt;init&gt;](-init-.md) | `KRecyclerView(builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KRecyclerItemTypeBuilder`](../-k-recycler-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>Constructs view class with view interaction from given ViewBuilder`KRecyclerView(parent: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>, builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KRecyclerItemTypeBuilder`](../-k-recycler-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>`KRecyclerView(parent: DataInteraction, builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`, itemTypeBuilder: `[`KRecyclerItemTypeBuilder`](../-k-recycler-item-type-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`<br>Constructs view class with parent and view interaction from given ViewBuilder |
 
 ### Properties
 
 | Name | Summary |
 |---|---|
-| [builder](builder.md) | `val builder: `[`ViewBuilder`](../-view-builder/index.md) |
-| [itemTypes](item-types.md) | `val itemTypes: `[`MutableMap`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>>, `[`KRecyclerItemType`](../-k-recycler-item-type/index.md)`<`[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>>>` |
+| [itemTypes](item-types.md) | `val itemTypes: `[`Map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)`<`[`KClass`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html)`<out `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>>, `[`KRecyclerItemType`](../-k-recycler-item-type/index.md)`<`[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>>>` |
 | [matcher](matcher.md) | `val matcher: Matcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
 | [view](view.md) | `val view: ViewInteraction` |
 
@@ -41,14 +38,14 @@ View with RecyclerActions and BaseAssertions. Gives access to it's children
 
 | Name | Summary |
 |---|---|
-| [childAt](child-at.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on child at given position |
-| [childWith](child-with.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> childWith(childMatcher: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): T`<br>Performs given actions/assertion on child that matches given matcher |
-| [children](children.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> children(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on all children in adapter |
-| [firstChild](first-child.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> firstChild(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on first child in adapter |
+| [childAt](child-at.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> childAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, function: `[`T`](child-at.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on child at given position |
+| [childWith](child-with.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> childWith(childMatcher: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](child-with.md#T)<br>Performs given actions/assertion on child that matches given matcher |
+| [children](children.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> children(function: `[`T`](children.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on all children in adapter |
+| [firstChild](first-child.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> firstChild(function: `[`T`](first-child.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on first child in adapter |
 | [getPosition](get-position.md) | `fun getPosition(childMatcher: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Returns the adapter position of item matched by given matcher |
-| [invoke](invoke.md) | `operator fun invoke(function: KRecyclerView.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
-| [lastChild](last-child.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> lastChild(function: T.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on last child in adapter |
-| [perform](perform.md) | `infix fun perform(function: KRecyclerView.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): KRecyclerView`<br>Infix function for invoking lambda on your view |
+| [invoke](invoke.md) | `operator fun invoke(function: `[`KRecyclerView`](./index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [lastChild](last-child.md) | `fun <T : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<*>> lastChild(function: `[`T`](last-child.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs given actions/assertion on last child in adapter |
+| [perform](perform.md) | `infix fun perform(function: `[`KRecyclerView`](./index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KRecyclerView`](./index.md)<br>Infix function for invoking lambda on your view |
 
 ### Inherited Functions
 
@@ -63,6 +60,7 @@ View with RecyclerActions and BaseAssertions. Gives access to it's children
 | [hasNotDescendant](../-base-assertions/has-not-descendant.md) | `open fun hasNotDescendant(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given descendant |
 | [hasNotSibling](../-base-assertions/has-not-sibling.md) | `open fun hasNotSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has not given sibling |
 | [hasSibling](../-base-assertions/has-sibling.md) | `open fun hasSibling(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given sibling |
+| [hasSize](../-recycler-adapter-assertions/has-size.md) | `open fun hasSize(size: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check size of recycler view |
 | [hasTag](../-base-assertions/has-tag.md) | `open fun hasTag(tag: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given tag |
 | [inRoot](../-base-assertions/in-root.md) | `open fun inRoot(function: `[`RootBuilder`](../-root-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check if the view is in given root |
 | [isClickable](../-base-assertions/is-clickable.md) | `open fun isClickable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is clickable |
@@ -92,7 +90,7 @@ View with RecyclerActions and BaseAssertions. Gives access to it's children
 
 | Name | Summary |
 |---|---|
-| [emptyChildAt](../empty-child-at.md) | `fun KRecyclerView.emptyChildAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, tail: `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls childAt() on your view with base child |
-| [emptyChildWith](../empty-child-with.md) | `fun KRecyclerView.emptyChildWith(builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)<br>Calls childWith() on your view with base child |
-| [emptyFirstChild](../empty-first-child.md) | `fun KRecyclerView.emptyFirstChild(tail: `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls firstChild() on your view with base child |
-| [emptyLastChild](../empty-last-child.md) | `fun KRecyclerView.emptyLastChild(tail: `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls lastChild() on your view with base child |
+| [emptyChildAt](../empty-child-at.md) | `fun `[`KRecyclerView`](./index.md)`.emptyChildAt(position: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, tail: `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls childAt() on your view with base child |
+| [emptyChildWith](../empty-child-with.md) | `fun `[`KRecyclerView`](./index.md)`.emptyChildWith(builder: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)<br>Calls childWith() on your view with base child |
+| [emptyFirstChild](../empty-first-child.md) | `fun `[`KRecyclerView`](./index.md)`.emptyFirstChild(tail: `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls firstChild() on your view with base child |
+| [emptyLastChild](../empty-last-child.md) | `fun `[`KRecyclerView`](./index.md)`.emptyLastChild(tail: `[`KEmptyRecyclerItem`](../-k-empty-recycler-item/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Calls lastChild() on your view with base child |

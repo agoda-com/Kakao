@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ProgressBarActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ProgressBarActions](./index.md)
 
 # ProgressBarActions
 
@@ -35,5 +35,5 @@ Provides action for ProgressBar
 
 | Name | Summary |
 |---|---|
-| [KProgressBar](../-k-progress-bar/index.md) | `class KProgressBar : `[`KBaseView`](../-k-base-view/index.md)`<`[`KProgressBar`](../-k-progress-bar/index.md)`>, ProgressBarActions, `[`ProgressBarAssertions`](../-progress-bar-assertions/index.md)<br>View with ProgressBarActions and ProgressBarAssertions |
-| [SeekBarActions](../-seek-bar-actions/index.md) | `interface SeekBarActions : ProgressBarActions`<br>Provides action for SeekBar |
+| [KProgressBar](../-k-progress-bar/index.md) | `class KProgressBar : `[`KBaseView`](../-k-base-view/index.md)`<`[`KProgressBar`](../-k-progress-bar/index.md)`>, `[`ProgressBarActions`](./index.md)`, `[`ProgressBarAssertions`](../-progress-bar-assertions/index.md)<br>View with ProgressBarActions and ProgressBarAssertions |
+| [SeekBarActions](../-seek-bar-actions/index.md) | `interface SeekBarActions : `[`ProgressBarActions`](./index.md)<br>Provides action for SeekBar |

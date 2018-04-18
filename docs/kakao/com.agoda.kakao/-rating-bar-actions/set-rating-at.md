@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RatingBarActions](index.md) / [setRatingAt](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [RatingBarActions](index.md) / [setRatingAt](./set-rating-at.md)
 
 # setRatingAt
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ComponentNameBuilder](index.md) / [hasClassName](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ComponentNameBuilder](index.md) / [hasClassName](./has-class-name.md)
 
 # hasClassName
 

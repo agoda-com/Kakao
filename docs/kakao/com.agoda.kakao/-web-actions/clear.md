@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [clear](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [WebActions](index.md) / [clear](./clear.md)
 
 # clear
 

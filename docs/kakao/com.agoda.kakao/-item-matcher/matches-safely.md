@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ItemMatcher](index.md) / [matchesSafely](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ItemMatcher](index.md) / [matchesSafely](./matches-safely.md)
 
 # matchesSafely
 

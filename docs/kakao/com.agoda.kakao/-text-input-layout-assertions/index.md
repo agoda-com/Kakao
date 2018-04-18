@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [TextInputLayoutAssertions](./index.md)
 
 # TextInputLayoutAssertions
 
@@ -64,4 +64,4 @@ Provides assertions for TextInputLayout
 
 | Name | Summary |
 |---|---|
-| [KTextInputLayout](../-k-text-input-layout/index.md) | `class KTextInputLayout : `[`KBaseView`](../-k-base-view/index.md)`<`[`KTextInputLayout`](../-k-text-input-layout/index.md)`>, TextInputLayoutAssertions`<br>View with TextInputLayoutAssertions |
+| [KTextInputLayout](../-k-text-input-layout/index.md) | `class KTextInputLayout : `[`KBaseView`](../-k-base-view/index.md)`<`[`KTextInputLayout`](../-k-text-input-layout/index.md)`>, `[`TextInputLayoutAssertions`](./index.md)<br>View with TextInputLayoutAssertions |

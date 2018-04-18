@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KDrawerView](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KDrawerView](./index.md)
 
 # KDrawerView
 
-`class KDrawerView : `[`KBaseView`](../-k-base-view/index.md)`<KDrawerView>, `[`DrawerActions`](../-drawer-actions/index.md)
+`class KDrawerView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KDrawerView`](./index.md)`>, `[`DrawerActions`](../-drawer-actions/index.md)
 
 View with DrawerActions and BaseAssertions
 
@@ -29,4 +29,6 @@ View with DrawerActions and BaseAssertions
 | Name | Summary |
 |---|---|
 | [close](../-drawer-actions/close.md) | `open fun close(gravity: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)` = Gravity.START): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Closes the navigation drawer |
+| [invoke](../-k-base-view/invoke.md) | `operator fun invoke(function: `[`T`](../-k-base-view/index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
 | [open](../-drawer-actions/open.md) | `open fun open(gravity: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)` = Gravity.START): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Opens the navigation drawer |
+| [perform](../-k-base-view/perform.md) | `infix fun perform(function: `[`T`](../-k-base-view/index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](../-k-base-view/index.md#T)<br>Infix function for invoking lambda on your view |

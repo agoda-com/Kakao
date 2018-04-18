@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [pressMenuKey](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [ScreenActions](index.md) / [pressMenuKey](./press-menu-key.md)
 
 # pressMenuKey
 

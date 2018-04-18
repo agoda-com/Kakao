@@ -1,8 +1,8 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KEmptyRecyclerItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [KEmptyRecyclerItem](./index.md)
 
 # KEmptyRecyclerItem
 
-`class KEmptyRecyclerItem : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<KEmptyRecyclerItem>`
+`class KEmptyRecyclerItem : `[`KRecyclerItem`](../-k-recycler-item/index.md)`<`[`KEmptyRecyclerItem`](./index.md)`>`
 
 Empty implementation of KRecyclerItem
 
@@ -27,3 +27,10 @@ Use this if you want to perform/assert on the root view of view holder
 | Name | Summary |
 |---|---|
 | [view](../-k-recycler-item/view.md) | `open val view: ViewInteraction` |
+
+### Inherited Functions
+
+| Name | Summary |
+|---|---|
+| [invoke](../-k-recycler-item/invoke.md) | `operator fun invoke(function: `[`T`](../-k-recycler-item/index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [perform](../-k-recycler-item/perform.md) | `infix fun perform(function: `[`T`](../-k-recycler-item/index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](../-k-recycler-item/index.md#T)<br>Infix function for invoking lambda on your view |

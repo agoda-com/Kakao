@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BottomNavigationViewAssertions](index.md) / [hasSelectedItem](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BottomNavigationViewAssertions](index.md) / [hasSelectedItem](./has-selected-item.md)
 
 # hasSelectedItem
 

@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BottomNavigationViewActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [BottomNavigationViewActions](./index.md)
 
 # BottomNavigationViewActions
 
@@ -35,4 +35,4 @@ Provides actions for BottomNavigationView
 
 | Name | Summary |
 |---|---|
-| [KBottomNavigationView](../-k-bottom-navigation-view/index.md) | `class KBottomNavigationView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KBottomNavigationView`](../-k-bottom-navigation-view/index.md)`>, BottomNavigationViewActions, `[`BottomNavigationViewAssertions`](../-bottom-navigation-view-assertions/index.md)<br>View for acting and asserting on BottomNavigationView |
+| [KBottomNavigationView](../-k-bottom-navigation-view/index.md) | `class KBottomNavigationView : `[`KBaseView`](../-k-base-view/index.md)`<`[`KBottomNavigationView`](../-k-bottom-navigation-view/index.md)`>, `[`BottomNavigationViewActions`](./index.md)`, `[`BottomNavigationViewAssertions`](../-bottom-navigation-view-assertions/index.md)<br>View for acting and asserting on BottomNavigationView |

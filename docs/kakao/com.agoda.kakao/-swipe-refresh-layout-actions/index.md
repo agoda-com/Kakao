@@ -1,4 +1,4 @@
-[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeRefreshLayoutActions](.)
+[kakao](../../index.md) / [com.agoda.kakao](../index.md) / [SwipeRefreshLayoutActions](./index.md)
 
 # SwipeRefreshLayoutActions
 
@@ -25,4 +25,4 @@ Provides actions for SwipeRefreshLayout
 
 | Name | Summary |
 |---|---|
-| [KSwipeRefreshLayout](../-k-swipe-refresh-layout/index.md) | `class KSwipeRefreshLayout : `[`KBaseView`](../-k-base-view/index.md)`<`[`KSwipeRefreshLayout`](../-k-swipe-refresh-layout/index.md)`>, SwipeRefreshLayoutActions, `[`SwipeRefreshLayoutAssertions`](../-swipe-refresh-layout-assertions/index.md)<br>View with SwipeRefreshLayoutActions and SwipeRefreshLayoutAssertions |
+| [KSwipeRefreshLayout](../-k-swipe-refresh-layout/index.md) | `class KSwipeRefreshLayout : `[`KBaseView`](../-k-base-view/index.md)`<`[`KSwipeRefreshLayout`](../-k-swipe-refresh-layout/index.md)`>, `[`SwipeRefreshLayoutActions`](./index.md)`, `[`SwipeRefreshLayoutAssertions`](../-swipe-refresh-layout-assertions/index.md)<br>View with SwipeRefreshLayoutActions and SwipeRefreshLayoutAssertions |
