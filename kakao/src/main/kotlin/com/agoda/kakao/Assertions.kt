@@ -200,7 +200,7 @@ interface BaseAssertions {
     }
 
     /**
-     * Checks if the matched view does not exists
+     * Checks if the matched view does not exist
      */
     fun doesNotExist() {
         view.check(ViewAssertions.doesNotExist())
@@ -699,7 +699,7 @@ interface SwipeRefreshLayoutAssertions : BaseAssertions {
     /**
      * Checks if the SwipeRefreshLayout is not refreshing
      */
-    fun isNotRefresing() {
+    fun isNotRefreshing() {
         view.check(ViewAssertions.matches(SwipeRefreshLayoutMatcher(false)))
     }
 }
