@@ -25,12 +25,12 @@ class TestActivityTest {
             textViewLarge {
                 click()
                 isVisible()
-                hasAnyText()
+                hasText("LARGE")
             }
 
             textViewSmall {
                 isVisible()
-                hasAnyText()
+                hasText("small")
             }
 
             textViewColored {
