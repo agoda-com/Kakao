@@ -65,4 +65,5 @@ object PreciseSwipe : Swiper {
     private const val EVENT_COUNT = 40
     private const val DURATION_MS = 1000L
     private const val TAG = "PreciseSwipe"
+
 }

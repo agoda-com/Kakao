@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao
 
 import android.net.Uri

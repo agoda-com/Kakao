@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao
 
 import android.support.design.widget.Snackbar
@@ -24,6 +26,7 @@ import kotlin.reflect.KClass
  * @param T Type of your custom view. Needs to be defined to enable invoke() and perform() for descendants
  */
 @Suppress("UNCHECKED_CAST")
+@ViewMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
     override val view: ViewInteraction
 
@@ -340,6 +343,7 @@ class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions 
  * @see KAdapterItem
  * @see KAdapterItemTypeBuilder
  */
+@ViewMarker
 class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
@@ -349,7 +353,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     /**
      * Constructs view class with view interaction from given ViewBuilder
      *
-     * @param function ViewBuilder which will result in view's interaction
+     * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
@@ -365,7 +369,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
      * Constructs view class with parent and view interaction from given ViewBuilder
      *
      * @param parent Matcher that will be used as parent in isDescendantOfA() matcher
-     * @param function ViewBuilder which will result in view's interaction
+     * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
@@ -380,7 +384,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
      * Constructs view class with parent and view interaction from given ViewBuilder
      *
      * @param parent DataInteraction that will be used as parent to ViewBuilder
-     * @param function ViewBuilder which will result in view's interaction
+     * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
@@ -509,6 +513,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
  * @see KRecyclerItem
  * @see KRecyclerItemTypeBuilder
  */
+@ViewMarker
 class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
@@ -518,7 +523,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     /**
      * Constructs view class with view interaction from given ViewBuilder
      *
-     * @param function ViewBuilder which will result in view's interaction
+     * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
@@ -534,7 +539,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
      * Constructs view class with parent and view interaction from given ViewBuilder
      *
      * @param parent Matcher that will be used as parent in isDescendantOfA() matcher
-     * @param function ViewBuilder which will result in view's interaction
+     * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
@@ -549,7 +554,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
      * Constructs view class with parent and view interaction from given ViewBuilder
      *
      * @param parent DataInteraction that will be used as parent to ViewBuilder
-     * @param function ViewBuilder which will result in view's interaction
+     * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
@@ -690,6 +695,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
  * @see itemType
  * @see KEmptyRecyclerItem
  */
+@BuilderMarker
 class KRecyclerItemTypeBuilder {
     val itemTypes = mutableMapOf<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>()
 
@@ -721,6 +727,7 @@ class KRecyclerItemTypeBuilder {
  * @see itemType
  * @see KEmptyAdapterItem
  */
+@BuilderMarker
 class KAdapterItemTypeBuilder {
     val itemTypes = mutableMapOf<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>()
 
@@ -768,6 +775,7 @@ class KAdapterItemType<out T : KAdapterItem<*>>(val provideItem: (DataInteractio
  * @see KRecyclerItemTypeBuilder
  */
 @Suppress("UNCHECKED_CAST")
+@ViewMarker
 open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions {
     override val view = Espresso.onView(matcher)
 
@@ -817,6 +825,7 @@ class KEmptyRecyclerItem(parent: Matcher<View>) : KRecyclerItem<KEmptyRecyclerIt
  * @see KRecyclerItemTypeBuilder
  */
 @Suppress("UNCHECKED_CAST")
+@ViewMarker
 open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
     override val view = interaction.check(ViewAssertions.matches(Matchers.anything()))
 
@@ -860,6 +869,7 @@ class KEmptyAdapterItem(parent: DataInteraction) : KAdapterItem<KEmptyAdapterIte
  *
  * @param matcher ViewBuilder which will result in matcher of web view
  */
+@ViewMarker
 open class KWebView(matcher: (ViewBuilder.() -> Unit)? = null) {
     private val web: Web.WebInteraction<*> = if (matcher != null) {
         Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())

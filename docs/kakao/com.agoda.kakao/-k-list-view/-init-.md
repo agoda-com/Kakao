@@ -8,7 +8,7 @@ Constructs view class with view interaction from given ViewBuilder
 
 ### Parameters
 
-`function` - ViewBuilder which will result in view's interaction
+`builder` - ViewBuilder which will result in view's interaction
 
 `itemTypeBuilder` - Lambda with receiver where you pass your item providers
 
@@ -24,7 +24,7 @@ Constructs view class with parent and view interaction from given ViewBuilder
 
 `parent` - Matcher that will be used as parent in isDescendantOfA() matcher
 
-`function` - ViewBuilder which will result in view's interaction
+`builder` - ViewBuilder which will result in view's interaction
 
 `itemTypeBuilder` - Lambda with receiver where you pass your item providers
 
@@ -40,7 +40,7 @@ Constructs view class with parent and view interaction from given ViewBuilder
 
 `parent` - DataInteraction that will be used as parent to ViewBuilder
 
-`function` - ViewBuilder which will result in view's interaction
+`builder` - ViewBuilder which will result in view's interaction
 
 `itemTypeBuilder` - Lambda with receiver where you pass your item providers
 
