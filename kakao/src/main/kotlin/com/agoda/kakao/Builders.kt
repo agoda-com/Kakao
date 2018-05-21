@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao
 
 import android.app.Activity
@@ -40,6 +42,7 @@ import org.hamcrest.core.AllOf
  *
  * @see AllOf.allOf()
  */
+@BuilderMarker
 class ViewBuilder {
     private val viewMatchers = arrayListOf<Matcher<View>>()
 
@@ -416,6 +419,7 @@ class ViewBuilder {
  *
  * @see AllOf.allOf()
  */
+@BuilderMarker
 class RootBuilder {
     private val rootMatchers = arrayListOf<Matcher<Root>>()
 
@@ -510,6 +514,7 @@ class RootBuilder {
  *
  * @see AllOf.allOf()
  */
+@BuilderMarker
 class DataBuilder {
     private val matchers = arrayListOf<Matcher<Any>>()
 
@@ -562,6 +567,7 @@ class DataBuilder {
  *
  * @param web WebInteraction where elements should be matched
  */
+@BuilderMarker
 class WebElementBuilder(private val web: Web.WebInteraction<*>) {
     /**
      * Looks up web view element and performs actions/assertions on it
@@ -582,6 +588,7 @@ class WebElementBuilder(private val web: Web.WebInteraction<*>) {
 /**
  * Class for building Intent matchers
  */
+@BuilderMarker
 class IntentBuilder {
     private val matchers = arrayListOf<Matcher<Intent>>()
     private lateinit var anyMatcher: Matcher<Intent>
@@ -854,6 +861,7 @@ class IntentBuilder {
 /**
  * Class for building Uri matchers
  */
+@BuilderMarker
 class UriBuilder {
     private val matchers = arrayListOf<Matcher<Uri>>()
 
@@ -975,6 +983,7 @@ class UriBuilder {
 /**
  * Class for building ComponentName matchers
  */
+@BuilderMarker
 class ComponentNameBuilder {
     private val matchers = arrayListOf<Matcher<ComponentName>>()
 
@@ -1045,6 +1054,7 @@ class ComponentNameBuilder {
 /**
  * Class for building Bundle matchers
  */
+@BuilderMarker
 class BundleBuilder {
     private val matchers = arrayListOf<Matcher<Bundle>>()
 
@@ -1110,6 +1120,7 @@ class BundleBuilder {
 /**
  * Class for building ActivityResult
  */
+@BuilderMarker
 class ActivityResultBuilder {
     private var code = Activity.RESULT_OK
     private var data: Intent? = null

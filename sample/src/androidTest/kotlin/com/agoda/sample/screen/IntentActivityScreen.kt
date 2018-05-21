@@ -26,8 +26,8 @@ class IntentActivityScreen : Screen<IntentActivityScreen>() {
         hasFlag(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
         hasExtras {
-            hasExtra("test", "test")
-            hasExtra("test2", "test2")
+            hasEntry("test", "test")
+            hasEntry("test2", "test2")
         }
 
         withResult {
@@ -42,8 +42,8 @@ class IntentActivityScreen : Screen<IntentActivityScreen>() {
         hasFlag(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
         hasExtras {
-            hasExtra("test", "test")
-            hasExtra("test2", "test2")
+            hasEntry("test", "test")
+            hasEntry("test2", "test2")
         }
 
         withResult {

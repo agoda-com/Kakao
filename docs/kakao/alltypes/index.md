@@ -12,6 +12,7 @@
 | [com.agoda.kakao.BaseAssertions](../com.agoda.kakao/-base-assertions/index.md) | Base interface for asserting views |
 | [com.agoda.kakao.BottomNavigationViewActions](../com.agoda.kakao/-bottom-navigation-view-actions/index.md) | Provides actions for BottomNavigationView |
 | [com.agoda.kakao.BottomNavigationViewAssertions](../com.agoda.kakao/-bottom-navigation-view-assertions/index.md) | Provides assertion for BottomNavigationview |
+| [com.agoda.kakao.BuilderMarker](../com.agoda.kakao/-builder-marker/index.md) |  |
 | [com.agoda.kakao.BundleBuilder](../com.agoda.kakao/-bundle-builder/index.md) | Class for building Bundle matchers |
 | [com.agoda.kakao.CheckableActions](../com.agoda.kakao/-checkable-actions/index.md) | Provides action for checking views |
 | [com.agoda.kakao.CheckableAssertions](../com.agoda.kakao/-checkable-assertions/index.md) | Provides checkable based assertions for views |
@@ -77,6 +78,7 @@
 | [com.agoda.kakao.RootBuilder](../com.agoda.kakao/-root-builder/index.md) | Class for building root matchers |
 | [com.agoda.kakao.Screen](../com.agoda.kakao/-screen/index.md) | Container class for UI elements. |
 | [com.agoda.kakao.ScreenActions](../com.agoda.kakao/-screen-actions/index.md) | Interface with common actions for all screens |
+| [com.agoda.kakao.ScreenMarker](../com.agoda.kakao/-screen-marker/index.md) |  |
 | [com.agoda.kakao.ScrollViewActions](../com.agoda.kakao/-scroll-view-actions/index.md) | Provides ScrollableActions implementation for ScrollView |
 | [com.agoda.kakao.ScrollableActions](../com.agoda.kakao/-scrollable-actions/index.md) | Provides scrolling actions for view |
 | [com.agoda.kakao.SeekBarActions](../com.agoda.kakao/-seek-bar-actions/index.md) | Provides action for SeekBar |
@@ -94,6 +96,7 @@
 | [com.agoda.kakao.TextViewAssertions](../com.agoda.kakao/-text-view-assertions/index.md) | Provides text based assertions for views |
 | [com.agoda.kakao.UriBuilder](../com.agoda.kakao/-uri-builder/index.md) | Class for building Uri matchers |
 | [com.agoda.kakao.ViewBuilder](../com.agoda.kakao/-view-builder/index.md) | Class for building view matchers and interactions |
+| [com.agoda.kakao.ViewMarker](../com.agoda.kakao/-view-marker/index.md) |  |
 | [com.agoda.kakao.ViewPagerAssertions](../com.agoda.kakao/-view-pager-assertions/index.md) | Provides assertions for view pagers |
 | [com.agoda.kakao.WebActions](../com.agoda.kakao/-web-actions/index.md) | Provides action for interacting with WebViews |
 | [com.agoda.kakao.WebAssertions](../com.agoda.kakao/-web-assertions/index.md) | Interface that provides assertions for WebViews |

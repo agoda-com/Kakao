@@ -101,6 +101,14 @@
 | [WebAssertions](-web-assertions/index.md) | `interface WebAssertions`<br>Interface that provides assertions for WebViews |
 | [WebElementBuilder](-web-element-builder/index.md) | `class WebElementBuilder`<br>Class for building WebView element matchers |
 
+### Annotations
+
+| Name | Summary |
+|---|---|
+| [BuilderMarker](-builder-marker/index.md) | `annotation class BuilderMarker` |
+| [ScreenMarker](-screen-marker/index.md) | `annotation class ScreenMarker` |
+| [ViewMarker](-view-marker/index.md) | `annotation class ViewMarker` |
+
 ### Functions
 
 | Name | Summary |
