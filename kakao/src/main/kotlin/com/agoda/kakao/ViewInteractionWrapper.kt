@@ -2,32 +2,15 @@ package com.agoda.kakao
 
 import android.support.test.espresso.*
 import android.view.View
+import com.agoda.kakao.KakaoInterceptors.viewInteractionInterceptor
 import org.hamcrest.Matcher
 
-interface ViewInteractionWrapper {
-    fun check(viewAssert: ViewAssertion)
-    fun inRoot(rootMatcher: Matcher<Root>)
-    fun noActivity()
-    fun perform(vararg viewActions: ViewAction)
-    fun withFailureHandler(failureHandler: FailureHandler)
-}
-
-interface ViewInteractionWrapperFactory {
-    fun create(viewInteraction: ViewInteraction): ViewInteractionWrapper
-
-    companion object {
-        var factory: ViewInteractionWrapperFactory = DEFAULT
-
-        fun createWrapper(viewInteraction: ViewInteraction): ViewInteractionWrapper {
-            return factory.create(viewInteraction)
-        }
-
-        object DEFAULT : ViewInteractionWrapperFactory {
-            override fun create(viewInteraction: ViewInteraction): ViewInteractionWrapper {
-                return DelegatingViewInteractionWrapper(viewInteraction)
-            }
-        }
-    }
+interface ViewInteractionWrapper : ViewInteractionInterceptor {
+    fun check(viewAssertion: ViewAssertion): ViewInteractionWrapper
+    fun inRoot(rootMatcher: Matcher<Root>): ViewInteractionWrapper
+    fun noActivity(): ViewInteractionWrapper
+    fun perform(viewAction: ViewAction): ViewInteractionWrapper
+    fun withFailureHandler(failureHandler: FailureHandler): ViewInteractionWrapper
 }
 
 inline fun ViewInteractionWrapper.withFailureHandler(crossinline function: (error: Throwable, matcher: Matcher<View>) -> Unit) {
@@ -38,26 +21,37 @@ inline fun ViewInteractionWrapper.check(crossinline viewAssert: (View, NoMatchin
     check(ViewAssertion { view, noViewFoundException -> viewAssert(view, noViewFoundException) })
 }
 
-fun ViewInteraction.wrap(): ViewInteractionWrapper = ViewInteractionWrapperFactory.createWrapper(this)
+fun ViewInteraction.wrap(): ViewInteractionWrapper = InterceptingViewInteractionWrapper(this)
 
-private class DelegatingViewInteractionWrapper(private val viewInteraction: ViewInteraction) : ViewInteractionWrapper {
-    override fun check(viewAssert: ViewAssertion) {
-        viewInteraction.check(viewAssert)
+private class InterceptingViewInteractionWrapper(private val viewInteraction: ViewInteraction) : ViewInteractionWrapper, MutableViewInteractionInterceptor by BaseViewInteractionInterceptor() {
+    override fun check(viewAssertion: ViewAssertion): ViewInteractionWrapper {
+        val intercepted = checkInterceptor?.check(viewInteraction, viewAssertion).orFalse() && viewInteractionInterceptor.checkInterceptor?.check(viewInteraction, viewAssertion).orFalse()
+        if (!intercepted) {
+            viewInteraction.check(viewAssertion)
+        }
+        return this
     }
 
-    override fun inRoot(rootMatcher: Matcher<Root>) {
+    override fun inRoot(rootMatcher: Matcher<Root>): ViewInteractionWrapper {
         viewInteraction.inRoot(rootMatcher)
+        return this
     }
 
-    override fun noActivity() {
+    override fun noActivity(): ViewInteractionWrapper {
         viewInteraction.noActivity()
+        return this
     }
 
-    override fun perform(vararg viewActions: ViewAction) {
-        viewInteraction.perform(*viewActions)
+    override fun perform(viewAction: ViewAction): ViewInteractionWrapper {
+        val intercepted = performInterceptor?.perform(viewInteraction, viewAction).orFalse() && viewInteractionInterceptor.performInterceptor?.perform(viewInteraction, viewAction).orFalse()
+        if (!intercepted) {
+            viewInteraction.perform(viewAction)
+        }
+        return this
     }
 
-    override fun withFailureHandler(failureHandler: FailureHandler) {
+    override fun withFailureHandler(failureHandler: FailureHandler): ViewInteractionWrapper {
         viewInteraction.withFailureHandler(failureHandler)
+        return this
     }
 }

@@ -4,9 +4,7 @@ package com.agoda.kakao
 
 import android.support.design.widget.Snackbar
 import android.support.design.widget.TextInputEditText
-import android.support.test.espresso.DataInteraction
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.ViewInteraction
+import android.support.test.espresso.*
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.web.sugar.Web
 import android.support.v7.widget.AppCompatButton
@@ -27,7 +25,7 @@ import kotlin.reflect.KClass
  */
 @Suppress("UNCHECKED_CAST")
 @ViewMarker
-open class KBaseView<out T> : BaseActions, BaseAssertions {
+open class KBaseView<out T> : BaseActions, BaseAssertions, ViewInteractionInterceptor {
     override val view: ViewInteractionWrapper
 
     /**
@@ -64,8 +62,8 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      */
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
         view = parent.onChildView(ViewBuilder().apply(function).getViewMatcher())
-                .check(ViewAssertions.matches(Matchers.anything()))
                 .wrap()
+                .check(ViewAssertions.matches(Matchers.anything()))
     }
 
     /**
@@ -90,6 +88,33 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
     infix fun perform(function: T.() -> Unit): T {
         function(this as T)
         return this
+    }
+
+    /**
+     * Sets `ViewInteraction.check` call interceptor for this particular view.
+     *
+     * @param action Lambda for intercepting `check` call. Return `true` from this lambda if call was intercepted by this interceptor, `false` otherwise.
+     * @see ViewInteractionCheckInterceptor
+     */
+    override fun onCheck(action: (ViewInteraction, ViewAssertion) -> Boolean) {
+        view.onCheck(action)
+    }
+
+    /**
+     * Sets `ViewInteraction.perform` call interceptor for this particular view.
+     *
+     * @param action Lambda for intercepting `perform` call. Return `true` from this lambda if call was intercepted by this interceptor, `false` otherwise.
+     * @see ViewInteractionPerformInterceptor
+     */
+    override fun onPerform(action: (ViewInteraction, ViewAction) -> Boolean) {
+        view.onPerform(action)
+    }
+
+    /**
+     * Clears interceptors for this view
+     */
+    override fun reset() {
+        view.reset()
     }
 }
 
@@ -828,7 +853,7 @@ class KEmptyRecyclerItem(parent: Matcher<View>) : KRecyclerItem<KEmptyRecyclerIt
 @Suppress("UNCHECKED_CAST")
 @ViewMarker
 open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
-    override val view = interaction.check(ViewAssertions.matches(Matchers.anything())).wrap()
+    override val view = interaction.wrap().check(ViewAssertions.matches(Matchers.anything()))
 
     /**
      * Operator that allows usage of DSL style
