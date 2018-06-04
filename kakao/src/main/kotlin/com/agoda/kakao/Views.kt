@@ -28,7 +28,7 @@ import kotlin.reflect.KClass
 @Suppress("UNCHECKED_CAST")
 @ViewMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
-    override val view: ViewInteractionWrapper
+    override val view: ViewInteraction
 
     /**
      * Constructs view class with view interaction from given ViewBuilder
@@ -38,7 +38,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @see ViewBuilder
      */
     constructor(function: ViewBuilder.() -> Unit) {
-        view = ViewBuilder().apply(function).getViewInteraction().wrap()
+        view = ViewBuilder().apply(function).getViewInteraction()
     }
 
     /**
@@ -64,8 +64,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      */
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
         view = parent.onChildView(ViewBuilder().apply(function).getViewMatcher())
-                .check(ViewAssertions.matches(Matchers.anything()))
-                .wrap()
+                .wrappedCheck(ViewAssertions.matches(Matchers.anything()))
     }
 
     /**
@@ -349,7 +348,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
-    override val view: ViewInteractionWrapper
+    override val view: ViewInteraction
 
     /**
      * Constructs view class with view interaction from given ViewBuilder
@@ -362,7 +361,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
         val vb = ViewBuilder().apply(builder)
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction().wrap()
+        view = vb.getViewInteraction()
         itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -402,7 +401,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
         }
 
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction().wrap()
+        view = vb.getViewInteraction()
         itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -519,7 +518,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 
-    override val view: ViewInteractionWrapper
+    override val view: ViewInteraction
 
     /**
      * Constructs view class with view interaction from given ViewBuilder
@@ -532,7 +531,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
         val vb = ViewBuilder().apply(builder)
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction().wrap()
+        view = vb.getViewInteraction()
         itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -572,7 +571,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         }
 
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction().wrap()
+        view = vb.getViewInteraction()
         itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -657,7 +656,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         val match = ItemMatcher(matcher, ViewBuilder().apply(childMatcher).getViewMatcher())
 
         scrollTo(childMatcher)
-        Espresso.onView(match).check(ViewAssertions.matches(Matchers.anything()))
+        Espresso.onView(match).wrappedCheck(ViewAssertions.matches(Matchers.anything()))
         return match.position
     }
 
@@ -778,7 +777,7 @@ class KAdapterItemType<out T : KAdapterItem<*>>(val provideItem: (DataInteractio
 @Suppress("UNCHECKED_CAST")
 @ViewMarker
 open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions {
-    override val view = Espresso.onView(matcher).wrap()
+    override val view = Espresso.onView(matcher)
 
     /**
      * Operator that allows usage of DSL style
@@ -828,7 +827,7 @@ class KEmptyRecyclerItem(parent: Matcher<View>) : KRecyclerItem<KEmptyRecyclerIt
 @Suppress("UNCHECKED_CAST")
 @ViewMarker
 open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
-    override val view = interaction.check(ViewAssertions.matches(Matchers.anything())).wrap()
+    override val view = interaction.wrappedCheck(ViewAssertions.matches(Matchers.anything()))
 
     /**
      * Operator that allows usage of DSL style

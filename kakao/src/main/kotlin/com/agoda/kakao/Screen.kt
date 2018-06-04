@@ -17,6 +17,6 @@ import android.support.test.espresso.matcher.ViewMatchers
 @Suppress("UNCHECKED_CAST")
 @ScreenMarker
 open class Screen<out T: Screen<T>>: ScreenActions {
-    override val view: ViewInteractionWrapper = Espresso.onView(ViewMatchers.isRoot()).wrap()
+    override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
     operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
 }
