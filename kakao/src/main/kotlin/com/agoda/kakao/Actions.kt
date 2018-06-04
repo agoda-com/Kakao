@@ -37,41 +37,41 @@ import org.hamcrest.TypeSafeMatcher
  * @property view ViewInteraction on which all actions are performed (root view by default)
  */
 interface ScreenActions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 
     /**
      * Performs click on device's back button
      */
     fun pressBack() {
-        view.wrappedPerform(ViewActions.pressBack())
+        view.perform(ViewActions.pressBack())
     }
 
     /**
      * Closes soft keyboard, if opened
      */
     fun closeSoftKeyboard() {
-        view.wrappedPerform(ViewActions.closeSoftKeyboard())
+        view.perform(ViewActions.closeSoftKeyboard())
     }
 
     /**
      * Presses a key with corresponding KeyCode
      */
     fun pressKey(keyCode: Int) {
-        view.wrappedPerform(ViewActions.pressKey(keyCode))
+        view.perform(ViewActions.pressKey(keyCode))
     }
 
     /**
      * Presses a key with correspondingKeyCode and modifiers
      */
     fun pressKey(key: EspressoKey) {
-        view.wrappedPerform(ViewActions.pressKey(key))
+        view.perform(ViewActions.pressKey(key))
     }
 
     /**
      * Presses the hardware menu key
      */
     fun pressMenuKey() {
-        view.wrappedPerform(ViewActions.pressMenuKey())
+        view.perform(ViewActions.pressMenuKey())
     }
 
     /**
@@ -80,7 +80,7 @@ interface ScreenActions {
      * @param duration Time to idle in milliseconds (1 second by default)
      */
     fun idle(duration: Long = 1000L) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Idle for $duration milliseconds"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(View::class.java)
@@ -103,7 +103,7 @@ interface ScreenActions {
  * @see CheckableActions
  */
 interface BaseActions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 
     /**
      * Performs click on view
@@ -111,7 +111,7 @@ interface BaseActions {
      * @param location Location of view where it should be clicked (VISIBLE_CENTER by default)
      */
     fun click(location: GeneralLocation = GeneralLocation.VISIBLE_CENTER) {
-        view.wrappedPerform(GeneralClickAction(Tap.SINGLE, location, Press.FINGER,
+        view.perform(GeneralClickAction(Tap.SINGLE, location, Press.FINGER,
                 InputDevice.SOURCE_UNKNOWN, MotionEvent.BUTTON_PRIMARY))
     }
 
@@ -121,7 +121,7 @@ interface BaseActions {
      * @param location Location of view where it should be clicked (VISIBLE_CENTER by default)
      */
     fun doubleClick(location: GeneralLocation = GeneralLocation.VISIBLE_CENTER) {
-        view.wrappedPerform(GeneralClickAction(Tap.DOUBLE, location, Press.FINGER,
+        view.perform(GeneralClickAction(Tap.DOUBLE, location, Press.FINGER,
                 InputDevice.SOURCE_UNKNOWN, MotionEvent.BUTTON_PRIMARY))
     }
 
@@ -131,7 +131,7 @@ interface BaseActions {
      * @param location Location of view where it should be clicked (VISIBLE_CENTER by default)
      */
     fun longClick(location: GeneralLocation = GeneralLocation.VISIBLE_CENTER) {
-        view.wrappedPerform(GeneralClickAction(Tap.LONG, location, Press.FINGER,
+        view.perform(GeneralClickAction(Tap.LONG, location, Press.FINGER,
                 InputDevice.SOURCE_UNKNOWN, MotionEvent.BUTTON_PRIMARY))
     }
 
@@ -139,14 +139,14 @@ interface BaseActions {
      * Presses IME action, if supported view is in focus
      */
     fun pressImeAction() {
-        view.wrappedPerform(ViewActions.pressImeActionButton())
+        view.perform(ViewActions.pressImeActionButton())
     }
 
     /**
      * Scrolls to the view, if possible
      */
     fun scrollTo() {
-        view.wrappedPerform(ViewActions.scrollTo())
+        view.perform(ViewActions.scrollTo())
     }
 
     /**
@@ -155,7 +155,7 @@ interface BaseActions {
      * @param function Lambda that must return ViewAction which will be performed
      */
     fun act(function: () -> ViewAction) {
-        view.wrappedPerform(function.invoke())
+        view.perform(function.invoke())
     }
 
     /**
@@ -177,7 +177,7 @@ interface BaseActions {
      * @see ViewActions.repeatedlyUntil
      */
     fun repeatUntil(maxAttempts: Int = 1, action: () -> ViewAction, matcher: ViewBuilder.() -> Unit) {
-        view.wrappedPerform(ViewActions.repeatedlyUntil(action(),
+        view.perform(ViewActions.repeatedlyUntil(action(),
                 ViewBuilder().apply(matcher).getViewMatcher(), maxAttempts))
     }
 }
@@ -190,35 +190,35 @@ interface TextViewActions : BaseActions {
      * @see ViewActions.openLinkWithText
      */
     fun openLinkWithText(text: String) {
-        view.wrappedPerform(ViewActions.openLinkWithText(text))
+        view.perform(ViewActions.openLinkWithText(text))
     }
 
     /**
      * @see ViewActions.openLinkWithText
      */
     fun openLinkWithText(text: Matcher<String>) {
-        view.wrappedPerform(ViewActions.openLinkWithText(text))
+        view.perform(ViewActions.openLinkWithText(text))
     }
 
     /**
      * @see ViewActions.openLinkWithUri
      */
     fun openLinkWithUri(uri: String) {
-        view.wrappedPerform(ViewActions.openLinkWithUri(uri))
+        view.perform(ViewActions.openLinkWithUri(uri))
     }
 
     /**
      * @see ViewActions.openLinkWithUri
      */
     fun openLinkWithUri(uri: Matcher<Uri>) {
-        view.wrappedPerform(ViewActions.openLinkWithUri(uri))
+        view.perform(ViewActions.openLinkWithUri(uri))
     }
 
     /**
      * @see ViewActions.openLink
      */
     fun openLink(text: Matcher<String>, uri: Matcher<Uri>) {
-        view.wrappedPerform(ViewActions.openLink(text, uri))
+        view.perform(ViewActions.openLink(text, uri))
     }
 }
 
@@ -232,7 +232,7 @@ interface EditableActions : BaseActions {
      * @param text Text to input
      */
     fun typeText(text: String) {
-        view.wrappedPerform(ViewActions.typeText(text))
+        view.perform(ViewActions.typeText(text))
     }
 
     /**
@@ -241,7 +241,7 @@ interface EditableActions : BaseActions {
      * @param text Text to input instead of current
      */
     fun replaceText(text: String) {
-        view.wrappedPerform(ViewActions.replaceText(text))
+        view.perform(ViewActions.replaceText(text))
     }
 
     /**
@@ -260,28 +260,28 @@ interface SwipeableActions : BaseActions {
      * Swipes left on the view
      */
     fun swipeLeft() {
-        view.wrappedPerform(ViewActions.swipeLeft())
+        view.perform(ViewActions.swipeLeft())
     }
 
     /**
      * Swipes right on the view
      */
     fun swipeRight() {
-        view.wrappedPerform(ViewActions.swipeRight())
+        view.perform(ViewActions.swipeRight())
     }
 
     /**
      * Swipes up on the view
      */
     fun swipeUp() {
-        view.wrappedPerform(ViewActions.swipeUp())
+        view.perform(ViewActions.swipeUp())
     }
 
     /**
      * Swipes down on the view
      */
     fun swipeDown() {
-        view.wrappedPerform(ViewActions.swipeDown())
+        view.perform(ViewActions.swipeDown())
     }
 }
 
@@ -321,11 +321,11 @@ interface ScrollableActions : BaseActions {
  */
 interface RecyclerActions : ScrollableActions, SwipeableActions {
     override fun scrollToStart() {
-        view.wrappedPerform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(0))
+        view.perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(0))
     }
 
     override fun scrollToEnd() {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Scroll RecyclerView to the bottom"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(RecyclerView::class.java)
@@ -344,7 +344,7 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
     }
 
     override fun scrollTo(position: Int) {
-        view.wrappedPerform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(position))
+        view.perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(position))
     }
 
     /**
@@ -353,7 +353,7 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
      * @param matcher Matcher for view holder, which is scroll destination
      */
     fun scrollTo(matcher: Matcher<View>) {
-        view.wrappedPerform(RecyclerViewActions.scrollTo<RecyclerView.ViewHolder>(matcher))
+        view.perform(RecyclerViewActions.scrollTo<RecyclerView.ViewHolder>(matcher))
     }
 
     /**
@@ -375,7 +375,7 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
     fun getSize(): Int {
         var size = 0
 
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Get RecyclerView adapter size"
 
             override fun getConstraints() = Matchers.allOf(ViewMatchers
@@ -401,7 +401,7 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
  */
 interface ScrollViewActions : ScrollableActions, SwipeableActions {
     override fun scrollToStart() {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to start"
 
             override fun getConstraints() = Matchers.allOf(ViewMatchers
@@ -416,7 +416,7 @@ interface ScrollViewActions : ScrollableActions, SwipeableActions {
     }
 
     override fun scrollToEnd() {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to end"
 
             override fun getConstraints() = Matchers.allOf(ViewMatchers
@@ -431,7 +431,7 @@ interface ScrollViewActions : ScrollableActions, SwipeableActions {
     }
 
     override fun scrollTo(position: Int) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to $position Y position"
 
             override fun getConstraints() = Matchers.allOf(ViewMatchers
@@ -456,7 +456,7 @@ interface ScrollViewActions : ScrollableActions, SwipeableActions {
     fun getSize(): Int {
         var size = 0
 
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Get AdapterView adapter size"
 
             override fun getConstraints() = Matchers.allOf(ViewMatchers
@@ -483,8 +483,8 @@ interface CheckableActions : BaseActions {
      * @param checked True if checked, false otherwise
      */
     fun setChecked(checked: Boolean) {
-        view.wrappedPerform(object : ViewAction {
-            override fun getDescription() = "wrappedPerforming CheckableViewAction: $checked"
+        view.perform(object : ViewAction {
+            override fun getDescription() = "performing CheckableViewAction: $checked"
 
             override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(View::class.java),
                     object : TypeSafeMatcher<View>() {
@@ -513,7 +513,7 @@ interface DrawerActions : BaseActions {
      * @see Gravity.START
      */
     fun open(gravity: Int = Gravity.START) {
-        view.wrappedPerform(DrawerActions.open(gravity))
+        view.perform(DrawerActions.open(gravity))
     }
 
     /**
@@ -523,7 +523,7 @@ interface DrawerActions : BaseActions {
      * @see Gravity.START
      */
     fun close(gravity: Int = Gravity.START) {
-        view.wrappedPerform(DrawerActions.close(gravity))
+        view.perform(DrawerActions.close(gravity))
     }
 }
 
@@ -537,7 +537,7 @@ interface NavigationViewActions : BaseActions {
      * @param id Menu id to be navigated to
      */
     fun navigateTo(id: Int) {
-        view.wrappedPerform(NavigationViewActions.navigateTo(id))
+        view.perform(NavigationViewActions.navigateTo(id))
     }
 }
 
@@ -551,7 +551,7 @@ interface ProgressBarActions : BaseActions {
      * @param number of progress to set for the ProgressBar
      */
     fun setProgress(number: Int) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "set progress value of progress bar as: $number"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(ProgressBar::class.java)
@@ -580,7 +580,7 @@ interface SeekBarActions : ProgressBarActions {
      * @see GeneralSwipeAction
      */
     fun dragProgressTo(number: Int) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "drags progress of seek bar to: $number"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(SeekBar::class.java)
@@ -631,7 +631,7 @@ interface RatingBarActions : BaseActions {
      * @param number rating to set for the RatingBar
      */
     fun setRatingAt(number: Float) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "set rating value of rating bar as: $number"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(RatingBar::class.java)
@@ -655,7 +655,7 @@ interface BottomNavigationViewActions : BaseActions {
      * @param id menu item id to be set
      */
     fun setSelectedItem(id: Int) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Sets given item id as selected: $id"
 
             override fun getConstraints() = ViewMatchers
@@ -680,7 +680,7 @@ interface TabLayoutActions : BaseActions {
      * @param index tab index to be selected
      */
     fun selectTab(index: Int) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Selects the tab at index: $index"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(TabLayout::class.java)
@@ -701,7 +701,7 @@ interface TabLayoutActions : BaseActions {
     fun getSelectedItem(): Int {
         var id = 0
 
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Gets selected item id"
 
             override fun getConstraints() = ViewMatchers
@@ -728,7 +728,7 @@ interface SwipeRefreshLayoutActions : SwipeableActions {
      * @param refreshing state to be set
      */
     fun setRefreshing(refreshing: Boolean) {
-        view.wrappedPerform(object : ViewAction {
+        view.perform(object : ViewAction {
             override fun getDescription() = "Sets the refreshing state to $refreshing"
 
             override fun getConstraints() = ViewMatchers.isAssignableFrom(SwipeRefreshLayout::class.java)

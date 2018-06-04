@@ -36,13 +36,13 @@ import java.lang.AssertionError
  * @see ImageViewAssertions
  */
 interface BaseAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 
     /**
      * Checks if the view is displayed
      */
     fun isDisplayed() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isDisplayed()))
     }
 
@@ -50,7 +50,7 @@ interface BaseAssertions {
      * Checks if the view is not displayed
      */
     fun isNotDisplayed() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.isDisplayed())))
     }
 
@@ -58,7 +58,7 @@ interface BaseAssertions {
      * Checks if the view is completely displayed
      */
     fun isCompletelyDisplayed() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isCompletelyDisplayed()))
     }
 
@@ -66,7 +66,7 @@ interface BaseAssertions {
      * Checks if the view is not completely displayed
      */
     fun isNotCompletelyDisplayed() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.isCompletelyDisplayed())))
     }
 
@@ -74,7 +74,7 @@ interface BaseAssertions {
      * Checks if the view has VISIBLE visibility
      */
     fun isVisible() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withEffectiveVisibility(
                         ViewMatchers.Visibility.VISIBLE)))
     }
@@ -83,7 +83,7 @@ interface BaseAssertions {
      * Checks if the view has INVISIBLE visibility
      */
     fun isInvisible() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.INVISIBLE)))
     }
 
@@ -91,7 +91,7 @@ interface BaseAssertions {
      * Checks if the view has GONE visibility
      */
     fun isGone() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.GONE)))
     }
 
@@ -99,7 +99,7 @@ interface BaseAssertions {
      * Checks if the view is selected
      */
     fun isSelected() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isSelected()))
     }
 
@@ -107,7 +107,7 @@ interface BaseAssertions {
      * Checks if the view is not selected
      */
     fun isNotSelected() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.isSelected())))
     }
 
@@ -115,7 +115,7 @@ interface BaseAssertions {
      * Checks if the view is focused
      */
     fun isFocused() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.hasFocus()))
     }
 
@@ -123,7 +123,7 @@ interface BaseAssertions {
      * Checks if the view is not focused
      */
     fun isNotFocused() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.hasFocus())))
     }
 
@@ -131,7 +131,7 @@ interface BaseAssertions {
      * Checks if the view is focusable
      */
     fun isFocusable() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isFocusable()))
     }
 
@@ -139,7 +139,7 @@ interface BaseAssertions {
      * Checks if the view is not focusable
      */
     fun isNotFocusable() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.isFocusable())))
     }
 
@@ -147,7 +147,7 @@ interface BaseAssertions {
      * Checks if the view is clickable
      */
     fun isClickable() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isClickable()))
     }
 
@@ -155,7 +155,7 @@ interface BaseAssertions {
      * Checks if the view is not clickable
      */
     fun isNotClickable() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.isClickable())))
     }
 
@@ -163,7 +163,7 @@ interface BaseAssertions {
      * Checks if the view is enabled
      */
     fun isEnabled() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isEnabled()))
     }
 
@@ -171,7 +171,7 @@ interface BaseAssertions {
      * Checks if the view is disabled
      */
     fun isDisabled() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 Matchers.not(ViewMatchers.isEnabled())))
     }
 
@@ -181,7 +181,7 @@ interface BaseAssertions {
      * @param tag Tag that view must have
      */
     fun hasTag(tag: String) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withTagValue(Matchers.`is`(tag))))
     }
 
@@ -197,7 +197,7 @@ interface BaseAssertions {
             matchers.add(Matchers.`is`(it))
         }
 
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withTagValue(Matchers.anyOf(matchers))))
     }
 
@@ -205,7 +205,7 @@ interface BaseAssertions {
      * Checks if the matched view does not exist
      */
     fun doesNotExist() {
-        view.wrappedCheck(ViewAssertions.doesNotExist())
+        view.check(ViewAssertions.doesNotExist())
     }
 
     /**
@@ -216,7 +216,7 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasDescendant(function: ViewBuilder.() -> Unit) {
-        view.wrappedCheck(ViewAssertions.matches(ViewMatchers
+        view.check(ViewAssertions.matches(ViewMatchers
                 .hasDescendant(ViewBuilder().apply(function).getViewMatcher())))
     }
 
@@ -228,7 +228,7 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasNotDescendant(function: ViewBuilder.() -> Unit) {
-        view.wrappedCheck(ViewAssertions.matches(Matchers.not(ViewMatchers
+        view.check(ViewAssertions.matches(Matchers.not(ViewMatchers
                 .hasDescendant(ViewBuilder().apply(function).getViewMatcher()))))
     }
 
@@ -240,7 +240,7 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasSibling(function: ViewBuilder.() -> Unit) {
-        view.wrappedCheck(ViewAssertions.matches(ViewMatchers
+        view.check(ViewAssertions.matches(ViewMatchers
                 .hasSibling(ViewBuilder().apply(function).getViewMatcher())))
     }
 
@@ -252,7 +252,7 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasNotSibling(function: ViewBuilder.() -> Unit) {
-        view.wrappedCheck(ViewAssertions.matches(Matchers.not(ViewMatchers
+        view.check(ViewAssertions.matches(Matchers.not(ViewMatchers
                 .hasSibling(ViewBuilder().apply(function).getViewMatcher()))))
     }
 
@@ -264,7 +264,7 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun matches(function: ViewBuilder.() -> Unit) {
-        view.wrappedCheck(ViewAssertions.matches(ViewBuilder().apply(function).getViewMatcher()))
+        view.check(ViewAssertions.matches(ViewBuilder().apply(function).getViewMatcher()))
     }
 
     /**
@@ -275,7 +275,7 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun notMatches(function: ViewBuilder.() -> Unit) {
-        view.wrappedCheck(ViewAssertions.matches(Matchers.not(ViewBuilder().apply(function).getViewMatcher())))
+        view.check(ViewAssertions.matches(Matchers.not(ViewBuilder().apply(function).getViewMatcher())))
     }
 
     /**
@@ -284,7 +284,7 @@ interface BaseAssertions {
      * @param function Lambda that must return ViewAssertion
      */
     fun assert(function: () -> ViewAssertion) {
-        view.wrappedCheck(function.invoke())
+        view.check(function.invoke())
     }
 
     /**
@@ -305,7 +305,7 @@ interface BaseAssertions {
      *
      */
     fun hasBackgroundColor(@ColorRes resId: Int) {
-        view.wrappedCheck(ViewAssertions.matches(BackgroundColorMatcher(resId = resId)))
+        view.check(ViewAssertions.matches(BackgroundColorMatcher(resId = resId)))
     }
 
     /**
@@ -315,7 +315,7 @@ interface BaseAssertions {
      *
      */
     fun hasBackgroundColor(colorCode: String) {
-        view.wrappedCheck(ViewAssertions.matches(BackgroundColorMatcher(colorCode = colorCode)))
+        view.check(ViewAssertions.matches(BackgroundColorMatcher(colorCode = colorCode)))
     }
 }
 
@@ -327,7 +327,7 @@ interface TextViewAssertions : BaseAssertions {
      * Checks if the view have not any text
      */
     fun hasEmptyText() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withText("")))
     }
 
@@ -335,7 +335,7 @@ interface TextViewAssertions : BaseAssertions {
      * Checks if the view has any text
      */
     fun hasAnyText() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 AnyTextMatcher()))
     }
 
@@ -345,7 +345,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be matched
      */
     fun hasText(text: String) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withText(text)))
     }
 
@@ -355,7 +355,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId String resource to be matched
      */
     fun hasText(@StringRes resId: Int) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withText(resId)))
     }
 
@@ -363,7 +363,7 @@ interface TextViewAssertions : BaseAssertions {
      * Checks if the view has text that matches given matcher
      */
     fun hasText(matcher: Matcher<String>) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withText(matcher)))
     }
 
@@ -373,7 +373,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId Color resource to be matched
      */
     fun hasTextColor(@ColorRes resId: Int) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.hasTextColor(resId)))
     }
 
@@ -383,7 +383,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be matched
      */
     fun hasNoText(text: String) {
-        view.wrappedCheck(ViewAssertions.matches(CoreMatchers.not(
+        view.check(ViewAssertions.matches(CoreMatchers.not(
                 ViewMatchers.withText(text))))
     }
 
@@ -393,7 +393,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId String resource to be matched
      */
     fun hasNoText(@StringRes resId: Int) {
-        view.wrappedCheck(ViewAssertions.matches(CoreMatchers.not(
+        view.check(ViewAssertions.matches(CoreMatchers.not(
                 ViewMatchers.withText(resId))))
     }
 
@@ -403,7 +403,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Content description to be matched
      */
     fun hasContentDescription(text: String) {
-        view.wrappedCheck(ViewAssertions.matches(ViewMatchers.withContentDescription(text)))
+        view.check(ViewAssertions.matches(ViewMatchers.withContentDescription(text)))
     }
 
     /**
@@ -412,7 +412,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be searched
      */
     fun containsText(text: String) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withText(Matchers.containsString(text))))
     }
 
@@ -422,7 +422,7 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be searched
      */
     fun startsWithText(text: String) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withText(Matchers.startsWith(text))))
     }
 }
@@ -437,7 +437,7 @@ interface EditableAssertions : TextViewAssertions {
      * @param hint Text to be matched
      */
     fun hasHint(hint: String) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withHint(hint)))
     }
 
@@ -447,7 +447,7 @@ interface EditableAssertions : TextViewAssertions {
      * @param resId String resource to be matched
      */
     fun hasHint(@StringRes resId: Int) {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.withHint(resId)))
     }
 }
@@ -460,7 +460,7 @@ interface CheckableAssertions : BaseAssertions {
      * Checks if the view is checked
      */
     fun isChecked() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isChecked()))
     }
 
@@ -468,7 +468,7 @@ interface CheckableAssertions : BaseAssertions {
      * Checks if the view is not checked
      */
     fun isNotChecked() {
-        view.wrappedCheck(ViewAssertions.matches(
+        view.check(ViewAssertions.matches(
                 ViewMatchers.isNotChecked()))
     }
 }
@@ -483,7 +483,7 @@ interface ViewPagerAssertions : BaseAssertions {
      * @param index Page index to be matched
      */
     fun isAtPage(index: Int) {
-        view.wrappedCheck(ViewAssertions.matches(PageMatcher(index)))
+        view.check(ViewAssertions.matches(PageMatcher(index)))
     }
 }
 
@@ -493,7 +493,7 @@ interface ViewPagerAssertions : BaseAssertions {
  * @see RecyclerAdapterAssertions
  */
 interface AdapterAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 }
 
 /**
@@ -506,7 +506,7 @@ interface RecyclerAdapterAssertions : AdapterAssertions {
      * @param size expected child count size in recycler view
      */
     fun hasSize(size: Int) {
-        view.wrappedCheck(ViewAssertions.matches(RecyclerViewAdapterSizeMatcher(size)))
+        view.check(ViewAssertions.matches(RecyclerViewAdapterSizeMatcher(size)))
     }
 }
 
@@ -520,7 +520,7 @@ interface ListViewAdapterAssertions : AdapterAssertions {
      * @param size expected child count size in recycler view
      */
     fun hasSize(size: Int) {
-        view.wrappedCheck(ViewAssertions.matches(ListViewViewAdapterSizeMatcher(size)))
+        view.check(ViewAssertions.matches(ListViewViewAdapterSizeMatcher(size)))
     }
 }
 
@@ -534,7 +534,7 @@ interface NavigationViewAssertions : BaseAssertions {
      * @param id menu item expected to be checked
      */
     fun isItemChecked(id: Int) {
-        view.wrappedCheck(ViewAssertions.matches(NavigationItemMatcher(id)))
+        view.check(ViewAssertions.matches(NavigationItemMatcher(id)))
     }
 }
 
@@ -548,7 +548,7 @@ interface ProgressBarAssertions : BaseAssertions {
      *  @param number progress as expected
      */
     fun hasProgress(number: Int) {
-        view.wrappedCheck(ViewAssertions.matches(ProgressMatcher(number)))
+        view.check(ViewAssertions.matches(ProgressMatcher(number)))
     }
 }
 
@@ -562,7 +562,7 @@ interface RatingBarAssertions : BaseAssertions {
      *  @param number rating as expected
      */
     fun hasRating(number: Float) {
-        view.wrappedCheck(ViewAssertions.matches(RatingBarMatcher(number)))
+        view.check(ViewAssertions.matches(RatingBarMatcher(number)))
     }
 }
 
@@ -576,7 +576,7 @@ interface TabLayoutAssertions : BaseAssertions {
      * @param index tab index to be checked
      */
     fun isTabSelected(index: Int) {
-        view.wrappedCheck { view, notFoundException ->
+        view.check { view, notFoundException ->
             if (view is TabLayout) {
                 if (view.selectedTabPosition != index) {
                     throw AssertionError("Expected selected item index is $index," +
@@ -599,7 +599,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
      * @param hint - hint text to be checked
      */
     fun hasHint(hint: String) {
-        view.wrappedCheck { view, notFoundException ->
+        view.check { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (hint != view.hint) {
                     throw AssertionError("Expected hint is $hint," +
@@ -612,15 +612,15 @@ interface TextInputLayoutAssertions : BaseAssertions {
     }
 
     fun isHintEnabled() {
-        view.wrappedCheck(ViewAssertions.matches(TextInputLayoutHintEnabledMatcher(true)))
+        view.check(ViewAssertions.matches(TextInputLayoutHintEnabledMatcher(true)))
     }
 
     fun isHintDisabled() {
-        view.wrappedCheck(ViewAssertions.matches(TextInputLayoutHintEnabledMatcher(false)))
+        view.check(ViewAssertions.matches(TextInputLayoutHintEnabledMatcher(false)))
     }
 
     fun hasError(error: String) {
-        view.wrappedCheck { view, notFoundException ->
+        view.check { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (error != view.error) {
                     throw AssertionError("Expected error is $error," +
@@ -633,15 +633,15 @@ interface TextInputLayoutAssertions : BaseAssertions {
     }
 
     fun isErrorEnabled() {
-        view.wrappedCheck(ViewAssertions.matches(TextInputLayoutErrorEnabledMatcher(true)))
+        view.check(ViewAssertions.matches(TextInputLayoutErrorEnabledMatcher(true)))
     }
 
     fun isErrorDisabled() {
-        view.wrappedCheck(ViewAssertions.matches(TextInputLayoutErrorEnabledMatcher(false)))
+        view.check(ViewAssertions.matches(TextInputLayoutErrorEnabledMatcher(false)))
     }
 
     fun hasCounterMaxLength(length: Int) {
-        view.wrappedCheck { view, notFoundException ->
+        view.check { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (length != view.counterMaxLength) {
                     throw AssertionError("Expected counter max length is $length," +
@@ -654,11 +654,11 @@ interface TextInputLayoutAssertions : BaseAssertions {
     }
 
     fun isCounterEnabled() {
-        view.wrappedCheck(ViewAssertions.matches(TextInputLayoutCounterEnabledMatcher(true)))
+        view.check(ViewAssertions.matches(TextInputLayoutCounterEnabledMatcher(true)))
     }
 
     fun isCounterDisabled() {
-        view.wrappedCheck(ViewAssertions.matches(TextInputLayoutCounterEnabledMatcher(false)))
+        view.check(ViewAssertions.matches(TextInputLayoutCounterEnabledMatcher(false)))
     }
 }
 
@@ -673,7 +673,7 @@ interface ImageViewAssertions : BaseAssertions {
      * @param toBitmap Lambda with custom Drawable -> Bitmap converter (default is null)
      */
     fun hasDrawable(@DrawableRes resId: Int, toBitmap: ((drawable: Drawable) -> Bitmap)? = null) {
-        view.wrappedCheck(ViewAssertions.matches(DrawableMatcher(resId = resId, toBitmap = toBitmap)))
+        view.check(ViewAssertions.matches(DrawableMatcher(resId = resId, toBitmap = toBitmap)))
     }
 
     /**
@@ -683,7 +683,7 @@ interface ImageViewAssertions : BaseAssertions {
      * @param toBitmap Lambda with custom Drawable -> Bitmap converter (default is null)
      */
     fun hasDrawable(drawable: Drawable, toBitmap: ((drawable: Drawable) -> Bitmap)? = null) {
-        view.wrappedCheck(ViewAssertions.matches(DrawableMatcher(drawable = drawable, toBitmap = toBitmap)))
+        view.check(ViewAssertions.matches(DrawableMatcher(drawable = drawable, toBitmap = toBitmap)))
     }
 }
 
@@ -695,14 +695,14 @@ interface SwipeRefreshLayoutAssertions : BaseAssertions {
      * Checks if the SwipeRefreshLayout is refreshing
      */
     fun isRefreshing() {
-        view.wrappedCheck(ViewAssertions.matches(SwipeRefreshLayoutMatcher(true)))
+        view.check(ViewAssertions.matches(SwipeRefreshLayoutMatcher(true)))
     }
 
     /**
      * Checks if the SwipeRefreshLayout is not refreshing
      */
     fun isNotRefreshing() {
-        view.wrappedCheck(ViewAssertions.matches(SwipeRefreshLayoutMatcher(false)))
+        view.check(ViewAssertions.matches(SwipeRefreshLayoutMatcher(false)))
     }
 }
 
@@ -716,7 +716,7 @@ interface BottomNavigationViewAssertions : BaseAssertions {
      * @param id Menu item id to be checked
      */
     fun hasSelectedItem(id: Int) {
-        view.wrappedCheck { view, notFoundException ->
+        view.check { view, notFoundException ->
             if (view is BottomNavigationView) {
                 if (view.selectedItemId != id) {
                     throw AssertionError("Expected selected item id is $id," +
