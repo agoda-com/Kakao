@@ -25,7 +25,7 @@ fun ViewInteraction.wrap(): ViewInteractionWrapper = InterceptingViewInteraction
 
 private class InterceptingViewInteractionWrapper(private val viewInteraction: ViewInteraction) : ViewInteractionWrapper, MutableViewInteractionInterceptor by BaseViewInteractionInterceptor() {
     override fun check(viewAssertion: ViewAssertion): ViewInteractionWrapper {
-        val intercepted = checkInterceptor?.check(viewInteraction, viewAssertion).orFalse() && viewInteractionInterceptor.checkInterceptor?.check(viewInteraction, viewAssertion).orFalse()
+        val intercepted = checkInterceptor?.check(viewInteraction, viewAssertion).orFalse() || viewInteractionInterceptor.checkInterceptor?.check(viewInteraction, viewAssertion).orFalse()
         if (!intercepted) {
             viewInteraction.check(viewAssertion)
         }
@@ -43,7 +43,7 @@ private class InterceptingViewInteractionWrapper(private val viewInteraction: Vi
     }
 
     override fun perform(viewAction: ViewAction): ViewInteractionWrapper {
-        val intercepted = performInterceptor?.perform(viewInteraction, viewAction).orFalse() && viewInteractionInterceptor.performInterceptor?.perform(viewInteraction, viewAction).orFalse()
+        val intercepted = performInterceptor?.perform(viewInteraction, viewAction).orFalse() || viewInteractionInterceptor.performInterceptor?.perform(viewInteraction, viewAction).orFalse()
         if (!intercepted) {
             viewInteraction.perform(viewAction)
         }
