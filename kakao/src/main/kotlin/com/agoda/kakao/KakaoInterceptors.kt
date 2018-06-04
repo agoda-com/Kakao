@@ -52,10 +52,30 @@ object KakaoInterceptors {
     }
 
     /**
+     * Sets global `ViewInteraction.perform` interceptor.
+     *
+     * @param action Lambda for intercepting `perform` call. Return `true` from this lambda if call was intercepted by this interceptor, `false` otherwise.
+     * @see ViewInteractionPerformInterceptor
+     */
+    fun setViewInteractionPerformInterceptor(action: (ViewInteraction, ViewAction) -> Boolean) {
+        viewInteractionInterceptor.onPerform(action)
+    }
+
+    /**
      * Sets global `ViewInteractionCheckInterceptor`
      */
     fun setViewInteractionCheckInterceptor(interceptor: ViewInteractionCheckInterceptor?) {
         viewInteractionInterceptor.checkInterceptor = interceptor
+    }
+
+    /**
+     * Sets global `ViewInteraction.check` interceptor.
+     *
+     * @param action Lambda for intercepting `check` call. Return `true` from this lambda if call was intercepted by this interceptor, `false` otherwise.
+     * @see ViewInteractionCheckInterceptor
+     */
+    fun setViewInteractionCheckInterceptor(action: (ViewInteraction, ViewAssertion) -> Boolean) {
+        viewInteractionInterceptor.onCheck(action)
     }
 
     /**
@@ -66,10 +86,30 @@ object KakaoInterceptors {
     }
 
     /**
+     * Sets global `DataInteraction.perform` interceptor.
+     *
+     * @param action Lambda for intercepting `perform` call. Return `true` from this lambda if call was intercepted by this interceptor, `false` otherwise.
+     * @see DataInteractionPerformInterceptor
+     */
+    fun setDataInteractionPerformInterceptor(action: (DataInteraction, ViewAction) -> ViewInteraction) {
+        dataInteractionInterceptor.onPerform(action)
+    }
+
+    /**
      * Sets global `DataInteractionCheckInterceptor`
      */
     fun setDataInteractionCheckInterceptor(interceptor: DataInteractionCheckInterceptor?) {
         dataInteractionInterceptor.checkInterceptor = interceptor
+    }
+
+    /**
+     * Sets global `DataInteraction.check` interceptor.
+     *
+     * @param action Lambda for intercepting `check` call. Return `true` from this lambda if call was intercepted by this interceptor, `false` otherwise.
+     * @see DataInteractionCheckInterceptor
+     */
+    fun setDataInteractionCheckInterceptor(action: (DataInteraction, ViewAssertion) -> ViewInteraction) {
+        dataInteractionInterceptor.onCheck(action)
     }
 
     /**
