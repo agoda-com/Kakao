@@ -36,7 +36,7 @@ import java.lang.AssertionError
  * @see ImageViewAssertions
  */
 interface BaseAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 
     /**
      * Checks if the view is displayed
@@ -493,7 +493,7 @@ interface ViewPagerAssertions : BaseAssertions {
  * @see RecyclerAdapterAssertions
  */
 interface AdapterAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 }
 
 /**

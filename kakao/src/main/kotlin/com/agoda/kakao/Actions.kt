@@ -37,7 +37,7 @@ import org.hamcrest.TypeSafeMatcher
  * @property view ViewInteraction on which all actions are performed (root view by default)
  */
 interface ScreenActions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 
     /**
      * Performs click on device's back button
@@ -103,7 +103,7 @@ interface ScreenActions {
  * @see CheckableActions
  */
 interface BaseActions {
-    val view: ViewInteraction
+    val view: ViewInteractionWrapper
 
     /**
      * Performs click on view

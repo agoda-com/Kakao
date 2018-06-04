@@ -97,3 +97,5 @@ fun KListView.emptyLastChild(tail: KEmptyAdapterItem.() -> Unit) {
  * @see KEmptyAdapterItem
  */
 fun KListView.emptyChildWith(builder: DataBuilder.() -> Unit) = childWith<KEmptyAdapterItem>(builder)
+
+internal fun Boolean?.orFalse() = this ?: false
