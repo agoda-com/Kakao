@@ -178,7 +178,7 @@ class ProgressMatcher(private val value: Int) : BoundedMatcher<View, ProgressBar
 
 /**
  * Matcher of value rating of given matcher
- * 
+ *
  * @param value of rating that matched the view which is RatingBar
  */
 class RatingBarMatcher(private val value: Float) : BoundedMatcher<View, RatingBar>(RatingBar::class.java) {
@@ -190,30 +190,48 @@ class RatingBarMatcher(private val value: Float) : BoundedMatcher<View, RatingBa
 }
 
 /**
- * Matches RecyclerView with count of childs
+ * Matches RecyclerView with count of children
  *
- * @param size of childs count in RecyclerView
+ * @param size of children count in RecyclerView
  */
 class RecyclerViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
-    override fun matchesSafely(view: RecyclerView?) = view?.adapter?.let {
-        it.itemCount == size } ?: false
+
+    private var itemCount: Int = 0
+
+    override fun matchesSafely(view: RecyclerView) = run {
+        itemCount = view.adapter?.itemCount ?: 0
+        itemCount == size
+    }
 
     override fun describeTo(description: Description) {
-        description.appendText("recycle view size is: $size")
+        description
+                .appendText("RecyclerView with ")
+                .appendValue(size)
+                .appendText(" item(s), but got with ")
+                .appendValue(itemCount)
     }
 }
 
 /**
- * Matches ListView with count of childs
+ * Matches ListView with count of children
  *
- * @param size of childs count in ListView
+ * @param size of children count in ListView
  */
 class ListViewViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, ListView>(ListView::class.java) {
-    override fun matchesSafely(view: ListView?) = view?.adapter?.let {
-        it.count == size } ?: false
+
+    private var itemCount: Int = 0
+
+    override fun matchesSafely(view: ListView) = run {
+        itemCount = view.adapter?.count ?: 0
+        itemCount == size
+    }
 
     override fun describeTo(description: Description) {
-        description.appendText("recycle view size is: $size")
+        description
+                .appendText("ListView with ")
+                .appendValue(size)
+                .appendText(" item(s), but got with ")
+                .appendValue(itemCount)
     }
 }
 
