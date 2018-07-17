@@ -59,7 +59,7 @@
 | [com.agoda.kakao.KViewPager](../com.agoda.kakao/-k-view-pager/index.md) | View with SwipeableActions and ViewPagerAssertions |
 | [com.agoda.kakao.KWebView](../com.agoda.kakao/-k-web-view/index.md) | Class for interacting with WebViews |
 | [com.agoda.kakao.ListViewAdapterAssertions](../com.agoda.kakao/-list-view-adapter-assertions/index.md) | Provides assertions for listView adapter |
-| [com.agoda.kakao.ListViewViewAdapterSizeMatcher](../com.agoda.kakao/-list-view-view-adapter-size-matcher/index.md) | Matches ListView with count of childs |
+| [com.agoda.kakao.ListViewViewAdapterSizeMatcher](../com.agoda.kakao/-list-view-view-adapter-size-matcher/index.md) | Matches ListView with count of children |
 | [com.agoda.kakao.NavigationItemMatcher](../com.agoda.kakao/-navigation-item-matcher/index.md) | Matches NavigationView with given item id checked |
 | [com.agoda.kakao.NavigationViewActions](../com.agoda.kakao/-navigation-view-actions/index.md) | Provides actions for navigation view |
 | [com.agoda.kakao.NavigationViewAssertions](../com.agoda.kakao/-navigation-view-assertions/index.md) | Provides assertions for NavigationView |
@@ -74,7 +74,7 @@
 | [com.agoda.kakao.RatingBarMatcher](../com.agoda.kakao/-rating-bar-matcher/index.md) | Matcher of value rating of given matcher |
 | [com.agoda.kakao.RecyclerActions](../com.agoda.kakao/-recycler-actions/index.md) | Provides ScrollableActions implementation for RecyclerView |
 | [com.agoda.kakao.RecyclerAdapterAssertions](../com.agoda.kakao/-recycler-adapter-assertions/index.md) | Provides assertions for recyclerView adapter |
-| [com.agoda.kakao.RecyclerViewAdapterSizeMatcher](../com.agoda.kakao/-recycler-view-adapter-size-matcher/index.md) | Matches RecyclerView with count of childs |
+| [com.agoda.kakao.RecyclerViewAdapterSizeMatcher](../com.agoda.kakao/-recycler-view-adapter-size-matcher/index.md) | Matches RecyclerView with count of children |
 | [com.agoda.kakao.RootBuilder](../com.agoda.kakao/-root-builder/index.md) | Class for building root matchers |
 | [com.agoda.kakao.Screen](../com.agoda.kakao/-screen/index.md) | Container class for UI elements. |
 | [com.agoda.kakao.ScreenActions](../com.agoda.kakao/-screen-actions/index.md) | Interface with common actions for all screens |
