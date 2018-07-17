@@ -4,8 +4,8 @@
 
 `ListViewViewAdapterSizeMatcher(size: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`
 
-Matches ListView with count of childs
+Matches ListView with count of children
 
 ### Parameters
 
-`size` - of childs count in ListView
+`size` - of children count in ListView

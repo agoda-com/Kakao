@@ -2,4 +2,4 @@
 
 # matchesSafely
 
-`protected fun matchesSafely(view: RecyclerView?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+`protected fun matchesSafely(view: RecyclerView): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)

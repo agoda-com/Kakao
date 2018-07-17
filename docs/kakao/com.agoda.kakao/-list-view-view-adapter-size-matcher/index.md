@@ -4,21 +4,21 @@
 
 `class ListViewViewAdapterSizeMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`ListView`](https://developer.android.com/reference/android/widget/ListView.html)`>`
 
-Matches ListView with count of childs
+Matches ListView with count of children
 
 ### Parameters
 
-`size` - of childs count in ListView
+`size` - of children count in ListView
 
 ### Constructors
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `ListViewViewAdapterSizeMatcher(size: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`<br>Matches ListView with count of childs |
+| [&lt;init&gt;](-init-.md) | `ListViewViewAdapterSizeMatcher(size: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`<br>Matches ListView with count of children |
 
 ### Functions
 
 | Name | Summary |
 |---|---|
 | [describeTo](describe-to.md) | `fun describeTo(description: Description): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [matchesSafely](matches-safely.md) | `fun matchesSafely(view: `[`ListView`](https://developer.android.com/reference/android/widget/ListView.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [matchesSafely](matches-safely.md) | `fun matchesSafely(view: `[`ListView`](https://developer.android.com/reference/android/widget/ListView.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |

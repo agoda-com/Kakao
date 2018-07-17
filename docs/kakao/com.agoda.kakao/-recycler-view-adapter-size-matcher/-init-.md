@@ -4,8 +4,8 @@
 
 `RecyclerViewAdapterSizeMatcher(size: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`
 
-Matches RecyclerView with count of childs
+Matches RecyclerView with count of children
 
 ### Parameters
 
-`size` - of childs count in RecyclerView
+`size` - of children count in RecyclerView
