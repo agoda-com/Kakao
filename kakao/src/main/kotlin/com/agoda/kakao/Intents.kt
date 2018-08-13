@@ -3,8 +3,8 @@
 package com.agoda.kakao
 
 import android.app.Instrumentation.ActivityResult
-import android.support.test.espresso.intent.Intents
-import android.support.test.espresso.intent.VerificationMode
+import androidx.test.espresso.intent.Intents
+import androidx.test.espresso.intent.VerificationMode
 
 /**
  * This class is intended to be used when you need to check if some intent has been sent

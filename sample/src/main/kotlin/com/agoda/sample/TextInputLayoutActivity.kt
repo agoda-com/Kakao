@@ -1,9 +1,9 @@
 package com.agoda.sample
 
 import android.os.Bundle
-import android.support.design.widget.TextInputLayout
-import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputLayout
 
 class TextInputLayoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

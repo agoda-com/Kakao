@@ -1,8 +1,8 @@
 package com.agoda.kakao
 
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.matcher.ViewMatchers
 
 /**
  * Container class for UI elements.
