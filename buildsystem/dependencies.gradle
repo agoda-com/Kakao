@@ -1,11 +1,11 @@
 ext.versions = [
         kotlin         : '1.2.51',
         dokka          : '0.9.17',
-        android_gradle : '3.2.0-beta05',
+        android_gradle : '3.1.4',
         bintray        : '1.7.3',
         maven          : '1.5',
         oss            : '4.5.4',
-        support_library: '1.0.0-rc01',
+        androidx       : '1.0.0-rc01',
         espresso       : '3.1.0-alpha4',
         espresso_rules : '1.0.0-alpha4',
         espresso_runner: '1.0.0-alpha4',
@@ -20,10 +20,10 @@ ext.libraries = [
         bintray         : "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.bintray",
         maven           : "com.github.dcendents:android-maven-gradle-plugin:$versions.maven",
         oss             : "org.jfrog.buildinfo:build-info-extractor-gradle:$versions.oss",
-        appcompat       : "androidx.appcompat:appcompat:$versions.support_library",
-        recyclerview    : "androidx.recyclerview:recyclerview:$versions.support_library",
-        design          : "com.google.android.material:material:$versions.support_library",
-        annotations     : "androidx.annotation:annotation:$versions.support_library",
+        appcompat       : "androidx.appcompat:appcompat:$versions.androidx",
+        recyclerview    : "androidx.recyclerview:recyclerview:$versions.androidx",
+        design          : "com.google.android.material:material:$versions.androidx",
+        annotations     : "androidx.annotation:annotation:$versions.androidx",
         espresso_runner : "androidx.test:runner:$versions.espresso_runner",
         espresso_rules  : "androidx.test:rules:$versions.espresso_rules",
         espresso_core   : "androidx.test.espresso:espresso-core:$versions.espresso",
@@ -40,12 +40,12 @@ if (alias == null) {
 }
 
 ext.kakao = [
-        group           : 'com.agoda.kakao',
-        artifact        : 'kakao',
-        name            : 'kakao',
-        description     : 'Kotlin based DSL for fluent AT with Espresso',
-        version         : "1.4.0$alias",
-        version_desc    : "Kakao 1.4.0$alias",
-        site            : 'https://github.com/agoda-com/Kakao',
-        github          : 'https://github.com/agoda-com/Kakao.git'
+        group       : 'com.agoda.kakao',
+        artifact    : 'kakao',
+        name        : 'kakao',
+        description : 'Kotlin based DSL for fluent AT with Espresso',
+        version     : "1.4.0$alias",
+        version_desc: "Kakao 1.4.0$alias",
+        site        : 'https://github.com/agoda-com/Kakao',
+        github      : 'https://github.com/agoda-com/Kakao.git'
 ]
