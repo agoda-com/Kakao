@@ -3,9 +3,10 @@ package com.agoda.sample
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
 
 class IntentActivity : AppCompatActivity() {
     private val resultText by lazy { findViewById<TextView>(R.id.result_text) }

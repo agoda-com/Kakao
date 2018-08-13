@@ -2,12 +2,12 @@ package com.agoda.sample
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 class TestActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

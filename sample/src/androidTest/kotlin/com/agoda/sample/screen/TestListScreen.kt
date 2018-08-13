@@ -1,6 +1,6 @@
 package com.agoda.sample.screen
 
-import android.support.test.espresso.DataInteraction
+import androidx.test.espresso.DataInteraction
 import com.agoda.kakao.*
 import com.agoda.sample.R
 

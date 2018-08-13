@@ -1,7 +1,7 @@
 package com.agoda.sample
 
-import android.support.test.espresso.intent.rule.IntentsTestRule
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.espresso.intent.rule.IntentsTestRule
+import androidx.test.runner.AndroidJUnit4
 import com.agoda.sample.screen.IntentActivityScreen
 import org.junit.Rule
 import org.junit.Test

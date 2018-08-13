@@ -2,15 +2,15 @@
 
 package com.agoda.kakao
 
-import android.support.design.widget.Snackbar
-import android.support.design.widget.TextInputEditText
-import android.support.test.espresso.DataInteraction
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.assertion.ViewAssertions
-import android.support.test.espresso.web.sugar.Web
-import android.support.v7.widget.AppCompatButton
-import android.support.v7.widget.AppCompatTextView
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
+import androidx.test.espresso.DataInteraction
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.web.sugar.Web
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
 import android.view.View
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
