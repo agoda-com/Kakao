@@ -1,8 +1,8 @@
 package com.agoda.sample
 
-import android.support.test.espresso.web.webdriver.Locator
-import android.support.test.rule.ActivityTestRule
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.espresso.web.webdriver.Locator
+import androidx.test.rule.ActivityTestRule
+import androidx.test.runner.AndroidJUnit4
 import com.agoda.sample.screen.TestWebScreen
 import org.junit.Rule
 import org.junit.Test

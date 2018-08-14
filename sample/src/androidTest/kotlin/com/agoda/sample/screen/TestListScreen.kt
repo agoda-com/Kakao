@@ -1,7 +1,11 @@
 package com.agoda.sample.screen
 
-import android.support.test.espresso.DataInteraction
-import com.agoda.kakao.*
+import androidx.test.espresso.DataInteraction
+import com.agoda.kakao.KAdapterItem
+import com.agoda.kakao.KButton
+import com.agoda.kakao.KListView
+import com.agoda.kakao.KTextView
+import com.agoda.kakao.Screen
 import com.agoda.sample.R
 
 class TestListScreen : Screen<TestListScreen>() {

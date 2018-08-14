@@ -8,18 +8,18 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.os.Build
-import android.support.annotation.ColorRes
-import android.support.annotation.DrawableRes
-import android.support.design.widget.NavigationView
-import android.support.design.widget.TextInputLayout
-import android.support.test.espresso.matcher.BoundedMatcher
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
-import android.support.v4.view.ViewPager
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.*
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.test.espresso.matcher.BoundedMatcher
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.textfield.TextInputLayout
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.TypeSafeMatcher
@@ -159,8 +159,7 @@ class NavigationItemMatcher(private val id: Int) : BoundedMatcher<View, Navigati
         desc.appendText("Matches view with menu item checked: $id")
     }
 
-    override fun matchesSafely(view: NavigationView)
-            = view.menu.getItem(id)?.isChecked ?: false
+    override fun matchesSafely(view: NavigationView) = view.menu.getItem(id)?.isChecked ?: false
 }
 
 /**
@@ -366,7 +365,7 @@ class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
             return item?.background == null
         }
 
-        return item?.let{
+        return item?.let {
             val expectedColor = if (resId != -1) {
                 ContextCompat.getColor(it.context, resId)
             } else {
@@ -374,9 +373,9 @@ class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
             }
 
             it.background != null &&
-            it.background.current is ColorDrawable &&
-            (it.background.current as ColorDrawable).color == expectedColor
-        }?: false
+                    it.background.current is ColorDrawable &&
+                    (it.background.current as ColorDrawable).color == expectedColor
+        } ?: false
     }
 
     override fun describeTo(description: Description) {

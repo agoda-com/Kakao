@@ -3,27 +3,39 @@
 package com.agoda.kakao
 
 import android.net.Uri
-import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.TabLayout
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.action.*
-import android.support.test.espresso.contrib.DrawerActions
-import android.support.test.espresso.contrib.NavigationViewActions
-import android.support.test.espresso.contrib.RecyclerViewActions
-import android.support.test.espresso.matcher.ViewMatchers
-import android.support.test.espresso.web.model.Atom
-import android.support.test.espresso.web.model.ElementReference
-import android.support.test.espresso.web.sugar.Web
-import android.support.test.espresso.web.webdriver.DriverAtoms
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.RecyclerView
 import android.view.Gravity
 import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.Checkable
+import android.widget.ProgressBar
+import android.widget.RatingBar
+import android.widget.ScrollView
+import android.widget.SeekBar
+import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.action.CoordinatesProvider
+import androidx.test.espresso.action.EspressoKey
+import androidx.test.espresso.action.GeneralClickAction
+import androidx.test.espresso.action.GeneralLocation
+import androidx.test.espresso.action.GeneralSwipeAction
+import androidx.test.espresso.action.Press
+import androidx.test.espresso.action.Tap
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.contrib.DrawerActions
+import androidx.test.espresso.contrib.NavigationViewActions
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.web.model.Atom
+import androidx.test.espresso.web.model.ElementReference
+import androidx.test.espresso.web.sugar.Web
+import androidx.test.espresso.web.webdriver.DriverAtoms
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -331,11 +343,11 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
             override fun getConstraints() = ViewMatchers.isAssignableFrom(RecyclerView::class.java)
 
             override fun perform(controller: UiController, view: View) {
-                if (view is RecyclerView) {
-                    val position = view.adapter.itemCount - 1
+                if (view is RecyclerView && view.adapter != null) {
+                    val position = view.adapter!!.itemCount - 1
                     view.scrollToPosition(position)
                     controller.loopMainThreadUntilIdle()
-                    val lastView = view.findViewHolderForLayoutPosition(position).itemView
+                    val lastView = view.findViewHolderForLayoutPosition(position)!!.itemView
                     view.scrollBy(0, lastView.height)
                     controller.loopMainThreadUntilIdle()
                 }
@@ -669,7 +681,7 @@ interface BottomNavigationViewActions : BaseActions {
         })
     }
 }
-                     
+
 /**
  * Provides action for TabLayout
  */

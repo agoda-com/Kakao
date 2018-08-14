@@ -1,12 +1,12 @@
 package com.agoda.sample
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class ListActivity : AppCompatActivity() {
     val items = listOf("Title 1", "Title 2", "Title 3", "Title 4", "Title 5",

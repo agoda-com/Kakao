@@ -3,14 +3,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName '1.0.0'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     sourceSets {
@@ -40,4 +40,5 @@ dependencies {
     androidTestImplementation libraries.espresso_rules
     androidTestImplementation libraries.espresso_intents
     androidTestImplementation libraries.espresso_core
+    androidTestImplementation libraries.espresso_web
 }

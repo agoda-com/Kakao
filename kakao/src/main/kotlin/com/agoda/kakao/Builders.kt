@@ -10,24 +10,24 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.support.annotation.ColorRes
-import android.support.annotation.DrawableRes
-import android.support.annotation.StringRes
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.intent.matcher.BundleMatchers
-import android.support.test.espresso.intent.matcher.ComponentNameMatchers
-import android.support.test.espresso.intent.matcher.IntentMatchers
-import android.support.test.espresso.intent.matcher.UriMatchers
-import android.support.test.espresso.matcher.RootMatchers
-import android.support.test.espresso.matcher.ViewMatchers
-import android.support.test.espresso.web.model.Atom
-import android.support.test.espresso.web.model.ElementReference
-import android.support.test.espresso.web.sugar.Web
-import android.support.test.espresso.web.webdriver.DriverAtoms
-import android.support.test.espresso.web.webdriver.Locator
 import android.view.View
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.Root
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.intent.matcher.BundleMatchers
+import androidx.test.espresso.intent.matcher.ComponentNameMatchers
+import androidx.test.espresso.intent.matcher.IntentMatchers
+import androidx.test.espresso.intent.matcher.UriMatchers
+import androidx.test.espresso.matcher.RootMatchers
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.web.model.Atom
+import androidx.test.espresso.web.model.ElementReference
+import androidx.test.espresso.web.sugar.Web
+import androidx.test.espresso.web.webdriver.DriverAtoms
+import androidx.test.espresso.web.webdriver.Locator
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -239,7 +239,7 @@ class ViewBuilder {
     fun withRating(rating: Float) {
         viewMatchers.add(RatingBarMatcher(rating))
     }
-    
+
     /**
      * Matches the view with given drawable
      *
@@ -371,7 +371,7 @@ class ViewBuilder {
      * @param matcher Matcher of class name
      */
     fun withClassName(matcher: Matcher<String>) {
-        viewMatchers.add(ViewMatchers.withClassName( matcher))
+        viewMatchers.add(ViewMatchers.withClassName(matcher))
     }
 
     /**
