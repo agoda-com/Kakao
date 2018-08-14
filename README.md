@@ -220,6 +220,15 @@ dependencies {
 }
 ```
 
+### AndroidX
+There is an published artifact with support of AndroidX libraries that is not merged to master branch for the time being.
+```
+dependencies {
+    androidTestImplementation 'com.agoda.kakao:kakao:1.4.0-androidx'
+}
+```
+We will move to AndroidX dependencies in the major release as soon as Google will publish stable release.
+
 ### Contribution Policy
 
 **Kakao** is an open source project, and depends on its users to improve it. We are more than happy to find you interested in taking the project forward.
