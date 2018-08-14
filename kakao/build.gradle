@@ -29,7 +29,7 @@ dependencies {
     implementation libraries.kotlin_stdlib
     implementation libraries.appcompat
     implementation libraries.recyclerview
-    implementation libraries.design
+    implementation libraries.material
     implementation libraries.espresso_core
     implementation libraries.espresso_web
     implementation libraries.espresso_intents

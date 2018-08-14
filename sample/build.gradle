@@ -30,7 +30,7 @@ dependencies {
     implementation libraries.kotlin_stdlib
     implementation libraries.appcompat
     implementation libraries.recyclerview
-    implementation libraries.design
+    implementation libraries.material
 
     testImplementation libraries.junit
 
