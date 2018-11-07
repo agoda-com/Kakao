@@ -10,6 +10,7 @@ import android.support.annotation.StringRes
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.TabLayout
 import android.support.design.widget.TextInputLayout
+import android.support.test.espresso.Root
 import android.support.test.espresso.ViewAssertion
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
@@ -37,6 +38,7 @@ import java.lang.AssertionError
  */
 interface BaseAssertions {
     val view: ViewInteraction
+    var root: Matcher<Root>
 
     /**
      * Checks if the view is displayed
@@ -295,7 +297,8 @@ interface BaseAssertions {
      * @see RootBuilder
      */
     fun inRoot(function: RootBuilder.() -> Unit) {
-        view.inRoot(RootBuilder().apply(function).getRootMatcher())
+        root = RootBuilder().apply(function).getRootMatcher()
+        view.inRoot(root)
     }
 
     /**
