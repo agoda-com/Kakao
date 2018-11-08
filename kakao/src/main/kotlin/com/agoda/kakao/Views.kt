@@ -6,8 +6,10 @@ import android.support.design.widget.Snackbar
 import android.support.design.widget.TextInputEditText
 import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
+import android.support.test.espresso.Root
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
+import android.support.test.espresso.matcher.RootMatchers
 import android.support.test.espresso.web.sugar.Web
 import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
@@ -29,6 +31,7 @@ import kotlin.reflect.KClass
 @ViewMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
     override val view: ViewInteraction
+    override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
      * Constructs view class with view interaction from given ViewBuilder
@@ -349,6 +352,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
     override val view: ViewInteraction
+    override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
      * Constructs view class with view interaction from given ViewBuilder
@@ -419,6 +423,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
 
         val interaction = Espresso
                 .onData(Matchers.anything())
+                .inRoot(root)
                 .inAdapterView(matcher)
                 .atPosition(position)
 
@@ -471,6 +476,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
 
         val interaction = Espresso
                 .onData(DataBuilder().apply(childMatcher).getDataMatcher())
+                .inRoot(root)
                 .inAdapterView(matcher)
 
         return provideItem(interaction) as T
@@ -519,6 +525,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 
     override val view: ViewInteraction
+    override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
      * Constructs view class with view interaction from given ViewBuilder
@@ -591,7 +598,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
             scrollTo(position)
         } catch (error: Throwable) {}
 
-        function(provideItem(PositionMatcher(matcher, position)) as T)
+        function((provideItem(PositionMatcher(matcher, position)) as T).also { inRoot { withMatcher(root) } })
     }
 
     /**
@@ -642,8 +649,8 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
             scrollTo(childMatcher)
         } catch (error: Throwable) {}
 
-        return provideItem(ItemMatcher(matcher,
-                ViewBuilder().apply(childMatcher).getViewMatcher())) as T
+        return (provideItem(ItemMatcher(matcher,
+                ViewBuilder().apply(childMatcher).getViewMatcher())) as T).also { inRoot { withMatcher(root) } }
     }
 
     /**
@@ -656,7 +663,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         val match = ItemMatcher(matcher, ViewBuilder().apply(childMatcher).getViewMatcher())
 
         scrollTo(childMatcher)
-        Espresso.onView(match).check(ViewAssertions.matches(Matchers.anything()))
+        Espresso.onView(match).inRoot(root).check(ViewAssertions.matches(Matchers.anything()))
         return match.position
     }
 
@@ -778,6 +785,7 @@ class KAdapterItemType<out T : KAdapterItem<*>>(val provideItem: (DataInteractio
 @ViewMarker
 open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions {
     override val view = Espresso.onView(matcher)
+    override var root = RootMatchers.DEFAULT
 
     /**
      * Operator that allows usage of DSL style
@@ -828,6 +836,7 @@ class KEmptyRecyclerItem(parent: Matcher<View>) : KRecyclerItem<KEmptyRecyclerIt
 @ViewMarker
 open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
     override val view = interaction.check(ViewAssertions.matches(Matchers.anything()))
+    override var root = RootMatchers.DEFAULT
 
     /**
      * Operator that allows usage of DSL style
