@@ -284,6 +284,18 @@ class KSnackbar : KBaseView<KSnackbar>({ isInstanceOf(Snackbar.SnackbarLayout::c
 }
 
 /**
+ * View for acting and asserting on Spinner
+ *
+ * @see SpinnerActions
+ * @see SpinnerAssertions
+ */
+class KSpinner : KBaseView<KSpinner>, SpinnerActions, SpinnerAssertions {
+    constructor(function: ViewBuilder.() -> Unit) : super(function)
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
+    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
+}
+
+/**
  * View with TabLayoutActions and TabLayoutAssertions
  *
  * @see TabLayoutActions

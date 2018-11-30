@@ -5,6 +5,7 @@ package com.agoda.kakao
 import android.net.Uri
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.TabLayout
+import android.support.test.espresso.Espresso
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
 import android.support.test.espresso.ViewInteraction
@@ -788,5 +789,36 @@ interface WebActions {
      */
     private fun perform(action: Atom<*>) {
         web.withElement(ref).perform(action)
+    }
+}
+
+/**
+ * Provides action for TabLayout
+ */
+interface SpinnerActions : BaseActions {
+    /**
+     * Selects a spinner item at given position
+     *
+     * @param position Int
+     */
+    fun selectItem(position: Int) {
+        click()
+        // Clicks on the first matched item from the list.
+        Espresso.onData(Matchers.allOf(Matchers.`is`(Matchers.instanceOf(String::class.java))))
+            .atPosition(position)
+            .perform(ViewActions.click())
+    }
+
+    /**
+     * Selects a spinner item at given string content
+     *
+     * @param content String
+     */
+    fun selectItem(content: String) {
+        click()
+        // Clicks on the first matched item with content string from the list.
+        Espresso.onData(Matchers.allOf(Matchers.`is`(Matchers.instanceOf(String::class.java)),
+                                       Matchers.`is`(content)))
+            .perform(ViewActions.click())
     }
 }

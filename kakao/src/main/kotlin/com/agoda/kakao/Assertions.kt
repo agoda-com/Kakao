@@ -2,6 +2,7 @@
 
 package com.agoda.kakao
 
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.support.annotation.ColorRes
@@ -769,5 +770,29 @@ interface WebAssertions {
     fun <T> matches(value: Atom<T>, matcher: Matcher<T>) {
         web.withElement(ref)
                 .check(WebViewAssertions.webMatches(value, matcher))
+    }
+}
+
+/**
+ * Provides assertions for spinner
+ */
+interface SpinnerAssertions : BaseAssertions {
+    /**
+     * Checks if the current showing label matches given text
+     *
+     * @param text Text to be matched
+     */
+    fun withText(text: String) {
+        view.check(ViewAssertions.matches(ViewMatchers.withSpinnerText(text)))
+    }
+
+    /**
+     * Checks if the current showing label matches text from given string resource
+     *
+     * @param stringId String resource id which text to be matched
+     */
+    fun withText(@StringRes stringId: Int) {
+        val text = Resources.getSystem().getString(stringId)
+        withText(text)
     }
 }
