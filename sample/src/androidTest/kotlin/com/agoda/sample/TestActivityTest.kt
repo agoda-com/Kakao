@@ -78,10 +78,10 @@ class TestActivityTest {
             spinner {
                 val spinnerArray = rule.activity.resources.getStringArray(R.array.sample_arrays)
                 selectItem(4)
-                withText(spinnerArray[4])
+                hasText(spinnerArray[4])
 
                 selectItem(spinnerArray[8])
-                withText(spinnerArray[8])
+                hasText(spinnerArray[8])
             }
         }
     }

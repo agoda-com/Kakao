@@ -2,7 +2,6 @@
 
 package com.agoda.kakao
 
-import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.support.annotation.ColorRes
@@ -782,7 +781,7 @@ interface SpinnerAssertions : BaseAssertions {
      *
      * @param text Text to be matched
      */
-    fun withText(text: String) {
+    fun hasText(text: String) {
         view.check(ViewAssertions.matches(ViewMatchers.withSpinnerText(text)))
     }
 }

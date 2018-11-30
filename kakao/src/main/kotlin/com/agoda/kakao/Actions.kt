@@ -793,7 +793,7 @@ interface WebActions {
 }
 
 /**
- * Provides action for TabLayout
+ * Provides action for Spinner
  */
 interface SpinnerActions : BaseActions {
     /**
