@@ -785,14 +785,4 @@ interface SpinnerAssertions : BaseAssertions {
     fun withText(text: String) {
         view.check(ViewAssertions.matches(ViewMatchers.withSpinnerText(text)))
     }
-
-    /**
-     * Checks if the current showing label matches text from given string resource
-     *
-     * @param stringId String resource id which text to be matched
-     */
-    fun withText(@StringRes stringId: Int) {
-        val text = Resources.getSystem().getString(stringId)
-        withText(text)
-    }
 }

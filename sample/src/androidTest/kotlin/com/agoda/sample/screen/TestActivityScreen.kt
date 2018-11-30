@@ -25,4 +25,6 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
     val seekbar: KSeekBar = KSeekBar { withId(R.id.seek_bar) }
 
     val snackbar: KSnackbar = KSnackbar()
+
+    val spinner: KSpinner = KSpinner { withId(R.id.spinner) }
 }
