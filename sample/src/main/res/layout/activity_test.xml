@@ -65,4 +65,10 @@
         android:max="100"
         android:progress="70" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sample_arrays" />
+
 </LinearLayout>

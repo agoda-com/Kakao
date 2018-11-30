@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
+import android.widget.Spinner
 
 class TestActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,5 +47,7 @@ class TestActivity: AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+
+        findViewById<Spinner>(R.id.spinner).setSelection(3)
     }
 }
