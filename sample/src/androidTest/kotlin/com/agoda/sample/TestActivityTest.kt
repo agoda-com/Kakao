@@ -1,9 +1,7 @@
 package com.agoda.sample
 
-import android.content.res.Resources
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import android.support.v4.content.ContextCompat
 import com.agoda.sample.screen.TestActivityScreen
 import org.junit.Rule
 import org.junit.Test
