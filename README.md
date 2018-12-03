@@ -245,7 +245,7 @@ Kakao is open source and available under the [Apache License, Version 2.0](https
 
 ### Thanks to
 
-* [Alviere](https://github.com/Alviere) - **Ilya Lim** 
+* [Unlimity](https://github.com/Unlimity) - **Ilya Lim** 
 * [VerachadW](https://github.com/VerachadW) - **Verachad Wongsawangtham**
 * [Сdsap](https://github.com/cdsap) - **Inaki Villar** 
 * [Vacxe](https://github.com/Vacxe) - **Konstantin Aksenov** 
