@@ -11,7 +11,7 @@ class AutoCompleteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auto_complete)
 
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1,
+        val adapter = ArrayAdapter<String>(this, R.layout.item_autocomplete, R.id.text,
                 listOf("Title 1", "Title 2", "Title 3", "Title 4", "Title 5",
                         "Title 6", "Title 7", "Title 8", "Title 9", "Title 10"))
 

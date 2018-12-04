@@ -10,7 +10,6 @@ import com.agoda.kakao.Screen
 import com.agoda.sample.R
 
 class AutoCompleteActivityScreen : Screen<AutoCompleteActivityScreen>() {
-
     val input = KEditText {
         withId(R.id.auto_complete_view)
     }
@@ -20,6 +19,6 @@ class AutoCompleteActivityScreen : Screen<AutoCompleteActivityScreen>() {
             itemTypeBuilder = { itemType(::Item) })
 
     class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
-        val text = KTextView(i) { withId(android.R.id.text1) }
+        val text = KTextView(i) { withId(R.id.text) }
     }
 }
