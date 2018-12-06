@@ -6,7 +6,8 @@ import com.agoda.kakao.*
 open class TestActivityScreen : Screen<TestActivityScreen>() {
     val content: KView = KView { withId(R.id.content) }
     val map: KView = KView { withId(R.id.map) }
-    val button: KButton = KButton { withId(R.id.button) }
+    val recycler: KButton = KButton { withId(R.id.recycler) }
+    val autoComplete: KButton = KButton { withId(R.id.auto_complete) }
     val snackbarButton: KButton = KButton { withId(R.id.snackbar_button) }
 
     val textViewLarge: KTextView = KTextView {

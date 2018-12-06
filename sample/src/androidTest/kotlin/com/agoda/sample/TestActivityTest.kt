@@ -42,8 +42,12 @@ class TestActivityTest {
                 hasAnyTag("test_tag", "non_test_tag")
             }
 
-            button {
-                hasText("BUTTON")
+            recycler {
+                hasText("RECYCLER")
+            }
+
+            autoComplete {
+                hasText("AUTO_COMPLETE")
             }
 
             ratingbar {
