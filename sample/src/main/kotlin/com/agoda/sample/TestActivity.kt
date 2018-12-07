@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
 
-class TestActivity: AppCompatActivity() {
+class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
@@ -19,8 +19,12 @@ class TestActivity: AppCompatActivity() {
         super.onResume()
         findViewById<ImageView>(R.id.map).tag = "test_tag"
 
-        findViewById<Button>(R.id.button).setOnClickListener {
+        findViewById<Button>(R.id.recycler).setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.auto_complete).setOnClickListener {
+            startActivity(Intent(this, AutoCompleteActivity::class.java))
         }
 
         findViewById<Button>(R.id.web_button).setOnClickListener {

@@ -48,6 +48,11 @@
             android:label="Intent Activity"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name=".AutoCompleteActivity"
+            android:label="Autocomplete Activity"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>
