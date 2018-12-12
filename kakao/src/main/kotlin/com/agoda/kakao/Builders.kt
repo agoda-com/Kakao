@@ -102,6 +102,15 @@ class ViewBuilder {
     }
 
     /**
+     * Matches the view with given tag assigned
+     *
+     * @param tag Tag object to match
+     */
+    fun withTag(tag: Any) {
+        viewMatchers.add(ViewMatchers.withTagValue(Matchers.equalTo(tag)))
+    }
+
+    /**
      * Matches the view if it is in ENABLED state
      */
     fun isEnabled() {
