@@ -201,4 +201,52 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         function(this)
         return this
     }
+
+    /**
+     * Calls childAt() on your view with base child
+     *
+     * Calls childAt() on your KRecyclerView and casts received item to KEmptyRecyclerItem
+     *
+     * @param position Position of child in adapter
+     * @param tail Lambda with KEmptyRecyclerItem receiver
+     * @see KEmptyRecyclerItem
+     */
+    fun emptyChildAt(position: Int, tail: KEmptyRecyclerItem.() -> Unit) {
+        childAt(position, tail)
+    }
+
+    /**
+     * Calls firstChild() on your view with base child
+     *
+     * Calls firstChild() on your KRecyclerView and casts received item to KEmptyRecyclerItem
+     *
+     * @param tail Lambda with KEmptyRecyclerItem receiver
+     * @see KEmptyRecyclerItem
+     */
+    fun emptyFirstChild(tail: KEmptyRecyclerItem.() -> Unit) {
+        firstChild(tail)
+    }
+
+    /**
+     * Calls lastChild() on your view with base child
+     *
+     * Calls lastChild() on your KRecyclerView and casts received item to KEmptyRecyclerItem
+     *
+     * @param tail Lambda with KEmptyRecyclerItem receiver
+     * @see KEmptyRecyclerItem
+     */
+    fun emptyLastChild(tail: KEmptyRecyclerItem.() -> Unit) {
+        lastChild(tail)
+    }
+
+    /**
+     * Calls childWith() on your view with base child
+     *
+     * Calls childWith() on your KRecyclerView and casts received item to KEmptyRecyclerItem
+     *
+     * @param builder View builder that will match the child view
+     * @return Matched KEmptyRecyclerItem
+     * @see KEmptyRecyclerItem
+     */
+    fun emptyChildWith(builder: ViewBuilder.() -> Unit) = childWith<KEmptyRecyclerItem>(builder)
 }
