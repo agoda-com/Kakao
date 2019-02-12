@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.agoda.kakao
+package com.agoda.kakao.views
 
 import android.support.design.widget.Snackbar
 import android.support.design.widget.TextInputEditText
@@ -14,6 +14,8 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
 import android.view.View
+import com.agoda.kakao.BuilderMarker
+import com.agoda.kakao.ViewMarker
 import com.agoda.kakao.actions.*
 import com.agoda.kakao.assertions.*
 import com.agoda.kakao.builders.DataBuilder
