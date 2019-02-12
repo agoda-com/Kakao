@@ -6,8 +6,8 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import android.support.test.espresso.web.webdriver.Locator
 import com.agoda.kakao.BuilderMarker
-import com.agoda.kakao.WebActions
 import com.agoda.kakao.WebAssertions
+import com.agoda.kakao.actions.WebActions
 
 /**
  * Class for building WebView element matchers

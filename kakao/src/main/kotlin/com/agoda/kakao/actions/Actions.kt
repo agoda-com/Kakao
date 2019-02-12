@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.agoda.kakao
+package com.agoda.kakao.actions
 
 import android.net.Uri
 import android.support.design.widget.BottomNavigationView
@@ -24,6 +24,7 @@ import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
 import android.widget.*
+import com.agoda.kakao.PreciseSwipe
 import com.agoda.kakao.builders.ViewBuilder
 import org.hamcrest.Description
 import org.hamcrest.Matcher

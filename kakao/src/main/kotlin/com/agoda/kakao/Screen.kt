@@ -3,6 +3,7 @@ package com.agoda.kakao
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.ViewMatchers
+import com.agoda.kakao.actions.ScreenActions
 
 /**
  * Container class for UI elements.
