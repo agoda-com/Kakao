@@ -22,6 +22,7 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import com.agoda.kakao.builders.RootBuilder
 import com.agoda.kakao.builders.ViewBuilder
+import com.agoda.kakao.matchers.*
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers

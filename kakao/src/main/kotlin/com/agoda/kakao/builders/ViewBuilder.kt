@@ -12,6 +12,7 @@ import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
 import com.agoda.kakao.*
+import com.agoda.kakao.matchers.*
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers

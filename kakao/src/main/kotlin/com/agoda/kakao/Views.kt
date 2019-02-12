@@ -17,6 +17,8 @@ import android.view.View
 import com.agoda.kakao.builders.DataBuilder
 import com.agoda.kakao.builders.ViewBuilder
 import com.agoda.kakao.builders.WebElementBuilder
+import com.agoda.kakao.matchers.ItemMatcher
+import com.agoda.kakao.matchers.PositionMatcher
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass

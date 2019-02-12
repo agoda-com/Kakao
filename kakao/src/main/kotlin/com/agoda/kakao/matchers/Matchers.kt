@@ -1,4 +1,4 @@
-package com.agoda.kakao
+package com.agoda.kakao.matchers
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
