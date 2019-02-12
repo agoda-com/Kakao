@@ -2,10 +2,10 @@ package com.agoda.sample.screen
 
 import android.app.Activity
 import android.content.Intent
-import com.agoda.kakao.KButton
-import com.agoda.kakao.KIntent
-import com.agoda.kakao.KTextView
-import com.agoda.kakao.Screen
+import com.agoda.kakao.intent.KIntent
+import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.text.KButton
+import com.agoda.kakao.text.KTextView
 import com.agoda.sample.R
 
 class IntentActivityScreen : Screen<IntentActivityScreen>() {

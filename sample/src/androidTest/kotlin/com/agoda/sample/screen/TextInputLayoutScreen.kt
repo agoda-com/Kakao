@@ -1,8 +1,8 @@
 package com.agoda.sample.screen
 
-import com.agoda.kakao.KButton
-import com.agoda.kakao.KTextInputLayout
-import com.agoda.kakao.Screen
+import com.agoda.kakao.edit.KTextInputLayout
+import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.text.KButton
 import com.agoda.sample.R
 
 class TextInputLayoutScreen : Screen<TextInputLayoutScreen>() {
