@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.agoda.kakao
+package com.agoda.kakao.assertions
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable

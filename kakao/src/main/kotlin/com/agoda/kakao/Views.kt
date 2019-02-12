@@ -15,6 +15,7 @@ import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
 import android.view.View
 import com.agoda.kakao.actions.*
+import com.agoda.kakao.assertions.*
 import com.agoda.kakao.builders.DataBuilder
 import com.agoda.kakao.builders.ViewBuilder
 import com.agoda.kakao.builders.WebElementBuilder
