@@ -5,6 +5,8 @@ package com.agoda.kakao
 import android.app.Instrumentation.ActivityResult
 import android.support.test.espresso.intent.Intents
 import android.support.test.espresso.intent.VerificationMode
+import com.agoda.kakao.builders.ActivityResultBuilder
+import com.agoda.kakao.builders.IntentBuilder
 
 /**
  * This class is intended to be used when you need to check if some intent has been sent

@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.agoda.kakao
+package com.agoda.kakao.builders
 
 import android.app.Activity
 import android.app.Instrumentation.ActivityResult
@@ -28,6 +28,7 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import android.support.test.espresso.web.webdriver.Locator
 import android.view.View
+import com.agoda.kakao.*
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers

@@ -14,6 +14,9 @@ import android.support.test.espresso.web.sugar.Web
 import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
 import android.view.View
+import com.agoda.kakao.builders.DataBuilder
+import com.agoda.kakao.builders.ViewBuilder
+import com.agoda.kakao.builders.WebElementBuilder
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass

@@ -24,6 +24,7 @@ import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
 import android.widget.*
+import com.agoda.kakao.builders.ViewBuilder
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers

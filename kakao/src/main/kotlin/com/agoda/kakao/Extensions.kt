@@ -2,6 +2,9 @@
 
 package com.agoda.kakao
 
+import com.agoda.kakao.builders.DataBuilder
+import com.agoda.kakao.builders.ViewBuilder
+
 /**
  * Calls childAt() on your view with base child
  *
