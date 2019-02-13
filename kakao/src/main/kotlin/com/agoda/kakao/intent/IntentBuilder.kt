@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.intent
 
 import android.app.Instrumentation

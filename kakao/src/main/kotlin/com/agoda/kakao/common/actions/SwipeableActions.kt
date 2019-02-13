@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.common.actions
 
 import android.support.test.espresso.action.ViewActions

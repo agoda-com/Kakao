@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.progress
 
 import android.os.SystemClock

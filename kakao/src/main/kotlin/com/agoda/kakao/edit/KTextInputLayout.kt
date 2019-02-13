@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.edit
 
 import android.support.design.widget.TextInputEditText

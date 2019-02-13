@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.common.builders
 
 import android.support.test.espresso.Root

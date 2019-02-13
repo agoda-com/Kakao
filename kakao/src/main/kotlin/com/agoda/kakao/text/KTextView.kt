@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.text
 
 import android.support.test.espresso.DataInteraction

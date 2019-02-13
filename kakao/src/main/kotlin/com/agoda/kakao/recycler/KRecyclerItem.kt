@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.recycler
 
 import android.support.test.espresso.Espresso

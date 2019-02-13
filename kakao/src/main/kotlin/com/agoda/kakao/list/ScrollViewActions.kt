@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.list
 
 import android.support.test.espresso.UiController

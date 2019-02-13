@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.common.matchers
 
 import android.graphics.Bitmap

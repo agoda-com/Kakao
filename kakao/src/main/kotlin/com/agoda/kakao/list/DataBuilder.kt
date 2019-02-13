@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.list
 
 import com.agoda.kakao.common.BuilderMarker

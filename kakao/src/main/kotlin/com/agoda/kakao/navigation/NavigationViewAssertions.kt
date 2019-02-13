@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.navigation
 
 import android.support.test.espresso.assertion.ViewAssertions

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.web
 
 import android.support.test.espresso.web.model.Atom

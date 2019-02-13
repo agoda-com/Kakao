@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.bottomnav
 
 import android.support.design.widget.BottomNavigationView

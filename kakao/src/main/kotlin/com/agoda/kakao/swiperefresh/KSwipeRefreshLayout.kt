@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.agoda.kakao.swiperefresh
 
 import android.support.test.espresso.DataInteraction
