@@ -12,7 +12,7 @@ import org.hamcrest.Description
  *
  * @param size of children count in ListView
  */
-class ListViewViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, ListView>(ListView::class.java) {
+class ListViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, ListView>(ListView::class.java) {
 
     private var itemCount: Int = 0
 
