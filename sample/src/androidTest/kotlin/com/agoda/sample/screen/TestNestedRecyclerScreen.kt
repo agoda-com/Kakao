@@ -1,7 +1,11 @@
 package com.agoda.sample.screen
 
 import android.view.View
-import com.agoda.kakao.*
+import com.agoda.kakao.recycler.KRecyclerItem
+import com.agoda.kakao.recycler.KRecyclerView
+import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.text.KButton
+import com.agoda.kakao.text.KTextView
 import com.agoda.sample.R
 import org.hamcrest.Matcher
 

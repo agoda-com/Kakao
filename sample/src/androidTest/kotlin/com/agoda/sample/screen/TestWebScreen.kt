@@ -1,7 +1,7 @@
 package com.agoda.sample.screen
 
-import com.agoda.kakao.KWebView
-import com.agoda.kakao.Screen
+import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.web.KWebView
 import com.agoda.sample.R
 
 class TestWebScreen : Screen<TestWebScreen>() {
