@@ -5,12 +5,12 @@ package com.agoda.kakao.intent
 import android.app.Activity
 import android.app.Instrumentation
 import android.content.Intent
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 
 /**
  * Class for building ActivityResult
  */
-@BuilderMarker
+@KakaoDslMarker
 class ActivityResultBuilder {
     private var code = Activity.RESULT_OK
     private var data: Intent? = null

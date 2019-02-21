@@ -54,22 +54,5 @@ interface ScreenActions {
     fun pressMenuKey() {
         view.perform(ViewActions.pressMenuKey())
     }
-
-    /**
-     * Idles for given amount of time
-     *
-     * @param duration Time to idle in milliseconds (1 second by default)
-     */
-    fun idle(duration: Long = 1000L) {
-        view.perform(object : ViewAction {
-            override fun getDescription() = "Idle for $duration milliseconds"
-
-            override fun getConstraints() = ViewMatchers.isAssignableFrom(View::class.java)
-
-            override fun perform(uiController: UiController?, view: View?) {
-                uiController?.loopMainThreadForAtLeast(duration)
-            }
-        })
-    }
 }
 

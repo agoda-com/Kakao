@@ -1,0 +1,5 @@
+[kakao](../../index.md) / [com.agoda.kakao.progress](../index.md) / [PreciseSwipe](index.md) / [sendSwipe](./send-swipe.md)
+
+# sendSwipe
+
+`fun sendSwipe(uiController: UiController, startCoordinates: `[`FloatArray`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)`, endCoordinates: `[`FloatArray`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)`, precision: `[`FloatArray`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float-array/index.html)`): Status`

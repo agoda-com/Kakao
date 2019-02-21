@@ -7,14 +7,14 @@ import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import android.support.test.espresso.web.webdriver.Locator
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 
 /**
  * Class for building WebView element matchers
  *
  * @param web WebInteraction where elements should be matched
  */
-@BuilderMarker
+@KakaoDslMarker
 class WebElementBuilder(private val web: Web.WebInteraction<*>) {
     /**
      * Looks up web view element and performs actions/assertions on it

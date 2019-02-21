@@ -3,7 +3,7 @@
 package com.agoda.kakao.list
 
 import android.support.test.espresso.DataInteraction
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import kotlin.reflect.KClass
 
 /**
@@ -16,7 +16,7 @@ import kotlin.reflect.KClass
  * @see itemType
  * @see KEmptyAdapterItem
  */
-@BuilderMarker
+@KakaoDslMarker
 class KAdapterItemTypeBuilder {
     val itemTypes = mutableMapOf<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>()
 

@@ -11,7 +11,7 @@ import android.support.test.espresso.Espresso
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.matchers.*
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
@@ -27,7 +27,7 @@ import org.hamcrest.core.AllOf
  *
  * @see AllOf.allOf()
  */
-@BuilderMarker
+@KakaoDslMarker
 class ViewBuilder {
     private val viewMatchers = arrayListOf<Matcher<View>>()
 

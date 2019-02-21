@@ -3,7 +3,7 @@
 package com.agoda.kakao.web
 
 import android.support.test.espresso.web.sugar.Web
-import com.agoda.kakao.common.ViewMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.builders.ViewBuilder
 
 /**
@@ -11,7 +11,7 @@ import com.agoda.kakao.common.builders.ViewBuilder
  *
  * @param matcher ViewBuilder which will result in matcher of web view
  */
-@ViewMarker
+@KakaoDslMarker
 open class KWebView(matcher: (ViewBuilder.() -> Unit)? = null) {
     private val web: Web.WebInteraction<*> = if (matcher != null) {
         Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())

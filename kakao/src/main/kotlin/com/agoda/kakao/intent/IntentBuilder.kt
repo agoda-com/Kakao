@@ -8,14 +8,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.test.espresso.intent.matcher.IntentMatchers
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf
 
 /**
  * Class for building Intent matchers
  */
-@BuilderMarker
+@KakaoDslMarker
 class IntentBuilder {
     private val matchers = arrayListOf<Matcher<Intent>>()
     private lateinit var anyMatcher: Matcher<Intent>

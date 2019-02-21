@@ -4,14 +4,14 @@ package com.agoda.kakao.intent
 
 import android.content.ComponentName
 import android.support.test.espresso.intent.matcher.ComponentNameMatchers
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf
 
 /**
  * Class for building ComponentName matchers
  */
-@BuilderMarker
+@KakaoDslMarker
 class ComponentNameBuilder {
     private val matchers = arrayListOf<Matcher<ComponentName>>()
 
