@@ -34,10 +34,10 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
 
             override fun perform(controller: UiController, view: View) {
                 if (view is RecyclerView) {
-                    val position = view.adapter.itemCount - 1
+                    val position = view.adapter!!.itemCount - 1
                     view.scrollToPosition(position)
                     controller.loopMainThreadUntilIdle()
-                    val lastView = view.findViewHolderForLayoutPosition(position).itemView
+                    val lastView = view.findViewHolderForLayoutPosition(position)!!.itemView
                     view.scrollBy(0, lastView.height)
                     controller.loopMainThreadUntilIdle()
                 }
