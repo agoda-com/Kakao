@@ -1,7 +1,7 @@
 # Kakao
 [![Github tag version](https://img.shields.io/github/tag/agoda-com/kakao.svg?label=version)](https://bintray.com/agoda/maven/kakao)
 [![CircleCI](https://circleci.com/gh/agoda-com/Kakao/tree/master.svg?style=shield&circle-token=0d0ed659625be4efe54fe706c16894cd54213690)](https://circleci.com/gh/agoda-com/Kakao/tree/master)
-[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.2.51-blue.svg)](http://kotlinlang.org/)
+[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.3.21-blue.svg)](http://kotlinlang.org/)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Kakao-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6314)
 
 Nice and simple DSL for Espresso in Kotlin
@@ -25,7 +25,7 @@ This is an example just to check the visibility and you can see that it's not lo
 #### Create Screen
 Create your entity `Screen` where you will add the views involved in the interactions of the tests:
 ```Kotlin
-class FormScreen : Screen<FormScreen>(){}
+class FormScreen : Screen<FormScreen>()
 ```
  `Screen` can represent the whole user interface or a portion of UI.
 If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject.html) you can put the interactions of Kakao inside the Page Objects.
@@ -33,10 +33,10 @@ If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject
 #### Create KViews
 `Screen` contains `KViews`, these are the Android Framework views where you want to do the interactions:
 ```Kotlin
-class FormScreen : Screen<FormScreen>(){
-    val phone = KView { withId(R.id.phone)}
-    val email = KEditText { withId(R.id.email)}
-    val submit = KButton { withId(R.id.submit)}
+class FormScreen : Screen<FormScreen>() {
+    val phone = KView { withId(R.id.phone) }
+    val email = KEditText { withId(R.id.email) }
+    val submit = KButton { withId(R.id.submit) }
 }
 ```
 Kakao provides different types depending on the type of view:
@@ -84,8 +84,7 @@ val email = KEditText {
 The syntax of the test with Kakao is very easy, once you have the `Screen` and the `KViews` defined, you only have to apply 
 the actions or assertions like in Espresso: 
 ```Kotlin
-val screen = FormScreen()
-screen {
+onScreen<FormScreen> {
     phone {
        hasText("971201771")
     }
@@ -97,8 +96,7 @@ screen {
 Kakao provides multiple actions/assertions based on Espresso. Furthermore, you can combine them, just like the matchers. 
 You can use your custom assertions or your custom actions too:
 ```Kotlin
-val screen = FormScreen()
-screen {
+onScreen<FormScreen> {
     phone {
        assert { MyCustomAssertion.isThaiNumber() }
     }
@@ -167,7 +165,7 @@ val recycler: KRecyclerView = KRecyclerView({
 
 And finally your final interaction will be:
 ```Kotlin
-screen {
+onScreen<RecyclerScreen> {
     recycler {
         firstChild<TestRecyclerScreen.Item> {
             isVisible()
@@ -202,7 +200,7 @@ Maven
 <dependency>
   <groupId>com.agoda.kakao</groupId>
   <artifactId>kakao</artifactId>
-  <version>1.4.0</version>
+  <version>2.0.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -213,10 +211,10 @@ repositories {
 }
 dependencies {
     // For Gradle Version below 3.0.0
-    androidTestCompile 'com.agoda.kakao:kakao:1.4.0'
+    androidTestCompile 'com.agoda.kakao:kakao:2.0.0'
 
     // For Gradle Version 3.0.0 or above
-    androidTestImplementation 'com.agoda.kakao:kakao:1.4.0'
+    androidTestImplementation 'com.agoda.kakao:kakao:2.0.0'
 }
 ```
 

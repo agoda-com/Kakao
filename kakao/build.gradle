@@ -5,12 +5,12 @@ apply from: "$rootDir/buildsystem/dependencies.gradle"
 apply from: "$rootDir/buildsystem/dokka.gradle"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 1
+        targetSdkVersion 28
+        versionCode 2
         versionName kakao.version
     }
 
@@ -22,7 +22,7 @@ android {
 
 repositories {
     jcenter()
-    maven { url "https://maven.google.com" }
+    google()
 }
 
 dependencies {
