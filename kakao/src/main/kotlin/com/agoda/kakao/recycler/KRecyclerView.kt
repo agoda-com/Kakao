@@ -9,7 +9,7 @@ import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
-import com.agoda.kakao.common.ViewMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.ItemMatcher
@@ -19,18 +19,15 @@ import org.hamcrest.Matchers
 import kotlin.reflect.KClass
 
 /**
- * View with RecyclerActions and BaseAssertions. Gives access to it's children
+ * View with RecyclerActions, BaseAssertions and RecyclerAdapterAssertions. Gives access to it's children
  *
  * @see RecyclerActions
  * @see BaseAssertions
- *
- * @param builder ViewBuilder which will match your list view
-
- *
+ * @see RecyclerAdapterAssertions
  * @see KRecyclerItem
  * @see KRecyclerItemTypeBuilder
  */
-@ViewMarker
+@KakaoDslMarker
 class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
@@ -109,7 +106,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
             scrollTo(position)
         } catch (error: Throwable) {}
 
-        function((provideItem(PositionMatcher(matcher, position)) as T).also { inRoot { withMatcher(root) } })
+        function((provideItem(PositionMatcher(matcher, position)) as T).also { inRoot { withMatcher(this@KRecyclerView.root) } })
     }
 
     /**
@@ -161,7 +158,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         } catch (error: Throwable) {}
 
         return (provideItem(ItemMatcher(matcher,
-                ViewBuilder().apply(childMatcher).getViewMatcher())) as T).also { inRoot { withMatcher(root) } }
+                ViewBuilder().apply(childMatcher).getViewMatcher())) as T).also { inRoot { withMatcher(this@KRecyclerView.root) } }
     }
 
     /**

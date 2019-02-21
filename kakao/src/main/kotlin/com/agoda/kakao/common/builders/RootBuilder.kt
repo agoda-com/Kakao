@@ -4,7 +4,7 @@ package com.agoda.kakao.common.builders
 
 import android.support.test.espresso.Root
 import android.support.test.espresso.matcher.RootMatchers
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import org.hamcrest.core.AllOf
@@ -18,7 +18,7 @@ import org.hamcrest.core.AllOf
  *
  * @see AllOf.allOf()
  */
-@BuilderMarker
+@KakaoDslMarker
 class RootBuilder {
     private val rootMatchers = arrayListOf<Matcher<Root>>()
 

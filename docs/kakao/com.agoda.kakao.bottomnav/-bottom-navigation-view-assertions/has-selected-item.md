@@ -1,0 +1,11 @@
+[kakao](../../index.md) / [com.agoda.kakao.bottomnav](../index.md) / [BottomNavigationViewAssertions](index.md) / [hasSelectedItem](./has-selected-item.md)
+
+# hasSelectedItem
+
+`open fun hasSelectedItem(id: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+
+Checks if the view's selected item id matches given one
+
+### Parameters
+
+`id` - Menu item id to be checked

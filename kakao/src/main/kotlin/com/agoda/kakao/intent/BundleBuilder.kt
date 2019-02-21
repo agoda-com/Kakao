@@ -4,14 +4,14 @@ package com.agoda.kakao.intent
 
 import android.os.Bundle
 import android.support.test.espresso.intent.matcher.BundleMatchers
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf
 
 /**
  * Class for building Bundle matchers
  */
-@BuilderMarker
+@KakaoDslMarker
 class BundleBuilder {
     private val matchers = arrayListOf<Matcher<Bundle>>()
 

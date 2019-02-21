@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.list
 
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import org.hamcrest.core.AllOf
@@ -16,7 +16,7 @@ import org.hamcrest.core.AllOf
  *
  * @see AllOf.allOf()
  */
-@BuilderMarker
+@KakaoDslMarker
 class DataBuilder {
     private val matchers = arrayListOf<Matcher<Any>>()
 

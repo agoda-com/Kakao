@@ -5,7 +5,7 @@ package com.agoda.kakao.recycler
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
-import com.agoda.kakao.common.ViewMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import org.hamcrest.Matcher
@@ -21,7 +21,7 @@ import org.hamcrest.Matcher
  * @see KRecyclerItemTypeBuilder
  */
 @Suppress("UNCHECKED_CAST")
-@ViewMarker
+@KakaoDslMarker
 open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions {
     override val view = Espresso.onView(matcher)
     override var root = RootMatchers.DEFAULT

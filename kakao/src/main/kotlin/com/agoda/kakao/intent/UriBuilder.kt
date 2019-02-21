@@ -4,14 +4,14 @@ package com.agoda.kakao.intent
 
 import android.net.Uri
 import android.support.test.espresso.intent.matcher.UriMatchers
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf
 
 /**
  * Class for building Uri matchers
  */
-@BuilderMarker
+@KakaoDslMarker
 class UriBuilder {
     private val matchers = arrayListOf<Matcher<Uri>>()
 

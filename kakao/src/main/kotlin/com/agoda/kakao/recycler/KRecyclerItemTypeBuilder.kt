@@ -3,7 +3,7 @@
 package com.agoda.kakao.recycler
 
 import android.view.View
-import com.agoda.kakao.common.BuilderMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import kotlin.reflect.KClass
 
@@ -17,7 +17,7 @@ import kotlin.reflect.KClass
  * @see itemType
  * @see KEmptyRecyclerItem
  */
-@BuilderMarker
+@KakaoDslMarker
 class KRecyclerItemTypeBuilder {
     val itemTypes = mutableMapOf<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>()
 

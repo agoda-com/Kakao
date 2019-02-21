@@ -1,4 +1,26 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
 
-com.agoda.kakao
+com.agoda.kakao.bottomnav
+com.agoda.kakao.check
+com.agoda.kakao.common
+com.agoda.kakao.common.actions
+com.agoda.kakao.common.assertions
+com.agoda.kakao.common.builders
+com.agoda.kakao.common.matchers
+com.agoda.kakao.common.views
+com.agoda.kakao.drawer
+com.agoda.kakao.edit
+com.agoda.kakao.image
+com.agoda.kakao.intent
+com.agoda.kakao.list
+com.agoda.kakao.navigation
+com.agoda.kakao.pager
+com.agoda.kakao.progress
+com.agoda.kakao.rating
+com.agoda.kakao.recycler
+com.agoda.kakao.screen
+com.agoda.kakao.swiperefresh
+com.agoda.kakao.tabs
+com.agoda.kakao.text
+com.agoda.kakao.web

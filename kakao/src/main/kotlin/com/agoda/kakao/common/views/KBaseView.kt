@@ -8,7 +8,7 @@ import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
-import com.agoda.kakao.common.ViewMarker
+import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
@@ -25,7 +25,7 @@ import org.hamcrest.Matchers
  * @param T Type of your custom view. Needs to be defined to enable invoke() and perform() for descendants
  */
 @Suppress("UNCHECKED_CAST")
-@ViewMarker
+@KakaoDslMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
     override val view: ViewInteraction
     override var root: Matcher<Root> = RootMatchers.DEFAULT

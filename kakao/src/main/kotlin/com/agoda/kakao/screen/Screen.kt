@@ -5,7 +5,7 @@ package com.agoda.kakao.screen
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.ViewMatchers
-import com.agoda.kakao.common.ScreenMarker
+import com.agoda.kakao.common.KakaoDslMarker
 
 /**
  * Container class for UI elements.
@@ -18,7 +18,7 @@ import com.agoda.kakao.common.ScreenMarker
  * @see ScreenActions
  */
 @Suppress("UNCHECKED_CAST")
-@ScreenMarker
+@KakaoDslMarker
 open class Screen<out T: Screen<T>>: ScreenActions {
     override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
     operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)

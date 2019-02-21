@@ -67,7 +67,7 @@ class TestActivityTest {
                 action {
                     hasText("DISMISS")
                     click()
-                    idle(500)
+                    this@screen.idle(500)
                 }
 
                 doesNotExist()
