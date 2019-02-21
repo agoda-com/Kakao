@@ -2,6 +2,7 @@ package com.agoda.sample
 
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TestNestedRecyclerScreen
 import com.agoda.sample.screen.TestNestedRecyclerScreen.NestedItem
 import com.agoda.sample.screen.TestNestedRecyclerScreen.RecyclerItem
@@ -15,11 +16,9 @@ class NestedRecyclerTest {
     @JvmField
     val rule = ActivityTestRule(NestedRecyclerActivity::class.java)
 
-    val screen = TestNestedRecyclerScreen()
-
     @Test
     fun testContentItemsRecyclerView() {
-        screen {
+        onScreen<TestNestedRecyclerScreen> {
             recycler {
                 isVisible()
 

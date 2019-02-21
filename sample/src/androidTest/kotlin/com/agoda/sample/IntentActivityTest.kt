@@ -2,6 +2,7 @@ package com.agoda.sample
 
 import android.support.test.espresso.intent.rule.IntentsTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.IntentActivityScreen
 import org.junit.Rule
 import org.junit.Test
@@ -13,11 +14,9 @@ class IntentActivityTest {
     @JvmField
     val rule = IntentsTestRule(IntentActivity::class.java)
 
-    val screen = IntentActivityScreen()
-
     @Test
     fun testContentScreen() {
-        screen {
+        onScreen<IntentActivityScreen> {
             resultText { hasText("No result") }
 
             startActivityButton { click() }
