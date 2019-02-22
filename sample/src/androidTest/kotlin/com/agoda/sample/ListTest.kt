@@ -2,6 +2,7 @@ package com.agoda.sample
 
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TestListScreen
 import org.junit.Rule
 import org.junit.Test
@@ -13,11 +14,9 @@ class ListTest {
     @JvmField
     val rule = ActivityTestRule(ListActivity::class.java)
 
-    val screen = TestListScreen()
-
     @Test
     fun testContentItemsListView() {
-        screen {
+        onScreen<TestListScreen> {
             list {
                 isVisible()
                 hasSize(10)

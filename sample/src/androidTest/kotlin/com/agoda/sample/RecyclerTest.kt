@@ -2,6 +2,7 @@ package com.agoda.sample
 
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TestRecyclerScreen
 import org.junit.Rule
 import org.junit.Test
@@ -13,11 +14,9 @@ class RecyclerTest {
     @JvmField
     val rule = ActivityTestRule(RecyclerActivity::class.java)
 
-    val screen = TestRecyclerScreen()
-
     @Test
     fun testContentItemsRecyclerView() {
-        screen {
+        onScreen<TestRecyclerScreen> {
             recycler {
                 isVisible()
                 hasSize(10)

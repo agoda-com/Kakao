@@ -3,6 +3,7 @@ package com.agoda.sample
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 import com.agoda.kakao.screen.Screen.Companion.idle
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TestActivityScreen
 import org.junit.Rule
 import org.junit.Test
@@ -14,11 +15,9 @@ class TestActivityTest {
     @JvmField
     val rule = ActivityTestRule(TestActivity::class.java)
 
-    val screen = TestActivityScreen()
-
     @Test
     fun testContentScreen() {
-        screen {
+        onScreen<TestActivityScreen> {
             content {
                 isVisible()
             }

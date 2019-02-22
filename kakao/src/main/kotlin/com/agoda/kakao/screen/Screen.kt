@@ -43,5 +43,8 @@ open class Screen<out T: Screen<T>>: ScreenActions {
                 }
             })
         }
+
+        inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T =
+                T::class.java.newInstance().apply { function.invoke(this) }
     }
 }

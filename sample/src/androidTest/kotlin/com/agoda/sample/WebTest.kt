@@ -3,6 +3,7 @@ package com.agoda.sample
 import android.support.test.espresso.web.webdriver.Locator
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TestWebScreen
 import org.junit.Rule
 import org.junit.Test
@@ -14,11 +15,9 @@ class WebTest {
     @JvmField
     val rule = ActivityTestRule(WebAcitivty::class.java)
 
-    private val screen = TestWebScreen()
-
     @Test
     fun testWebViewHasTextHelloAndClickLink() {
-        screen {
+        onScreen<TestWebScreen> {
             webView {
                 withElement(Locator.ID, "text") {
                     hasText("Hello")

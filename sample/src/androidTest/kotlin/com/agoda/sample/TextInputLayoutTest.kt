@@ -2,6 +2,7 @@ package com.agoda.sample
 
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TextInputLayoutScreen
 import org.junit.Rule
 import org.junit.Test
@@ -13,11 +14,9 @@ class TextInputLayoutTest {
     @JvmField
     val rule = ActivityTestRule(TextInputLayoutActivity::class.java)
 
-    val screen = TextInputLayoutScreen()
-
     @Test
     fun testTextInputLayout() {
-        screen {
+        onScreen<TextInputLayoutScreen> {
             inputLayout {
                 hasCounterMaxLength(50)
                 hasHint("This is the HINT!")
