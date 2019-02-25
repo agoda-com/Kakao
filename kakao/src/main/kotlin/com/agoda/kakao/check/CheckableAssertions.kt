@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.check
 
-import android.support.test.espresso.assertion.ViewAssertions
-import android.support.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.assertions.BaseAssertions
 
 /**

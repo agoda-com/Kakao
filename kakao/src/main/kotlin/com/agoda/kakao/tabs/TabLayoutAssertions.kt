@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.tabs
 
-import android.support.design.widget.TabLayout
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.google.android.material.tabs.TabLayout
 
 /**
  * Provides assertions for TabLayout

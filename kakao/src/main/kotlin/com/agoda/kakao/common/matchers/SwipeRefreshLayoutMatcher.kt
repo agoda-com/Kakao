@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.common.matchers
 
-import android.support.v4.widget.SwipeRefreshLayout
 import android.view.View
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 

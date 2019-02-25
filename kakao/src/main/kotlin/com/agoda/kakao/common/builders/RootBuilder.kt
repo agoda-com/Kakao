@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.common.builders
 
-import android.support.test.espresso.Root
-import android.support.test.espresso.matcher.RootMatchers
+import androidx.test.espresso.Root
+import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers

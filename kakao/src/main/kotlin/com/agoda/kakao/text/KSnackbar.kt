@@ -2,10 +2,10 @@
 
 package com.agoda.kakao.text
 
-import android.support.design.widget.Snackbar
-import android.support.v7.widget.AppCompatButton
-import android.support.v7.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
 import com.agoda.kakao.common.views.KBaseView
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * View with internal TextView and a Button

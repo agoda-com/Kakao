@@ -2,12 +2,12 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.DataInteraction
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
+import androidx.test.espresso.DataInteraction
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.Root
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder

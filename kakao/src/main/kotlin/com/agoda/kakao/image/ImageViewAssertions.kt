@@ -4,8 +4,8 @@ package com.agoda.kakao.image
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.support.annotation.DrawableRes
-import android.support.test.espresso.assertion.ViewAssertions
+import androidx.annotation.DrawableRes
+import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.DrawableMatcher
 

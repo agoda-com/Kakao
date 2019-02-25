@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.pager
 
-import android.support.test.espresso.DataInteraction
 import android.view.View
+import androidx.test.espresso.DataInteraction
 import com.agoda.kakao.common.actions.SwipeableActions
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.views.KBaseView

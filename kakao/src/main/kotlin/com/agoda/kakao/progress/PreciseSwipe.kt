@@ -3,11 +3,11 @@
 package com.agoda.kakao.progress
 
 import android.os.SystemClock
-import android.support.test.espresso.UiController
-import android.support.test.espresso.action.MotionEvents
-import android.support.test.espresso.action.Swiper
-import android.support.test.espresso.core.internal.deps.guava.base.Preconditions.checkElementIndex
 import android.util.Log
+import androidx.test.espresso.UiController
+import androidx.test.espresso.action.MotionEvents
+import androidx.test.espresso.action.Swiper
+import androidx.test.espresso.core.internal.deps.guava.base.Preconditions.checkElementIndex
 
 object PreciseSwipe : Swiper {
     override fun sendSwipe(uiController: UiController, startCoordinates: FloatArray,

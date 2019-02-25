@@ -2,9 +2,9 @@
 
 package com.agoda.kakao.edit
 
-import android.support.annotation.StringRes
-import android.support.test.espresso.assertion.ViewAssertions
-import android.support.test.espresso.matcher.ViewMatchers
+import androidx.annotation.StringRes
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.text.TextViewAssertions
 
 /**

@@ -3,7 +3,7 @@
 package com.agoda.kakao.intent
 
 import android.os.Bundle
-import android.support.test.espresso.intent.matcher.BundleMatchers
+import androidx.test.espresso.intent.matcher.BundleMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf

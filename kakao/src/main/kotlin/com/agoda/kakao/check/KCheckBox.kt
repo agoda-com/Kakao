@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.check
 
-import android.support.test.espresso.DataInteraction
 import android.view.View
+import androidx.test.espresso.DataInteraction
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.views.KBaseView
 import com.agoda.kakao.text.TextViewAssertions

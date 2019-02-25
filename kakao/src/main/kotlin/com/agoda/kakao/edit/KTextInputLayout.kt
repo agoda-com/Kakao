@@ -2,11 +2,11 @@
 
 package com.agoda.kakao.edit
 
-import android.support.design.widget.TextInputEditText
-import android.support.test.espresso.DataInteraction
 import android.view.View
+import androidx.test.espresso.DataInteraction
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.views.KBaseView
+import com.google.android.material.textfield.TextInputEditText
 import org.hamcrest.Matcher
 
 /**

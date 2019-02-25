@@ -40,7 +40,13 @@ such as tapBack() and closeSoftKeyboard()
 | Name | Summary |
 |---|---|
 | [closeSoftKeyboard](../-screen-actions/close-soft-keyboard.md) | `open fun closeSoftKeyboard(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Closes soft keyboard, if opened |
-| [idle](../-screen-actions/idle.md) | `open fun idle(duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 1000L): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Idles for given amount of time |
 | [pressBack](../-screen-actions/press-back.md) | `open fun pressBack(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Performs click on device's back button |
 | [pressKey](../-screen-actions/press-key.md) | `open fun pressKey(keyCode: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Presses a key with corresponding KeyCode`open fun pressKey(key: EspressoKey): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Presses a key with correspondingKeyCode and modifiers |
 | [pressMenuKey](../-screen-actions/press-menu-key.md) | `open fun pressMenuKey(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Presses the hardware menu key |
+
+### Companion Object Functions
+
+| Name | Summary |
+|---|---|
+| [idle](idle.md) | `fun idle(duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 1000L): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Idles for given amount of time |
+| [onScreen](on-screen.md) | `fun <T : `[`Screen`](./index.md)`<`[`T`](on-screen.md#T)`>> onScreen(function: `[`T`](on-screen.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](on-screen.md#T) |

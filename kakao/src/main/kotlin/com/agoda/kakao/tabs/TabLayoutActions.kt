@@ -2,13 +2,13 @@
 
 package com.agoda.kakao.tabs
 
-import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.TabLayout
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.actions.BaseActions
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 
 /**
  * Provides action for TabLayout

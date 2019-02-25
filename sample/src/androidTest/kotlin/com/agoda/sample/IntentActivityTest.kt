@@ -1,14 +1,14 @@
 package com.agoda.sample
 
-import android.support.test.espresso.intent.rule.IntentsTestRule
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.espresso.intent.rule.IntentsTestRule
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.IntentActivityScreen
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class)
+@RunWith(AndroidJUnit4ClassRunner::class)
 class IntentActivityTest {
     @Rule
     @JvmField

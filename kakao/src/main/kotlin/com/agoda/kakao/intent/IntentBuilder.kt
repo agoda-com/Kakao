@@ -7,7 +7,7 @@ import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.test.espresso.intent.matcher.IntentMatchers
+import androidx.test.espresso.intent.matcher.IntentMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf

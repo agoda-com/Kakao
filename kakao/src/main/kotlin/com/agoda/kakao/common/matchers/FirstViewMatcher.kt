@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.common.matchers
 
-import android.support.test.espresso.matcher.BoundedMatcher
 import android.view.View
+import androidx.test.espresso.matcher.BoundedMatcher
 import org.hamcrest.Description
 
 /**
