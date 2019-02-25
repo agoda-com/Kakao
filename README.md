@@ -219,10 +219,11 @@ dependencies {
 ```
 
 ### AndroidX
-There is an published artifact with support of AndroidX libraries that is not merged to master branch for the time being.
+Default artifact starting from `2.0.0` includes AndroidX libraries to build upon. If you're still using
+old support libraries, please use `2.0.0-support` artifact.
 ```
 dependencies {
-    androidTestImplementation 'com.agoda.kakao:kakao:1.4.0-androidx'
+    androidTestImplementation 'com.agoda.kakao:kakao:2.0.0-support'
 }
 ```
 We will move to AndroidX dependencies in the major release as soon as Google will publish stable release.
