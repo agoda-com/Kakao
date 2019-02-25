@@ -3,7 +3,7 @@
 package com.agoda.kakao.intent
 
 import android.net.Uri
-import android.support.test.espresso.intent.matcher.UriMatchers
+import androidx.test.espresso.intent.matcher.UriMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import org.hamcrest.Matcher
 import org.hamcrest.core.AllOf

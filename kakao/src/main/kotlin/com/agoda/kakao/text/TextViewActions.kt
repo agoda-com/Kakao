@@ -3,7 +3,7 @@
 package com.agoda.kakao.text
 
 import android.net.Uri
-import android.support.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions
 import com.agoda.kakao.common.actions.BaseActions
 import org.hamcrest.Matcher
 

@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.DataInteraction
+import androidx.test.espresso.DataInteraction
 
 /**
  * Empty implementation of KAdapterItem

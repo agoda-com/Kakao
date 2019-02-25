@@ -2,13 +2,9 @@
 
 package com.agoda.kakao.screen
 
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.action.EspressoKey
-import android.support.test.espresso.action.ViewActions
-import android.support.test.espresso.matcher.ViewMatchers
-import android.view.View
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.action.EspressoKey
+import androidx.test.espresso.action.ViewActions
 
 /**
  * Interface with common actions for all screens

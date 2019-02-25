@@ -1,7 +1,7 @@
 package com.agoda.sample.screen
 
-import android.support.test.espresso.DataInteraction
 import android.widget.ListView
+import androidx.test.espresso.DataInteraction
 import com.agoda.kakao.list.KAdapterItem
 import com.agoda.kakao.edit.KEditText
 import com.agoda.kakao.list.KListView

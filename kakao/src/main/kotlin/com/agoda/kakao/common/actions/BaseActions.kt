@@ -2,12 +2,12 @@
 
 package com.agoda.kakao.common.actions
 
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.action.*
 import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.action.*
 import com.agoda.kakao.common.builders.ViewBuilder
 import org.hamcrest.Matcher
 

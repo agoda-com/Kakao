@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.drawer
 
-import android.support.test.espresso.contrib.DrawerActions
 import android.view.Gravity
+import androidx.test.espresso.contrib.DrawerActions
 import com.agoda.kakao.common.actions.BaseActions
 
 /**

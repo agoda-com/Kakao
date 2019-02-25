@@ -2,9 +2,9 @@
 
 package com.agoda.kakao.recycler
 
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions

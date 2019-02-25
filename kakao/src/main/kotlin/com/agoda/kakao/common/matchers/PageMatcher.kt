@@ -2,9 +2,9 @@
 
 package com.agoda.kakao.common.matchers
 
-import android.support.test.espresso.matcher.BoundedMatcher
-import android.support.v4.view.ViewPager
 import android.view.View
+import androidx.test.espresso.matcher.BoundedMatcher
+import androidx.viewpager.widget.ViewPager
 import org.hamcrest.Description
 
 /**

@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.common.assertions
 
-import android.support.test.espresso.ViewInteraction
+import androidx.test.espresso.ViewInteraction
 
 /**
  * Provides assertions for view with adapters

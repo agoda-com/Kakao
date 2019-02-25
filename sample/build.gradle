@@ -10,7 +10,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName '1.0.0'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     sourceSets {
@@ -35,9 +35,10 @@ dependencies {
     testImplementation libraries.junit
 
     androidTestImplementation project(':kakao')
-    androidTestImplementation libraries.annotations
+    androidTestImplementation libraries.annotation
     androidTestImplementation libraries.espresso_runner
     androidTestImplementation libraries.espresso_rules
     androidTestImplementation libraries.espresso_intents
     androidTestImplementation libraries.espresso_core
+    androidTestImplementation libraries.espresso_web
 }

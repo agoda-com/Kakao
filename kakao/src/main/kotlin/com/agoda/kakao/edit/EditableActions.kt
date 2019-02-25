@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.edit
 
-import android.support.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions
 import com.agoda.kakao.common.actions.BaseActions
 
 /**

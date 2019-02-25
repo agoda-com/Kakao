@@ -2,12 +2,12 @@
 
 package com.agoda.kakao.edit
 
-import android.support.design.widget.TextInputLayout
-import android.support.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.TextInputLayoutCounterEnabledMatcher
 import com.agoda.kakao.common.matchers.TextInputLayoutErrorEnabledMatcher
 import com.agoda.kakao.common.matchers.TextInputLayoutHintEnabledMatcher
+import com.google.android.material.textfield.TextInputLayout
 
 /**
  * Provides assertions for TextInputLayout
