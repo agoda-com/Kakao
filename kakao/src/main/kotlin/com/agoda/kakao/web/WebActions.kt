@@ -2,10 +2,10 @@
 
 package com.agoda.kakao.web
 
-import android.support.test.espresso.web.model.Atom
-import android.support.test.espresso.web.model.ElementReference
-import android.support.test.espresso.web.sugar.Web
-import android.support.test.espresso.web.webdriver.DriverAtoms
+import androidx.test.espresso.web.model.Atom
+import androidx.test.espresso.web.model.ElementReference
+import androidx.test.espresso.web.sugar.Web
+import androidx.test.espresso.web.webdriver.DriverAtoms
 
 /**
  * Provides action for interacting with WebViews

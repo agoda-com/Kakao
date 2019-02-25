@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.common.matchers
 
-import android.support.design.widget.TextInputLayout
 import android.view.View
+import com.google.android.material.textfield.TextInputLayout
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 

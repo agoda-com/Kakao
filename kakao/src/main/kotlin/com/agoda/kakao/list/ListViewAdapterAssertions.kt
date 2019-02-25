@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.AdapterAssertions
 import com.agoda.kakao.common.matchers.ListViewAdapterSizeMatcher
 

@@ -2,12 +2,12 @@
 
 package com.agoda.kakao.bottomnav
 
-import android.support.design.widget.BottomNavigationView
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.actions.BaseActions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
  * Provides actions for BottomNavigationView

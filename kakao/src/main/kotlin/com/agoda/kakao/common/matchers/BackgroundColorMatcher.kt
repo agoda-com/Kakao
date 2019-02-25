@@ -4,9 +4,9 @@ package com.agoda.kakao.common.matchers
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.support.annotation.ColorRes
-import android.support.v4.content.ContextCompat
 import android.view.View
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 

@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.navigation
 
-import android.support.test.espresso.contrib.NavigationViewActions
+import androidx.test.espresso.contrib.NavigationViewActions
 import com.agoda.kakao.common.actions.BaseActions
 
 /**

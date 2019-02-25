@@ -2,10 +2,10 @@
 
 package com.agoda.kakao.text
 
-import android.support.annotation.ColorRes
-import android.support.annotation.StringRes
-import android.support.test.espresso.assertion.ViewAssertions
-import android.support.test.espresso.matcher.ViewMatchers
+import androidx.annotation.ColorRes
+import androidx.annotation.StringRes
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.AnyTextMatcher
 import org.hamcrest.CoreMatchers

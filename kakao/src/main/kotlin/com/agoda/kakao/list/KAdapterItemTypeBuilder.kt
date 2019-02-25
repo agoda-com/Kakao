@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.DataInteraction
+import androidx.test.espresso.DataInteraction
 import com.agoda.kakao.common.KakaoDslMarker
 import kotlin.reflect.KClass
 

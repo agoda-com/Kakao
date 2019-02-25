@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.bottomnav
 
-import android.support.design.widget.BottomNavigationView
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
  * Provides assertion for BottomNavigationview

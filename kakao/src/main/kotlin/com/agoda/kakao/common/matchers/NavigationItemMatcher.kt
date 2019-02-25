@@ -2,9 +2,9 @@
 
 package com.agoda.kakao.common.matchers
 
-import android.support.design.widget.NavigationView
-import android.support.test.espresso.matcher.BoundedMatcher
 import android.view.View
+import androidx.test.espresso.matcher.BoundedMatcher
+import com.google.android.material.navigation.NavigationView
 import org.hamcrest.Description
 
 /**

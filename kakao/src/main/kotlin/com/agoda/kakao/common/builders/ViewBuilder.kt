@@ -4,13 +4,13 @@ package com.agoda.kakao.common.builders
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.support.annotation.ColorRes
-import android.support.annotation.DrawableRes
-import android.support.annotation.StringRes
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.matchers.*
 import org.hamcrest.CoreMatchers

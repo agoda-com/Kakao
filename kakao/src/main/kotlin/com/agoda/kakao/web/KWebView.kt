@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.web
 
-import android.support.test.espresso.web.sugar.Web
+import androidx.test.espresso.web.sugar.Web
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.builders.ViewBuilder
 

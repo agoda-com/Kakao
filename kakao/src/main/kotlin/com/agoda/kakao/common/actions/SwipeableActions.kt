@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.common.actions
 
-import android.support.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions
 
 /**
  * Provides swipe actions for views

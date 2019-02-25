@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.swiperefresh
 
-import android.support.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.SwipeRefreshLayoutMatcher
 
