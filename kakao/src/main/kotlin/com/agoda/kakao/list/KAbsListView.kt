@@ -25,7 +25,7 @@ import kotlin.reflect.KClass
  * @see KAdapterItemTypeBuilder
  */
 @KakaoDslMarker
-class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
+class KAbsListView : ScrollViewActions, BaseAssertions, AbsListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
@@ -96,7 +96,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
      */
     inline fun <reified T : KAdapterItem<*>> childAt(position: Int, function: T.() -> Unit) {
         val provideItem = itemTypes.getOrElse(T::class) {
-            throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
+            throw IllegalStateException("${T::class.java.simpleName} did not register to AbsListView")
         }.provideItem
 
         val interaction = Espresso.onData(Matchers.anything())
@@ -148,7 +148,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
      */
     inline fun <reified T : KAdapterItem<*>> childWith(childMatcher: DataBuilder.() -> Unit): T {
         val provideItem = itemTypes.getOrElse(T::class) {
-            throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
+            throw IllegalStateException("${T::class.java.simpleName} did not register to AbsListView")
         }.provideItem
 
         val interaction = Espresso.onData(DataBuilder().apply(childMatcher).getDataMatcher())
@@ -163,7 +163,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
      *
      * @param function Tail lambda with receiver which is your view
      */
-    operator fun invoke(function: KListView.() -> Unit) {
+    operator fun invoke(function: KAbsListView.() -> Unit) {
         function(this)
     }
 
@@ -177,7 +177,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
      * @param function Tail lambda with receiver which is your view
      * @return This object
      */
-    infix fun perform(function: KListView.() -> Unit): KListView {
+    infix fun perform(function: KAbsListView.() -> Unit): KAbsListView {
         function.invoke(this)
         return this
     }
@@ -185,7 +185,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     /**
      * Calls childAt() on your view with base child
      *
-     * Calls childAt() on your KListView and casts received item to KEmptyAdapterItem
+     * Calls childAt() on your AbsListView and casts received item to KEmptyAdapterItem
      *
      * @param position Position of child in adapter
      * @param tail Lambda with KEmptyAdapterItem receiver
@@ -198,7 +198,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     /**
      * Calls firstChild() on your view with base child
      *
-     * Calls firstChild() on your KListView and casts received item to KEmptyAdapterItem
+     * Calls firstChild() on your AbsListView and casts received item to KEmptyAdapterItem
      *
      * @param tail Lambda with KEmptyAdapterItem receiver
      * @see KEmptyAdapterItem
@@ -210,7 +210,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     /**
      * Calls lastChild() on your view with base child
      *
-     * Calls lastChild() on your KListView and casts received item to KEmptyAdapterItem
+     * Calls lastChild() on your AbsListView and casts received item to KEmptyAdapterItem
      *
      * @param tail Lambda with KEmptyAdapterItem receiver
      * @see KEmptyAdapterItem
@@ -222,7 +222,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     /**
      * Calls childWith() on your view with base child
      *
-     * Calls childWith() on your KListView and casts received item to KEmptyAdapterItem
+     * Calls childWith() on your AbsListView and casts received item to KEmptyAdapterItem
      *
      * @param builder Data builder that will match the child view
      * @return Matched KEmptyAdapterItem

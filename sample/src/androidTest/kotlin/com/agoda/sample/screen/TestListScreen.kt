@@ -1,15 +1,15 @@
 package com.agoda.sample.screen
 
 import androidx.test.espresso.DataInteraction
+import com.agoda.kakao.list.KAbsListView
 import com.agoda.kakao.list.KAdapterItem
-import com.agoda.kakao.list.KListView
 import com.agoda.kakao.screen.Screen
 import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KTextView
 import com.agoda.sample.R
 
 class TestListScreen : Screen<TestListScreen>() {
-    val list = KListView(
+    val list = KAbsListView(
             builder = { withId(R.id.list) },
             itemTypeBuilder = { itemType(::Item) })
 
