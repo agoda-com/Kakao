@@ -24,6 +24,14 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
         withId(R.id.text_view_small)
     }
 
+    val buttonViewLeft: KButton = KButton {
+        withId(R.id.button_view_left)
+    }
+
+    val buttonViewRight: KButton = KButton {
+        withId(R.id.button_view_right)
+    }
+
     val textViewColored: KTextView = KTextView {
         withId(R.id.text_view_colored)
     }
