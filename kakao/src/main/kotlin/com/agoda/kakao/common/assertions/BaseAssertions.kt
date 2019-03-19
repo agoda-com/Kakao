@@ -6,6 +6,7 @@ import androidx.annotation.ColorRes
 import androidx.test.espresso.Root
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.assertion.PositionAssertions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.builders.RootBuilder
@@ -308,6 +309,47 @@ interface BaseAssertions {
      */
     fun hasBackgroundColor(colorCode: String) {
         view.check(ViewAssertions.matches(BackgroundColorMatcher(colorCode = colorCode)))
+    }
+
+    /**
+     *  Checks if the view displayed is completely above of the view matching the given matcher.
+     *
+     * @param function ViewBuilder that will result in matcher
+     *
+     */
+    fun isCompletelyAbove(function: ViewBuilder.() -> Unit) {
+        view.check(PositionAssertions.isCompletelyAbove(ViewBuilder().apply(function).getViewMatcher()))
+    }
+
+    /**
+     *  Checks if the view displayed is completely below of the view matching the given matcher.
+     *
+     * @param function ViewBuilder that will result in matcher
+     *
+     */
+    fun isCompletelyBelow(function: ViewBuilder.() -> Unit) {
+        view.check(PositionAssertions.isCompletelyBelow(ViewBuilder().apply(function).getViewMatcher()))
+    }
+
+    /**
+     *  Checks if the view displayed is completely right of the view matching the given matcher.
+     *
+     * @param function ViewBuilder that will result in matcher
+     *
+     */
+    fun isCompletelyLeftOf(function: ViewBuilder.() -> Unit) {
+        view.check(PositionAssertions.isCompletelyLeftOf(ViewBuilder().apply(function).getViewMatcher()))
+    }
+
+
+    /**
+     *  Checks if the view displayed is completely right of the view matching the given matcher.
+     *
+     * @param function ViewBuilder that will result in matcher
+     *
+     */
+    fun isCompletelyRightOf(function: ViewBuilder.() -> Unit) {
+        view.check(PositionAssertions.isCompletelyRightOf(ViewBuilder().apply(function).getViewMatcher()))
     }
 }
 
