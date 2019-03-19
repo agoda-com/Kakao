@@ -26,11 +26,41 @@ class TestActivityTest {
                 click()
                 isVisible()
                 hasText("LARGE")
+                isCompletelyAbove {
+                    withId(R.id.text_view_small)
+                }
             }
 
             textViewSmall {
                 isVisible()
                 hasText("small")
+                isCompletelyBelow {
+                    withId(R.id.text_view_large)
+                }
+            }
+
+            buttonViewLeft {
+                isVisible()
+                hasText("left")
+                isCompletelyLeftOf {
+                    withId(R.id.button_view_right)
+                }
+            }
+
+            buttonViewRight {
+                isVisible()
+                hasText("right")
+                isCompletelyRightOf {
+                    withId(R.id.button_view_left)
+                }
+            }
+
+            textViewSmall {
+                isVisible()
+                hasText("small")
+                isCompletelyBelow {
+                    withId(R.id.text_view_large)
+                }
             }
 
             textViewColored {
