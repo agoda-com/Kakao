@@ -3,20 +3,20 @@
 package com.agoda.kakao.common.matchers
 
 import android.view.View
-import android.widget.ListView
+import android.widget.AbsListView
 import androidx.test.espresso.matcher.BoundedMatcher
 import org.hamcrest.Description
 
 /**
- * Matches ListView with count of children
+ * Matches AbsListView with count of children
  *
- * @param size of children count in ListView
+ * @param size of children count in AbsListView
  */
-class ListViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, ListView>(ListView::class.java) {
+class KAbsListViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, AbsListView>(AbsListView::class.java) {
 
     private var itemCount: Int = 0
 
-    override fun matchesSafely(view: ListView) = run {
+    override fun matchesSafely(view: AbsListView) = run {
         itemCount = view.adapter?.count ?: 0
         itemCount == size
     }
