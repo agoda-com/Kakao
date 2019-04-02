@@ -53,6 +53,11 @@
             android:label="Autocomplete Activity"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name=".DrawableListActivity"
+            android:label="Drawable Activity"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>

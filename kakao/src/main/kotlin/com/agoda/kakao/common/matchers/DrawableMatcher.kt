@@ -41,7 +41,7 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
         }
 
         return view?.let {
-            var expectedDrawable: Drawable? = ContextCompat.getDrawable(it.context, resId)
+            var expectedDrawable: Drawable? = drawable ?: ContextCompat.getDrawable(it.context, resId)
 
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP && expectedDrawable != null) {
                 expectedDrawable = DrawableCompat.wrap(expectedDrawable).mutate()
@@ -51,9 +51,10 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
                 return false
             }
 
-            val convertDrawable = drawable ?: (it as ImageView).drawable
+            val convertDrawable = (it as ImageView).drawable
             val bitmap = toBitmap?.invoke(convertDrawable) ?: drawableToBitmap(convertDrawable)
-            val otherBitmap = toBitmap?.invoke(expectedDrawable) ?: drawableToBitmap(expectedDrawable)
+            val otherBitmap = toBitmap?.invoke(expectedDrawable)
+                    ?: drawableToBitmap(expectedDrawable)
 
             return bitmap.sameAs(otherBitmap)
         } ?: false
