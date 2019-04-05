@@ -7,7 +7,8 @@ import androidx.test.espresso.ViewInteraction
 /**
  * Provides assertions for view with adapters
  *
- * @see RecyclerAdapterAssertions
+ * @see [com.agoda.kakao.recycler.RecyclerAdapterAssertions]
+ * @see [com.agoda.kakao.list.AbsListViewAdapterAssertions]
  */
 interface AdapterAssertions {
     val view: ViewInteraction

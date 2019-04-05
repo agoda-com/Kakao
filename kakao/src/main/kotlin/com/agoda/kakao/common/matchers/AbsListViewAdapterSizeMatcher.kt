@@ -12,7 +12,7 @@ import org.hamcrest.Description
  *
  * @param size of children count in AbsListView
  */
-class KAbsListViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, AbsListView>(AbsListView::class.java) {
+class AbsListViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View, AbsListView>(AbsListView::class.java) {
 
     private var itemCount: Int = 0
 

@@ -4,7 +4,7 @@ package com.agoda.kakao.list
 
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.AdapterAssertions
-import com.agoda.kakao.common.matchers.KAbsListViewAdapterSizeMatcher
+import com.agoda.kakao.common.matchers.AbsListViewAdapterSizeMatcher
 
 /**
  * Provides assertions for AbsListView adapter
@@ -16,6 +16,6 @@ interface AbsListViewAdapterAssertions : AdapterAssertions {
      * @param size expected child count size in AbsListView
      */
     fun hasSize(size: Int) {
-        view.check(ViewAssertions.matches(KAbsListViewAdapterSizeMatcher(size)))
+        view.check(ViewAssertions.matches(AbsListViewAdapterSizeMatcher(size)))
     }
 }
