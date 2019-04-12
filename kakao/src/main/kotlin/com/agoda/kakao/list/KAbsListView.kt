@@ -11,6 +11,7 @@ import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.scroll.ScrollViewActions
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -25,7 +26,7 @@ import kotlin.reflect.KClass
  * @see KAdapterItemTypeBuilder
  */
 @KakaoDslMarker
-class KAbsListView : ScrollViewActions, BaseAssertions, AbsListViewAdapterAssertions {
+class KAbsListView : ScrollViewActions, AbsListViewAdapterActions, BaseAssertions, AbsListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
