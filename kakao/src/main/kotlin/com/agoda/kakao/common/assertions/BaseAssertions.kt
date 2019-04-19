@@ -21,7 +21,6 @@ import org.hamcrest.Matchers
  * Provides basic assertions that can be performed on any view
  *
  * @see TextViewAssertions
- * @see EditableAssertions
  * @see CheckableAssertions
  * @see ViewPagerAssertions
  * @see ImageViewAssertions
