@@ -19,7 +19,6 @@
 | [com.agoda.kakao.list.DataBuilder](../com.agoda.kakao.list/-data-builder/index.md) | Class for building data matchers |
 | [com.agoda.kakao.common.matchers.DrawableMatcher](../com.agoda.kakao.common.matchers/-drawable-matcher/index.md) | Matches given drawable with current one |
 | [com.agoda.kakao.drawer.DrawerActions](../com.agoda.kakao.drawer/-drawer-actions/index.md) | Provides actions for navigation drawer |
-| [com.agoda.kakao.edit.EditableActions](../com.agoda.kakao.edit/-editable-actions/index.md) | Provides editable actions for views |
 | [com.agoda.kakao.edit.EditableAssertions](../com.agoda.kakao.edit/-editable-assertions/index.md) | Provides editable based assertions for views |
 | [com.agoda.kakao.common.matchers.FirstViewMatcher](../com.agoda.kakao.common.matchers/-first-view-matcher/index.md) | Matches first view |
 | [com.agoda.kakao.image.ImageViewAssertions](../com.agoda.kakao.image/-image-view-assertions/index.md) | Provides assertion for image views |
