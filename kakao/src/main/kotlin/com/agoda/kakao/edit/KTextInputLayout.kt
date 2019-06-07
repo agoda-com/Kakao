@@ -3,10 +3,10 @@
 package com.agoda.kakao.edit
 
 import android.support.design.widget.TextInputEditText
-import android.support.test.espresso.DataInteraction
 import android.view.View
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.views.KBaseView
+import com.agoda.kakao.delegates.DataInteractionDelegate
 import org.hamcrest.Matcher
 
 /**
@@ -31,7 +31,7 @@ class KTextInputLayout : KBaseView<KTextInputLayout>, TextInputLayoutAssertions 
         }
     }
 
-    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function) {
+    constructor(parent: DataInteractionDelegate, function: ViewBuilder.() -> Unit) : super(parent, function) {
         edit = KEditText {
             isDescendantOfA(function)
             isInstanceOf(TextInputEditText::class.java)

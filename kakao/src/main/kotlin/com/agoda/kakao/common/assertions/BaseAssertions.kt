@@ -5,12 +5,12 @@ package com.agoda.kakao.common.assertions
 import android.support.annotation.ColorRes
 import android.support.test.espresso.Root
 import android.support.test.espresso.ViewAssertion
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.builders.RootBuilder
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.BackgroundColorMatcher
+import com.agoda.kakao.delegates.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -26,7 +26,7 @@ import org.hamcrest.Matchers
  * @see ImageViewAssertions
  */
 interface BaseAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
     var root: Matcher<Root>
 
     /**

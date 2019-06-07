@@ -2,8 +2,8 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.DataInteraction
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.delegates.DataInteractionDelegate
 import kotlin.reflect.KClass
 
 /**
@@ -34,7 +34,7 @@ class KAdapterItemTypeBuilder {
      *
      * @param provideItem Function that takes data interaction of list view and returns instance of item view
      */
-    inline fun <reified T : KAdapterItem<*>> itemType(noinline provideItem: (DataInteraction) -> T) {
+    inline fun <reified T : KAdapterItem<*>> itemType(noinline provideItem: (DataInteractionDelegate) -> T) {
         itemTypes.put(T::class, KAdapterItemType(provideItem))
     }
 }

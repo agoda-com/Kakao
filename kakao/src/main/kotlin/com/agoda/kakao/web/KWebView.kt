@@ -5,6 +5,8 @@ package com.agoda.kakao.web
 import android.support.test.espresso.web.sugar.Web
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.delegates.WebInteractionDelegate
+import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
 
 /**
  * Class for interacting with WebViews
@@ -13,11 +15,14 @@ import com.agoda.kakao.common.builders.ViewBuilder
  */
 @KakaoDslMarker
 open class KWebView(matcher: (ViewBuilder.() -> Unit)? = null) {
-    private val web: Web.WebInteraction<*> = if (matcher != null) {
-        Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())
-    } else {
-        Web.onWebView()
-    }
+
+    private val web: WebInteractionDelegate = InteractionDelegatesFactory().createWebInteractionDelegate(
+            if (matcher != null) {
+                Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())
+            } else {
+                Web.onWebView()
+            }
+    )
 
     /**
      * Operator that allows usage of DSL style

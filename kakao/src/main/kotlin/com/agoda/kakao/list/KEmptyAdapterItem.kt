@@ -2,7 +2,7 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.DataInteraction
+import com.agoda.kakao.delegates.DataInteractionDelegate
 
 /**
  * Empty implementation of KAdapterItem
@@ -12,4 +12,4 @@ import android.support.test.espresso.DataInteraction
  * @param parent Matcher of the root view of adapter item
  * @see KAdapterItem
  */
-class KEmptyAdapterItem(parent: DataInteraction) : KAdapterItem<KEmptyAdapterItem>(parent)
+class KEmptyAdapterItem(parent: DataInteractionDelegate) : KAdapterItem<KEmptyAdapterItem>(parent)

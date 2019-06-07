@@ -2,10 +2,8 @@
 
 package com.agoda.kakao.recycler
 
-import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
@@ -14,6 +12,8 @@ import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.ItemMatcher
 import com.agoda.kakao.common.matchers.PositionMatcher
+import com.agoda.kakao.delegates.DataInteractionDelegate
+import com.agoda.kakao.delegates.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -32,7 +32,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -46,7 +46,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
         val vb = ViewBuilder().apply(builder)
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -68,16 +68,16 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     /**
      * Constructs view class with parent and view interaction from given ViewBuilder
      *
-     * @param parent DataInteraction that will be used as parent to ViewBuilder
+     * @param parent DataInteractionDelegate that will be used as parent to ViewBuilder
      * @param builder ViewBuilder which will result in view's interaction
      * @param itemTypeBuilder Lambda with receiver where you pass your item providers
      *
      * @see ViewBuilder
      */
     @Suppress("UNCHECKED_CAST")
-    constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
+    constructor(parent: DataInteractionDelegate, builder: ViewBuilder.() -> Unit,
                 itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
-        val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
+        val makeTargetMatcher = DataInteractionDelegate::class.java.getDeclaredMethod("makeTargetMatcher")
         val parentMatcher = makeTargetMatcher.invoke(parent)
 
         val vb = ViewBuilder().apply {
@@ -86,7 +86,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         }
 
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
