@@ -1,6 +1,6 @@
 package com.agoda.sample.screen
 
-import android.support.test.espresso.DataInteraction
+import com.agoda.kakao.delegates.DataInteractionDelegate
 import com.agoda.kakao.list.KAdapterItem
 import com.agoda.kakao.list.KListView
 import com.agoda.kakao.screen.Screen
@@ -13,7 +13,7 @@ class TestListScreen : Screen<TestListScreen>() {
             builder = { withId(R.id.list) },
             itemTypeBuilder = { itemType(::Item) })
 
-    class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
+    class Item(i: DataInteractionDelegate) : KAdapterItem<Item>(i) {
         val title = KTextView(i) { withId(R.id.title) }
         val subtitle = KTextView(i) { withId(R.id.subtitle) }
         val button = KButton(i) { withId(R.id.button) }
