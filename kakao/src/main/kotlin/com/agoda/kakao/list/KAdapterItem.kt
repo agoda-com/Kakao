@@ -2,12 +2,12 @@
 
 package com.agoda.kakao.list
 
-import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.agoda.kakao.delegates.DataInteractionDelegate
 import org.hamcrest.Matchers
 
 /**
@@ -22,7 +22,7 @@ import org.hamcrest.Matchers
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
+open class KAdapterItem<out T>(interaction: DataInteractionDelegate) : BaseActions, BaseAssertions {
     override val view = interaction.check(ViewAssertions.matches(Matchers.anything()))
     override var root = RootMatchers.DEFAULT
 

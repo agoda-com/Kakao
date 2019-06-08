@@ -5,10 +5,11 @@ package com.agoda.kakao.screen
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.UiController
 import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.delegates.ViewInteractionDelegate
+import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
 
 /**
  * Container class for UI elements.
@@ -22,8 +23,11 @@ import com.agoda.kakao.common.KakaoDslMarker
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class Screen<out T: Screen<T>>: ScreenActions {
-    override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
+open class Screen<out T : Screen<T>> : ScreenActions {
+    override val view: ViewInteractionDelegate = InteractionDelegatesFactory().createViewInteractionDelegate(
+            Espresso.onView(ViewMatchers.isRoot())
+    )
+
     operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
 
     companion object {

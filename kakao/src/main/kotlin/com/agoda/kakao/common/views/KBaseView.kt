@@ -2,9 +2,7 @@
 
 package com.agoda.kakao.common.views
 
-import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
@@ -12,6 +10,8 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.delegates.DataInteractionDelegate
+import com.agoda.kakao.delegates.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -27,7 +27,7 @@ import org.hamcrest.Matchers
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -38,7 +38,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @see ViewBuilder
      */
     constructor(function: ViewBuilder.() -> Unit) {
-        view = ViewBuilder().apply(function).getViewInteraction()
+        view = ViewBuilder().apply(function).getViewInteractionDelegate()
     }
 
     /**
@@ -57,12 +57,12 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
     /**
      * Constructs view class with parent and view interaction from given ViewBuilder
      *
-     * @param parent DataInteraction that will be used as parent to ViewBuilder
+     * @param parent DataInteractionDelegate that will be used as parent to ViewBuilder
      * @param function ViewBuilder which will result in view's interaction
      *
      * @see ViewBuilder
      */
-    constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
+    constructor(parent: DataInteractionDelegate, function: ViewBuilder.() -> Unit) {
         view = parent.onChildView(ViewBuilder().apply(function).getViewMatcher())
                 .check(ViewAssertions.matches(Matchers.anything()))
     }
