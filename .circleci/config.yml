@@ -102,9 +102,12 @@ workflows:
   build-deploy:
     jobs:
       - build-job
+      - run-at-approval:
+          type: approval
       - automation-tests-job:
           requires:
             - build-job
+            - run-at-approval
           filters:
             branches:
               ignore: master
