@@ -8,6 +8,7 @@ import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.agoda.kakao.core.Kakao
 import org.hamcrest.Matcher
 
 /**
@@ -46,6 +47,7 @@ open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAsser
      * @return This object
      */
     infix fun perform(function: T.() -> Unit): T {
+        Kakao.configuration.interactor.onPerform?.invoke(view)
         function(this as T)
         return this
     }

@@ -8,6 +8,7 @@ import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.agoda.kakao.core.Kakao
 import org.hamcrest.Matchers
 
 /**
@@ -47,6 +48,7 @@ open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, Base
      */
     infix fun perform(function: T.() -> Unit): T {
         function(this as T)
+        Kakao.configuration.interactor.onPerform?.invoke(view)
         return this
     }
 }
