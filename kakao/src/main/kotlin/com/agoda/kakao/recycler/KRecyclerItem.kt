@@ -47,7 +47,7 @@ open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAsser
      * @return This object
      */
     infix fun perform(function: T.() -> Unit): T {
-        Kakao.configuration.interactor.onPerform?.invoke(view)
+        Kakao.viewInteractionInterceptor.onPerform?.invoke(view)
         function(this as T)
         return this
     }

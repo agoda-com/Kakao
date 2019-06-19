@@ -1,8 +1,8 @@
-package com.agoda.kakao.common.interactors
+package com.agoda.kakao.common.interceptors
 
 import androidx.test.espresso.ViewInteraction
 
-class Interactor {
+class Interceptor {
     var onAll: ((ViewInteraction) -> Unit)? = null
     var onPerform: ((ViewInteraction) -> Unit)? = null
     var onCheck: ((ViewInteraction) -> Unit)? = null

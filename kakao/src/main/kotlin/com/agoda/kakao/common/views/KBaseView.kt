@@ -88,7 +88,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @return This object
      */
     infix fun perform(function: T.() -> Unit): T {
-        Kakao.configuration.interactor.onPerform?.invoke(view)
+        Kakao.viewInteractionInterceptor.onPerform?.invoke(view)
         function(this as T)
         return this
     }

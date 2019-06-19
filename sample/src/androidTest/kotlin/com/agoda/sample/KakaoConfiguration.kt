@@ -4,19 +4,9 @@ import com.agoda.kakao.core.Kakao
 
 object KakaoConfiguration{
     init {
-        Kakao.config {
-            onInteraction {
-                onPerform {
+        Kakao {
+            onViewInteraction {
 
-                }
-
-                onCheck {
-
-                }
-
-                onAll {
-
-                }
             }
         }
     }

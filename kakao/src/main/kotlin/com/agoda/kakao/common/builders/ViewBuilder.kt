@@ -13,6 +13,7 @@ import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.matchers.*
+import com.agoda.kakao.core.Kakao
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -394,6 +395,7 @@ class ViewBuilder {
     fun getViewInteraction(): ViewInteraction {
         check(viewMatchers.isNotEmpty()) { "No matchers inside InteractionBuilder" }
         return Espresso.onView(AllOf.allOf(viewMatchers))
+                .also { Kakao.configuration.viewInteractionInterceptor.onAll?.invoke(it) }
     }
 
     /**
