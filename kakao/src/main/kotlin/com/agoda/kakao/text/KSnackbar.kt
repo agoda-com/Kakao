@@ -13,11 +13,11 @@ import com.google.android.material.snackbar.Snackbar
 class KSnackbar : KBaseView<KSnackbar>({ isInstanceOf(Snackbar.SnackbarLayout::class.java) }) {
     val text = KTextView {
         isDescendantOfA { isInstanceOf(Snackbar.SnackbarLayout::class.java) }
-        withResourceName("snackbar_text")
+        withId(com.google.android.material.R.id.snackbar_text)
     }
 
     val action = KButton {
         isDescendantOfA { isInstanceOf(Snackbar.SnackbarLayout::class.java) }
-        withResourceName("snackbar_action")
+        withId(com.google.android.material.R.id.snackbar_action)
     }
 }
