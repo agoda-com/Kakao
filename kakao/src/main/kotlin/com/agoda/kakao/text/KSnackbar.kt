@@ -2,8 +2,6 @@
 
 package com.agoda.kakao.text
 
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatTextView
 import com.agoda.kakao.common.views.KBaseView
 import com.google.android.material.snackbar.Snackbar
 
@@ -15,11 +13,11 @@ import com.google.android.material.snackbar.Snackbar
 class KSnackbar : KBaseView<KSnackbar>({ isInstanceOf(Snackbar.SnackbarLayout::class.java) }) {
     val text = KTextView {
         isDescendantOfA { isInstanceOf(Snackbar.SnackbarLayout::class.java) }
-        isInstanceOf(AppCompatTextView::class.java)
+        withId(com.google.android.material.R.id.snackbar_text)
     }
 
     val action = KButton {
         isDescendantOfA { isInstanceOf(Snackbar.SnackbarLayout::class.java) }
-        isInstanceOf(AppCompatButton::class.java)
+        withId(com.google.android.material.R.id.snackbar_action)
     }
 }
