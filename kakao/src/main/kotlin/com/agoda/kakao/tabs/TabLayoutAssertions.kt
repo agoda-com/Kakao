@@ -2,6 +2,7 @@
 
 package com.agoda.kakao.tabs
 
+import androidx.test.espresso.ViewAssertion
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.google.android.material.tabs.TabLayout
 

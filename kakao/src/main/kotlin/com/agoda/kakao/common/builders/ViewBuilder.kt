@@ -14,6 +14,8 @@ import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.matchers.*
 import com.agoda.kakao.core.Kakao
+import com.agoda.kakao.core.ViewInteractionDelegate
+import com.agoda.kakao.core.ViewInteractionDelegateImpl
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -392,10 +394,12 @@ class ViewBuilder {
      *
      * @return ViewInteraction
      */
-    fun getViewInteraction(): ViewInteraction {
+    fun getViewInteraction(): ViewInteractionDelegate {
         check(viewMatchers.isNotEmpty()) { "No matchers inside InteractionBuilder" }
-        return Espresso.onView(AllOf.allOf(viewMatchers))
-                .also { Kakao.configuration.viewInteractionInterceptor.onAll?.invoke(it) }
+        return ViewInteractionDelegateImpl(
+                Espresso.onView(AllOf.allOf(viewMatchers)),
+                Kakao.viewInteractionInterceptor)
+        //TODO: set local interceptor
     }
 
     /**

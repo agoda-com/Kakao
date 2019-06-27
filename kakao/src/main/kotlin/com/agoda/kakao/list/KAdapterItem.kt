@@ -9,6 +9,7 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.core.Kakao
+import com.agoda.kakao.core.ViewInteractionDelegateImpl
 import org.hamcrest.Matchers
 
 /**
@@ -24,7 +25,9 @@ import org.hamcrest.Matchers
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
-    override val view = interaction.check(ViewAssertions.matches(Matchers.anything()))
+    override val view =
+            ViewInteractionDelegateImpl(interaction.check(ViewAssertions.matches(Matchers.anything())),
+                    Kakao.viewInteractionInterceptor)
     override var root = RootMatchers.DEFAULT
 
     /**
@@ -48,7 +51,6 @@ open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, Base
      */
     infix fun perform(function: T.() -> Unit): T {
         function(this as T)
-        Kakao.configuration.interactor.onPerform?.invoke(view)
         return this
     }
 }

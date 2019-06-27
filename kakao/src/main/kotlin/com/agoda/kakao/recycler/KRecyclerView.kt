@@ -14,6 +14,7 @@ import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.ItemMatcher
 import com.agoda.kakao.common.matchers.PositionMatcher
+import com.agoda.kakao.core.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -32,7 +33,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**

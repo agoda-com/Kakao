@@ -9,6 +9,7 @@ import androidx.test.espresso.ViewAction
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.*
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.core.ViewInteractionDelegate
 import org.hamcrest.Matcher
 
 /**
@@ -22,7 +23,7 @@ import org.hamcrest.Matcher
  * @see CheckableActions
  */
 interface BaseActions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
 
     /**
      * Performs click on view

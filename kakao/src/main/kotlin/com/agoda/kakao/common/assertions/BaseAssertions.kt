@@ -12,6 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.builders.RootBuilder
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.BackgroundColorMatcher
+import com.agoda.kakao.core.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -26,7 +27,7 @@ import org.hamcrest.Matchers
  * @see ImageViewAssertions
  */
 interface BaseAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
     var root: Matcher<Root>
 
     /**

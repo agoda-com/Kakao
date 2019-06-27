@@ -11,6 +11,7 @@ import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.core.ViewInteractionDelegate
 import com.agoda.kakao.scroll.ScrollViewActions
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -30,7 +31,7 @@ class KAbsListView : ScrollViewActions, AbsListViewAdapterActions, BaseAssertion
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**

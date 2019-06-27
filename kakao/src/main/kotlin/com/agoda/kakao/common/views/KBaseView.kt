@@ -13,6 +13,8 @@ import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.core.Kakao
+import com.agoda.kakao.core.ViewInteractionDelegate
+import com.agoda.kakao.core.ViewInteractionDelegateImpl
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -28,7 +30,7 @@ import org.hamcrest.Matchers
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -64,8 +66,11 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @see ViewBuilder
      */
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
-        view = parent.onChildView(ViewBuilder().apply(function).getViewMatcher())
-                .check(ViewAssertions.matches(Matchers.anything()))
+        view = ViewInteractionDelegateImpl(parent.onChildView(ViewBuilder().apply(function).getViewMatcher())
+                .check(ViewAssertions.matches(Matchers.anything())),
+                Kakao.viewInteractionInterceptor)
+
+        //TODO: replace to dateInterceptor
     }
 
     /**
@@ -88,7 +93,6 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @return This object
      */
     infix fun perform(function: T.() -> Unit): T {
-        Kakao.viewInteractionInterceptor.onPerform?.invoke(view)
         function(this as T)
         return this
     }

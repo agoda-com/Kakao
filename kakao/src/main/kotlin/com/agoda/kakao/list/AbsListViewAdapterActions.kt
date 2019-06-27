@@ -7,10 +7,11 @@ import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.ViewMatchers
+import com.agoda.kakao.core.ViewInteractionDelegate
 import org.hamcrest.Matchers
 
 interface AbsListViewAdapterActions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
 
     /**
      * Returns the size of ScrollView

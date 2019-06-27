@@ -9,6 +9,7 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.core.Kakao
+import com.agoda.kakao.core.ViewInteractionDelegateImpl
 import org.hamcrest.Matcher
 
 /**
@@ -24,7 +25,9 @@ import org.hamcrest.Matcher
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions {
-    override val view = Espresso.onView(matcher)
+    override val view = ViewInteractionDelegateImpl(
+            Espresso.onView(matcher),
+            Kakao.viewInteractionInterceptor)
     override var root = RootMatchers.DEFAULT
 
     /**
@@ -47,7 +50,6 @@ open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAsser
      * @return This object
      */
     infix fun perform(function: T.() -> Unit): T {
-        Kakao.viewInteractionInterceptor.onPerform?.invoke(view)
         function(this as T)
         return this
     }
