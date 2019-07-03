@@ -29,6 +29,7 @@ open class Screen<out T: Screen<T>>: ScreenActions {
 
     /**
      * The visibility of rootView will be checked when entering the screen
+     * @rootView.isVisible() Will be called after land onScreen<>()
      */
     open var rootView: KBaseView<*>? = null
 
