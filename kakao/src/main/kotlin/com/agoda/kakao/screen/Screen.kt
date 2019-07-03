@@ -27,12 +27,12 @@ open class Screen<out T: Screen<T>>: ScreenActions {
     override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
     operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
 
-    companion object {
-        /**
-         * The visibility of rootView will be checked when entering the screen
-         */
-        var rootView: KBaseView<*>? = null
+    /**
+     * The visibility of rootView will be checked when entering the screen
+     */
+    open var rootView: KBaseView<*>? = null
 
+    companion object {
         /**
          * Idles for given amount of time
          *
@@ -51,8 +51,10 @@ open class Screen<out T: Screen<T>>: ScreenActions {
         }
 
         inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T {
-            rootView?.isVisible()
-            return T::class.java.newInstance().apply { function.invoke(this) }
+            return T::class.java
+                    .newInstance()
+                    .also { it.rootView?.isVisible() }
+                    .apply { function.invoke(this) }
         }
     }
 }
