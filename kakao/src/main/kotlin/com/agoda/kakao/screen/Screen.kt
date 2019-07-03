@@ -9,6 +9,7 @@ import androidx.test.espresso.ViewAction
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.common.views.KBaseView
 
 /**
  * Container class for UI elements.
@@ -25,6 +26,12 @@ import com.agoda.kakao.common.KakaoDslMarker
 open class Screen<out T: Screen<T>>: ScreenActions {
     override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
     operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
+
+    /**
+     * The visibility of rootView will be checked when entering the screen
+     * @rootView.isVisible() Will be called after land onScreen<>()
+     */
+    open var rootView: KBaseView<*>? = null
 
     companion object {
         /**
@@ -44,7 +51,11 @@ open class Screen<out T: Screen<T>>: ScreenActions {
             })
         }
 
-        inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T =
-                T::class.java.newInstance().apply { function.invoke(this) }
+        inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T {
+            return T::class.java
+                    .newInstance()
+                    .also { it.rootView?.isVisible() }
+                    .apply { function.invoke(this) }
+        }
     }
 }
