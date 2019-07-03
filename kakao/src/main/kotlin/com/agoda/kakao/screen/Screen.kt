@@ -9,6 +9,7 @@ import androidx.test.espresso.ViewAction
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.common.views.KBaseView
 
 /**
  * Container class for UI elements.
@@ -28,6 +29,11 @@ open class Screen<out T: Screen<T>>: ScreenActions {
 
     companion object {
         /**
+         * The visibility of rootView will be checked when entering the screen
+         */
+        var rootView: KBaseView<*>? = null
+
+        /**
          * Idles for given amount of time
          *
          * @param duration Time to idle in milliseconds (1 second by default)
@@ -44,7 +50,9 @@ open class Screen<out T: Screen<T>>: ScreenActions {
             })
         }
 
-        inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T =
-                T::class.java.newInstance().apply { function.invoke(this) }
+        inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T {
+            rootView?.isVisible()
+            return T::class.java.newInstance().apply { function.invoke(this) }
+        }
     }
 }
