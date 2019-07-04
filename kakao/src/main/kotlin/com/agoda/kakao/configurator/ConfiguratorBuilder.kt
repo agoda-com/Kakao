@@ -7,16 +7,21 @@ import com.agoda.kakao.delegates.DataInteractionDelegate
 import com.agoda.kakao.delegates.ViewInteractionDelegate
 import com.agoda.kakao.delegates.WebInteractionDelegate
 
-class ConfiguratorBuilder {
+class ConfiguratorBuilder private constructor(
+    private val parentConfig: ConfigModel? = null
+) {
+
+    companion object {
+        fun clearCreate(): ConfiguratorBuilder = ConfiguratorBuilder()
+        fun createWithHistory(parent: ConfigModel): ConfiguratorBuilder = ConfiguratorBuilder(parent)
+    }
 
     private lateinit var viewInteractionDelegateFactory:
-            ((ViewInteraction) -> ViewInteractionDelegate)
-
+        ((ViewInteraction) -> ViewInteractionDelegate)
     private lateinit var dataInteractionDelegateFactory:
-            ((DataInteraction) -> DataInteractionDelegate)
-
+        ((DataInteraction) -> DataInteractionDelegate)
     private lateinit var webInteractionDelegateFactory:
-            ((Web.WebInteraction<*>) -> WebInteractionDelegate)
+        ((Web.WebInteraction<*>) -> WebInteractionDelegate)
 
     init {
         onViewInteraction { }
@@ -34,43 +39,59 @@ class ConfiguratorBuilder {
     }
 
     fun onViewInteraction(
-            override: Boolean = false,
-            onViewInteractionDelegateBuilder: ViewInteractionDelegateBuilder.(ViewInteraction) -> Unit
+        override: Boolean = false,
+        onViewInteractionDelegateBuilder: ViewInteractionDelegateBuilder.(ViewInteraction) -> Unit
     ) {
         viewInteractionDelegateFactory = { viewInteraction ->
-            val viewInteractionDelegateBuilder = ViewInteractionDelegateBuilder(viewInteraction, override)
+            val viewInteractionDelegateBuilder = ViewInteractionDelegateBuilder(
+                viewInteractionForBuilder = viewInteraction,
+                parentViewInteractionDelegate =
+                    if (override) parentConfig?.viewInteractionDelegateFactory?.invoke(viewInteraction)
+                    else null
+            )
             onViewInteractionDelegateBuilder.invoke(viewInteractionDelegateBuilder, viewInteraction)
             viewInteractionDelegateBuilder.viewInteractionDelegate
         }
     }
 
     fun onDataInteraction(
-            override: Boolean = false,
-            onDataInteractionDelegateBuilder: DataInteractionDelegateBuilder.(DataInteraction) -> Unit
+        override: Boolean = false,
+        onDataInteractionDelegateBuilder: DataInteractionDelegateBuilder.(DataInteraction) -> Unit
     ) {
         dataInteractionDelegateFactory = { dataInteraction ->
-            val dataInteractionDelegateBuilder = DataInteractionDelegateBuilder(dataInteraction, override)
+            val dataInteractionDelegateBuilder = DataInteractionDelegateBuilder(
+                dataInteractionForBuilder = dataInteraction,
+                parentDataInteractionDelegate =
+                    if (override) parentConfig?.dataInteractionDelegateFactory?.invoke(dataInteraction)
+                    else null
+            )
             onDataInteractionDelegateBuilder.invoke(dataInteractionDelegateBuilder, dataInteraction)
             dataInteractionDelegateBuilder.dataInteractionDelegate
         }
     }
 
     fun onWebInteraction(
-            override: Boolean = false,
-            onWebInteractionDelegateBuilder: WebInteractionDelegateBuilder.(Web.WebInteraction<*>) -> Unit
+        override: Boolean = false,
+        onWebInteractionDelegateBuilder: WebInteractionDelegateBuilder.(Web.WebInteraction<*>) -> Unit
     ) {
         webInteractionDelegateFactory = { webInteraction ->
-            val webInteractionDelegateBuilder = WebInteractionDelegateBuilder(webInteraction, override)
+            val webInteractionDelegateBuilder = WebInteractionDelegateBuilder(
+                webInteractionForBuilder = webInteraction,
+                parentWebInteractionDelegate =
+                    if (override) parentConfig?.webInteractionDelegateFactory?.invoke(webInteraction)
+                    else null
+            )
             onWebInteractionDelegateBuilder.invoke(webInteractionDelegateBuilder, webInteraction)
             webInteractionDelegateBuilder.webInteractionDelegate
         }
     }
 
-    fun getConfigurator(): ConfiguratorModel {
-        return ConfiguratorModel(
-                viewInteractionDelegateFactory,
-                dataInteractionDelegateFactory,
-                webInteractionDelegateFactory
+    fun getConfigurator(): ConfigModel {
+        return ConfigModel(
+            parentConfig,
+            viewInteractionDelegateFactory,
+            dataInteractionDelegateFactory,
+            webInteractionDelegateFactory
         )
     }
 

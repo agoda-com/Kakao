@@ -14,6 +14,7 @@ import com.agoda.kakao.configurator.ConfiguratorBuilder
 import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.DataInteractionDelegate
 import com.agoda.kakao.delegates.ViewInteractionDelegate
+import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -79,14 +80,14 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
     }
 
     fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
-        val configuratorBuilder = ConfiguratorBuilder()
+        val configuratorBuilder = ConfiguratorBuilder.createWithHistory(KakaoConfigurator.configurator)
         configuratorBuilderAction.invoke(configuratorBuilder)
-        val configurator = configuratorBuilder.getConfigurator()
-        view = configurator.viewInteractionDelegateFactory.invoke(view.viewInteraction)
+        view = configuratorBuilder.getConfigurator().viewInteractionDelegateFactory
+            .invoke(view.viewInteraction)
     }
 
     fun resetCustomConfigurator() {
-        view = KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(view.viewInteraction)
+        view = InteractionDelegatesFactory().createViewInteractionDelegate(view.viewInteraction)
     }
 
     /**

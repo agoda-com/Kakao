@@ -9,7 +9,6 @@ import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.configurator.ConfiguratorBuilder
-import com.agoda.kakao.configurator.ConfiguratorModel
 import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.ViewInteractionDelegate
 import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
@@ -31,22 +30,24 @@ open class Screen<out T : Screen<T>> : ScreenActions {
             Espresso.onView(ViewMatchers.isRoot())
     )
 
-    private var screenConfigurator: ConfiguratorModel? = null
+    private var configuratorBuilderAction: (ConfiguratorBuilder.() -> Unit)? = null
 
     operator fun invoke(function: T.() -> Unit) {
-        screenConfigurator?.let {
-            KakaoConfigurator.pushConfigurator(screenConfigurator as ConfiguratorModel)
+        configuratorBuilderAction?.let {
+            val configuratorBuilder = ConfiguratorBuilder.createWithHistory(KakaoConfigurator.configurator)
+            configuratorBuilderAction?.invoke(configuratorBuilder)
+            KakaoConfigurator.configureWithHistory(
+                configuratorBuilder.getConfigurator()
+            )
             function.invoke(this as T)
-            KakaoConfigurator.dropLastConfigurator()
+            KakaoConfigurator.revertParentConfigurator()
             return
         }
         function.invoke(this as T)
     }
 
     fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
-        val configuratorBuilder = ConfiguratorBuilder()
-        configuratorBuilderAction.invoke(configuratorBuilder)
-        screenConfigurator = configuratorBuilder.getConfigurator()
+        this.configuratorBuilderAction = configuratorBuilderAction
     }
 
     companion object {

@@ -1,16 +1,11 @@
 package com.agoda.kakao.configurator
 
-import java.util.*
+import java.lang.IllegalStateException
 
 object KakaoConfigurator {
 
-    internal var configurator: ConfiguratorModel = ConfiguratorBuilder().getConfigurator()
-
-    private val configuratorHistory: Deque<ConfiguratorModel> = ArrayDeque<ConfiguratorModel>()
-
-    init {
-        configuratorHistory.push(configurator)
-    }
+    var configurator: ConfigModel = ConfiguratorBuilder.clearCreate().getConfigurator()
+        private set
 
     /**
      * Operator that allows usage of DSL style
@@ -21,21 +16,39 @@ object KakaoConfigurator {
         function(this)
     }
 
-    fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
-        val configuratorBuilder = ConfiguratorBuilder()
+    fun clearConfigure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
+        val configuratorBuilder = ConfiguratorBuilder.clearCreate()
         configuratorBuilderAction.invoke(configuratorBuilder)
         configurator = configuratorBuilder.getConfigurator()
-        configuratorHistory.push(configurator)
     }
 
-    internal fun pushConfigurator(configurator: ConfiguratorModel) {
-        KakaoConfigurator.configurator = configurator
-        configuratorHistory.push(configurator)
+    fun clearConfigure(config: ConfigModel) {
+        if (config.parentConfig != null) {
+            throw IllegalStateException("For clean configure you must set config that is with parent == null. " +
+                "Your config=$config")
+        }
+        configurator = config
     }
 
-    internal fun dropLastConfigurator() {
-        configuratorHistory.remove()
-        configurator = configuratorHistory.peek()
+    fun configureWithHistory(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
+        val configuratorBuilder = ConfiguratorBuilder.createWithHistory(configurator)
+        configuratorBuilderAction.invoke(configuratorBuilder)
+        configurator = configuratorBuilder.getConfigurator()
+    }
+
+    fun configureWithHistory(config: ConfigModel) {
+        if (config.parentConfig == null) {
+            throw IllegalStateException("For configure with history you must set config that is with parent != null. " +
+                "Your config=$config")
+        }
+        configurator = config
+    }
+
+    fun revertParentConfigurator() {
+        configurator = configurator.parentConfig
+            ?: throw IllegalStateException("Your current configurator does not contain a parent." +
+                "Your configurator=$configurator")
     }
 
 }
+

@@ -6,46 +6,46 @@ import com.agoda.kakao.delegates.ViewInteractionDelegate
 import org.hamcrest.Matcher
 
 class ViewInteractionDelegateBuilder(
-        private val viewInteractionForBuilder: ViewInteraction,
-        private val override: Boolean
-)  {
+    private val viewInteractionForBuilder: ViewInteraction,
+    private val parentViewInteractionDelegate: ViewInteractionDelegate?
+) {
 
     internal val viewInteractionDelegate = object : ViewInteractionDelegate {
         override val viewInteraction: ViewInteraction
             get() = viewInteractionForBuilder
 
         override fun perform(viewAction: ViewAction): ViewInteractionDelegate {
-            perform?.invoke(viewAction) ?:
-                if (override) KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction).perform(viewAction)
-                else viewInteraction.perform(viewAction)
+            perform?.invoke(viewAction)
+                ?: parentViewInteractionDelegate?.perform(viewAction)
+                ?: viewInteraction.perform(viewAction)
             return this
         }
 
         override fun check(viewAssertion: ViewAssertion): ViewInteractionDelegate {
-            check?.invoke(viewAssertion) ?:
-                if (override) KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction).check(viewAssertion)
-                else viewInteraction.check(viewAssertion)
+            check?.invoke(viewAssertion)
+                ?: parentViewInteractionDelegate?.check(viewAssertion)
+                ?: viewInteraction.check(viewAssertion)
             return this
         }
 
         override fun check(function: (View, NoMatchingViewException?) -> Unit): ViewInteractionDelegate {
-            checkByFunction?.invoke(function) ?:
-                if (override) KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction).check(function)
-                else viewInteraction.check(function)
+            checkByFunction?.invoke(function)
+                ?: parentViewInteractionDelegate?.check(function)
+                ?: viewInteraction.check(function)
             return this
         }
 
         override fun withFailureHandler(function: (Throwable, Matcher<View>) -> Unit): ViewInteractionDelegate {
-            withFailureHandler?.invoke(function) ?:
-                if (override) KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction).withFailureHandler(function)
-                else viewInteraction.withFailureHandler(function)
+            withFailureHandler?.invoke(function)
+                ?: parentViewInteractionDelegate?.withFailureHandler(function)
+                ?: viewInteraction.withFailureHandler(function)
             return this
         }
 
         override fun inRoot(rootMatcher: Matcher<Root>): ViewInteractionDelegate {
-            inRoot?.invoke(rootMatcher) ?:
-                if (override) KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction).inRoot(rootMatcher)
-                else viewInteraction.inRoot(rootMatcher)
+            inRoot?.invoke(rootMatcher)
+                ?: parentViewInteractionDelegate?.inRoot(rootMatcher)
+                ?: viewInteraction.inRoot(rootMatcher)
             return this
         }
     }

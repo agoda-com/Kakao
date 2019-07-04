@@ -23,9 +23,12 @@ class InteractionDelegatesFactory {
      * @return [ViewInteractionDelegate] the wrapper of [viewInteraction].
      */
     fun createViewInteractionDelegate(
-            viewInteraction: ViewInteraction
+        viewInteraction: ViewInteraction
     ): ViewInteractionDelegate {
-        return KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction)
+        return object : ViewInteractionDelegate {
+            override val viewInteraction: ViewInteraction
+                get() = viewInteraction
+        }
     }
 
     /**
@@ -36,9 +39,12 @@ class InteractionDelegatesFactory {
      * @return [DataInteractionDelegate] the wrapper of [dataInteraction].
      */
     fun createDataInteractionDelegate(
-            dataInteraction: DataInteraction
+        dataInteraction: DataInteraction
     ): DataInteractionDelegate {
-        return KakaoConfigurator.configurator.dataInteractionDelegateFactory.invoke(dataInteraction)
+        return object : DataInteractionDelegate {
+            override val dataInteraction: DataInteraction
+                get() = dataInteraction
+        }
     }
 
     /**
@@ -49,8 +55,11 @@ class InteractionDelegatesFactory {
      * @return [WebInteractionDelegate] the wrapper of [webInteraction].
      */
     fun createWebInteractionDelegate(
-            webInteraction: Web.WebInteraction<*>
+        webInteraction: Web.WebInteraction<*>
     ): WebInteractionDelegate {
-        return KakaoConfigurator.configurator.webInteractionDelegateFactory.invoke(webInteraction)
+        return object : WebInteractionDelegate {
+            override val webInteraction: Web.WebInteraction<*>
+                get() = webInteraction
+        }
     }
 }

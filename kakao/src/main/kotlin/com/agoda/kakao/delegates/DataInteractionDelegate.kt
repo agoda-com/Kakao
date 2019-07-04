@@ -5,6 +5,7 @@ import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.ViewAssertion
 import android.support.test.espresso.ViewInteraction
 import android.view.View
+import com.agoda.kakao.configurator.KakaoConfigurator
 import org.hamcrest.Matcher
 import javax.annotation.CheckReturnValue
 
@@ -19,7 +20,16 @@ interface DataInteractionDelegate {
 
     @CheckResult
     @CheckReturnValue
-    fun onChildView(childMatcher: Matcher<View>): DataInteractionDelegate
+    fun onChildView(childMatcher: Matcher<View>): DataInteractionDelegate {
+        return KakaoConfigurator.configurator.dataInteractionDelegateFactory
+            .invoke(dataInteraction)
+            .onChildView(childMatcher)
+    }
 
-    fun check(viewAssertion: ViewAssertion): ViewInteractionDelegate
+    fun check(viewAssertion: ViewAssertion): ViewInteractionDelegate {
+        return KakaoConfigurator.configurator.dataInteractionDelegateFactory
+            .invoke(dataInteraction)
+            .check(viewAssertion)
+    }
+
 }

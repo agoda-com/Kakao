@@ -5,6 +5,7 @@ import android.support.test.espresso.web.assertion.WebAssertion
 import android.support.test.espresso.web.model.Atom
 import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
+import com.agoda.kakao.configurator.KakaoConfigurator
 import org.hamcrest.Matcher
 import javax.annotation.CheckReturnValue
 
@@ -19,13 +20,26 @@ interface WebInteractionDelegate {
 
     @CheckResult
     @CheckReturnValue
-    fun withElement(ref: Atom<ElementReference>): WebInteractionDelegate
+    fun withElement(ref: Atom<ElementReference>): WebInteractionDelegate {
+        return KakaoConfigurator.configurator.webInteractionDelegateFactory
+            .invoke(webInteraction)
+            .withElement(ref)
+    }
 
-    fun perform(webAction: Atom<*>): WebInteractionDelegate
+    fun perform(webAction: Atom<*>): WebInteractionDelegate {
+        return KakaoConfigurator.configurator.webInteractionDelegateFactory
+            .invoke(webInteraction)
+            .perform(webAction)
+    }
 
     fun <E> check(
-            webAssertion: WebAssertion<E>,
-            atom: Atom<E>,
-            matcher: Matcher<E>
-    ): WebInteractionDelegate
+        webAssertion: WebAssertion<E>,
+        atom: Atom<E>,
+        matcher: Matcher<E>
+    ): WebInteractionDelegate {
+        return KakaoConfigurator.configurator.webInteractionDelegateFactory
+            .invoke(webInteraction)
+            .check(webAssertion, atom, matcher)
+    }
+
 }

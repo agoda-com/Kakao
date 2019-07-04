@@ -10,8 +10,8 @@ import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
 import org.hamcrest.Matcher
 
 class DataInteractionDelegateBuilder(
-        private val dataInteractionForBuilder: DataInteraction,
-        private val override: Boolean
+    private val dataInteractionForBuilder: DataInteraction,
+    private val parentDataInteractionDelegate: DataInteractionDelegate?
 ) {
 
     internal val dataInteractionDelegate = object : DataInteractionDelegate {
@@ -19,18 +19,17 @@ class DataInteractionDelegateBuilder(
             get() = dataInteractionForBuilder
 
         override fun onChildView(childMatcher: Matcher<View>): DataInteractionDelegate {
-            onChildView?.invoke(childMatcher) ?:
-                if (override) KakaoConfigurator.configurator.dataInteractionDelegateFactory.invoke(dataInteraction).onChildView(childMatcher)
-                else dataInteraction.onChildView(childMatcher)
+            onChildView?.invoke(childMatcher)
+                ?: parentDataInteractionDelegate?.onChildView(childMatcher)
+                ?: dataInteraction.onChildView(childMatcher)
             return this
         }
 
         override fun check(viewAssertion: ViewAssertion): ViewInteractionDelegate {
             return InteractionDelegatesFactory().createViewInteractionDelegate(
-                check?.invoke(viewAssertion) ?:
-                    if (override) KakaoConfigurator.configurator.dataInteractionDelegateFactory
-                            .invoke(dataInteraction).check(viewAssertion).viewInteraction
-                    else dataInteraction.check(viewAssertion)
+                check?.invoke(viewAssertion)
+                    ?: parentDataInteractionDelegate?.check(viewAssertion)?.viewInteraction
+                    ?: dataInteraction.check(viewAssertion)
             )
         }
 

@@ -10,8 +10,8 @@ import org.hamcrest.Matcher
 
 
 class WebInteractionDelegateBuilder(
-        private val webInteractionForBuilder: Web.WebInteraction<*>,
-        private val override: Boolean
+    private val webInteractionForBuilder: Web.WebInteraction<*>,
+    private val parentWebInteractionDelegate: WebInteractionDelegate?
 ) {
 
     internal val webInteractionDelegate = object : WebInteractionDelegate {
@@ -20,19 +20,17 @@ class WebInteractionDelegateBuilder(
 
         override fun withElement(ref: Atom<ElementReference>): WebInteractionDelegate {
             return InteractionDelegatesFactory().createWebInteractionDelegate(
-                    withElement?.invoke(ref) ?:
-                    if (override) KakaoConfigurator.configurator.webInteractionDelegateFactory
-                            .invoke(webInteraction).withElement(ref).webInteraction
-                    else webInteraction.withElement(ref)
+                withElement?.invoke(ref)
+                    ?: parentWebInteractionDelegate?.withElement(ref)?.webInteraction
+                    ?: webInteraction.withElement(ref)
             )
         }
 
         override fun perform(webAction: Atom<*>): WebInteractionDelegate {
             return InteractionDelegatesFactory().createWebInteractionDelegate(
-                    perform?.invoke(webAction) ?:
-                    if (override) KakaoConfigurator.configurator.webInteractionDelegateFactory
-                            .invoke(webInteraction).perform(webAction).webInteraction
-                    else webInteraction.perform(webAction)
+                perform?.invoke(webAction)
+                    ?: parentWebInteractionDelegate?.perform(webAction)?.webInteraction
+                    ?: webInteraction.perform(webAction)
             )
         }
 
