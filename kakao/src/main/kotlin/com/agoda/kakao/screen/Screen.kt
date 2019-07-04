@@ -8,6 +8,9 @@ import android.support.test.espresso.ViewAction
 import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.configurator.ConfiguratorBuilder
+import com.agoda.kakao.configurator.ConfiguratorModel
+import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.ViewInteractionDelegate
 import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
 
@@ -28,7 +31,23 @@ open class Screen<out T : Screen<T>> : ScreenActions {
             Espresso.onView(ViewMatchers.isRoot())
     )
 
-    operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
+    private var screenConfigurator: ConfiguratorModel? = null
+
+    operator fun invoke(function: T.() -> Unit) {
+        screenConfigurator?.let {
+            KakaoConfigurator.pushConfigurator(screenConfigurator as ConfiguratorModel)
+            function.invoke(this as T)
+            KakaoConfigurator.dropLastConfigurator()
+            return
+        }
+        function.invoke(this as T)
+    }
+
+    fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
+        val configuratorBuilder = ConfiguratorBuilder()
+        configuratorBuilderAction.invoke(configuratorBuilder)
+        screenConfigurator = configuratorBuilder.getConfigurator()
+    }
 
     companion object {
         /**
@@ -51,4 +70,5 @@ open class Screen<out T : Screen<T>> : ScreenActions {
         inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T =
                 T::class.java.newInstance().apply { function.invoke(this) }
     }
+
 }

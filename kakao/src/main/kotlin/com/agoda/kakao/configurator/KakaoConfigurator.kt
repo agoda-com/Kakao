@@ -1,65 +1,41 @@
 package com.agoda.kakao.configurator
 
-import android.support.test.espresso.DataInteraction
-import android.support.test.espresso.ViewInteraction
-import android.support.test.espresso.web.sugar.Web
-import com.agoda.kakao.delegates.DataInteractionDelegate
-import com.agoda.kakao.delegates.ViewInteractionDelegate
-import com.agoda.kakao.delegates.WebInteractionDelegate
+import java.util.*
 
-/**
- * Holds interaction delegates factories used in Kakao.
- * Interaction delegates are middleware between Kakao and Espresso (*Interaction classes).
- * By those delegates you can modify common Kakao's API behaviour like to put logs, to handle flaky occurred because of Espresso bugs and others.
- * You can change factories at any time of a test but we strongly recommend to change before your tests start.
- */
 object KakaoConfigurator {
 
-    internal var viewInteractionDelegateFactory:
-            ((ViewInteraction) -> ViewInteractionDelegate)? = null
+    internal var configurator: ConfiguratorModel = ConfiguratorBuilder().getConfigurator()
 
-    internal var dataInteractionDelegateFactory:
-            ((ViewInteraction, DataInteraction) -> DataInteractionDelegate)? = null
+    private val configuratorHistory: Deque<ConfiguratorModel> = ArrayDeque<ConfiguratorModel>()
 
-    internal var webInteractionDelegateFactory:
-            ((Web.WebInteraction<*>) -> WebInteractionDelegate)? = null
-
-    /**
-     * Setter for [viewInteractionDelegateFactory].
-     * This factory is used to create instances of [ViewInteractionDelegate] for all Kakao views, so
-     * we strongly recommend to set it before your tests start.
-     *
-     * @param factory the function that returns [ViewInteractionDelegate] as a result of the invocation.
-     */
-    fun initViewInteractionDelegateFactory(
-            factory: ((ViewInteraction) -> ViewInteractionDelegate)?
-    ) {
-        viewInteractionDelegateFactory = factory
+    init {
+        configuratorHistory.push(configurator)
     }
 
     /**
-     * Setter for [dataInteractionDelegateFactory].
-     * This factory is used to create instances of [DataInteractionDelegate] for all Kakao views, so
-     * we strongly recommend to set it before your tests start.
+     * Operator that allows usage of DSL style
      *
-     * @param factory the function that returns [DataInteractionDelegate] as a result of the invocation.
+     * @param function Tail lambda with receiver which is your view
      */
-    fun initDataInteractionDelegateFactory(
-            factory: ((ViewInteraction, DataInteraction) -> DataInteractionDelegate)?
-    ) {
-        dataInteractionDelegateFactory = factory
+    operator fun invoke(function: KakaoConfigurator.() -> Unit) {
+        function(this)
     }
 
-    /**
-     * Setter for [webInteractionDelegateFactory].
-     * This factory is used to create instances of [WebInteractionDelegate] for all Kakao views, so
-     * we strongly recommend to set it before your tests start.
-     *
-     * @param factory the function that returns [WebInteractionDelegate] as a result of the invocation.
-     */
-    fun initWebInteractionDelegateFactory(
-            factory: ((Web.WebInteraction<*>) -> WebInteractionDelegate)?
-    ) {
-        webInteractionDelegateFactory = factory
+    fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
+        val configuratorBuilder = ConfiguratorBuilder()
+        configuratorBuilderAction.invoke(configuratorBuilder)
+        configurator = configuratorBuilder.getConfigurator()
+        configuratorHistory.push(configurator)
     }
+
+    internal fun pushConfigurator(configurator: ConfiguratorModel) {
+        KakaoConfigurator.configurator = configurator
+        configuratorHistory.push(configurator)
+    }
+
+    internal fun dropLastConfigurator() {
+        configuratorHistory.remove()
+        configurator = configuratorHistory.peek()
+    }
+
 }

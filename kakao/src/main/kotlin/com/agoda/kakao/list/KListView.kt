@@ -105,7 +105,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
                 .inAdapterView(matcher)
                 .atPosition(position)
 
-        val interactionDelegate = InteractionDelegatesFactory().createDataInteractionDelegate(view.viewInteraction, interaction)
+        val interactionDelegate = InteractionDelegatesFactory().createDataInteractionDelegate(interaction)
 
         function(provideItem(interactionDelegate) as T)
     }
@@ -158,7 +158,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
                 .inRoot(root)
                 .inAdapterView(matcher)
 
-        val interactionDelegate = InteractionDelegatesFactory().createDataInteractionDelegate(view.viewInteraction, interaction)
+        val interactionDelegate = InteractionDelegatesFactory().createDataInteractionDelegate(interaction)
 
         return provideItem(interactionDelegate) as T
     }

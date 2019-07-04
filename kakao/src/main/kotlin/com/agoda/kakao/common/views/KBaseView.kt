@@ -10,6 +10,8 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.configurator.ConfiguratorBuilder
+import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.DataInteractionDelegate
 import com.agoda.kakao.delegates.ViewInteractionDelegate
 import org.hamcrest.Matcher
@@ -27,7 +29,7 @@ import org.hamcrest.Matchers
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class KBaseView<out T> : BaseActions, BaseAssertions {
-    override val view: ViewInteractionDelegate
+    override var view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -74,6 +76,17 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      */
     operator fun invoke(function: T.() -> Unit) {
         function(this as T)
+    }
+
+    fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
+        val configuratorBuilder = ConfiguratorBuilder()
+        configuratorBuilderAction.invoke(configuratorBuilder)
+        val configurator = configuratorBuilder.getConfigurator()
+        view = configurator.viewInteractionDelegateFactory.invoke(view.viewInteraction)
+    }
+
+    fun resetCustomConfigurator() {
+        view = KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(view.viewInteraction)
     }
 
     /**

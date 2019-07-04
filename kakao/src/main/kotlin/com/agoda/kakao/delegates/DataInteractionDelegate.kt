@@ -15,7 +15,6 @@ import javax.annotation.CheckReturnValue
  */
 interface DataInteractionDelegate {
 
-    val viewInteraction: ViewInteraction
     val dataInteraction: DataInteraction
 
     @CheckResult

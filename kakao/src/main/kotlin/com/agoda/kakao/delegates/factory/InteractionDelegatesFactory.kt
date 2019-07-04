@@ -7,9 +7,6 @@ import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.DataInteractionDelegate
 import com.agoda.kakao.delegates.ViewInteractionDelegate
 import com.agoda.kakao.delegates.WebInteractionDelegate
-import com.agoda.kakao.delegates.impl.DataInteractionDelegateImpl
-import com.agoda.kakao.delegates.impl.ViewInteractionDelegateImpl
-import com.agoda.kakao.delegates.impl.WebInteractionDelegateImpl
 
 /**
  * Responsible for creating interaction delegates instances, uses interaction delegates factories set in
@@ -28,7 +25,7 @@ class InteractionDelegatesFactory {
     fun createViewInteractionDelegate(
             viewInteraction: ViewInteraction
     ): ViewInteractionDelegate {
-        return ViewInteractionDelegateImpl(viewInteraction)
+        return KakaoConfigurator.configurator.viewInteractionDelegateFactory.invoke(viewInteraction)
     }
 
     /**
@@ -39,10 +36,9 @@ class InteractionDelegatesFactory {
      * @return [DataInteractionDelegate] the wrapper of [dataInteraction].
      */
     fun createDataInteractionDelegate(
-            viewInteraction: ViewInteraction,
             dataInteraction: DataInteraction
     ): DataInteractionDelegate {
-        return DataInteractionDelegateImpl(viewInteraction, dataInteraction)
+        return KakaoConfigurator.configurator.dataInteractionDelegateFactory.invoke(dataInteraction)
     }
 
     /**
@@ -55,6 +51,6 @@ class InteractionDelegatesFactory {
     fun createWebInteractionDelegate(
             webInteraction: Web.WebInteraction<*>
     ): WebInteractionDelegate {
-        return WebInteractionDelegateImpl(webInteraction)
+        return KakaoConfigurator.configurator.webInteractionDelegateFactory.invoke(webInteraction)
     }
 }
