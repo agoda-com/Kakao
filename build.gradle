@@ -16,7 +16,7 @@ buildscript {
         classpath libraries.maven
         classpath libraries.dokka
         classpath libraries.oss
-        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.0.0-RC16"
+        classpath libraries.detekt
     }
 }
 
