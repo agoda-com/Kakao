@@ -132,3 +132,10 @@ artifactory {
         }
     }
 }
+
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+detekt {
+    toolVersion = "1.0.0-RC11"
+    disableDefaultRuleSets = true
+}
