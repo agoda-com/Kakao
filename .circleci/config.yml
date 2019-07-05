@@ -1,5 +1,16 @@
 version: 2
 jobs:
+  code-style-job:
+    working_directory: ~/code
+    docker:
+        - image: circleci/android:api-28
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - run:
+          name: Code style analyse
+          command: ./gradlew check
+
   build-job:
     working_directory: ~/code
     docker:
@@ -101,7 +112,10 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build-job
+      - code-style-job
+      - build-job:
+        - requires:
+            - code-style-job
       - run-at-approval:
           type: approval
       - automation-tests-job:
