@@ -10,7 +10,7 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
-import com.agoda.kakao.configurator.ConfiguratorBuilder
+import com.agoda.kakao.configurator.Configurator
 import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.DataInteractionDelegate
 import com.agoda.kakao.delegates.ViewInteractionDelegate
@@ -79,10 +79,10 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
         function(this as T)
     }
 
-    fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
-        val configuratorBuilder = ConfiguratorBuilder.createWithHistory(KakaoConfigurator.configurator)
+    fun configure(configuratorBuilderAction: Configurator.Builder.() -> Unit) {
+        val configuratorBuilder = Configurator.Builder(history = KakaoConfigurator.configurator)
         configuratorBuilderAction.invoke(configuratorBuilder)
-        view = configuratorBuilder.getConfigurator().viewInteractionDelegateFactory
+        view = configuratorBuilder.build().viewInteractionDelegateFactory
             .invoke(view.viewInteraction)
     }
 

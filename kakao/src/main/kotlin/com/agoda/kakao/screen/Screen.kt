@@ -8,7 +8,7 @@ import android.support.test.espresso.ViewAction
 import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
-import com.agoda.kakao.configurator.ConfiguratorBuilder
+import com.agoda.kakao.configurator.Configurator
 import com.agoda.kakao.configurator.KakaoConfigurator
 import com.agoda.kakao.delegates.ViewInteractionDelegate
 import com.agoda.kakao.delegates.factory.InteractionDelegatesFactory
@@ -30,14 +30,14 @@ open class Screen<out T : Screen<T>> : ScreenActions {
             Espresso.onView(ViewMatchers.isRoot())
     )
 
-    private var configuratorBuilderAction: (ConfiguratorBuilder.() -> Unit)? = null
+    private var configuratorBuilderAction: (Configurator.Builder.() -> Unit)? = null
 
     operator fun invoke(function: T.() -> Unit) {
-        configuratorBuilderAction?.let {
-            val configuratorBuilder = ConfiguratorBuilder.createWithHistory(KakaoConfigurator.configurator)
-            configuratorBuilderAction?.invoke(configuratorBuilder)
-            KakaoConfigurator.configureWithHistory(
-                configuratorBuilder.getConfigurator()
+        val configuratorBuilderActionCopy = configuratorBuilderAction
+        configuratorBuilderActionCopy?.let {
+            KakaoConfigurator.configure(
+                history = KakaoConfigurator.configurator,
+                builderAction = configuratorBuilderActionCopy
             )
             function.invoke(this as T)
             KakaoConfigurator.revertParentConfigurator()
@@ -46,7 +46,7 @@ open class Screen<out T : Screen<T>> : ScreenActions {
         function.invoke(this as T)
     }
 
-    fun configure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
+    fun configure(configuratorBuilderAction: Configurator.Builder.() -> Unit) {
         this.configuratorBuilderAction = configuratorBuilderAction
     }
 

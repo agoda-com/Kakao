@@ -4,7 +4,7 @@ import java.lang.IllegalStateException
 
 object KakaoConfigurator {
 
-    var configurator: ConfigModel = ConfiguratorBuilder.clearCreate().getConfigurator()
+    var configurator: Configurator = Configurator.Builder().build()
         private set
 
     /**
@@ -16,32 +16,10 @@ object KakaoConfigurator {
         function(this)
     }
 
-    fun clearConfigure(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
-        val configuratorBuilder = ConfiguratorBuilder.clearCreate()
-        configuratorBuilderAction.invoke(configuratorBuilder)
-        configurator = configuratorBuilder.getConfigurator()
-    }
-
-    fun clearConfigure(config: ConfigModel) {
-        if (config.parentConfig != null) {
-            throw IllegalStateException("For clean configure you must set config that is with parent == null. " +
-                "Your config=$config")
-        }
-        configurator = config
-    }
-
-    fun configureWithHistory(configuratorBuilderAction: ConfiguratorBuilder.() -> Unit) {
-        val configuratorBuilder = ConfiguratorBuilder.createWithHistory(configurator)
-        configuratorBuilderAction.invoke(configuratorBuilder)
-        configurator = configuratorBuilder.getConfigurator()
-    }
-
-    fun configureWithHistory(config: ConfigModel) {
-        if (config.parentConfig == null) {
-            throw IllegalStateException("For configure with history you must set config that is with parent != null. " +
-                "Your config=$config")
-        }
-        configurator = config
+    fun configure(history: Configurator?, builderAction: Configurator.Builder.() -> Unit) {
+        val configuratorBuilder = Configurator.Builder(history)
+        builderAction.invoke(configuratorBuilder)
+        configurator = configuratorBuilder.build()
     }
 
     fun revertParentConfigurator() {

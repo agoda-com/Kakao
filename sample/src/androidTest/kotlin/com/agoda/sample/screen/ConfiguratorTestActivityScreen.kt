@@ -36,7 +36,7 @@ open class ConfiguratorTestActivityScreen : Screen<ConfiguratorTestActivityScree
 
     init {
         configure {
-            onViewInteraction(override = true) { viewInteraction ->
+            onViewInteraction(doOverride = true) { viewInteraction ->
                 onPerform { viewAction ->
                     Log.i("Intercept__", "action=${viewAction.description}")
                     viewInteraction.perform(viewAction)
@@ -44,7 +44,7 @@ open class ConfiguratorTestActivityScreen : Screen<ConfiguratorTestActivityScree
             }
         }
         content.configure {
-            onViewInteraction(override = true) { viewInteraction ->
+            onViewInteraction(doOverride = true) { viewInteraction ->
                 onCheck { viewAssertion ->
                     Log.i("Intercept___", "check=$viewAssertion")
                     viewInteraction.check(viewAssertion)

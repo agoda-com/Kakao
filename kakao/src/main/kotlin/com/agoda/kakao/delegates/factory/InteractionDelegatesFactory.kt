@@ -13,7 +13,7 @@ import com.agoda.kakao.delegates.WebInteractionDelegate
  * [KakaoConfigurator]. If factories are not set, by default creates stub interaction wrappers without any changes in
  * behavior.
  */
-class InteractionDelegatesFactory {
+internal class InteractionDelegatesFactory {
 
     /**
      * Creates an instance of [ViewInteractionDelegate]. If [viewInteractionDelegateFactory] is null, returns
@@ -62,4 +62,5 @@ class InteractionDelegatesFactory {
                 get() = webInteraction
         }
     }
+
 }

@@ -14,7 +14,7 @@ import org.junit.runner.RunWith
 class ConfiguratorTestActivityTest {
 
     init {
-        KakaoConfigurator.clearConfigure {
+        KakaoConfigurator.configure(history = null) {
             onViewInteraction { viewInteraction ->
                 onPerform { viewAction ->
                     Log.i("Intercept_", "action=${viewAction.description}")
@@ -96,8 +96,8 @@ class ConfiguratorTestActivityTest {
 
         Log.i("Intercept", "---------------")
 
-        KakaoConfigurator.clearConfigure {
-            onViewInteraction(override = true) { viewInteraction ->
+        KakaoConfigurator.configure(history = null) {
+            onViewInteraction(doOverride = true) { viewInteraction ->
                 onCheck { viewAssertion ->
                     Log.i("Intercept_2", "check=$viewAssertion")
                     viewInteraction.check(viewAssertion)
