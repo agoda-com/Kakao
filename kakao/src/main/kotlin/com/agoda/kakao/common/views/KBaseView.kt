@@ -82,7 +82,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
     fun configure(configuratorBuilderAction: Configurator.Builder.() -> Unit) {
         val configuratorBuilder = Configurator.Builder(history = KakaoConfigurator.configurator)
         configuratorBuilderAction.invoke(configuratorBuilder)
-        view = configuratorBuilder.build().viewInteractionDelegateFactory
+        view = configuratorBuilder.build().viewInteractionDelegateSource
             .invoke(view.viewInteraction)
     }
 

@@ -21,13 +21,13 @@ interface WebInteractionDelegate {
     @CheckResult
     @CheckReturnValue
     fun withElement(ref: Atom<ElementReference>): WebInteractionDelegate {
-        return KakaoConfigurator.configurator.webInteractionDelegateFactory
+        return KakaoConfigurator.configurator.webInteractionDelegateSource
             .invoke(webInteraction)
             .withElement(ref)
     }
 
     fun perform(webAction: Atom<*>): WebInteractionDelegate {
-        return KakaoConfigurator.configurator.webInteractionDelegateFactory
+        return KakaoConfigurator.configurator.webInteractionDelegateSource
             .invoke(webInteraction)
             .perform(webAction)
     }
@@ -37,7 +37,7 @@ interface WebInteractionDelegate {
         atom: Atom<E>,
         matcher: Matcher<E>
     ): WebInteractionDelegate {
-        return KakaoConfigurator.configurator.webInteractionDelegateFactory
+        return KakaoConfigurator.configurator.webInteractionDelegateSource
             .invoke(webInteraction)
             .check(webAssertion, atom, matcher)
     }

@@ -9,18 +9,18 @@ import com.agoda.kakao.delegates.WebInteractionDelegate
 
 class Configurator private constructor(
     val parentConfig: Configurator?,
-    val viewInteractionDelegateFactory: ((ViewInteraction) -> ViewInteractionDelegate),
-    val dataInteractionDelegateFactory: ((DataInteraction) -> DataInteractionDelegate),
-    val webInteractionDelegateFactory: ((Web.WebInteraction<*>) -> WebInteractionDelegate)
+    val viewInteractionDelegateSource: ((ViewInteraction) -> ViewInteractionDelegate),
+    val dataInteractionDelegateSource: ((DataInteraction) -> DataInteractionDelegate),
+    val webInteractionDelegateSource: ((Web.WebInteraction<*>) -> WebInteractionDelegate)
 ) {
 
     class Builder(
         private var history: Configurator? = null
     ) {
 
-        private lateinit var viewInteractionDelegateFactory: ((ViewInteraction) -> ViewInteractionDelegate)
-        private lateinit var dataInteractionDelegateFactory: ((DataInteraction) -> DataInteractionDelegate)
-        private lateinit var webInteractionDelegateFactory: ((Web.WebInteraction<*>) -> WebInteractionDelegate)
+        private lateinit var viewInteractionDelegateSource: ((ViewInteraction) -> ViewInteractionDelegate)
+        private lateinit var dataInteractionDelegateSource: ((DataInteraction) -> DataInteractionDelegate)
+        private lateinit var webInteractionDelegateSource: ((Web.WebInteraction<*>) -> WebInteractionDelegate)
 
         init {
             onViewInteraction { }
@@ -41,11 +41,11 @@ class Configurator private constructor(
             doOverride: Boolean = false,
             onViewInteractionDelegateBuilder: ViewInteractionDelegateBuilder.(ViewInteraction) -> Unit
         ) {
-            viewInteractionDelegateFactory = { viewInteraction ->
+            viewInteractionDelegateSource = { viewInteraction ->
                 val viewInteractionDelegateBuilder = ViewInteractionDelegateBuilder(
                     viewInteractionForBuilder = viewInteraction,
                     parentViewInteractionDelegate =
-                    if (doOverride) history?.viewInteractionDelegateFactory?.invoke(viewInteraction)
+                    if (doOverride) history?.viewInteractionDelegateSource?.invoke(viewInteraction)
                     else null
                 )
                 onViewInteractionDelegateBuilder.invoke(viewInteractionDelegateBuilder, viewInteraction)
@@ -57,11 +57,11 @@ class Configurator private constructor(
             doOverride: Boolean = false,
             onDataInteractionDelegateBuilder: DataInteractionDelegateBuilder.(DataInteraction) -> Unit
         ) {
-            dataInteractionDelegateFactory = { dataInteraction ->
+            dataInteractionDelegateSource = { dataInteraction ->
                 val dataInteractionDelegateBuilder = DataInteractionDelegateBuilder(
                     dataInteractionForBuilder = dataInteraction,
                     parentDataInteractionDelegate =
-                    if (doOverride) history?.dataInteractionDelegateFactory?.invoke(dataInteraction)
+                    if (doOverride) history?.dataInteractionDelegateSource?.invoke(dataInteraction)
                     else null
                 )
                 onDataInteractionDelegateBuilder.invoke(dataInteractionDelegateBuilder, dataInteraction)
@@ -73,11 +73,11 @@ class Configurator private constructor(
             doOverride: Boolean = false,
             onWebInteractionDelegateBuilder: WebInteractionDelegateBuilder.(Web.WebInteraction<*>) -> Unit
         ) {
-            webInteractionDelegateFactory = { webInteraction ->
+            webInteractionDelegateSource = { webInteraction ->
                 val webInteractionDelegateBuilder = WebInteractionDelegateBuilder(
                     webInteractionForBuilder = webInteraction,
                     parentWebInteractionDelegate =
-                    if (doOverride) history?.webInteractionDelegateFactory?.invoke(webInteraction)
+                    if (doOverride) history?.webInteractionDelegateSource?.invoke(webInteraction)
                     else null
                 )
                 onWebInteractionDelegateBuilder.invoke(webInteractionDelegateBuilder, webInteraction)
@@ -88,9 +88,9 @@ class Configurator private constructor(
         fun build(): Configurator =
             Configurator(
                 history,
-                viewInteractionDelegateFactory,
-                dataInteractionDelegateFactory,
-                webInteractionDelegateFactory
+                viewInteractionDelegateSource,
+                dataInteractionDelegateSource,
+                webInteractionDelegateSource
             )
 
     }

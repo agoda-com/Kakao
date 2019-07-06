@@ -15,31 +15,31 @@ interface ViewInteractionDelegate {
     val viewInteraction: ViewInteraction
 
     fun perform(viewAction: ViewAction): ViewInteractionDelegate {
-        return KakaoConfigurator.configurator.viewInteractionDelegateFactory
+        return KakaoConfigurator.configurator.viewInteractionDelegateSource
             .invoke(viewInteraction)
             .perform(viewAction)
     }
 
     fun check(viewAssertion: ViewAssertion): ViewInteractionDelegate {
-        return KakaoConfigurator.configurator.viewInteractionDelegateFactory
+        return KakaoConfigurator.configurator.viewInteractionDelegateSource
             .invoke(viewInteraction)
             .check(viewAssertion)
     }
 
     fun check(function: (View, NoMatchingViewException?) -> Unit): ViewInteractionDelegate {
-        return KakaoConfigurator.configurator.viewInteractionDelegateFactory
+        return KakaoConfigurator.configurator.viewInteractionDelegateSource
             .invoke(viewInteraction)
             .check(function)
     }
 
     fun withFailureHandler(function: (Throwable, Matcher<View>) -> Unit): ViewInteractionDelegate {
-        return KakaoConfigurator.configurator.viewInteractionDelegateFactory
+        return KakaoConfigurator.configurator.viewInteractionDelegateSource
             .invoke(viewInteraction)
             .withFailureHandler(function)
     }
 
     fun inRoot(rootMatcher: Matcher<Root>): ViewInteractionDelegate {
-        return KakaoConfigurator.configurator.viewInteractionDelegateFactory
+        return KakaoConfigurator.configurator.viewInteractionDelegateSource
             .invoke(viewInteraction)
             .inRoot(rootMatcher)
     }
