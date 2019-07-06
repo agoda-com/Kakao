@@ -86,7 +86,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
             .invoke(view.viewInteraction)
     }
 
-    fun resetCustomConfigurator() {
+    fun reset() {
         view = InteractionDelegatesFactory().createViewInteractionDelegate(view.viewInteraction)
     }
 
