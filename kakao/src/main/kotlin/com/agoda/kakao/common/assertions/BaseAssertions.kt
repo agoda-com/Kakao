@@ -5,13 +5,13 @@ package com.agoda.kakao.common.assertions
 import androidx.annotation.ColorRes
 import androidx.test.espresso.Root
 import androidx.test.espresso.ViewAssertion
-import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.PositionAssertions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.builders.RootBuilder
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.BackgroundColorMatcher
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -20,13 +20,13 @@ import org.hamcrest.Matchers
  *
  * Provides basic assertions that can be performed on any view
  *
- * @see TextViewAssertions
- * @see CheckableAssertions
- * @see ViewPagerAssertions
- * @see ImageViewAssertions
+ * @see com.agoda.kakao.text.TextViewAssertions
+ * @see com.agoda.kakao.check.CheckableAssertions
+ * @see com.agoda.kakao.pager.ViewPagerAssertions
+ * @see com.agoda.kakao.image.ImageViewAssertions
  */
 interface BaseAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
     var root: Matcher<Root>
 
     /**
@@ -351,4 +351,3 @@ interface BaseAssertions {
         view.check(PositionAssertions.isCompletelyRightOf(ViewBuilder().apply(function).getViewMatcher()))
     }
 }
-

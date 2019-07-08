@@ -2,6 +2,7 @@
 
 package com.agoda.kakao.tabs
 
+import androidx.test.espresso.ViewAssertion
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.google.android.material.tabs.TabLayout
 
@@ -15,7 +16,7 @@ interface TabLayoutAssertions : BaseAssertions {
      * @param index tab index to be checked
      */
     fun isTabSelected(index: Int) {
-        view.check { view, notFoundException ->
+        view.check(ViewAssertion { view, notFoundException ->
             if (view is TabLayout) {
                 if (view.selectedTabPosition != index) {
                     throw AssertionError("Expected selected item index is $index," +
@@ -24,6 +25,6 @@ interface TabLayoutAssertions : BaseAssertions {
             } else {
                 notFoundException?.let { throw AssertionError(it) }
             }
-        }
+        })
     }
 }
