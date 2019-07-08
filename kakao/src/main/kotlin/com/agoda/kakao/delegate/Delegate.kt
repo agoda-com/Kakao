@@ -49,7 +49,7 @@ interface Delegate<T, C, P> {
         return false
     }
 
-    private fun interceptors(): List<Interceptor<T, C, P>> = mutableListOf<Interceptor<T, C, P>>().also { list ->
+    private fun interceptors() = mutableListOf<Interceptor<T, C, P>>().also { list ->
         viewInterceptor()?.let { list.add(it) }
         screenInterceptor()?.let { list.add(it) }
         kakaoInterceptor()?.let { list.add(it) }
