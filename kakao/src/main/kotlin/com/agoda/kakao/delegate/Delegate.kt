@@ -17,12 +17,6 @@ interface Delegate<T, C, P> {
     fun screenInterceptor(): Interceptor<T, C, P>?
     fun kakaoInterceptor(): Interceptor<T, C, P>?
 
-    fun interceptors(): List<Interceptor<T, C, P>> = mutableListOf<Interceptor<T, C, P>>().also { list ->
-        viewInterceptor()?.let { list.add(it) }
-        screenInterceptor()?.let { list.add(it) }
-        kakaoInterceptor()?.let { list.add(it) }
-    }
-
     fun interceptCheck(assertion: C): Boolean {
         interceptors().forEach { interceptor ->
             interceptor.onAll?.let {
@@ -53,5 +47,11 @@ interface Delegate<T, C, P> {
         }
 
         return false
+    }
+
+    private fun interceptors(): List<Interceptor<T, C, P>> = mutableListOf<Interceptor<T, C, P>>().also { list ->
+        viewInterceptor()?.let { list.add(it) }
+        screenInterceptor()?.let { list.add(it) }
+        kakaoInterceptor()?.let { list.add(it) }
     }
 }
