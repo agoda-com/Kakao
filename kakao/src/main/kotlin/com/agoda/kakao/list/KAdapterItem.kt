@@ -12,7 +12,7 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.delegate.DataInteractionDelegate
-import com.agoda.kakao.intercept.Interceptor
+import com.agoda.kakao.intercept.Interceptable
 import org.hamcrest.Matchers
 
 /**
@@ -27,7 +27,7 @@ import org.hamcrest.Matchers
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
+open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions, Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
     override val view = DataInteractionDelegate(interaction).check(ViewAssertions.matches(Matchers.anything()))
     override var root = RootMatchers.DEFAULT
 
@@ -38,25 +38,6 @@ open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, Base
      */
     operator fun invoke(function: T.() -> Unit) {
         function(this as T)
-    }
-
-    /**
-     * Sets the interceptors for the item.
-     * Interceptors will be invoked on the interaction with the item.
-     *
-     * @param builder Builder of the interceptors
-     *
-     * @see Interceptor
-     */
-    fun intercept(builder: Interceptor.Builder<ViewInteraction, ViewAssertion, ViewAction>.() -> Unit) {
-        view.interceptor = Interceptor.Builder<ViewInteraction, ViewAssertion, ViewAction>().apply(builder).build()
-    }
-
-    /**
-     * Removes the interceptors from the item.
-     */
-    fun reset() {
-        view.interceptor = null
     }
 
     /**

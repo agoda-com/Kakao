@@ -12,8 +12,8 @@ import com.agoda.kakao.intercept.Interceptor
  */
 interface Delegate<T, C, P> {
     var interaction: T
+    var interceptor: Interceptor<T, C, P>?
 
-    fun viewInterceptor(): Interceptor<T, C, P>?
     fun screenInterceptor(): Interceptor<T, C, P>?
     fun kakaoInterceptor(): Interceptor<T, C, P>?
 
@@ -50,7 +50,7 @@ interface Delegate<T, C, P> {
     }
 
     private fun interceptors() = mutableListOf<Interceptor<T, C, P>>().also { list ->
-        viewInterceptor()?.let { list.add(it) }
+        interceptor?.let { list.add(it) }
         screenInterceptor()?.let { list.add(it) }
         kakaoInterceptor()?.let { list.add(it) }
     }

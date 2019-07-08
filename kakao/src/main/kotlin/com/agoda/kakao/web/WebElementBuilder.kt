@@ -10,7 +10,7 @@ import androidx.test.espresso.web.webdriver.DriverAtoms
 import androidx.test.espresso.web.webdriver.Locator
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.delegate.WebInteractionDelegate
-import com.agoda.kakao.intercept.Interceptor
+import com.agoda.kakao.intercept.Interceptable
 
 /**
  * Class for building WebView element matchers
@@ -18,7 +18,7 @@ import com.agoda.kakao.intercept.Interceptor
  * @param web WebInteraction where elements should be matched
  */
 @KakaoDslMarker
-class WebElementBuilder(private val web: WebInteractionDelegate) {
+class WebElementBuilder(override val view: WebInteractionDelegate) : Interceptable<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>> {
     /**
      * Looks up web view element and performs actions/assertions on it
      *
@@ -28,29 +28,7 @@ class WebElementBuilder(private val web: WebInteractionDelegate) {
      */
     fun withElement(locator: Locator, value: String, interaction: KWebInteraction.() -> Unit) {
         val ref = DriverAtoms.findElement(locator, value)
-        KWebInteraction(web, ref).apply(interaction)
-    }
-
-    /**
-     * Sets the interceptors for the WebView.
-     * Interceptors will be invoked on the interaction with the item.
-     *
-     * @param builder Builder of the interceptors
-     *
-     * @see Interceptor
-     */
-    fun intercept(builder: Interceptor.Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>.() -> Unit) {
-        web.interceptor = Interceptor.Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>().apply(builder).build()
-    }
-
-    /**
-     * Removes the interceptors from the WebView.
-     *
-     * @see intercept
-     * @see Interceptor
-     */
-    fun reset() {
-        web.interceptor = null
+        KWebInteraction(view, ref).apply(interaction)
     }
 
     inner class KWebInteraction(override val web: WebInteractionDelegate, override val ref: Atom<ElementReference>) :

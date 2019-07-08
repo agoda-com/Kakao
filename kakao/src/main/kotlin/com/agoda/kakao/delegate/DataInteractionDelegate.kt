@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Contract
  * @see Interceptor
  */
 class DataInteractionDelegate(override var interaction: DataInteraction) : Delegate<DataInteraction, ViewAssertion, ViewAction> {
-    var interceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+    override var interceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
 
     @Contract("_->this")
     fun atPosition(atPosition: Int) = this.also {
@@ -66,7 +66,6 @@ class DataInteractionDelegate(override var interaction: DataInteraction) : Deleg
         interaction.usingAdapterViewProtocol(adapterViewProtocol)
     }
 
-    override fun viewInterceptor() = interceptor
     override fun screenInterceptor() = Screen.dis.takeIf { it.isNotEmpty() }?.peek()
     override fun kakaoInterceptor() = Kakao.di
 }

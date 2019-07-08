@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Contract
  * @see Interceptor
  */
 class ViewInteractionDelegate(override var interaction: ViewInteraction) : Delegate<ViewInteraction, ViewAssertion, ViewAction> {
-    var interceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+    override var interceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
 
     @Contract("_->this")
     fun check(viewAssert: ViewAssertion) = this.also {
@@ -42,7 +42,6 @@ class ViewInteractionDelegate(override var interaction: ViewInteraction) : Deleg
         interaction.withFailureHandler(failureHandler)
     }
 
-    override fun viewInterceptor() = interceptor
     override fun screenInterceptor() = Screen.vis.takeIf { it.isNotEmpty() }?.peek()
     override fun kakaoInterceptor() = Kakao.vi
 }

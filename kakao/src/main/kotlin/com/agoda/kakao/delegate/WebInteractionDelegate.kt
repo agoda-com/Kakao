@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit
  * @see Interceptor
  */
 class WebInteractionDelegate(override var interaction: Web.WebInteraction<*>) : Delegate<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>> {
-    var interceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+    override var interceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
 
     fun check(assertion: WebAssertion<*>) = this.also {
         if (!interceptCheck(assertion)) interaction = interaction.check(assertion)
@@ -66,7 +66,6 @@ class WebInteractionDelegate(override var interaction: Web.WebInteraction<*>) : 
         interaction = interaction.withTimeout(amount, unit)
     }
 
-    override fun viewInterceptor() = interceptor
     override fun screenInterceptor() = Screen.wis.takeIf { it.isNotEmpty() }?.peek()
     override fun kakaoInterceptor() = Kakao.wi
 }
