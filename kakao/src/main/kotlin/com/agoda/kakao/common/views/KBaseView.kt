@@ -64,9 +64,9 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @see ViewBuilder
      */
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
-        view = ViewInteractionDelegate(DataInteractionDelegate(parent)
+        view = DataInteractionDelegate(parent)
                 .onChildView(ViewBuilder().apply(function).getViewMatcher())
-                .check(ViewAssertions.matches(Matchers.anything())).interaction)
+                .check(ViewAssertions.matches(Matchers.anything()))
     }
 
     /**
