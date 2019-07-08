@@ -93,7 +93,7 @@ open class Screen<out T: Screen<T>>: ScreenActions {
      * @see Interceptor
      */
     fun reset() {
-        pop()
+        if (isPushed) pop()
         vi = null
         di = null
         wi = null
