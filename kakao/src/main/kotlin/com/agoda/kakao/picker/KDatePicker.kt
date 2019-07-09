@@ -12,13 +12,16 @@ import com.agoda.kakao.text.KButton
  */
 class KDatePicker : KBaseView<KDatePicker>({ isInstanceOf(DatePicker::class.java) }) {
     val action = KButton {
-        isDescendantOfA { isInstanceOf(DatePicker::class.java) }
         withId(android.R.id.button1)
     }
 
-    fun setDate(year: Int, month: Int, day: Int) {
-        perform {
-            PickerActions.setDate(year, month, day)
+    fun setDate(year: Int, month: Int, day: Int, apply: Boolean = true) {
+        act { PickerActions.setDate(year, month, day) }
+
+        if(apply) {
+            action {
+                click()
+            }
         }
     }
 }
