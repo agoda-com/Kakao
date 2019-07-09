@@ -71,7 +71,7 @@ open class Screen<out T : Screen<T>> : ScreenActions {
      */
     fun intercept(configurator: Interceptor.Configurator.() -> Unit) {
         if (isActive) {
-            deactivate(true)
+            removeInterceptors()
         }
 
         Interceptor.Configurator().apply(configurator).configure().also { (viewInterceptor, dataInterceptor, webInterceptor) ->
@@ -81,7 +81,7 @@ open class Screen<out T : Screen<T>> : ScreenActions {
         }
 
         if (isActive) {
-            activate()
+            addInterceptors()
         }
     }
 
@@ -93,7 +93,7 @@ open class Screen<out T : Screen<T>> : ScreenActions {
      */
     fun reset() {
         if (isActive) {
-            deactivate(true)
+            removeInterceptors()
         }
 
         viewInterceptor = null
@@ -107,28 +107,26 @@ open class Screen<out T : Screen<T>> : ScreenActions {
      * @param function Tail lambda with receiver which is your screen
      */
     operator fun invoke(function: T.() -> Unit) {
-        activate()
+        isActive = true
+        addInterceptors()
+
         rootView?.isVisible()
         function.invoke(this as T)
-        deactivate()
+
+        isActive = false
+        removeInterceptors()
     }
 
-    private fun activate() {
+    private fun addInterceptors() {
         viewInterceptor?.let { viewInterceptors.offerFirst(it) }
         dataInterceptor?.let { dataInterceptors.offerFirst(it) }
         webInterceptor?.let { webInterceptors.offerFirst(it) }
-
-        isActive = true
     }
 
-    private fun deactivate(resetIsActive: Boolean = false) {
+    private fun removeInterceptors() {
         viewInterceptor?.let { viewInterceptors.removeFirstOccurrence(it) }
         dataInterceptor?.let { dataInterceptors.removeFirstOccurrence(it) }
         webInterceptor?.let { webInterceptors.removeFirstOccurrence(it) }
-
-        if (!resetIsActive) {
-            isActive = false
-        }
     }
 
     companion object {
