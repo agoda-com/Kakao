@@ -10,9 +10,9 @@ import androidx.test.espresso.web.sugar.Web
 import com.agoda.kakao.intercept.Interceptor
 
 object Kakao {
-    internal var vi: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
-    internal var di: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
-    internal var wi: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+    internal var viewInteraction: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+    internal var dataInteraction: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+    internal var webInteraction: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
 
     /**
      * Operator that allows usage of DSL style
@@ -33,9 +33,9 @@ object Kakao {
      */
     fun intercept(configurator: Interceptor.Configurator.() -> Unit) {
         Interceptor.Configurator().apply(configurator).configure().also {
-            vi = it.first
-            di = it.second
-            wi = it.third
+            viewInteraction = it.first
+            dataInteraction = it.second
+            webInteraction = it.third
         }
     }
 
@@ -46,8 +46,8 @@ object Kakao {
      * @see Interceptor
      */
     fun reset() {
-        vi = null
-        di = null
-        wi = null
+        viewInteraction = null
+        dataInteraction = null
+        webInteraction = null
     }
 }
