@@ -27,9 +27,9 @@ import java.util.*
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class Screen<out T: Screen<T>>: ScreenActions {
-    private var vi: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
-    private var di: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
-    private var wi: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+    private var viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+    private var dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+    private var webInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
 
     override val view: ViewInteractionDelegate = ViewInteractionDelegate(Espresso.onView(ViewMatchers.isRoot()))
 
@@ -78,9 +78,10 @@ open class Screen<out T: Screen<T>>: ScreenActions {
         }
 
         Interceptor.Configurator().apply(configurator).configure().also {
-            vi = it.first
-            di = it.second
-            wi = it.third
+            (viewInteractionInterceptor, dataInteractionInterceptor, webInteractionInterceptor) ->
+            this.viewInteractionInterceptor = viewInteractionInterceptor
+            this.dataInteractionInterceptor = dataInteractionInterceptor
+            this.webInteractionInterceptor = webInteractionInterceptor
         }
 
         if (push) push()
@@ -94,9 +95,9 @@ open class Screen<out T: Screen<T>>: ScreenActions {
      */
     fun reset() {
         if (isPushed) pop()
-        vi = null
-        di = null
-        wi = null
+        viewInteractionInterceptor = null
+        dataInteractionInterceptor = null
+        webInteractionInterceptor = null
     }
 
     /**
@@ -112,16 +113,16 @@ open class Screen<out T: Screen<T>>: ScreenActions {
     }
 
     private fun push() {
-        vi?.let { if (vis.isEmpty() || vis.peek() != it) vis.push(it) }
-        di?.let { if (dis.isEmpty() || dis.peek() != it) dis.push(it) }
-        wi?.let { if (wis.isEmpty() || wis.peek() != it) wis.push(it) }
+        viewInteractionInterceptor?.let { if (vis.isEmpty() || vis.peek() != it) vis.push(it) }
+        dataInteractionInterceptor?.let { if (dis.isEmpty() || dis.peek() != it) dis.push(it) }
+        webInteractionInterceptor?.let { if (wis.isEmpty() || wis.peek() != it) wis.push(it) }
         isPushed = true
     }
 
     private fun pop() {
-        vi?.let { if (vis.isNotEmpty() && vis.peek() == it) vis.pop() }
-        di?.let { if (dis.isNotEmpty() && dis.peek() == it) dis.pop() }
-        wi?.let { if (wis.isNotEmpty() && wis.peek() == it) wis.pop() }
+        viewInteractionInterceptor?.let { if (vis.isNotEmpty() && vis.peek() == it) vis.pop() }
+        dataInteractionInterceptor?.let { if (dis.isNotEmpty() && dis.peek() == it) dis.pop() }
+        webInteractionInterceptor?.let { if (wis.isNotEmpty() && wis.peek() == it) wis.pop() }
         isPushed = false
     }
 

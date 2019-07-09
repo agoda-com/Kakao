@@ -100,9 +100,9 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
      * @see com.agoda.kakao.screen.Screen
      */
     class Configurator {
-        private var vi: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
-        private var di: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
-        private var wi: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+        private var viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+        private var dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+        private var webInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
 
         /**
          * Setups the interceptor for `check` and `perform` operations happening through [ViewInteraction]
@@ -110,7 +110,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param builder Builder of interceptor for [ViewInteraction]
          */
         fun onViewInteraction(builder: Builder<ViewInteraction, ViewAssertion, ViewAction>.() -> Unit) {
-            vi = Builder<ViewInteraction, ViewAssertion, ViewAction>().apply(builder).build()
+            viewInteractionInterceptor = Builder<ViewInteraction, ViewAssertion, ViewAction>().apply(builder).build()
         }
 
         /**
@@ -119,7 +119,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param builder Builder of interceptor for [DataInteraction]
          */
         fun onDataInteraction(builder: Builder<DataInteraction, ViewAssertion, ViewAction>.() -> Unit) {
-            di = Builder<DataInteraction, ViewAssertion, ViewAction>().apply(builder).build()
+            dataInteractionInterceptor = Builder<DataInteraction, ViewAssertion, ViewAction>().apply(builder).build()
         }
 
         /**
@@ -128,14 +128,13 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param builder Builder of interceptor for [Web.WebInteraction]
          */
         fun onWebInteraction(builder: Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>.() -> Unit) {
-            wi = Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>().apply(builder).build()
+            webInteractionInterceptor = Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>().apply(builder).build()
         }
 
-        internal fun configure(): Triple<
-                Interceptor<ViewInteraction, ViewAssertion, ViewAction>?,
-                Interceptor<DataInteraction, ViewAssertion, ViewAction>?,
-                Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?> {
-            return Triple(vi, di, wi)
-        }
+        internal fun configure() = InterceptConfiguration(
+                    viewInteractionInterceptor,
+                    dataInteractionInterceptor,
+                    webInteractionInterceptor
+            )
     }
 }
