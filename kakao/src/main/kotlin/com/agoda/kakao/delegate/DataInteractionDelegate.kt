@@ -67,5 +67,5 @@ class DataInteractionDelegate(override var interaction: DataInteraction) : Deleg
     }
 
     override fun screenInterceptor() = Screen.dis.takeIf { it.isNotEmpty() }?.peek()
-    override fun kakaoInterceptor() = Kakao.di
+    override fun kakaoInterceptor() = Kakao.dataInteraction
 }

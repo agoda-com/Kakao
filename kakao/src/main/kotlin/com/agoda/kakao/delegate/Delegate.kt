@@ -10,14 +10,14 @@ import com.agoda.kakao.intercept.Interceptor
  *
  * @see Interceptor
  */
-interface Delegate<T, C, P> {
-    var interaction: T
-    var interceptor: Interceptor<T, C, P>?
+interface Delegate<INTERACTION, ASSERTION, ACTION> {
+    var interaction: INTERACTION
+    var interceptor: Interceptor<INTERACTION, ASSERTION, ACTION>?
 
-    fun screenInterceptor(): Interceptor<T, C, P>?
-    fun kakaoInterceptor(): Interceptor<T, C, P>?
+    fun screenInterceptor(): Interceptor<INTERACTION, ASSERTION, ACTION>?
+    fun kakaoInterceptor(): Interceptor<INTERACTION, ASSERTION, ACTION>?
 
-    fun interceptCheck(assertion: C): Boolean {
+    fun interceptCheck(assertion: ASSERTION): Boolean {
         interceptors().forEach { interceptor ->
             interceptor.onAll?.let {
                 it.second(interaction)
@@ -33,7 +33,7 @@ interface Delegate<T, C, P> {
         return false
     }
 
-    fun interceptPerform(action: P): Boolean {
+    fun interceptPerform(action: ACTION): Boolean {
         interceptors().forEach { interceptor ->
             interceptor.onAll?.let {
                 it.second(interaction)
@@ -49,7 +49,7 @@ interface Delegate<T, C, P> {
         return false
     }
 
-    private fun interceptors() = mutableListOf<Interceptor<T, C, P>>().also { list ->
+    private fun interceptors() = mutableListOf<Interceptor<INTERACTION, ASSERTION, ACTION>>().also { list ->
         interceptor?.let { list.add(it) }
         screenInterceptor()?.let { list.add(it) }
         kakaoInterceptor()?.let { list.add(it) }

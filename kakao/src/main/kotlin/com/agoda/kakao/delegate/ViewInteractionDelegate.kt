@@ -43,5 +43,5 @@ class ViewInteractionDelegate(override var interaction: ViewInteraction) : Deleg
     }
 
     override fun screenInterceptor() = Screen.vis.takeIf { it.isNotEmpty() }?.peek()
-    override fun kakaoInterceptor() = Kakao.vi
+    override fun kakaoInterceptor() = Kakao.viewInteraction
 }
