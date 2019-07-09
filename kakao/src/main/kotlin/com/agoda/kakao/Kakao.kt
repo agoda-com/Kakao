@@ -33,9 +33,10 @@ object Kakao {
      */
     fun intercept(configurator: Interceptor.Configurator.() -> Unit) {
         Interceptor.Configurator().apply(configurator).configure().also {
-            viewInteraction = it.first
-            dataInteraction = it.second
-            webInteraction = it.third
+            (viewInteraction,dataInteraction,webInteraction) ->
+            this.viewInteraction = viewInteraction
+            this.dataInteraction = dataInteraction
+            this.webInteraction = webInteraction
         }
     }
 
