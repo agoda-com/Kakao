@@ -122,20 +122,20 @@ open class Screen<out T : Screen<T>> : ScreenActions {
 
     private fun push() {
         viewInteractionInterceptor?.let {
-            if (viewInteractionStack.isEmpty() || viewInteractionStack.peek() != it) {
-                viewInteractionStack.push(it)
+            if (viewInterceptorStack.isEmpty() || viewInterceptorStack.peek() != it) {
+                viewInterceptorStack.push(it)
             }
         }
 
         dataInteractionInterceptor?.let {
-            if (dataInteractionStack.isEmpty() || dataInteractionStack.peek() != it) {
-                dataInteractionStack.push(it)
+            if (dataInterceptorStack.isEmpty() || dataInterceptorStack.peek() != it) {
+                dataInterceptorStack.push(it)
             }
         }
 
         webInteractionInterceptor?.let {
-            if (webInteractionStack.isEmpty() || webInteractionStack.peek() != it) {
-                webInteractionStack.push(it)
+            if (webInterceptorStack.isEmpty() || webInterceptorStack.peek() != it) {
+                webInterceptorStack.push(it)
             }
         }
 
@@ -144,22 +144,20 @@ open class Screen<out T : Screen<T>> : ScreenActions {
 
     private fun pop() {
         viewInteractionInterceptor?.let {
-            if (viewInteractionStack.isNotEmpty() && viewInteractionStack.peek() == it) {
-                viewInteractionStack.pop()
+            if (viewInterceptorStack.isNotEmpty() && viewInterceptorStack.peek() == it) {
+                viewInterceptorStack.pop()
             }
         }
 
         dataInteractionInterceptor?.let {
-
-            if (dataInteractionStack.isNotEmpty() && dataInteractionStack.peek() == it) {
-                dataInteractionStack.pop()
+            if (dataInterceptorStack.isNotEmpty() && dataInterceptorStack.peek() == it) {
+                dataInterceptorStack.pop()
             }
         }
 
         webInteractionInterceptor?.let {
-
-            if (webInteractionStack.isNotEmpty() && webInteractionStack.peek() == it) {
-                webInteractionStack.pop()
+            if (webInterceptorStack.isNotEmpty() && webInterceptorStack.peek() == it) {
+                webInterceptorStack.pop()
             }
         }
 
@@ -200,8 +198,8 @@ open class Screen<out T : Screen<T>> : ScreenActions {
                     .apply { this(function) }
         }
 
-        internal val viewInteractionStack: Stack<Interceptor<ViewInteraction, ViewAssertion, ViewAction>?> = Stack()
-        internal val dataInteractionStack: Stack<Interceptor<DataInteraction, ViewAssertion, ViewAction>?> = Stack()
-        internal val webInteractionStack: Stack<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?> = Stack()
+        internal val viewInterceptorStack: Stack<Interceptor<ViewInteraction, ViewAssertion, ViewAction>?> = Stack()
+        internal val dataInterceptorStack: Stack<Interceptor<DataInteraction, ViewAssertion, ViewAction>?> = Stack()
+        internal val webInterceptorStack: Stack<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?> = Stack()
     }
 }

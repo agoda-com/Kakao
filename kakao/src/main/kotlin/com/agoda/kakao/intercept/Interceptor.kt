@@ -131,10 +131,16 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
             webInteractionInterceptor = Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>().apply(builder).build()
         }
 
-        internal fun configure() = InterceptConfiguration(
+        internal fun configure() = Configuration(
                     viewInteractionInterceptor,
                     dataInteractionInterceptor,
                     webInteractionInterceptor
             )
     }
+
+    data class Configuration(
+            val viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>?,
+            val dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>?,
+            val webViewInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?
+    )
 }

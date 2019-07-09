@@ -24,9 +24,9 @@ interface Delegate<INTERACTION, ASSERTION, ACTION> {
                 if (override) return true
             }
 
-            interceptor.onCheck?.let {(override, interceptor) ->
+            interceptor.onCheck?.let {(isOverride, interceptor) ->
                 interceptor(interaction, assertion)
-                if (override) return true
+                if (isOverride) return true
             }
         }
 
@@ -35,14 +35,14 @@ interface Delegate<INTERACTION, ASSERTION, ACTION> {
 
     fun interceptPerform(action: ACTION): Boolean {
         interceptors().forEach { interceptor ->
-            interceptor.onAll?.let {(override, interceptor) ->
+            interceptor.onAll?.let {(isOverride, interceptor) ->
                 interceptor(interaction)
-                if (override) return true
+                if (isOverride) return true
             }
 
-            interceptor.onPerform?.let {(override, interceptor) ->
+            interceptor.onPerform?.let {(isOverride, interceptor) ->
                 interceptor(interaction, action)
-                if (override) return true
+                if (isOverride) return true
             }
         }
 
