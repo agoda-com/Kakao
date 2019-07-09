@@ -26,7 +26,7 @@ import java.util.*
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class Screen<out T: Screen<T>>: ScreenActions {
+open class Screen<out T : Screen<T>> : ScreenActions {
     private var viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
     private var dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
     private var webInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
@@ -77,14 +77,15 @@ open class Screen<out T: Screen<T>>: ScreenActions {
             pop()
         }
 
-        Interceptor.Configurator().apply(configurator).configure().also {
-            (viewInteractionInterceptor, dataInteractionInterceptor, webInteractionInterceptor) ->
+        Interceptor.Configurator().apply(configurator).configure().also { (viewInteractionInterceptor, dataInteractionInterceptor, webInteractionInterceptor) ->
             this.viewInteractionInterceptor = viewInteractionInterceptor
             this.dataInteractionInterceptor = dataInteractionInterceptor
             this.webInteractionInterceptor = webInteractionInterceptor
         }
 
-        if (push) push()
+        if (push){
+            push()
+        }
     }
 
     /**
@@ -94,7 +95,10 @@ open class Screen<out T: Screen<T>>: ScreenActions {
      * @see Interceptor
      */
     fun reset() {
-        if (isPushed) pop()
+        if (isPushed){
+            pop()
+        }
+
         viewInteractionInterceptor = null
         dataInteractionInterceptor = null
         webInteractionInterceptor = null
@@ -106,23 +110,59 @@ open class Screen<out T: Screen<T>>: ScreenActions {
      * @param function Tail lambda with receiver which is your screen
      */
     operator fun invoke(function: T.() -> Unit) {
-        if (!isPushed) push()
+        if (!isPushed) {
+            push()
+        }
         rootView?.isVisible()
         function.invoke(this as T)
-        if (isPushed) pop()
+        if (isPushed) {
+            pop()
+        }
     }
 
     private fun push() {
-        viewInteractionInterceptor?.let { if (vis.isEmpty() || vis.peek() != it) vis.push(it) }
-        dataInteractionInterceptor?.let { if (dis.isEmpty() || dis.peek() != it) dis.push(it) }
-        webInteractionInterceptor?.let { if (wis.isEmpty() || wis.peek() != it) wis.push(it) }
+        viewInteractionInterceptor?.let {
+            if (viewInteractionStack.isEmpty() || viewInteractionStack.peek() != it) {
+                viewInteractionStack.push(it)
+            }
+        }
+
+        dataInteractionInterceptor?.let {
+            if (dataInteractionStack.isEmpty() || dataInteractionStack.peek() != it) {
+                dataInteractionStack.push(it)
+            }
+        }
+
+        webInteractionInterceptor?.let {
+            if (webInteractionStack.isEmpty() || webInteractionStack.peek() != it) {
+                webInteractionStack.push(it)
+            }
+        }
+
         isPushed = true
     }
 
     private fun pop() {
-        viewInteractionInterceptor?.let { if (vis.isNotEmpty() && vis.peek() == it) vis.pop() }
-        dataInteractionInterceptor?.let { if (dis.isNotEmpty() && dis.peek() == it) dis.pop() }
-        webInteractionInterceptor?.let { if (wis.isNotEmpty() && wis.peek() == it) wis.pop() }
+        viewInteractionInterceptor?.let {
+            if (viewInteractionStack.isNotEmpty() && viewInteractionStack.peek() == it) {
+                viewInteractionStack.pop()
+            }
+        }
+
+        dataInteractionInterceptor?.let {
+
+            if (dataInteractionStack.isNotEmpty() && dataInteractionStack.peek() == it) {
+                dataInteractionStack.pop()
+            }
+        }
+
+        webInteractionInterceptor?.let {
+
+            if (webInteractionStack.isNotEmpty() && webInteractionStack.peek() == it) {
+                webInteractionStack.pop()
+            }
+        }
+
         isPushed = false
     }
 
@@ -160,8 +200,8 @@ open class Screen<out T: Screen<T>>: ScreenActions {
                     .apply { this(function) }
         }
 
-        internal val vis: Stack<Interceptor<ViewInteraction, ViewAssertion, ViewAction>?> = Stack()
-        internal val dis: Stack<Interceptor<DataInteraction, ViewAssertion, ViewAction>?> = Stack()
-        internal val wis: Stack<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?> = Stack()
+        internal val viewInteractionStack: Stack<Interceptor<ViewInteraction, ViewAssertion, ViewAction>?> = Stack()
+        internal val dataInteractionStack: Stack<Interceptor<DataInteraction, ViewAssertion, ViewAction>?> = Stack()
+        internal val webInteractionStack: Stack<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?> = Stack()
     }
 }
