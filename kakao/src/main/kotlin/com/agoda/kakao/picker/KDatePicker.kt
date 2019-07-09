@@ -16,9 +16,15 @@ class KDatePicker : KBaseView<KDatePicker>({ isInstanceOf(DatePicker::class.java
         withId(android.R.id.button1)
     }
 
-    fun setDate(year: Int, month: Int, day: Int) {
+    fun setDate(year: Int, month: Int, day: Int, apply: Boolean = true) {
         perform {
             PickerActions.setDate(year, month, day)
+        }
+
+        if(apply) {
+            action {
+                click()
+            }
         }
     }
 }
