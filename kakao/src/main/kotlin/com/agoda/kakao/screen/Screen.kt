@@ -121,12 +121,12 @@ open class Screen<out T : Screen<T>> : ScreenActions {
         isActive = true
     }
 
-    private fun deactivate(isReset: Boolean = false) {
+    private fun deactivate(resetIsActive: Boolean = false) {
         viewInterceptor?.let { viewInterceptors.removeFirstOccurrence(it) }
         dataInterceptor?.let { dataInterceptors.removeFirstOccurrence(it) }
         webInterceptor?.let { webInterceptors.removeFirstOccurrence(it) }
 
-        if (!isReset) {
+        if (!resetIsActive) {
             isActive = false
         }
     }
