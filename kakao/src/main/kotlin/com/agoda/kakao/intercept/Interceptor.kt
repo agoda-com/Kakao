@@ -37,9 +37,9 @@ import androidx.test.espresso.web.sugar.Web
  * @see com.agoda.kakao.common.views.KBaseView
  */
 class Interceptor<INTERACTION, ASSERTION, ACTION>(
-        val onCheck: Pair<Boolean, (INTERACTION, ASSERTION) -> Unit>?,
-        val onPerform: Pair<Boolean, (INTERACTION, ACTION) -> Unit>?,
-        val onAll: Pair<Boolean, (INTERACTION) -> Unit>?
+        val onCheck: Interception<(INTERACTION, ASSERTION) -> Unit>?,
+        val onPerform: Interception<(INTERACTION, ACTION) -> Unit>?,
+        val onAll: Interception<(INTERACTION) -> Unit>?
 ) {
     /**
      * Builder class that is used to build a single instance of [Interceptor].
@@ -47,9 +47,9 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
      * @see Interceptor
      */
     class Builder<INTERACTION, ASSERTION, ACTION> {
-        private var onCheck: Pair<Boolean, (INTERACTION, ASSERTION) -> Unit>? = null
-        private var onPerform: Pair<Boolean, (INTERACTION, ACTION) -> Unit>? = null
-        private var onAll: Pair<Boolean, (INTERACTION) -> Unit>? = null
+        private var onCheck: Interception<(INTERACTION, ASSERTION) -> Unit>? = null
+        private var onPerform: Interception<(INTERACTION, ACTION) -> Unit>? = null
+        private var onAll: Interception<(INTERACTION) -> Unit>? = null
 
         /**
          * Sets the interceptor for the `check` operation for a given interaction.
@@ -60,7 +60,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param interceptor lambda with intercepting logic
          */
         fun onCheck(isOverride: Boolean = false, interceptor: (INTERACTION, ASSERTION) -> Unit) {
-            onCheck = isOverride to interceptor
+            onCheck = Interception(isOverride, interceptor)
         }
 
         /**
@@ -72,7 +72,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param interceptor lambda with intercepting logic
          */
         fun onPerform(isOverride: Boolean = false, interceptor: (INTERACTION, ACTION) -> Unit) {
-            onPerform = isOverride to interceptor
+            onPerform = Interception(isOverride, interceptor)
         }
 
         /**
@@ -86,7 +86,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param interceptor lambda with intercepting logic
          */
         fun onAll(isOverride: Boolean = false, interceptor: (INTERACTION) -> Unit) {
-            onAll = isOverride to interceptor
+            onAll = Interception(isOverride, interceptor)
         }
 
         internal fun build(): Interceptor<INTERACTION, ASSERTION, ACTION> = Interceptor(onCheck, onPerform, onAll)
