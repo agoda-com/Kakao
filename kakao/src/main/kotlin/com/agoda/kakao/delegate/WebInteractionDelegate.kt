@@ -66,6 +66,6 @@ class WebInteractionDelegate(override var interaction: Web.WebInteraction<*>) : 
         interaction = interaction.withTimeout(amount, unit)
     }
 
-    override fun screenInterceptor() = Screen.wis.takeIf { it.isNotEmpty() }?.peek()
-    override fun kakaoInterceptor() = Kakao.wi
+    override fun screenInterceptor() = Screen.webInterceptorStack.takeIf { it.isNotEmpty() }?.peek()
+    override fun kakaoInterceptor() = Kakao.webInterceptor
 }

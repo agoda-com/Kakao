@@ -10,46 +10,46 @@ import com.agoda.kakao.intercept.Interceptor
  *
  * @see Interceptor
  */
-interface Delegate<T, C, P> {
-    var interaction: T
-    var interceptor: Interceptor<T, C, P>?
+interface Delegate<INTERACTION, ASSERTION, ACTION> {
+    var interaction: INTERACTION
+    var interceptor: Interceptor<INTERACTION, ASSERTION, ACTION>?
 
-    fun screenInterceptor(): Interceptor<T, C, P>?
-    fun kakaoInterceptor(): Interceptor<T, C, P>?
+    fun screenInterceptor(): Interceptor<INTERACTION, ASSERTION, ACTION>?
+    fun kakaoInterceptor(): Interceptor<INTERACTION, ASSERTION, ACTION>?
 
-    fun interceptCheck(assertion: C): Boolean {
+    fun interceptCheck(assertion: ASSERTION): Boolean {
         interceptors().forEach { interceptor ->
-            interceptor.onAll?.let {
-                it.second(interaction)
-                if (it.first) return true
+            interceptor.onAll?.let {(override, interceptor) ->
+                interceptor(interaction)
+                if (override) return true
             }
 
-            interceptor.onCheck?.let {
-                it.second(interaction, assertion)
-                if (it.first) return true
+            interceptor.onCheck?.let {(isOverride, interceptor) ->
+                interceptor(interaction, assertion)
+                if (isOverride) return true
             }
         }
 
         return false
     }
 
-    fun interceptPerform(action: P): Boolean {
+    fun interceptPerform(action: ACTION): Boolean {
         interceptors().forEach { interceptor ->
-            interceptor.onAll?.let {
-                it.second(interaction)
-                if (it.first) return true
+            interceptor.onAll?.let {(isOverride, interceptor) ->
+                interceptor(interaction)
+                if (isOverride) return true
             }
 
-            interceptor.onPerform?.let {
-                it.second(interaction, action)
-                if (it.first) return true
+            interceptor.onPerform?.let {(isOverride, interceptor) ->
+                interceptor(interaction, action)
+                if (isOverride) return true
             }
         }
 
         return false
     }
 
-    private fun interceptors() = mutableListOf<Interceptor<T, C, P>>().also { list ->
+    private fun interceptors() = mutableListOf<Interceptor<INTERACTION, ASSERTION, ACTION>>().also { list ->
         interceptor?.let { list.add(it) }
         screenInterceptor()?.let { list.add(it) }
         kakaoInterceptor()?.let { list.add(it) }

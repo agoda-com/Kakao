@@ -2,8 +2,8 @@ package com.agoda.kakao.intercept
 
 import com.agoda.kakao.delegate.Delegate
 
-interface Interceptable<T, C, P> {
-    val view: Delegate<T, C, P>
+interface Interceptable<INTERACTION, ASSERTION, ACTION> {
+    val view: Delegate<INTERACTION, ASSERTION, ACTION>
 
     /**
      * Sets the interceptors for the instance.
@@ -13,8 +13,8 @@ interface Interceptable<T, C, P> {
      *
      * @see Interceptor
      */
-    fun intercept(builder: Interceptor.Builder<T, C, P>.() -> Unit) {
-        view.interceptor = Interceptor.Builder<T, C, P>().apply(builder).build()
+    fun intercept(builder: Interceptor.Builder<INTERACTION, ASSERTION, ACTION>.() -> Unit) {
+        view.interceptor = Interceptor.Builder<INTERACTION, ASSERTION, ACTION>().apply(builder).build()
     }
 
     /**

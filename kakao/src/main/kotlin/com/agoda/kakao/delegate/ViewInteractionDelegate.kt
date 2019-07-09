@@ -42,6 +42,6 @@ class ViewInteractionDelegate(override var interaction: ViewInteraction) : Deleg
         interaction.withFailureHandler(failureHandler)
     }
 
-    override fun screenInterceptor() = Screen.vis.takeIf { it.isNotEmpty() }?.peek()
-    override fun kakaoInterceptor() = Kakao.vi
+    override fun screenInterceptor() = Screen.viewInterceptorStack.takeIf { it.isNotEmpty() }?.peek()
+    override fun kakaoInterceptor() = Kakao.viewInterceptor
 }
