@@ -15,9 +15,11 @@ import androidx.test.espresso.web.sugar.Web
  * different [Screens][com.agoda.kakao.screen.Screen] as well as [KViews][com.agoda.kakao.common.views.KBaseView].
  *
  * Interceptors are stacked during the runtime for any Kakao-Espresso `check` and `perform` operations.
- * The stack ordering is following: KView interceptor -> Screen interceptor -> Kakao interceptor.
+ * The stack ordering is following: KView interceptor -> Screen interceptors -> Kakao interceptor.
  *
- * Any of the interceptors in the chain can break the chain call, this will not only prevent underlying
+ * Any of the interceptors in the chain can break the chain call by setting `isOverride` to true
+ * in [onCheck][Builder.onCheck], [onPerform][Builder.onPerform] or [onAll][Builder.onAll] interception
+ * functions during the configuration. Doing this will not only prevent underlying
  * interceptors from being invoked, but prevents Kakao from executing the operation. In that case,
  * responsibility for actually making Espresso call lies on developer.
  *
@@ -100,9 +102,9 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
      * @see com.agoda.kakao.screen.Screen
      */
     class Configurator {
-        private var viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
-        private var dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
-        private var webInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+        private var viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+        private var dataInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+        private var webInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
 
         /**
          * Setups the interceptor for `check` and `perform` operations happening through [ViewInteraction]
@@ -110,7 +112,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param builder Builder of interceptor for [ViewInteraction]
          */
         fun onViewInteraction(builder: Builder<ViewInteraction, ViewAssertion, ViewAction>.() -> Unit) {
-            viewInteractionInterceptor = Builder<ViewInteraction, ViewAssertion, ViewAction>().apply(builder).build()
+            viewInterceptor = Builder<ViewInteraction, ViewAssertion, ViewAction>().apply(builder).build()
         }
 
         /**
@@ -119,7 +121,7 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param builder Builder of interceptor for [DataInteraction]
          */
         fun onDataInteraction(builder: Builder<DataInteraction, ViewAssertion, ViewAction>.() -> Unit) {
-            dataInteractionInterceptor = Builder<DataInteraction, ViewAssertion, ViewAction>().apply(builder).build()
+            dataInterceptor = Builder<DataInteraction, ViewAssertion, ViewAction>().apply(builder).build()
         }
 
         /**
@@ -128,19 +130,19 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
          * @param builder Builder of interceptor for [Web.WebInteraction]
          */
         fun onWebInteraction(builder: Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>.() -> Unit) {
-            webInteractionInterceptor = Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>().apply(builder).build()
+            webInterceptor = Builder<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>().apply(builder).build()
         }
 
         internal fun configure() = Configuration(
-                    viewInteractionInterceptor,
-                    dataInteractionInterceptor,
-                    webInteractionInterceptor
-            )
+                viewInterceptor,
+                dataInterceptor,
+                webInterceptor
+        )
     }
 
     data class Configuration(
-            val viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>?,
-            val dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>?,
-            val webViewInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?
+            val viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>?,
+            val dataInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>?,
+            val webInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?
     )
 }

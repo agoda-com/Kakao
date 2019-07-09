@@ -27,13 +27,13 @@ import java.util.*
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
 open class Screen<out T : Screen<T>> : ScreenActions {
-    private var viewInteractionInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
-    private var dataInteractionInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
-    private var webInteractionInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+    private var viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+    private var dataInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+    private var webInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
 
     override val view: ViewInteractionDelegate = ViewInteractionDelegate(Espresso.onView(ViewMatchers.isRoot()))
 
-    private var isPushed = false
+    private var isActive = false
 
     /**
      * The visibility of rootView will be checked when entering the screen
@@ -62,29 +62,26 @@ open class Screen<out T : Screen<T>> : ScreenActions {
      * } // Inactive
      * ```
      *
-     * If you use nesting, interceptors of the latest screen that became active will be invoked.
-     * All active screen's interceptors are being stored in a stack, so that you won't.
+     * If you use nesting screens, all interceptors of the screens that became active will be invoked
+     * in LIFO order (using Deque).
      *
      * @param configurator Configuration of the interceptors
      *
      * @see Interceptor
      */
     fun intercept(configurator: Interceptor.Configurator.() -> Unit) {
-        var push = false
-
-        if (isPushed) {
-            push = true
-            pop()
+        if (isActive) {
+            deactivate(true)
         }
 
-        Interceptor.Configurator().apply(configurator).configure().also { (viewInteractionInterceptor, dataInteractionInterceptor, webInteractionInterceptor) ->
-            this.viewInteractionInterceptor = viewInteractionInterceptor
-            this.dataInteractionInterceptor = dataInteractionInterceptor
-            this.webInteractionInterceptor = webInteractionInterceptor
+        Interceptor.Configurator().apply(configurator).configure().also { (viewInterceptor, dataInterceptor, webInterceptor) ->
+            this.viewInterceptor = viewInterceptor
+            this.dataInterceptor = dataInterceptor
+            this.webInterceptor = webInterceptor
         }
 
-        if (push){
-            push()
+        if (isActive) {
+            activate()
         }
     }
 
@@ -95,13 +92,13 @@ open class Screen<out T : Screen<T>> : ScreenActions {
      * @see Interceptor
      */
     fun reset() {
-        if (isPushed){
-            pop()
+        if (isActive) {
+            deactivate(true)
         }
 
-        viewInteractionInterceptor = null
-        dataInteractionInterceptor = null
-        webInteractionInterceptor = null
+        viewInterceptor = null
+        dataInterceptor = null
+        webInterceptor = null
     }
 
     /**
@@ -110,58 +107,28 @@ open class Screen<out T : Screen<T>> : ScreenActions {
      * @param function Tail lambda with receiver which is your screen
      */
     operator fun invoke(function: T.() -> Unit) {
-        if (!isPushed) {
-            push()
-        }
+        activate()
         rootView?.isVisible()
         function.invoke(this as T)
-        if (isPushed) {
-            pop()
-        }
+        deactivate()
     }
 
-    private fun push() {
-        viewInteractionInterceptor?.let {
-            if (viewInterceptorStack.isEmpty() || viewInterceptorStack.peek() != it) {
-                viewInterceptorStack.push(it)
-            }
-        }
+    private fun activate() {
+        viewInterceptor?.let { viewInterceptors.offerFirst(it) }
+        dataInterceptor?.let { dataInterceptors.offerFirst(it) }
+        webInterceptor?.let { webInterceptors.offerFirst(it) }
 
-        dataInteractionInterceptor?.let {
-            if (dataInterceptorStack.isEmpty() || dataInterceptorStack.peek() != it) {
-                dataInterceptorStack.push(it)
-            }
-        }
-
-        webInteractionInterceptor?.let {
-            if (webInterceptorStack.isEmpty() || webInterceptorStack.peek() != it) {
-                webInterceptorStack.push(it)
-            }
-        }
-
-        isPushed = true
+        isActive = true
     }
 
-    private fun pop() {
-        viewInteractionInterceptor?.let {
-            if (viewInterceptorStack.isNotEmpty() && viewInterceptorStack.peek() == it) {
-                viewInterceptorStack.pop()
-            }
-        }
+    private fun deactivate(isReset: Boolean = false) {
+        viewInterceptor?.let { viewInterceptors.removeFirstOccurrence(it) }
+        dataInterceptor?.let { dataInterceptors.removeFirstOccurrence(it) }
+        webInterceptor?.let { webInterceptors.removeFirstOccurrence(it) }
 
-        dataInteractionInterceptor?.let {
-            if (dataInterceptorStack.isNotEmpty() && dataInterceptorStack.peek() == it) {
-                dataInterceptorStack.pop()
-            }
+        if (!isReset) {
+            isActive = false
         }
-
-        webInteractionInterceptor?.let {
-            if (webInterceptorStack.isNotEmpty() && webInterceptorStack.peek() == it) {
-                webInterceptorStack.pop()
-            }
-        }
-
-        isPushed = false
     }
 
     companion object {
@@ -198,8 +165,8 @@ open class Screen<out T : Screen<T>> : ScreenActions {
                     .apply { this(function) }
         }
 
-        internal val viewInterceptorStack: Stack<Interceptor<ViewInteraction, ViewAssertion, ViewAction>?> = Stack()
-        internal val dataInterceptorStack: Stack<Interceptor<DataInteraction, ViewAssertion, ViewAction>?> = Stack()
-        internal val webInterceptorStack: Stack<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?> = Stack()
+        internal val viewInterceptors: Deque<Interceptor<ViewInteraction, ViewAssertion, ViewAction>> = LinkedList()
+        internal val dataInterceptors: Deque<Interceptor<DataInteraction, ViewAssertion, ViewAction>> = LinkedList()
+        internal val webInterceptors: Deque<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>> = LinkedList()
     }
 }
