@@ -75,7 +75,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     @Suppress("UNCHECKED_CAST")
     constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
                 itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
-        val makeTargetMatcher = DataInteractionDelegate::class.java.getDeclaredMethod("makeTargetMatcher")
+        val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
         val parentMatcher = makeTargetMatcher.invoke(parent)
 
         val vb = ViewBuilder().apply {
@@ -100,12 +100,12 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
             throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
         }.provideItem
 
-        val interaction = DataInteractionDelegate(Espresso.onData(Matchers.anything()))
+        val interaction = Espresso.onData(Matchers.anything())
                 .inRoot(root)
                 .inAdapterView(matcher)
                 .atPosition(position)
 
-        function(provideItem(interaction.interaction) as T)
+        function(provideItem(interaction) as T)
     }
 
     /**
@@ -152,12 +152,11 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
             throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
         }.provideItem
 
-        val interaction =
-            DataInteractionDelegate(Espresso.onData(DataBuilder().apply(childMatcher).getDataMatcher()))
+        val interaction = Espresso.onData(DataBuilder().apply(childMatcher).getDataMatcher())
                 .inRoot(root)
                 .inAdapterView(matcher)
 
-        return provideItem(interaction.interaction) as T
+        return provideItem(interaction) as T
     }
 
     /**
