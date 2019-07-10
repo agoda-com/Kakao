@@ -1,8 +1,10 @@
 package com.agoda.sample.screen
 
 import com.agoda.kakao.common.views.KView
+import com.agoda.kakao.picker.KDatePicker
+import com.agoda.kakao.picker.KTimePicker
+
 import com.agoda.kakao.screen.Screen
-import com.agoda.kakao.text.KSnackbar
 import com.agoda.kakao.text.KTextView
 import com.agoda.sample.R
 
@@ -18,5 +20,6 @@ open class PickersActivityScreen : Screen<PickersActivityScreen>() {
         withId(R.id.time_field)
     }
 
-    val datePicker: KSnackbar = KSnackbar()
+    val datePicker: KDatePicker = KDatePicker()
+    val timePicker: KTimePicker = KTimePicker()
 }
