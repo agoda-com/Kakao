@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
 import android.widget.TextView
 
-
 class PickersActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {

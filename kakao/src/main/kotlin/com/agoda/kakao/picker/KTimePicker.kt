@@ -18,7 +18,7 @@ class KTimePicker : KBaseView<KTimePicker>({ isInstanceOf(TimePicker::class.java
     fun setTime(hour: Int, minutes: Int, apply: Boolean = true) {
         act { PickerActions.setTime(hour, minutes) }
 
-        if(apply) {
+        if (apply) {
             action {
                 click()
             }

@@ -18,7 +18,7 @@ class KDatePicker : KBaseView<KDatePicker>({ isInstanceOf(DatePicker::class.java
     fun setDate(year: Int, month: Int, day: Int, apply: Boolean = true) {
         act { PickerActions.setDate(year, month, day) }
 
-        if(apply) {
+        if (apply) {
             action {
                 click()
             }
