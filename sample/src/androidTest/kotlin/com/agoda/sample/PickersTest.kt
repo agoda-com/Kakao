@@ -23,6 +23,22 @@ class PickersTest {
 
             timePicker {
                 setTime(22, 4)
+                hasTime(22, 4)
+                cancelButton {
+                    click()
+                }
+                doesNotExist()
+            }
+
+            selectTimeButton {
+                click()
+            }
+
+            timePicker {
+                setTime(22, 4)
+                okButton {
+                   click()
+                }
             }
 
             timeText {
@@ -35,6 +51,22 @@ class PickersTest {
 
             datePicker {
                 setDate(1955, 11, 12)
+                hasDate(1955, 11, 12)
+                cancelButton {
+                    click()
+                }
+                doesNotExist()
+            }
+
+            selectDateButton {
+                click()
+            }
+
+            datePicker {
+                setDate(1955, 11, 12)
+                okButton {
+                    click()
+                }
             }
 
             dateText {

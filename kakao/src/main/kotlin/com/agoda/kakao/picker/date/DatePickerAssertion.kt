@@ -44,13 +44,14 @@ interface DatePickerAssertion : BaseActions {
     /**
      * Check if picker dialog contain selected month
      *
-     * @param month month
+     * @param monthOfYear month
      */
-    fun hasMonth(month: Int) {
+    fun hasMonth(monthOfYear: Int) {
+        val normalizedMonthOfYear = monthOfYear - 1
         view.check(ViewAssertion { view, notFoundException ->
             if (view is DatePicker) {
-                if (month != view.month) {
-                    throw AssertionError("Expected month is $month," +
+                if (normalizedMonthOfYear != view.month) {
+                    throw AssertionError("Expected month is $normalizedMonthOfYear," +
                             " but actual is ${view.month}")
                 }
             } else {
