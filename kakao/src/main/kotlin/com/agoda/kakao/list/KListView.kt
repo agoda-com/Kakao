@@ -5,12 +5,13 @@ package com.agoda.kakao.list
 import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.delegate.DataInteractionDelegate
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -29,7 +30,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -43,7 +44,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
         val vb = ViewBuilder().apply(builder)
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -74,7 +75,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     @Suppress("UNCHECKED_CAST")
     constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
                 itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
-        val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
+        val makeTargetMatcher = DataInteractionDelegate::class.java.getDeclaredMethod("makeTargetMatcher")
         val parentMatcher = makeTargetMatcher.invoke(parent)
 
         val vb = ViewBuilder().apply {
@@ -83,7 +84,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
         }
 
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -99,12 +100,12 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
             throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
         }.provideItem
 
-        val interaction = Espresso.onData(Matchers.anything())
+        val interaction = DataInteractionDelegate(Espresso.onData(Matchers.anything()))
                 .inRoot(root)
                 .inAdapterView(matcher)
                 .atPosition(position)
 
-        function(provideItem(interaction) as T)
+        function(provideItem(interaction.interaction) as T)
     }
 
     /**
@@ -151,11 +152,12 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
             throw IllegalStateException("${T::class.java.simpleName} did not register to KListView")
         }.provideItem
 
-        val interaction = Espresso.onData(DataBuilder().apply(childMatcher).getDataMatcher())
+        val interaction =
+            DataInteractionDelegate(Espresso.onData(DataBuilder().apply(childMatcher).getDataMatcher()))
                 .inRoot(root)
                 .inAdapterView(matcher)
 
-        return provideItem(interaction) as T
+        return provideItem(interaction.interaction) as T
     }
 
     /**

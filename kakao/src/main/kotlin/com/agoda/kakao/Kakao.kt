@@ -1,12 +1,13 @@
 package com.agoda.kakao
 
-import androidx.test.espresso.DataInteraction
-import androidx.test.espresso.ViewAction
-import androidx.test.espresso.ViewAssertion
-import androidx.test.espresso.ViewInteraction
-import androidx.test.espresso.web.assertion.WebAssertion
-import androidx.test.espresso.web.model.Atom
-import androidx.test.espresso.web.sugar.Web
+import android.support.test.espresso.DataInteraction
+import android.support.test.espresso.ViewAction
+import android.support.test.espresso.ViewAssertion
+import android.support.test.espresso.ViewInteraction
+import android.support.test.espresso.web.assertion.WebAssertion
+import android.support.test.espresso.web.model.Atom
+import android.support.test.espresso.web.sugar.Web
+import com.agoda.kakao.intercept.Interceptor
 
 object Kakao {
     internal var viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null

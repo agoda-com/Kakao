@@ -5,7 +5,6 @@ package com.agoda.kakao.recycler
 import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
@@ -14,6 +13,7 @@ import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.common.matchers.ItemMatcher
 import com.agoda.kakao.common.matchers.PositionMatcher
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -32,7 +32,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KRecyclerItem<*>>, KRecyclerItemType<KRecyclerItem<*>>>
 
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -46,7 +46,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
     constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
         val vb = ViewBuilder().apply(builder)
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -86,7 +86,7 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         }
 
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KRecyclerItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -171,7 +171,11 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         val match = ItemMatcher(matcher, ViewBuilder().apply(childMatcher).getViewMatcher())
 
         scrollTo(childMatcher)
-        Espresso.onView(match).inRoot(root).check(ViewAssertions.matches(Matchers.anything()))
+
+        ViewInteractionDelegate(Espresso.onView(match))
+            .inRoot(root)
+            .check(ViewAssertions.matches(Matchers.anything()))
+
         return match.position
     }
 

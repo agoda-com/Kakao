@@ -65,4 +65,35 @@ class ListTest {
             }
         }
     }
+
+    @Test
+    fun testDataInteraction() {
+        val dataList = mutableListOf<String>()
+        val viewList = mutableListOf<String>()
+
+        onScreen<TestListScreen> {
+            intercept {
+                onDataInteraction {
+                    onAll { dataList.add("DATA_ALL") }
+                    onCheck { _, _ -> dataList.add("DATA_CHECK") }
+                }
+
+                onViewInteraction {
+                    onAll { viewList.add("ALL") }
+                    onCheck { _, _ -> viewList.add("CHECK") }
+                    onPerform { _, _ -> viewList.add("PERFORM") }
+                }
+            }
+
+            list {
+                firstChild<TestListScreen.Item> {
+                    isVisible()
+                    title { click() }
+                }
+            }
+        }
+
+        assert(dataList == mutableListOf("DATA_ALL", "DATA_CHECK"))
+        assert(viewList == mutableListOf("ALL", "CHECK", "ALL", "PERFORM"))
+    }
 }

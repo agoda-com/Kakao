@@ -8,7 +8,7 @@ import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import android.support.test.espresso.Espresso
-import android.support.test.espresso.ViewInteraction
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import android.support.test.espresso.matcher.ViewMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
@@ -387,13 +387,13 @@ class ViewBuilder {
     }
 
     /**
-     * Returns view interaction based on all given matchers
+     * Returns view interaction delegate based on all given matchers
      *
-     * @return ViewInteraction
+     * @return ViewInteractionDelegate
      */
-    fun getViewInteraction(): ViewInteraction {
+    fun getViewInteractionDelegate(): ViewInteractionDelegate {
         check(viewMatchers.isNotEmpty()) { "No matchers inside InteractionBuilder" }
-        return Espresso.onView(AllOf.allOf(viewMatchers))
+        return ViewInteractionDelegate(Espresso.onView(AllOf.allOf(viewMatchers)))
     }
 
     /**

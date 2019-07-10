@@ -2,13 +2,17 @@
 
 package com.agoda.kakao.screen
 
-import android.support.test.espresso.Espresso
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
+import android.support.test.espresso.*
 import android.support.test.espresso.matcher.ViewMatchers
+import android.support.test.espresso.web.assertion.WebAssertion
+import android.support.test.espresso.web.model.Atom
+import android.support.test.espresso.web.sugar.Web
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.common.views.KBaseView
+import com.agoda.kakao.delegate.ViewInteractionDelegate
+import com.agoda.kakao.intercept.Interceptor
+import java.util.*
 
 /**
  * Container class for UI elements.
@@ -22,9 +26,108 @@ import com.agoda.kakao.common.KakaoDslMarker
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class Screen<out T: Screen<T>>: ScreenActions {
-    override val view: ViewInteraction = Espresso.onView(ViewMatchers.isRoot())
-    operator fun invoke(function: T.() -> Unit) = function.invoke(this as T)
+open class Screen<out T : Screen<T>> : ScreenActions {
+    private var viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>? = null
+    private var dataInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>? = null
+    private var webInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>? = null
+
+    override val view: ViewInteractionDelegate = ViewInteractionDelegate(Espresso.onView(ViewMatchers.isRoot()))
+
+    private var isActive = false
+
+    /**
+     * The visibility of rootView will be checked when entering the screen
+     * @rootView.isVisible() Will be called after land onScreen<>() and after invoking screen directly.
+     */
+    open var rootView: KBaseView<*>? = null
+
+    /**
+     * Sets the interceptors for the screen.
+     * Interceptors will be invoked on all interactions while the screen is active.
+     *
+     * The screen is considered `active` when it is invoked in one of the following ways:
+     * ```
+     * val screen = SomeScreen()
+     *
+     * screen { // Active
+     *     view { click() }
+     *     ...
+     * } // Inactive
+     *
+     * // OR
+     *
+     * onScreen<SomeScreen>() { // Active
+     *     view { click() }
+     *     ...
+     * } // Inactive
+     * ```
+     *
+     * If you use nesting screens, all interceptors of the screens that became active will be invoked
+     * in LIFO order (using Deque).
+     *
+     * @param configurator Configuration of the interceptors
+     *
+     * @see Interceptor
+     */
+    fun intercept(configurator: Interceptor.Configurator.() -> Unit) {
+        if (isActive) {
+            removeInterceptors()
+        }
+
+        Interceptor.Configurator().apply(configurator).configure().also { (viewInterceptor, dataInterceptor, webInterceptor) ->
+            this.viewInterceptor = viewInterceptor
+            this.dataInterceptor = dataInterceptor
+            this.webInterceptor = webInterceptor
+        }
+
+        if (isActive) {
+            addInterceptors()
+        }
+    }
+
+    /**
+     * Removes the interceptors from the screen.
+     *
+     * @see intercept
+     * @see Interceptor
+     */
+    fun reset() {
+        if (isActive) {
+            removeInterceptors()
+        }
+
+        viewInterceptor = null
+        dataInterceptor = null
+        webInterceptor = null
+    }
+
+    /**
+     * Operator that allows usage of DSL style
+     *
+     * @param function Tail lambda with receiver which is your screen
+     */
+    operator fun invoke(function: T.() -> Unit) {
+        isActive = true
+        addInterceptors()
+
+        rootView?.isVisible()
+        function.invoke(this as T)
+
+        isActive = false
+        removeInterceptors()
+    }
+
+    private fun addInterceptors() {
+        viewInterceptor?.let { viewInterceptors.offerFirst(it) }
+        dataInterceptor?.let { dataInterceptors.offerFirst(it) }
+        webInterceptor?.let { webInterceptors.offerFirst(it) }
+    }
+
+    private fun removeInterceptors() {
+        viewInterceptor?.let { viewInterceptors.removeFirstOccurrence(it) }
+        dataInterceptor?.let { dataInterceptors.removeFirstOccurrence(it) }
+        webInterceptor?.let { webInterceptors.removeFirstOccurrence(it) }
+    }
 
     companion object {
         /**
@@ -44,7 +147,24 @@ open class Screen<out T: Screen<T>>: ScreenActions {
             })
         }
 
-        inline fun <reified T : Screen<T>> onScreen(function: T.() -> Unit): T =
-                T::class.java.newInstance().apply { function.invoke(this) }
+        /**
+         * Initializes instance of the screen class provided and invokes given tail lambda on it.
+         *
+         * This approach helps to reduce boilerplate code and avoid have a screen instance stored in
+         * a properties of you tests classes.
+         *
+         * In order to use this function, your [Screen] class must have an empty primary constructor.
+         *
+         * @param function Tail lambda to be invoked on the created instance of screen.
+         */
+        inline fun <reified T : Screen<T>> onScreen(noinline function: T.() -> Unit): T {
+            return T::class.java
+                .newInstance()
+                .apply { this(function) }
+        }
+
+        internal val viewInterceptors: Deque<Interceptor<ViewInteraction, ViewAssertion, ViewAction>> = LinkedList()
+        internal val dataInterceptors: Deque<Interceptor<DataInteraction, ViewAssertion, ViewAction>> = LinkedList()
+        internal val webInterceptors: Deque<Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>> = LinkedList()
     }
 }

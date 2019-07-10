@@ -2,12 +2,15 @@
 
 package com.agoda.kakao.web
 
+import android.support.test.espresso.web.assertion.WebAssertion
 import android.support.test.espresso.web.model.Atom
 import android.support.test.espresso.web.model.ElementReference
 import android.support.test.espresso.web.sugar.Web
 import android.support.test.espresso.web.webdriver.DriverAtoms
 import android.support.test.espresso.web.webdriver.Locator
 import com.agoda.kakao.common.KakaoDslMarker
+import com.agoda.kakao.delegate.WebInteractionDelegate
+import com.agoda.kakao.intercept.Interceptable
 
 /**
  * Class for building WebView element matchers
@@ -15,7 +18,7 @@ import com.agoda.kakao.common.KakaoDslMarker
  * @param web WebInteraction where elements should be matched
  */
 @KakaoDslMarker
-class WebElementBuilder(private val web: Web.WebInteraction<*>) {
+class WebElementBuilder(override val view: WebInteractionDelegate) : Interceptable<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>> {
     /**
      * Looks up web view element and performs actions/assertions on it
      *
@@ -25,9 +28,9 @@ class WebElementBuilder(private val web: Web.WebInteraction<*>) {
      */
     fun withElement(locator: Locator, value: String, interaction: KWebInteraction.() -> Unit) {
         val ref = DriverAtoms.findElement(locator, value)
-        KWebInteraction(web, ref).apply(interaction)
+        KWebInteraction(view, ref).apply(interaction)
     }
 
-    inner class KWebInteraction(override val web: Web.WebInteraction<*>, override val ref: Atom<ElementReference>) :
+    inner class KWebInteraction(override val web: WebInteractionDelegate, override val ref: Atom<ElementReference>) :
             WebActions, WebAssertions
 }
