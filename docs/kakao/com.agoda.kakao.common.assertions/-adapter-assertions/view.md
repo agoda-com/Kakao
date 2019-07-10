@@ -2,4 +2,4 @@
 
 # view
 
-`abstract val view: ViewInteraction`
+`abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md)

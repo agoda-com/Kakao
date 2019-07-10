@@ -2,12 +2,12 @@
 
 # view
 
-`open val view: ViewInteraction`
+`open val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md)
 
 Overrides [ScreenActions.view](../-screen-actions/view.md)
 
-ViewInteraction on which all actions are performed (root view by default)
+ViewInteractionDelegate on which all actions are performed (root view by default)
 
 ### Property
 
-`view` - ViewInteraction on which all actions are performed (root view by default)
+`view` - ViewInteractionDelegate on which all actions are performed (root view by default)

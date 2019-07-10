@@ -2,7 +2,7 @@
 
 # view
 
-`val view: ViewInteraction`
+`val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md)
 
 Overrides [BaseActions.view](../../com.agoda.kakao.common.actions/-base-actions/view.md)
 

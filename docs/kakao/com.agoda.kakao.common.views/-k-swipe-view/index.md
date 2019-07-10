@@ -23,7 +23,7 @@ View with SwipeableActions and BaseAssertions
 | Name | Summary |
 |---|---|
 | [root](../-k-base-view/root.md) | `open var root: Matcher<Root>` |
-| [view](../-k-base-view/view.md) | `open val view: ViewInteraction` |
+| [view](../-k-base-view/view.md) | `open val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Inherited Functions
 

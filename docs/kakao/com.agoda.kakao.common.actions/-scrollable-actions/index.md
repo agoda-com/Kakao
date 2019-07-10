@@ -10,15 +10,15 @@ Important: does not hold any implementation
 
 **See Also**
 
-[RecyclerActions](#)
+[com.agoda.kakao.recycler.RecyclerActions](../../com.agoda.kakao.recycler/-recycler-actions/index.md)
 
-[ScrollViewActions](#)
+[com.agoda.kakao.scroll.ScrollViewActions](../../com.agoda.kakao.scroll/-scroll-view-actions/index.md)
 
 ### Inherited Properties
 
 | Name | Summary |
 |---|---|
-| [view](../-base-actions/view.md) | `abstract val view: ViewInteraction` |
+| [view](../-base-actions/view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Functions
 
@@ -46,4 +46,4 @@ Important: does not hold any implementation
 | Name | Summary |
 |---|---|
 | [RecyclerActions](../../com.agoda.kakao.recycler/-recycler-actions/index.md) | `interface RecyclerActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for RecyclerView |
-| [ScrollViewActions](../../com.agoda.kakao.list/-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for ScrollView |
+| [ScrollViewActions](../../com.agoda.kakao.scroll/-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for ScrollView |

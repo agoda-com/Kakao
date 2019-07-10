@@ -2,4 +2,4 @@
 
 # &lt;init&gt;
 
-`KWebInteraction(web: WebInteraction<*>, ref: Atom<ElementReference>)`
+`KWebInteraction(web: `[`WebInteractionDelegate`](../../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md)`, ref: Atom<ElementReference>)`

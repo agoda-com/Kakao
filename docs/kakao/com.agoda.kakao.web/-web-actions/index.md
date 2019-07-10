@@ -15,7 +15,7 @@ Provides action for interacting with WebViews
 | Name | Summary |
 |---|---|
 | [ref](ref.md) | `abstract val ref: Atom<ElementReference>` |
-| [web](web.md) | `abstract val web: WebInteraction<*>` |
+| [web](web.md) | `abstract val web: `[`WebInteractionDelegate`](../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md) |
 
 ### Functions
 

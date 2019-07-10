@@ -12,7 +12,7 @@ Provides basic actions that can be performed on each and every screen
 
 | Name | Summary |
 |---|---|
-| [view](view.md) | `abstract val view: ViewInteraction`<br>ViewInteraction on which all actions are performed (root view by default) |
+| [view](view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md)<br>ViewInteractionDelegate on which all actions are performed (root view by default) |
 
 ### Functions
 

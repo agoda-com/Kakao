@@ -10,7 +10,7 @@ Provides assertions for recyclerView adapter
 
 | Name | Summary |
 |---|---|
-| [view](../../com.agoda.kakao.common.assertions/-adapter-assertions/view.md) | `abstract val view: ViewInteraction` |
+| [view](../../com.agoda.kakao.common.assertions/-adapter-assertions/view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Functions
 

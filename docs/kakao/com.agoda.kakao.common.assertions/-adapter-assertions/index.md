@@ -8,17 +8,19 @@ Provides assertions for view with adapters
 
 **See Also**
 
-[RecyclerAdapterAssertions](#)
+[com.agoda.kakao.recycler.RecyclerAdapterAssertions](../../com.agoda.kakao.recycler/-recycler-adapter-assertions/index.md)
+
+[com.agoda.kakao.list.AbsListViewAdapterAssertions](../../com.agoda.kakao.list/-abs-list-view-adapter-assertions/index.md)
 
 ### Properties
 
 | Name | Summary |
 |---|---|
-| [view](view.md) | `abstract val view: ViewInteraction` |
+| [view](view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Inheritors
 
 | Name | Summary |
 |---|---|
-| [ListViewAdapterAssertions](../../com.agoda.kakao.list/-list-view-adapter-assertions/index.md) | `interface ListViewAdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for listView adapter |
+| [AbsListViewAdapterAssertions](../../com.agoda.kakao.list/-abs-list-view-adapter-assertions/index.md) | `interface AbsListViewAdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for AbsListView adapter |
 | [RecyclerAdapterAssertions](../../com.agoda.kakao.recycler/-recycler-adapter-assertions/index.md) | `interface RecyclerAdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for recyclerView adapter |

@@ -26,8 +26,8 @@ Use this if you want to perform/assert on the root view of adapter item
 
 | Name | Summary |
 |---|---|
-| [root](../-k-adapter-item/root.md) | `open var root: Matcher<Root>` |
-| [view](../-k-adapter-item/view.md) | `open val view: ViewInteraction` |
+| [root](../-k-adapter-item/root.md) | `open var root: Matcher<Root!>!` |
+| [view](../-k-adapter-item/view.md) | `open val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Inherited Functions
 

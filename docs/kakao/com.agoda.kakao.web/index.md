@@ -9,4 +9,4 @@
 | [KWebView](-k-web-view/index.md) | `open class KWebView`<br>Class for interacting with WebViews |
 | [WebActions](-web-actions/index.md) | `interface WebActions`<br>Provides action for interacting with WebViews |
 | [WebAssertions](-web-assertions/index.md) | `interface WebAssertions`<br>Interface that provides assertions for WebViews |
-| [WebElementBuilder](-web-element-builder/index.md) | `class WebElementBuilder`<br>Class for building WebView element matchers |
+| [WebElementBuilder](-web-element-builder/index.md) | `class WebElementBuilder : `[`Interceptable`](../com.agoda.kakao.intercept/-interceptable/index.md)`<WebInteraction<*>, WebAssertion<*>, Atom<*>>`<br>Class for building WebView element matchers |

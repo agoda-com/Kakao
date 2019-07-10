@@ -27,13 +27,16 @@ such as tapBack() and closeSoftKeyboard()
 
 | Name | Summary |
 |---|---|
-| [view](view.md) | `open val view: ViewInteraction`<br>ViewInteraction on which all actions are performed (root view by default) |
+| [rootView](root-view.md) | `open var rootView: `[`KBaseView`](../../com.agoda.kakao.common.views/-k-base-view/index.md)`<*>?`<br>The visibility of rootView will be checked when entering the screen |
+| [view](view.md) | `open val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md)<br>ViewInteractionDelegate on which all actions are performed (root view by default) |
 
 ### Functions
 
 | Name | Summary |
 |---|---|
-| [invoke](invoke.md) | `operator fun invoke(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [intercept](intercept.md) | `fun intercept(configurator: `[`Interceptor.Configurator`](../../com.agoda.kakao.intercept/-interceptor/-configurator/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Sets the interceptors for the screen. Interceptors will be invoked on all interactions while the screen is active. |
+| [invoke](invoke.md) | `operator fun invoke(function: `[`T`](index.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Operator that allows usage of DSL style |
+| [reset](reset.md) | `fun reset(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Removes the interceptors from the screen. |
 
 ### Inherited Functions
 
@@ -49,4 +52,4 @@ such as tapBack() and closeSoftKeyboard()
 | Name | Summary |
 |---|---|
 | [idle](idle.md) | `fun idle(duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 1000L): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Idles for given amount of time |
-| [onScreen](on-screen.md) | `fun <T : `[`Screen`](./index.md)`<`[`T`](on-screen.md#T)`>> onScreen(function: `[`T`](on-screen.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](on-screen.md#T) |
+| [onScreen](on-screen.md) | `fun <T : `[`Screen`](./index.md)`<`[`T`](on-screen.md#T)`>> onScreen(function: `[`T`](on-screen.md#T)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`T`](on-screen.md#T)<br>Initializes instance of the screen class provided and invokes given tail lambda on it. |

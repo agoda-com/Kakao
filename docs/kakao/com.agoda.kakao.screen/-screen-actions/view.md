@@ -2,10 +2,10 @@
 
 # view
 
-`abstract val view: ViewInteraction`
+`abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md)
 
-ViewInteraction on which all actions are performed (root view by default)
+ViewInteractionDelegate on which all actions are performed (root view by default)
 
 ### Property
 
-`view` - ViewInteraction on which all actions are performed (root view by default)
+`view` - ViewInteractionDelegate on which all actions are performed (root view by default)

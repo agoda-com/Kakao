@@ -26,8 +26,8 @@ Use this if you want to perform/assert on the root view of view holder
 
 | Name | Summary |
 |---|---|
-| [root](../-k-recycler-item/root.md) | `open var root: Matcher<Root>` |
-| [view](../-k-recycler-item/view.md) | `open val view: ViewInteraction` |
+| [root](../-k-recycler-item/root.md) | `open var root: Matcher<Root!>!` |
+| [view](../-k-recycler-item/view.md) | `open val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Inherited Functions
 
