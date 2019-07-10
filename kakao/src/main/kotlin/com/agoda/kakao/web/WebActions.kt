@@ -4,8 +4,8 @@ package com.agoda.kakao.web
 
 import androidx.test.espresso.web.model.Atom
 import androidx.test.espresso.web.model.ElementReference
-import androidx.test.espresso.web.sugar.Web
 import androidx.test.espresso.web.webdriver.DriverAtoms
+import com.agoda.kakao.delegate.WebInteractionDelegate
 
 /**
  * Provides action for interacting with WebViews
@@ -13,7 +13,7 @@ import androidx.test.espresso.web.webdriver.DriverAtoms
  * @see WebView
  */
 interface WebActions {
-    val web: Web.WebInteraction<*>
+    val web: WebInteractionDelegate
     val ref: Atom<ElementReference>
 
     /**

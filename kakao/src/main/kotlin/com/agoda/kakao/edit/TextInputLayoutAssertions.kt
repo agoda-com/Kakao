@@ -2,6 +2,7 @@
 
 package com.agoda.kakao.edit
 
+import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.TextInputLayoutCounterEnabledMatcher
@@ -19,7 +20,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
      * @param hint - hint text to be checked
      */
     fun hasHint(hint: String) {
-        view.check { view, notFoundException ->
+        view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (hint != view.hint) {
                     throw AssertionError("Expected hint is $hint," +
@@ -28,7 +29,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
             } else {
                 notFoundException?.let { throw AssertionError(it) }
             }
-        }
+        })
     }
 
     fun isHintEnabled() {
@@ -40,7 +41,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
     }
 
     fun hasError(error: String) {
-        view.check { view, notFoundException ->
+        view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (error != view.error) {
                     throw AssertionError("Expected error is $error," +
@@ -49,7 +50,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
             } else {
                 notFoundException?.let { throw AssertionError(it) }
             }
-        }
+        })
     }
 
     fun isErrorEnabled() {
@@ -61,7 +62,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
     }
 
     fun hasCounterMaxLength(length: Int) {
-        view.check { view, notFoundException ->
+        view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (length != view.counterMaxLength) {
                     throw AssertionError("Expected counter max length is $length," +
@@ -70,7 +71,7 @@ interface TextInputLayoutAssertions : BaseAssertions {
             } else {
                 notFoundException?.let { throw AssertionError(it) }
             }
-        }
+        })
     }
 
     fun isCounterEnabled() {
