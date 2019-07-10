@@ -3,6 +3,7 @@
 package com.agoda.kakao.bottomnav
 
 import android.support.design.widget.BottomNavigationView
+import android.support.test.espresso.ViewAssertion
 import com.agoda.kakao.common.assertions.BaseAssertions
 
 /**
@@ -15,7 +16,7 @@ interface BottomNavigationViewAssertions : BaseAssertions {
      * @param id Menu item id to be checked
      */
     fun hasSelectedItem(id: Int) {
-        view.check { view, notFoundException ->
+        view.check(ViewAssertion { view, notFoundException ->
             if (view is BottomNavigationView) {
                 if (view.selectedItemId != id) {
                     throw AssertionError("Expected selected item id is $id," +
@@ -26,6 +27,6 @@ interface BottomNavigationViewAssertions : BaseAssertions {
                     throw AssertionError(it)
                 }
             }
-        }
+        })
     }
 }

@@ -5,7 +5,7 @@ package com.agoda.kakao.common.assertions
 import android.support.annotation.ColorRes
 import android.support.test.espresso.Root
 import android.support.test.espresso.ViewAssertion
-import android.support.test.espresso.ViewInteraction
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.builders.RootBuilder
@@ -19,14 +19,14 @@ import org.hamcrest.Matchers
  *
  * Provides basic assertions that can be performed on any view
  *
- * @see TextViewAssertions
- * @see EditableAssertions
- * @see CheckableAssertions
- * @see ViewPagerAssertions
- * @see ImageViewAssertions
+ * @see com.agoda.kakao.text.TextViewAssertions
+ * @see com.agoda.kakao.edit.EditableAssertions
+ * @see com.agoda.kakao.check.CheckableAssertions
+ * @see com.agoda.kakao.pager.ViewPagerAssertions
+ * @see com.agoda.kakao.image.ImageViewAssertions
  */
 interface BaseAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
     var root: Matcher<Root>
 
     /**

@@ -2,13 +2,14 @@
 
 package com.agoda.kakao.common.actions
 
+import android.support.test.espresso.FailureHandler
 import android.support.test.espresso.ViewAction
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.action.*
 import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 
 /**
@@ -16,13 +17,13 @@ import org.hamcrest.Matcher
  *
  * Provides a lot of basic action methods, such as click(), scrollTo(), etc.
  *
- * @see EditableActions
- * @see SwipeableActions
- * @see ScrollableActions
- * @see CheckableActions
+ * @see com.agoda.kakao.edit.EditableActions
+ * @see com.agoda.kakao.common.actions.SwipeableActions
+ * @see com.agoda.kakao.common.actions.ScrollableActions
+ * @see com.agoda.kakao.check.CheckableActions
  */
 interface BaseActions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
 
     /**
      * Performs click on view
@@ -83,7 +84,7 @@ interface BaseActions {
      * @param function Lambda that handles this view's errors
      */
     fun onFailure(function: (error: Throwable, matcher: Matcher<View>) -> Unit) {
-        view.withFailureHandler(function)
+        view.withFailureHandler(FailureHandler { error, viewMatcher -> function(error, viewMatcher) })
     }
 
     /**

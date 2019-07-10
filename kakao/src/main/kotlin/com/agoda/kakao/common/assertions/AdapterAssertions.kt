@@ -2,13 +2,13 @@
 
 package com.agoda.kakao.common.assertions
 
-import android.support.test.espresso.ViewInteraction
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 
 /**
  * Provides assertions for view with adapters
  *
- * @see RecyclerAdapterAssertions
+ * @see com.agoda.kakao.recycler.RecyclerAdapterAssertions
  */
 interface AdapterAssertions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
 }

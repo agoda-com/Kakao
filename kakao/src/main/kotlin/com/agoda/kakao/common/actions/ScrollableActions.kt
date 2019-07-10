@@ -7,8 +7,8 @@ package com.agoda.kakao.common.actions
  *
  * Important: does not hold any implementation
  *
- * @see RecyclerActions
- * @see ScrollViewActions
+ * @see com.agoda.kakao.recycler.RecyclerActions
+ * @see com.agoda.kakao.scroll.ScrollViewActions
  */
 interface ScrollableActions : BaseActions {
     /**
