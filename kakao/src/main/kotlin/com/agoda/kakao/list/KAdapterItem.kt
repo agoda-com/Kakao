@@ -3,27 +3,32 @@
 package com.agoda.kakao.list
 
 import androidx.test.espresso.DataInteraction
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewAssertion
+import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.agoda.kakao.delegate.DataInteractionDelegate
+import com.agoda.kakao.intercept.Interceptable
 import org.hamcrest.Matchers
 
 /**
- * Base class for KRecyclerView adapter items
+ * Base class for KAbsListView adapter items
  *
  * Please extend this class to provide custom recycler view item types
  *
  * @param T type of your item. Used to enable invoke() and perform() on descendants
  * @param interaction Data interaction of item. Can be used as parent for all views inside item.
  *
- * @see KRecyclerItemTypeBuilder
+ * @see KAdapterItemTypeBuilder
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions {
-    override val view = interaction.check(ViewAssertions.matches(Matchers.anything()))
+open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions, Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
+    override val view = DataInteractionDelegate(interaction).check(ViewAssertions.matches(Matchers.anything()))
     override var root = RootMatchers.DEFAULT
 
     /**

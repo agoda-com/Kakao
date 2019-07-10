@@ -3,15 +3,16 @@
 package com.agoda.kakao.common.views
 
 import android.view.View
-import androidx.test.espresso.DataInteraction
-import androidx.test.espresso.Root
-import androidx.test.espresso.ViewInteraction
+import androidx.test.espresso.*
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.BaseActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.delegate.DataInteractionDelegate
+import com.agoda.kakao.delegate.ViewInteractionDelegate
+import com.agoda.kakao.intercept.Interceptable
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -26,8 +27,8 @@ import org.hamcrest.Matchers
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class KBaseView<out T> : BaseActions, BaseAssertions {
-    override val view: ViewInteraction
+open class KBaseView<out T> : BaseActions, BaseAssertions, Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -38,7 +39,7 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @see ViewBuilder
      */
     constructor(function: ViewBuilder.() -> Unit) {
-        view = ViewBuilder().apply(function).getViewInteraction()
+        view = ViewBuilder().apply(function).getViewInteractionDelegate()
     }
 
     /**
@@ -63,7 +64,8 @@ open class KBaseView<out T> : BaseActions, BaseAssertions {
      * @see ViewBuilder
      */
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
-        view = parent.onChildView(ViewBuilder().apply(function).getViewMatcher())
+        view = DataInteractionDelegate(parent)
+                .onChildView(ViewBuilder().apply(function).getViewMatcher())
                 .check(ViewAssertions.matches(Matchers.anything()))
     }
 

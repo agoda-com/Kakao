@@ -9,10 +9,10 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.test.espresso.Espresso
-import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.matchers.*
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -36,7 +36,7 @@ class ViewBuilder {
      *
      * IMPORTANT: this matcher is single-use only, since it does not reset it's
      * index counter due to specific espresso's matching process. Thus only one action
-     * and/or assertion can be performed on such a [KView].
+     * and/or assertion can be performed on such a [KView][com.agoda.kakao.common.views.KView].
      *
      * If you need to match view with index multiple times, each time you should match
      * with new instance of [withIndex]
@@ -387,13 +387,13 @@ class ViewBuilder {
     }
 
     /**
-     * Returns view interaction based on all given matchers
+     * Returns view interaction delegate based on all given matchers
      *
-     * @return ViewInteraction
+     * @return ViewInteractionDelegate
      */
-    fun getViewInteraction(): ViewInteraction {
+    fun getViewInteractionDelegate(): ViewInteractionDelegate {
         check(viewMatchers.isNotEmpty()) { "No matchers inside InteractionBuilder" }
-        return Espresso.onView(AllOf.allOf(viewMatchers))
+        return ViewInteractionDelegate(Espresso.onView(AllOf.allOf(viewMatchers)))
     }
 
     /**
