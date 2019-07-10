@@ -10,7 +10,6 @@ import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
-import com.agoda.kakao.delegate.DataInteractionDelegate
 import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
