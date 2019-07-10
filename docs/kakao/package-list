@@ -19,6 +19,8 @@ com.agoda.kakao.intercept
 com.agoda.kakao.list
 com.agoda.kakao.navigation
 com.agoda.kakao.pager
+com.agoda.kakao.picker.date
+com.agoda.kakao.picker.time
 com.agoda.kakao.progress
 com.agoda.kakao.rating
 com.agoda.kakao.recycler

@@ -43,6 +43,8 @@ Provides a lot of basic action methods, such as click(), scrollTo(), etc.
 |---|---|
 | [BottomNavigationViewActions](../../com.agoda.kakao.bottomnav/-bottom-navigation-view-actions/index.md) | `interface BottomNavigationViewActions : `[`BaseActions`](./index.md)<br>Provides actions for BottomNavigationView |
 | [CheckableActions](../../com.agoda.kakao.check/-checkable-actions/index.md) | `interface CheckableActions : `[`BaseActions`](./index.md)<br>Provides action for checking views |
+| [DatePickerAction](../../com.agoda.kakao.picker.date/-date-picker-action/index.md) | `interface DatePickerAction : `[`BaseActions`](./index.md)<br>Provides actions for date picker |
+| [DatePickerAssertion](../../com.agoda.kakao.picker.date/-date-picker-assertion/index.md) | `interface DatePickerAssertion : `[`BaseActions`](./index.md)<br>Provides assertions for date picker |
 | [DrawerActions](../../com.agoda.kakao.drawer/-drawer-actions/index.md) | `interface DrawerActions : `[`BaseActions`](./index.md)<br>Provides actions for navigation drawer |
 | [EditableActions](../../com.agoda.kakao.edit/-editable-actions/index.md) | `interface EditableActions : `[`BaseActions`](./index.md)<br>Provides editable actions for views |
 | [KAdapterItem](../../com.agoda.kakao.list/-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](./index.md)`, `[`BaseAssertions`](../../com.agoda.kakao.common.assertions/-base-assertions/index.md)`, `[`Interceptable`](../../com.agoda.kakao.intercept/-interceptable/index.md)`<ViewInteraction, ViewAssertion, ViewAction>`<br>Base class for KAbsListView adapter items |
@@ -55,3 +57,5 @@ Provides a lot of basic action methods, such as click(), scrollTo(), etc.
 | [SwipeableActions](../-swipeable-actions/index.md) | `interface SwipeableActions : `[`BaseActions`](./index.md)<br>Provides swipe actions for views |
 | [TabLayoutActions](../../com.agoda.kakao.tabs/-tab-layout-actions/index.md) | `interface TabLayoutActions : `[`BaseActions`](./index.md)<br>Provides action for TabLayout |
 | [TextViewActions](../../com.agoda.kakao.text/-text-view-actions/index.md) | `interface TextViewActions : `[`BaseActions`](./index.md)<br>Provides actions for TextViews |
+| [TimePickerAction](../../com.agoda.kakao.picker.time/-time-picker-action/index.md) | `interface TimePickerAction : `[`BaseActions`](./index.md)<br>Provides actions for time picker |
+| [TimePickerAssertion](../../com.agoda.kakao.picker.time/-time-picker-assertion/index.md) | `interface TimePickerAssertion : `[`BaseActions`](./index.md)<br>Provides assertions for time picker |
