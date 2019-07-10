@@ -14,12 +14,12 @@ interface DatePickerAssertion : BaseActions {
      * Month number will be normalized
      *
      * @param year year
-     * @param month month
+     * @param monthOfYear month
      * @param day day
      */
-    fun hasDate(year: Int, month: Int, day: Int) {
+    fun hasDate(year: Int, monthOfYear: Int, day: Int) {
         hasYear(year)
-        hasMonth(month)
+        hasMonth(monthOfYear)
         hasDay(day)
     }
 

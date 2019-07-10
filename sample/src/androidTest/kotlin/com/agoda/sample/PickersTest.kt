@@ -21,9 +21,11 @@ class PickersTest {
                 click()
             }
 
-            timePicker {
-                setTime(22, 4)
-                hasTime(22, 4)
+            timePickerDialog {
+                timePicker {
+                    setTime(22, 4)
+                    hasTime(22, 4)
+                }
                 cancelButton {
                     click()
                 }
@@ -34,10 +36,12 @@ class PickersTest {
                 click()
             }
 
-            timePicker {
-                setTime(22, 4)
+            timePickerDialog {
+                timePicker {
+                    setTime(22, 4)
+                }
                 okButton {
-                   click()
+                    click()
                 }
             }
 
@@ -49,9 +53,11 @@ class PickersTest {
                 click()
             }
 
-            datePicker {
-                setDate(1955, 11, 12)
-                hasDate(1955, 11, 12)
+            datePickerDialog {
+                datePicker {
+                    setDate(1955, 11, 12)
+                    hasDate(1955, 11, 12)
+                }
                 cancelButton {
                     click()
                 }
@@ -62,8 +68,10 @@ class PickersTest {
                 click()
             }
 
-            datePicker {
-                setDate(1955, 11, 12)
+            datePickerDialog {
+                datePicker {
+                    setDate(1955, 11, 12)
+                }
                 okButton {
                     click()
                 }

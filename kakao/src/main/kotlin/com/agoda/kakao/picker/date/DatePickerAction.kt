@@ -11,7 +11,9 @@ interface DatePickerAction : BaseActions {
      * Set date to picker dialog
      * Month number will be normalized
      *
-     * @param year Menu id to be navigated to
+     * @param year year
+     * @param monthOfYear month
+     * @param day day
      */
-    fun setDate(year: Int, month: Int, day: Int) = view.perform(PickerActions.setDate(year, month, day))
+    fun setDate(year: Int, monthOfYear: Int, day: Int) = view.perform(PickerActions.setDate(year, monthOfYear, day))
 }
