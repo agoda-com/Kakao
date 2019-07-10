@@ -2,19 +2,19 @@
 
 package com.agoda.kakao.screen
 
-import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.EspressoKey
 import androidx.test.espresso.action.ViewActions
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 
 /**
  * Interface with common actions for all screens
  *
  * Provides basic actions that can be performed on each and every screen
  *
- * @property view ViewInteraction on which all actions are performed (root view by default)
+ * @property view ViewInteractionDelegate on which all actions are performed (root view by default)
  */
 interface ScreenActions {
-    val view: ViewInteraction
+    val view: ViewInteractionDelegate
 
     /**
      * Performs click on device's back button
@@ -51,4 +51,3 @@ interface ScreenActions {
         view.perform(ViewActions.pressMenuKey())
     }
 }
-
