@@ -79,6 +79,9 @@ jobs:
             name: Setup project ID
             command:  sudo gcloud config set project $PROJECT_ID
         - run:
+            name: Update apt-get
+            command:  sudo apt-get update
+        - run:
             name: Install kubernetes
             command:  sudo apt-get install kubectl
         - run:
