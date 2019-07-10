@@ -2,8 +2,8 @@ package com.agoda.kakao.picker.time
 
 import android.app.TimePickerDialog
 import android.widget.TimePicker
-import androidx.appcompat.widget.AlertDialogLayout
 import com.agoda.kakao.common.views.KBaseView
+import com.agoda.kakao.text.KButton
 
 /**
  * View for interact with default date picker dialog
@@ -20,11 +20,9 @@ class KTimePickerDialog : KBaseView<KTimePickerDialog>({ isRoot() }) {
         it.inRoot { isDialog() }
     }
 
-    val okButton = timePicker.okButton.also {
-        it.inRoot { isDialog() }
-    }
+    val okButton = KButton { withId(android.R.id.button1) }
+            .also { it.inRoot { isDialog() } }
 
-    val cancelButton = timePicker.cancelButton.also {
-        it.inRoot { isDialog() }
-    }
+    val cancelButton = KButton { withId(android.R.id.button2) }
+            .also { it.inRoot { isDialog() } }
 }
