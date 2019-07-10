@@ -31,6 +31,10 @@ class TestActivity : AppCompatActivity() {
             startActivity(Intent(this, WebAcitivty::class.java))
         }
 
+        findViewById<Button>(R.id.picker_button).setOnClickListener {
+            startActivity(Intent(this, PickersActivity::class.java))
+        }
+
         findViewById<Button>(R.id.snackbar_button).setOnClickListener {
             val snackbar = Snackbar.make(findViewById(android.R.id.content),
                     "This is snackbar!", Snackbar.LENGTH_LONG)
