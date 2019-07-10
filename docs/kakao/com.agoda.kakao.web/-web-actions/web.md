@@ -2,4 +2,4 @@
 
 # web
 
-`abstract val web: WebInteraction<*>`
+`abstract val web: `[`WebInteractionDelegate`](../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md)

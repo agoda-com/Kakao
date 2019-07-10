@@ -2,7 +2,7 @@
 
 # root
 
-`open var root: Matcher<Root>`
+`open var root: Matcher<Root!>!`
 
 Overrides [BaseAssertions.root](../../com.agoda.kakao.common.assertions/-base-assertions/root.md)
 

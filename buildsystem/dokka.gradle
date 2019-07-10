@@ -3,5 +3,6 @@ apply plugin: 'org.jetbrains.dokka-android'
 dokka {
     moduleName = 'kakao'
     outputFormat = 'gfm'
+    jdkVersion = 6
     outputDirectory = "$rootDir/docs/"
 }

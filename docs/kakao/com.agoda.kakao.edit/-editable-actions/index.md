@@ -10,7 +10,7 @@ Provides editable actions for views
 
 | Name | Summary |
 |---|---|
-| [view](../../com.agoda.kakao.common.actions/-base-actions/view.md) | `abstract val view: ViewInteraction` |
+| [view](../../com.agoda.kakao.common.actions/-base-actions/view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Functions
 
@@ -37,4 +37,4 @@ Provides editable actions for views
 
 | Name | Summary |
 |---|---|
-| [KEditText](../-k-edit-text/index.md) | `class KEditText : `[`KBaseView`](../../com.agoda.kakao.common.views/-k-base-view/index.md)`<`[`KEditText`](../-k-edit-text/index.md)`>, `[`EditableActions`](./index.md)`, `[`EditableAssertions`](../-editable-assertions/index.md)<br>View with EditableActions and EditableAssertions |
+| [KEditText](../-k-edit-text/index.md) | `class KEditText : `[`KBaseView`](../../com.agoda.kakao.common.views/-k-base-view/index.md)`<`[`KEditText`](../-k-edit-text/index.md)`>, `[`EditableActions`](./index.md)`, `[`TextViewAssertions`](../../com.agoda.kakao.text/-text-view-assertions/index.md)<br>View with EditableActions and TextViewAssertions |

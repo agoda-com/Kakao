@@ -2,7 +2,7 @@
 
 # &lt;init&gt;
 
-`WebElementBuilder(web: WebInteraction<*>)`
+`WebElementBuilder(view: `[`WebInteractionDelegate`](../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md)`)`
 
 Class for building WebView element matchers
 

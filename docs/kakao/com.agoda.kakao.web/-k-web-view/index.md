@@ -14,7 +14,7 @@ Class for interacting with WebViews
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `KWebView(matcher: `[`ViewBuilder`](../../com.agoda.kakao.common.builders/-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)` = null)`<br>Class for interacting with WebViews |
+| [&lt;init&gt;](-init-.md) | `KWebView(matcher: (`[`ViewBuilder`](../../com.agoda.kakao.common.builders/-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)? = null)`<br>Class for interacting with WebViews |
 
 ### Functions
 

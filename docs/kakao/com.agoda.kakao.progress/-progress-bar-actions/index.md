@@ -10,7 +10,7 @@ Provides action for ProgressBar
 
 | Name | Summary |
 |---|---|
-| [view](../../com.agoda.kakao.common.actions/-base-actions/view.md) | `abstract val view: ViewInteraction` |
+| [view](../../com.agoda.kakao.common.actions/-base-actions/view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Functions
 

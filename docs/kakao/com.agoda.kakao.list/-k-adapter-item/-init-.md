@@ -4,7 +4,7 @@
 
 `KAdapterItem(interaction: DataInteraction)`
 
-Base class for KRecyclerView adapter items
+Base class for KAbsListView adapter items
 
 Please extend this class to provide custom recycler view item types
 
@@ -16,5 +16,5 @@ Please extend this class to provide custom recycler view item types
 
 **See Also**
 
-[KRecyclerItemTypeBuilder](#)
+[KAdapterItemTypeBuilder](../-k-adapter-item-type-builder/index.md)
 

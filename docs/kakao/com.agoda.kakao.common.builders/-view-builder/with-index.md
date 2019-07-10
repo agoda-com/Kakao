@@ -8,7 +8,7 @@ Matches only view at given [index](with-index.md#com.agoda.kakao.common.builders
 
 IMPORTANT: this matcher is single-use only, since it does not reset it's
 index counter due to specific espresso's matching process. Thus only one action
-and/or assertion can be performed on such a [KView](#).
+and/or assertion can be performed on such a [KView](../../com.agoda.kakao.common.views/-k-view/index.md).
 
 If you need to match view with index multiple times, each time you should match
 with new instance of [withIndex](./with-index.md)

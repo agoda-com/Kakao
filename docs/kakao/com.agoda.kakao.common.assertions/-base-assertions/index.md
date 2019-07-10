@@ -10,22 +10,20 @@ Provides basic assertions that can be performed on any view
 
 **See Also**
 
-[TextViewAssertions](#)
+[com.agoda.kakao.text.TextViewAssertions](../../com.agoda.kakao.text/-text-view-assertions/index.md)
 
-[EditableAssertions](#)
+[com.agoda.kakao.check.CheckableAssertions](../../com.agoda.kakao.check/-checkable-assertions/index.md)
 
-[CheckableAssertions](#)
+[com.agoda.kakao.pager.ViewPagerAssertions](../../com.agoda.kakao.pager/-view-pager-assertions/index.md)
 
-[ViewPagerAssertions](#)
-
-[ImageViewAssertions](#)
+[com.agoda.kakao.image.ImageViewAssertions](../../com.agoda.kakao.image/-image-view-assertions/index.md)
 
 ### Properties
 
 | Name | Summary |
 |---|---|
 | [root](root.md) | `abstract var root: Matcher<Root>` |
-| [view](view.md) | `abstract val view: ViewInteraction` |
+| [view](view.md) | `abstract val view: `[`ViewInteractionDelegate`](../../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) |
 
 ### Functions
 
@@ -42,7 +40,11 @@ Provides basic assertions that can be performed on any view
 | [hasTag](has-tag.md) | `open fun hasTag(tag: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view has given tag |
 | [inRoot](in-root.md) | `open fun inRoot(function: `[`RootBuilder`](../../com.agoda.kakao.common.builders/-root-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Check if the view is in given root |
 | [isClickable](is-clickable.md) | `open fun isClickable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is clickable |
+| [isCompletelyAbove](is-completely-above.md) | `open fun isCompletelyAbove(function: `[`ViewBuilder`](../../com.agoda.kakao.common.builders/-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view displayed is completely above of the view matching the given matcher. |
+| [isCompletelyBelow](is-completely-below.md) | `open fun isCompletelyBelow(function: `[`ViewBuilder`](../../com.agoda.kakao.common.builders/-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view displayed is completely below of the view matching the given matcher. |
 | [isCompletelyDisplayed](is-completely-displayed.md) | `open fun isCompletelyDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is completely displayed |
+| [isCompletelyLeftOf](is-completely-left-of.md) | `open fun isCompletelyLeftOf(function: `[`ViewBuilder`](../../com.agoda.kakao.common.builders/-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view displayed is completely right of the view matching the given matcher. |
+| [isCompletelyRightOf](is-completely-right-of.md) | `open fun isCompletelyRightOf(function: `[`ViewBuilder`](../../com.agoda.kakao.common.builders/-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view displayed is completely right of the view matching the given matcher. |
 | [isDisabled](is-disabled.md) | `open fun isDisabled(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is disabled |
 | [isDisplayed](is-displayed.md) | `open fun isDisplayed(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is displayed |
 | [isEnabled](is-enabled.md) | `open fun isEnabled(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Checks if the view is enabled |
@@ -68,11 +70,12 @@ Provides basic assertions that can be performed on any view
 | [BottomNavigationViewAssertions](../../com.agoda.kakao.bottomnav/-bottom-navigation-view-assertions/index.md) | `interface BottomNavigationViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for BottomNavigationview |
 | [CheckableAssertions](../../com.agoda.kakao.check/-checkable-assertions/index.md) | `interface CheckableAssertions : `[`BaseAssertions`](./index.md)<br>Provides checkable based assertions for views |
 | [ImageViewAssertions](../../com.agoda.kakao.image/-image-view-assertions/index.md) | `interface ImageViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for image views |
-| [KAdapterItem](../../com.agoda.kakao.list/-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](../../com.agoda.kakao.common.actions/-base-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>Base class for KRecyclerView adapter items |
-| [KBaseView](../../com.agoda.kakao.common.views/-k-base-view/index.md) | `open class KBaseView<out T> : `[`BaseActions`](../../com.agoda.kakao.common.actions/-base-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>Base class for all Kakao views |
-| [KListView](../../com.agoda.kakao.list/-k-list-view/index.md) | `class KListView : `[`ScrollViewActions`](../../com.agoda.kakao.list/-scroll-view-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`ListViewAdapterAssertions`](../../com.agoda.kakao.list/-list-view-adapter-assertions/index.md)<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
-| [KRecyclerItem](../../com.agoda.kakao.recycler/-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](../../com.agoda.kakao.common.actions/-base-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>Base class for KRecyclerView adapter items |
+| [KAbsListView](../../com.agoda.kakao.list/-k-abs-list-view/index.md) | `class KAbsListView : `[`ScrollViewActions`](../../com.agoda.kakao.scroll/-scroll-view-actions/index.md)`, `[`AbsListViewAdapterActions`](../../com.agoda.kakao.list/-abs-list-view-adapter-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`AbsListViewAdapterAssertions`](../../com.agoda.kakao.list/-abs-list-view-adapter-assertions/index.md)<br>View with ScrollViewActions and BaseAssertions. Gives access to it's children |
+| [KAdapterItem](../../com.agoda.kakao.list/-k-adapter-item/index.md) | `open class KAdapterItem<out T> : `[`BaseActions`](../../com.agoda.kakao.common.actions/-base-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`Interceptable`](../../com.agoda.kakao.intercept/-interceptable/index.md)`<ViewInteraction, ViewAssertion, ViewAction>`<br>Base class for KAbsListView adapter items |
+| [KBaseView](../../com.agoda.kakao.common.views/-k-base-view/index.md) | `open class KBaseView<out T> : `[`BaseActions`](../../com.agoda.kakao.common.actions/-base-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`Interceptable`](../../com.agoda.kakao.intercept/-interceptable/index.md)`<ViewInteraction, ViewAssertion, ViewAction>`<br>Base class for all Kakao views |
+| [KRecyclerItem](../../com.agoda.kakao.recycler/-k-recycler-item/index.md) | `open class KRecyclerItem<out T> : `[`BaseActions`](../../com.agoda.kakao.common.actions/-base-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`Interceptable`](../../com.agoda.kakao.intercept/-interceptable/index.md)`<ViewInteraction, ViewAssertion, ViewAction>`<br>Base class for KRecyclerView adapter items |
 | [KRecyclerView](../../com.agoda.kakao.recycler/-k-recycler-view/index.md) | `class KRecyclerView : `[`RecyclerActions`](../../com.agoda.kakao.recycler/-recycler-actions/index.md)`, `[`BaseAssertions`](./index.md)`, `[`RecyclerAdapterAssertions`](../../com.agoda.kakao.recycler/-recycler-adapter-assertions/index.md)<br>View with RecyclerActions, BaseAssertions and RecyclerAdapterAssertions. Gives access to it's children |
+| [KScrollView](../../com.agoda.kakao.scroll/-k-scroll-view/index.md) | `class KScrollView : `[`KBaseView`](../../com.agoda.kakao.common.views/-k-base-view/index.md)`<`[`KScrollView`](../../com.agoda.kakao.scroll/-k-scroll-view/index.md)`>, `[`ScrollViewActions`](../../com.agoda.kakao.scroll/-scroll-view-actions/index.md)`, `[`BaseAssertions`](./index.md)<br>View with ScrollViewActions and BaseAssertions |
 | [NavigationViewAssertions](../../com.agoda.kakao.navigation/-navigation-view-assertions/index.md) | `interface NavigationViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for NavigationView |
 | [ProgressBarAssertions](../../com.agoda.kakao.progress/-progress-bar-assertions/index.md) | `interface ProgressBarAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for progress bar |
 | [RatingBarAssertions](../../com.agoda.kakao.rating/-rating-bar-assertions/index.md) | `interface RatingBarAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for RatingBar |

@@ -2,7 +2,7 @@
 
 # web
 
-`val web: WebInteraction<*>`
+`val web: `[`WebInteractionDelegate`](../../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md)
 
 Overrides [WebActions.web](../../-web-actions/web.md)
 

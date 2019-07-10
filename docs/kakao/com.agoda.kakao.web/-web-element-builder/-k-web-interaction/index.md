@@ -8,14 +8,14 @@
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `KWebInteraction(web: WebInteraction<*>, ref: Atom<ElementReference>)` |
+| [&lt;init&gt;](-init-.md) | `KWebInteraction(web: `[`WebInteractionDelegate`](../../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md)`, ref: Atom<ElementReference>)` |
 
 ### Properties
 
 | Name | Summary |
 |---|---|
 | [ref](ref.md) | `val ref: Atom<ElementReference>` |
-| [web](web.md) | `val web: WebInteraction<*>` |
+| [web](web.md) | `val web: `[`WebInteractionDelegate`](../../../com.agoda.kakao.delegate/-web-interaction-delegate/index.md) |
 
 ### Inherited Functions
 
