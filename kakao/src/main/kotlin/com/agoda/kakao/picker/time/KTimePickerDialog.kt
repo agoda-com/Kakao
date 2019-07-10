@@ -10,8 +10,21 @@ import com.agoda.kakao.common.views.KBaseView
  *
  * @see TimePickerDialog
  */
-class KTimePickerDialog : KBaseView<KTimePickerDialog>({ isInstanceOf(AlertDialogLayout::class.java) }) {
-    val timePicker = KTimePicker { isInstanceOf(TimePicker::class.java) }
-    val okButton = timePicker.okButton
-    val cancelButton = timePicker.cancelButton
+class KTimePickerDialog : KBaseView<KTimePickerDialog>({ isRoot() }) {
+
+    init {
+        inRoot { isDialog() }
+    }
+
+    val timePicker = KTimePicker { isInstanceOf(TimePicker::class.java) }.also {
+        it.inRoot { isDialog() }
+    }
+
+    val okButton = timePicker.okButton.also {
+        it.inRoot { isDialog() }
+    }
+
+    val cancelButton = timePicker.cancelButton.also {
+        it.inRoot { isDialog() }
+    }
 }

@@ -29,7 +29,6 @@ class PickersTest {
                 cancelButton {
                     click()
                 }
-                doesNotExist()
             }
 
             selectTimeButton {
@@ -61,7 +60,6 @@ class PickersTest {
                 cancelButton {
                     click()
                 }
-                doesNotExist()
             }
 
             selectDateButton {
