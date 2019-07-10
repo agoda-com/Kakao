@@ -15,7 +15,43 @@ class PickersTest {
     val rule = ActivityTestRule(PickersActivity::class.java)
 
     @Test
-    fun testTextInputLayout() {
+    fun testDatePickerDialog() {
+        Screen.onScreen<PickersActivityScreen> {
+            selectDateButton {
+                click()
+            }
+
+            datePickerDialog {
+                datePicker {
+                    setDate(1955, 11, 12)
+                    hasDate(1955, 11, 12)
+                }
+                cancelButton {
+                    click()
+                }
+            }
+
+            selectDateButton {
+                click()
+            }
+
+            datePickerDialog {
+                datePicker {
+                    setDate(1955, 11, 12)
+                }
+                okButton {
+                    click()
+                }
+            }
+
+            dateText {
+                hasText("12 11 1955")
+            }
+        }
+    }
+
+    @Test
+    fun testTimePickerDialog() {
         Screen.onScreen<PickersActivityScreen> {
             selectTimeButton {
                 click()
@@ -51,33 +87,7 @@ class PickersTest {
             selectDateButton {
                 click()
             }
-
-            datePickerDialog {
-                datePicker {
-                    setDate(1955, 11, 12)
-                    hasDate(1955, 11, 12)
-                }
-                cancelButton {
-                    click()
-                }
-            }
-
-            selectDateButton {
-                click()
-            }
-
-            datePickerDialog {
-                datePicker {
-                    setDate(1955, 11, 12)
-                }
-                okButton {
-                    click()
-                }
-            }
-
-            dateText {
-                hasText("12 11 1955")
-            }
         }
     }
+
 }
