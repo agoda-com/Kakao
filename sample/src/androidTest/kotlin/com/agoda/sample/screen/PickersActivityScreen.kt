@@ -1,8 +1,8 @@
 package com.agoda.sample.screen
 
 import com.agoda.kakao.common.views.KView
-import com.agoda.kakao.picker.KDatePicker
-import com.agoda.kakao.picker.KTimePicker
+import com.agoda.kakao.picker.date.KDatePicker
+import com.agoda.kakao.picker.time.KTimePicker
 
 import com.agoda.kakao.screen.Screen
 import com.agoda.kakao.text.KTextView
