@@ -3,49 +3,63 @@ package com.agoda.sample
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen
-import com.agoda.sample.screen.PickersActivityScreen
+import com.agoda.sample.screen.AlertDialogActivityScreen
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class AlerdDialogTest {
+class AlertDialogTest {
     @Rule
     @JvmField
     val rule = ActivityTestRule(AlertDialogActivity::class.java)
 
     @Test
     fun testAlertDialog() {
-        Screen.onScreen<PickersActivityScreen> {
-            selectDateButton {
+        Screen.onScreen<AlertDialogActivityScreen> {
+            showAlertDialogButton {
                 click()
             }
 
-            datePickerDialog {
-                datePicker {
-                    setDate(1955, 11, 12)
-                    hasDate(1955, 11, 12)
+            alertDialog {
+                title {
+                    hasText("Title")
                 }
-                cancelButton {
+
+                message {
+                    hasText("Message")
+                }
+
+                icon {
+                    hasDrawable(R.drawable.abc_ic_star_black_36dp)
+                }
+
+                positiveButton {
+                    hasText("Positive")
                     click()
                 }
             }
 
-            selectDateButton {
+            showAlertDialogButton {
                 click()
             }
 
-            datePickerDialog {
-                datePicker {
-                    setDate(1955, 11, 12)
-                }
-                okButton {
+            alertDialog {
+                negativeButton {
+                    hasText("Negative")
                     click()
                 }
             }
 
-            dateText {
-                hasText("12 11 1955")
+            showAlertDialogButton {
+                click()
+            }
+
+            alertDialog {
+                neutralButton {
+                    hasText("Neutral")
+                    click()
+                }
             }
         }
     }
