@@ -78,6 +78,12 @@
         android:layout_height="wrap_content"
         android:text="PICKERS" />
 
+    <Button
+        android:id="@+id/alert_dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALERT DIALOG" />
+
     <RatingBar
             android:id="@+id/rating_bar"
             android:layout_width="wrap_content"

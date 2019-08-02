@@ -35,6 +35,10 @@ class TestActivity : AppCompatActivity() {
             startActivity(Intent(this, PickersActivity::class.java))
         }
 
+        findViewById<Button>(R.id.alert_dialog_button).setOnClickListener {
+            startActivity(Intent(this, AlertDialogActivity::class.java))
+        }
+
         findViewById<Button>(R.id.snackbar_button).setOnClickListener {
             val snackbar = Snackbar.make(findViewById(android.R.id.content),
                     "This is snackbar!", Snackbar.LENGTH_LONG)

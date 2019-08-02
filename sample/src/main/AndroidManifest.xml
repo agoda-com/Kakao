@@ -63,6 +63,11 @@
             android:label="Pickers Activity"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name=".AlertDialogActivity"
+            android:label="Alert Dialog Activity"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>
