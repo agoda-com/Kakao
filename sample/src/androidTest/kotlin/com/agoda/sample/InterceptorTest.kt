@@ -7,6 +7,7 @@ import com.agoda.kakao.screen.Screen
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.kakao.text.KTextView
 import com.agoda.sample.screen.TestActivityScreen
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -38,7 +39,7 @@ class InterceptorTest {
             }
         }
 
-        assert(list == mutableListOf("ALL", "CHECK", "ALL", "PERFORM"))
+        assertEquals(mutableListOf("ALL", "CHECK", "ALL", "PERFORM"), list)
     }
 
     @Test
@@ -49,7 +50,7 @@ class InterceptorTest {
                 click()
             }
 
-            assert(list == mutableListOf("ALL", "CHECK", "ALL", "PERFORM"))
+            assertEquals(mutableListOf("ALL", "CHECK", "ALL", "PERFORM"), list)
         }
     }
 
@@ -70,7 +71,7 @@ class InterceptorTest {
             }
         }
 
-        assert(list == mutableListOf("ALL", "CHECK", "ALL", "PERFORM"))
+        assertEquals(mutableListOf("ALL", "CHECK", "ALL", "PERFORM"), list)
     }
 
     @Test
@@ -102,10 +103,10 @@ class InterceptorTest {
             assert(this.list == mutableListOf("ALL", "CHECK", "ALL", "PERFORM"))
         }
 
-        assert(list == mutableListOf(
+        assertEquals(mutableListOf(
                 "ALL_VIEW", "CHECK_VIEW", "ALL_KAKAO", "CHECK_KAKAO", "ALL_VIEW",
                 "PERFORM_VIEW", "ALL_KAKAO", "PERFORM_KAKAO"
-        ))
+        ), list)
     }
 
     @Test
@@ -145,7 +146,7 @@ class InterceptorTest {
             assert(this.list.isEmpty())
         }
 
-        assert(list == mutableListOf("ALL_VIEW", "CHECK_VIEW", "ALL_VIEW", "PERFORM_VIEW"))
+        assertEquals(mutableListOf("ALL_VIEW", "CHECK_VIEW", "ALL_VIEW", "PERFORM_VIEW"), list)
     }
 
     class InterceptedTestScreen : Screen<InterceptedTestScreen>() {
