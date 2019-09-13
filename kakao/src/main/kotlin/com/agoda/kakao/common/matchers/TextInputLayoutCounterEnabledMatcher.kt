@@ -18,6 +18,6 @@ class TextInputLayoutCounterEnabledMatcher(private val enabled: Boolean) : TypeS
 
     override fun describeTo(desc: Description) {
         desc.appendText("with counter state: ")
-                .appendValue(enabled)
+            .appendValue(enabled)
     }
 }

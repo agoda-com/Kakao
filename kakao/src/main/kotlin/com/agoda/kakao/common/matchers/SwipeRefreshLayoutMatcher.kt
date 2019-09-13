@@ -18,6 +18,6 @@ class SwipeRefreshLayoutMatcher(private val refreshing: Boolean) : TypeSafeMatch
 
     override fun describeTo(desc: Description) {
         desc.appendText("with refreshing state: ")
-                .appendValue(refreshing)
+            .appendValue(refreshing)
     }
 }

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun getItemCount() = 10
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -16,7 +16,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            ViewHolder(parent.inflate(R.layout.item_recycler))
+        ViewHolder(parent.inflate(R.layout.item_recycler))
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         lateinit var title: TextView
@@ -24,7 +24,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         lateinit var button: Button
 
         init {
-            with (itemView) {
+            with(itemView) {
                 title = findViewById(R.id.title)
                 subtitle = findViewById(R.id.subtitle)
                 button = findViewById(R.id.button)
@@ -36,12 +36,13 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         }
     }
 
-    fun ViewGroup.inflate(@LayoutRes layout: Int)
-            = LayoutInflater.from(context).inflate(layout, this, false)
+    fun ViewGroup.inflate(@LayoutRes layout: Int) = LayoutInflater.from(context).inflate(layout, this, false)
 
     companion object {
-        val titles = listOf("Title 1", "Test Title", "Super Test Title", "Title 2",
-                "Title 5", "Mega Test", "Uber Test", "Turtles 4",
-                "Pre Final Title", "Final Title")
+        val titles = listOf(
+            "Title 1", "Test Title", "Super Test Title", "Title 2",
+            "Title 5", "Mega Test", "Uber Test", "Turtles 4",
+            "Pre Final Title", "Final Title"
+        )
     }
 }

@@ -40,8 +40,10 @@ class TestActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.snackbar_button).setOnClickListener {
-            val snackbar = Snackbar.make(findViewById(android.R.id.content),
-                    "This is snackbar!", Snackbar.LENGTH_LONG)
+            val snackbar = Snackbar.make(
+                findViewById(android.R.id.content),
+                "This is snackbar!", Snackbar.LENGTH_LONG
+            )
 
             snackbar.setAction("DISMISS") {
                 snackbar.dismiss()

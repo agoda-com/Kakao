@@ -18,5 +18,5 @@ class PageMatcher(private val index: Int) : BoundedMatcher<View, ViewPager>(View
     }
 
     override fun matchesSafely(view: ViewPager?): Boolean =
-            view?.let { it.currentItem == index } ?: false
+        view?.let { it.currentItem == index } ?: false
 }

@@ -18,5 +18,5 @@ class AnyTextMatcher : BoundedMatcher<View, TextView>(TextView::class.java) {
     }
 
     override fun matchesSafely(view: TextView?): Boolean =
-            view?.text?.toString()?.isNotEmpty() ?: false
+        view?.text?.toString()?.isNotEmpty() ?: false
 }

@@ -57,11 +57,13 @@ class KAbsListView : ScrollViewActions, AbsListViewAdapterActions, BaseAssertion
      *
      * @see ViewBuilder
      */
-    constructor(parent: Matcher<View>, builder: ViewBuilder.() -> Unit,
-                itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) : this({
-        isDescendantOfA { withMatcher(parent) }
-        builder(this)
-    }, itemTypeBuilder)
+    constructor(
+        parent: Matcher<View>, builder: ViewBuilder.() -> Unit,
+        itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit
+    ) : this({
+                 isDescendantOfA { withMatcher(parent) }
+                 builder(this)
+             }, itemTypeBuilder)
 
     /**
      * Constructs view class with parent and view interaction from given ViewBuilder
@@ -73,8 +75,10 @@ class KAbsListView : ScrollViewActions, AbsListViewAdapterActions, BaseAssertion
      * @see ViewBuilder
      */
     @Suppress("UNCHECKED_CAST")
-    constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
-                itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
+    constructor(
+        parent: DataInteraction, builder: ViewBuilder.() -> Unit,
+        itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit
+    ) {
         val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
         val parentMatcher = makeTargetMatcher.invoke(parent)
 
@@ -101,9 +105,9 @@ class KAbsListView : ScrollViewActions, AbsListViewAdapterActions, BaseAssertion
         }.provideItem
 
         val interaction = Espresso.onData(Matchers.anything())
-                .inRoot(root)
-                .inAdapterView(matcher)
-                .atPosition(position)
+            .inRoot(root)
+            .inAdapterView(matcher)
+            .atPosition(position)
 
         function(provideItem(interaction) as T)
     }
@@ -153,8 +157,8 @@ class KAbsListView : ScrollViewActions, AbsListViewAdapterActions, BaseAssertion
         }.provideItem
 
         val interaction = Espresso.onData(DataBuilder().apply(childMatcher).getDataMatcher())
-                .inRoot(root)
-                .inAdapterView(matcher)
+            .inRoot(root)
+            .inAdapterView(matcher)
 
         return provideItem(interaction) as T
     }

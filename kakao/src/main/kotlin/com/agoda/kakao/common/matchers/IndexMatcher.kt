@@ -18,9 +18,9 @@ class IndexMatcher(private val matcher: Matcher<View>, private val index: Int) :
 
     override fun describeTo(desc: Description) {
         desc.appendText("${index}th view with: ")
-                .appendDescriptionOf(matcher)
+            .appendDescriptionOf(matcher)
     }
 
     public override fun matchesSafely(view: View): Boolean =
-            matcher.matches(view) && currentIndex++ == index
+        matcher.matches(view) && currentIndex++ == index
 }

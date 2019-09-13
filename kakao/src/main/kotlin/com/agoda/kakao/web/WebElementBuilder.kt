@@ -32,5 +32,5 @@ class WebElementBuilder(override val view: WebInteractionDelegate) : Interceptab
     }
 
     inner class KWebInteraction(override val web: WebInteractionDelegate, override val ref: Atom<ElementReference>) :
-            WebActions, WebAssertions
+        WebActions, WebAssertions
 }

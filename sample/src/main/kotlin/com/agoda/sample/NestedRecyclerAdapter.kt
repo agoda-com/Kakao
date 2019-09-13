@@ -15,7 +15,7 @@ class NestedRecyclerAdapter : RecyclerView.Adapter<NestedRecyclerAdapter.ViewHol
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            ViewHolder(parent.inflate(R.layout.item_nested_recycler))
+        ViewHolder(parent.inflate(R.layout.item_nested_recycler))
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
@@ -26,6 +26,5 @@ class NestedRecyclerAdapter : RecyclerView.Adapter<NestedRecyclerAdapter.ViewHol
         }
     }
 
-    fun ViewGroup.inflate(@LayoutRes layout: Int)
-            = LayoutInflater.from(context).inflate(layout, this, false)
+    fun ViewGroup.inflate(@LayoutRes layout: Int) = LayoutInflater.from(context).inflate(layout, this, false)
 }

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 
-class WebAcitivty : AppCompatActivity(){
+class WebAcitivty : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -12,7 +12,8 @@ class WebAcitivty : AppCompatActivity(){
         val webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
         }
-        webView.loadData("""
+        webView.loadData(
+            """
             <html>
             <body>
 
@@ -21,6 +22,7 @@ class WebAcitivty : AppCompatActivity(){
 
             </body>
             </html>
-        """, "text/html", "utf-8")
+        """, "text/html", "utf-8"
+        )
     }
 }

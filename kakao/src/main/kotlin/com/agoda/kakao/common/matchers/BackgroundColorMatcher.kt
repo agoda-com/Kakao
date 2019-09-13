@@ -16,15 +16,17 @@ import org.hamcrest.TypeSafeMatcher
  * @param resId Background color resource to be matched (default is -1)
  * @param colorCode Background color string code to be matched (default is null)
  */
-class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
-                             private val colorCode: String? = null) : TypeSafeMatcher<View>() {
+class BackgroundColorMatcher(
+    @ColorRes private val resId: Int = -1,
+    private val colorCode: String? = null
+) : TypeSafeMatcher<View>() {
 
     override fun matchesSafely(item: View?): Boolean {
         if (resId == -1 && colorCode.isNullOrEmpty()) {
             return item?.background == null
         }
 
-        return item?.let{
+        return item?.let {
             val expectedColor = if (resId != -1) {
                 ContextCompat.getColor(it.context, resId)
             } else {
@@ -32,9 +34,9 @@ class BackgroundColorMatcher(@ColorRes private val resId: Int = -1,
             }
 
             it.background != null &&
-            it.background.current is ColorDrawable &&
-            (it.background.current as ColorDrawable).color == expectedColor
-        }?: false
+                    it.background.current is ColorDrawable &&
+                    (it.background.current as ColorDrawable).color == expectedColor
+        } ?: false
     }
 
     override fun describeTo(description: Description) {

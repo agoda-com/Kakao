@@ -1,6 +1,10 @@
 package com.agoda.kakao.delegate
 
-import androidx.test.espresso.*
+import androidx.test.espresso.FailureHandler
+import androidx.test.espresso.Root
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewAssertion
+import androidx.test.espresso.ViewInteraction
 import com.agoda.kakao.Kakao
 import com.agoda.kakao.intercept.Interceptor
 import com.agoda.kakao.screen.Screen

@@ -23,7 +23,8 @@ interface ScrollViewActions : ScrollableActions, SwipeableActions {
         view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to start"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(ScrollView::class.java), ViewMatchers.isDisplayed())
+            override fun getConstraints() =
+                Matchers.allOf(ViewMatchers.isAssignableFrom(ScrollView::class.java), ViewMatchers.isDisplayed())
 
             override fun perform(uiController: UiController?, view: View?) {
                 if (view is ScrollView) {
@@ -37,7 +38,8 @@ interface ScrollViewActions : ScrollableActions, SwipeableActions {
         view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to end"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(ScrollView::class.java), ViewMatchers.isDisplayed())
+            override fun getConstraints() =
+                Matchers.allOf(ViewMatchers.isAssignableFrom(ScrollView::class.java), ViewMatchers.isDisplayed())
 
             override fun perform(uiController: UiController?, view: View?) {
                 if (view is ScrollView) {
@@ -51,7 +53,8 @@ interface ScrollViewActions : ScrollableActions, SwipeableActions {
         view.perform(object : ViewAction {
             override fun getDescription() = "Scroll ScrollView to $position Y position"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(ScrollView::class.java), ViewMatchers.isDisplayed())
+            override fun getConstraints() =
+                Matchers.allOf(ViewMatchers.isAssignableFrom(ScrollView::class.java), ViewMatchers.isDisplayed())
 
             override fun perform(uiController: UiController?, view: View?) {
                 if (view is ScrollView) {

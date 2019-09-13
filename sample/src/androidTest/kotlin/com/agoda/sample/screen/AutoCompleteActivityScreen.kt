@@ -15,8 +15,8 @@ class AutoCompleteActivityScreen : Screen<AutoCompleteActivityScreen>() {
     }
 
     val list = KAbsListView(
-            builder = { isInstanceOf(ListView::class.java) },
-            itemTypeBuilder = { itemType(::Item) })
+        builder = { isInstanceOf(ListView::class.java) },
+        itemTypeBuilder = { itemType(::Item) })
 
     class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
         val text = KTextView(i) { withId(R.id.text) }

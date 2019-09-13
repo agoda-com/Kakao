@@ -1,104 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_view_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LARGE" />
+  <TextView
+      android:id="@+id/text_view_large"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="LARGE" />
 
-    <TextView
-        android:id="@+id/text_view_small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="small" />
+  <TextView
+      android:id="@+id/text_view_small"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="small" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button_view_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="left" />
-
-        <Button
-            android:id="@+id/button_view_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="right" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/text_view_colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="colored"
-        android:textColor="@color/background_color"/>
-
-    <ImageView
-        android:id="@+id/map"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
 
     <Button
-        android:id="@+id/recycler"
+        android:id="@+id/button_view_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RECYCLER" />
+        android:text="left" />
 
     <Button
-        android:id="@+id/auto_complete"
+        android:id="@+id/button_view_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AUTO_COMPLETE" />
+        android:text="right" />
+  </LinearLayout>
 
-    <Button
-            android:id="@+id/web_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WEB_BUTTON" />
+  <TextView
+      android:id="@+id/text_view_colored"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="colored"
+      android:textColor="@color/background_color" />
 
-    <Button
-        android:id="@+id/snackbar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SNACKBAR" />
+  <ImageView
+      android:id="@+id/map"
+      android:layout_width="100dp"
+      android:layout_height="100dp" />
 
-    <Button
-        android:id="@+id/picker_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PICKERS" />
+  <Button
+      android:id="@+id/recycler"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="RECYCLER" />
 
-    <Button
-        android:id="@+id/alert_dialog_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ALERT DIALOG" />
+  <Button
+      android:id="@+id/auto_complete"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="AUTO_COMPLETE" />
 
-    <RatingBar
-            android:id="@+id/rating_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="1"
-            android:rating="0"/>
+  <Button
+      android:id="@+id/web_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="WEB_BUTTON" />
 
-    <SeekBar
-        android:id="@+id/seek_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
-        android:paddingRight="32dp"
-        android:max="100"
-        android:progress="70" />
+  <Button
+      android:id="@+id/snackbar_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="SNACKBAR" />
+
+  <Button
+      android:id="@+id/picker_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="PICKERS" />
+
+  <Button
+      android:id="@+id/alert_dialog_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="ALERT DIALOG" />
+
+  <RatingBar
+      android:id="@+id/rating_bar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:numStars="5"
+      android:rating="0"
+      android:stepSize="1" />
+
+  <SeekBar
+      android:id="@+id/seek_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:max="100"
+      android:paddingLeft="32dp"
+      android:paddingRight="32dp"
+      android:progress="70" />
 
 </LinearLayout>

@@ -27,7 +27,8 @@ import org.hamcrest.Matcher
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions, Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
+open class KRecyclerItem<out T>(matcher: Matcher<View>) : BaseActions, BaseAssertions,
+    Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
     override val view = ViewInteractionDelegate(Espresso.onView(matcher))
     override var root = RootMatchers.DEFAULT
 

@@ -9,8 +9,8 @@ import com.agoda.sample.R
 
 class DrawableListScreen : Screen<DrawableListScreen>() {
     val list = KAbsListView(
-            builder = { withId(R.id.drawableList) },
-            itemTypeBuilder = { itemType(::Item) })
+        builder = { withId(R.id.drawableList) },
+        itemTypeBuilder = { itemType(::Item) })
 
     class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
         val imageView = KImageView(i) { withId(R.id.imgView) }

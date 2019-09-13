@@ -7,6 +7,7 @@ import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.web.assertion.WebAssertion
 import androidx.test.espresso.web.model.Atom
 import androidx.test.espresso.web.sugar.Web
+import com.agoda.kakao.intercept.Interceptor.Builder
 
 /**
  * Base class for intercepting the call chain from Kakao to Espresso.
@@ -39,9 +40,9 @@ import androidx.test.espresso.web.sugar.Web
  * @see com.agoda.kakao.common.views.KBaseView
  */
 class Interceptor<INTERACTION, ASSERTION, ACTION>(
-        val onCheck: Interception<(INTERACTION, ASSERTION) -> Unit>?,
-        val onPerform: Interception<(INTERACTION, ACTION) -> Unit>?,
-        val onAll: Interception<(INTERACTION) -> Unit>?
+    val onCheck: Interception<(INTERACTION, ASSERTION) -> Unit>?,
+    val onPerform: Interception<(INTERACTION, ACTION) -> Unit>?,
+    val onAll: Interception<(INTERACTION) -> Unit>?
 ) {
     /**
      * Builder class that is used to build a single instance of [Interceptor].
@@ -134,15 +135,15 @@ class Interceptor<INTERACTION, ASSERTION, ACTION>(
         }
 
         internal fun configure() = Configuration(
-                viewInterceptor,
-                dataInterceptor,
-                webInterceptor
+            viewInterceptor,
+            dataInterceptor,
+            webInterceptor
         )
     }
 
     data class Configuration(
-            val viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>?,
-            val dataInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>?,
-            val webInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?
+        val viewInterceptor: Interceptor<ViewInteraction, ViewAssertion, ViewAction>?,
+        val dataInterceptor: Interceptor<DataInteraction, ViewAssertion, ViewAction>?,
+        val webInterceptor: Interceptor<Web.WebInteraction<*>, WebAssertion<*>, Atom<*>>?
     )
 }

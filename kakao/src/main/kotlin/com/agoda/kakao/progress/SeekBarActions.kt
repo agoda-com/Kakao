@@ -46,20 +46,20 @@ interface SeekBarActions : ProgressBarActions {
 
                         val start = CoordinatesProvider {
                             floatArrayOf(
-                                    position[0].toFloat() + realWidth / max * progress,
-                                    position[1].toFloat() + realHeight / 2
+                                position[0].toFloat() + realWidth / max * progress,
+                                position[1].toFloat() + realHeight / 2
                             )
                         }
 
                         val end = CoordinatesProvider {
                             floatArrayOf(
-                                    position[0].toFloat() + realWidth / max * number,
-                                    position[1].toFloat() + realHeight / 2
+                                position[0].toFloat() + realWidth / max * number,
+                                position[1].toFloat() + realHeight / 2
                             )
                         }
 
                         GeneralSwipeAction(PreciseSwipe, start, end, Press.PINPOINT)
-                                .perform(uiController, view)
+                            .perform(uiController, view)
                     }
                 }
             }

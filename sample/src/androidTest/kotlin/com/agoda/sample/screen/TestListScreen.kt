@@ -10,8 +10,8 @@ import com.agoda.sample.R
 
 class TestListScreen : Screen<TestListScreen>() {
     val list = KAbsListView(
-            builder = { withId(R.id.list) },
-            itemTypeBuilder = { itemType(::Item) })
+        builder = { withId(R.id.list) },
+        itemTypeBuilder = { itemType(::Item) })
 
     class Item(i: DataInteraction) : KAdapterItem<Item>(i) {
         val title = KTextView(i) { withId(R.id.title) }

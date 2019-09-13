@@ -27,7 +27,8 @@ import org.hamcrest.Matchers
  */
 @Suppress("UNCHECKED_CAST")
 @KakaoDslMarker
-open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions, Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
+open class KAdapterItem<out T>(interaction: DataInteraction) : BaseActions, BaseAssertions,
+    Interceptable<ViewInteraction, ViewAssertion, ViewAction> {
     override val view = DataInteractionDelegate(interaction).check(ViewAssertions.matches(Matchers.anything()))
     override var root = RootMatchers.DEFAULT
 

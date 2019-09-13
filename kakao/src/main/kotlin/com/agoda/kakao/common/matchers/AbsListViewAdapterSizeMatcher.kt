@@ -23,9 +23,9 @@ class AbsListViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<View
 
     override fun describeTo(description: Description) {
         description
-                .appendText("ListView with ")
-                .appendValue(size)
-                .appendText(" item(s), but got with ")
-                .appendValue(itemCount)
+            .appendText("ListView with ")
+            .appendValue(size)
+            .appendText(" item(s), but got with ")
+            .appendValue(itemCount)
     }
 }

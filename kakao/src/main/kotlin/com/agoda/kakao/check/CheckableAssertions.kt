@@ -14,15 +14,21 @@ interface CheckableAssertions : BaseAssertions {
      * Checks if the view is checked
      */
     fun isChecked() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isChecked()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isChecked()
+            )
+        )
     }
 
     /**
      * Checks if the view is not checked
      */
     fun isNotChecked() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isNotChecked()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isNotChecked()
+            )
+        )
     }
 }

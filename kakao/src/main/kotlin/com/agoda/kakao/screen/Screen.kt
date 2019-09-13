@@ -3,7 +3,12 @@
 package com.agoda.kakao.screen
 
 import android.view.View
-import androidx.test.espresso.*
+import androidx.test.espresso.DataInteraction
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewAssertion
+import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.web.assertion.WebAssertion
 import androidx.test.espresso.web.model.Atom
@@ -159,8 +164,8 @@ open class Screen<out T : Screen<T>> : ScreenActions {
          */
         inline fun <reified T : Screen<T>> onScreen(noinline function: T.() -> Unit): T {
             return T::class.java
-                    .newInstance()
-                    .apply { this(function) }
+                .newInstance()
+                .apply { this(function) }
         }
 
         internal val viewInterceptors: Deque<Interceptor<ViewInteraction, ViewAssertion, ViewAction>> = LinkedList()

@@ -1,7 +1,10 @@
 package com.agoda.kakao.delegate
 
 import android.view.View
-import androidx.test.espresso.*
+import androidx.test.espresso.DataInteraction
+import androidx.test.espresso.Root
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.action.AdapterViewProtocol
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.Kakao
@@ -28,11 +31,11 @@ class DataInteractionDelegate(override var interaction: DataInteraction) : Deleg
 
     fun check(viewAssert: ViewAssertion): ViewInteractionDelegate {
         return ViewInteractionDelegate(
-                if (!interceptCheck(viewAssert)) {
-                    interaction.check(viewAssert)
-                } else {
-                    interaction.check(ViewAssertions.matches(Matchers.anything()))
-                }
+            if (!interceptCheck(viewAssert)) {
+                interaction.check(viewAssert)
+            } else {
+                interaction.check(ViewAssertions.matches(Matchers.anything()))
+            }
         )
     }
 
@@ -53,11 +56,11 @@ class DataInteractionDelegate(override var interaction: DataInteraction) : Deleg
 
     fun perform(vararg viewActions: ViewAction): ViewInteractionDelegate {
         return ViewInteractionDelegate(
-                if (viewActions.none { interceptPerform(it) }) {
-                    interaction.perform(*viewActions)
-                } else {
-                    interaction.check(ViewAssertions.matches(Matchers.anything()))
-                }
+            if (viewActions.none { interceptPerform(it) }) {
+                interaction.perform(*viewActions)
+            } else {
+                interaction.check(ViewAssertions.matches(Matchers.anything()))
+            }
         )
     }
 

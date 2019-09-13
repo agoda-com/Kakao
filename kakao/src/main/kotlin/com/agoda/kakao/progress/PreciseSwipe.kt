@@ -10,8 +10,10 @@ import androidx.test.espresso.action.Swiper
 import androidx.test.espresso.core.internal.deps.guava.base.Preconditions.checkElementIndex
 
 object PreciseSwipe : Swiper {
-    override fun sendSwipe(uiController: UiController, startCoordinates: FloatArray,
-                           endCoordinates: FloatArray, precision: FloatArray): Swiper.Status {
+    override fun sendSwipe(
+        uiController: UiController, startCoordinates: FloatArray,
+        endCoordinates: FloatArray, precision: FloatArray
+    ): Swiper.Status {
         checkNotNull(uiController)
         checkNotNull(startCoordinates)
         checkNotNull(endCoordinates)

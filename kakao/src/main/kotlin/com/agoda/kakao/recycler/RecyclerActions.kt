@@ -80,7 +80,8 @@ interface RecyclerActions : ScrollableActions, SwipeableActions {
         view.perform(object : ViewAction {
             override fun getDescription() = "Get RecyclerView adapter size"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(RecyclerView::class.java), ViewMatchers.isDisplayed())
+            override fun getConstraints() =
+                Matchers.allOf(ViewMatchers.isAssignableFrom(RecyclerView::class.java), ViewMatchers.isDisplayed())
 
             override fun perform(uiController: UiController?, view: View?) {
                 if (view is RecyclerView) {
