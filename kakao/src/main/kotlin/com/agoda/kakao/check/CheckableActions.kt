@@ -25,15 +25,16 @@ interface CheckableActions : BaseActions {
         view.perform(object : ViewAction {
             override fun getDescription() = "performing CheckableViewAction: $checked"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(View::class.java),
-                                                           object : TypeSafeMatcher<View>() {
-                                                               override fun describeTo(description: Description) {
-                                                                   description.appendText("is assignable from class: " + Checkable::class.java)
-                                                               }
+            override fun getConstraints() =
+                Matchers.allOf(ViewMatchers.isAssignableFrom(View::class.java),
+                               object : TypeSafeMatcher<View>() {
+                                   override fun describeTo(description: Description) {
+                                       description.appendText("is assignable from class: " + Checkable::class.java)
+                                   }
 
-                                                               override fun matchesSafely(view: View) =
-                                                                   Checkable::class.java.isAssignableFrom(view.javaClass)
-                                                           })
+                                   override fun matchesSafely(view: View) =
+                                       Checkable::class.java.isAssignableFrom(view.javaClass)
+                               })
 
             override fun perform(uiController: UiController, view: View) {
                 if (view is Checkable) view.isChecked = checked
