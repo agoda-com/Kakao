@@ -11,7 +11,12 @@ import androidx.annotation.StringRes
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
-import com.agoda.kakao.common.matchers.*
+import com.agoda.kakao.common.matchers.AnyTextMatcher
+import com.agoda.kakao.common.matchers.BackgroundColorMatcher
+import com.agoda.kakao.common.matchers.DrawableMatcher
+import com.agoda.kakao.common.matchers.FirstViewMatcher
+import com.agoda.kakao.common.matchers.IndexMatcher
+import com.agoda.kakao.common.matchers.RatingBarMatcher
 import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
@@ -233,7 +238,7 @@ class ViewBuilder {
     fun withRating(rating: Float) {
         viewMatchers.add(RatingBarMatcher(rating))
     }
-    
+
     /**
      * Matches the view with given drawable
      *
@@ -365,7 +370,7 @@ class ViewBuilder {
      * @param matcher Matcher of class name
      */
     fun withClassName(matcher: Matcher<String>) {
-        viewMatchers.add(ViewMatchers.withClassName( matcher))
+        viewMatchers.add(ViewMatchers.withClassName(matcher))
     }
 
     /**

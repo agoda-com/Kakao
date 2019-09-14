@@ -10,8 +10,8 @@ import org.hamcrest.Matcher
 
 open class TestRecyclerScreen : Screen<TestRecyclerScreen>() {
     val recycler: KRecyclerView = KRecyclerView({
-        withId(R.id.recycler_view)
-    }, itemTypeBuilder = {
+                                                    withId(R.id.recycler_view)
+                                                }, itemTypeBuilder = {
         itemType(::Item)
     })
 

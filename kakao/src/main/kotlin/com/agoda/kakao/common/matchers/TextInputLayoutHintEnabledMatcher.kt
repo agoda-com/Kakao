@@ -18,6 +18,6 @@ class TextInputLayoutHintEnabledMatcher(private val enabled: Boolean) : TypeSafe
 
     override fun describeTo(desc: Description) {
         desc.appendText("with hint state: ")
-                .appendValue(enabled)
+            .appendValue(enabled)
     }
 }

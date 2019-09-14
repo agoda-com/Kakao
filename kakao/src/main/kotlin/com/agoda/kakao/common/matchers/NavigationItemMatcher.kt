@@ -17,6 +17,5 @@ class NavigationItemMatcher(private val id: Int) : BoundedMatcher<View, Navigati
         desc.appendText("Matches view with menu item checked: $id")
     }
 
-    override fun matchesSafely(view: NavigationView)
-            = view.menu.getItem(id)?.isChecked ?: false
+    override fun matchesSafely(view: NavigationView) = view.menu.getItem(id)?.isChecked ?: false
 }

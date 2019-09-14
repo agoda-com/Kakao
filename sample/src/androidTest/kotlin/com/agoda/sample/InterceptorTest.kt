@@ -103,10 +103,12 @@ class InterceptorTest {
             assert(this.list == mutableListOf("ALL", "CHECK", "ALL", "PERFORM"))
         }
 
-        assertEquals(mutableListOf(
+        assertEquals(
+            mutableListOf(
                 "ALL_VIEW", "CHECK_VIEW", "ALL_KAKAO", "CHECK_KAKAO", "ALL_VIEW",
                 "PERFORM_VIEW", "ALL_KAKAO", "PERFORM_KAKAO"
-        ), list)
+            ), list
+        )
     }
 
     @Test

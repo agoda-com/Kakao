@@ -19,8 +19,10 @@ interface BottomNavigationViewAssertions : BaseAssertions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is BottomNavigationView) {
                 if (view.selectedItemId != id) {
-                    throw AssertionError("Expected selected item id is $id," +
-                            " but actual is ${view.selectedItemId}")
+                    throw AssertionError(
+                        "Expected selected item id is $id," +
+                                " but actual is ${view.selectedItemId}"
+                    )
                 }
             } else {
                 notFoundException?.let {

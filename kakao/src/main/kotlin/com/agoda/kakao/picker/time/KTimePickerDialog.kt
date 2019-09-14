@@ -21,8 +21,8 @@ class KTimePickerDialog : KBaseView<KTimePickerDialog>({ isRoot() }) {
     }
 
     val okButton = KButton { withId(android.R.id.button1) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 
     val cancelButton = KButton { withId(android.R.id.button2) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 }

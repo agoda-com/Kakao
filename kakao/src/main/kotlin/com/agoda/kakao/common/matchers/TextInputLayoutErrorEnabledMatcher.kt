@@ -18,6 +18,6 @@ class TextInputLayoutErrorEnabledMatcher(private val enabled: Boolean) : TypeSaf
 
     override fun describeTo(desc: Description) {
         desc.appendText("with error state: ")
-                .appendValue(enabled)
+            .appendValue(enabled)
     }
 }

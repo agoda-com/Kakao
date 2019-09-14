@@ -34,9 +34,9 @@ class DrawableListTest {
                 childAt<DrawableListScreen.Item>(1) {
                     imageView {
                         val drawable = ResourcesCompat.getDrawable(
-                                appContext.resources,
-                                R.drawable.ic_sentiment_very_satisfied_black_24dp,
-                                appContext.theme
+                            appContext.resources,
+                            R.drawable.ic_sentiment_very_satisfied_black_24dp,
+                            appContext.theme
                         )
                         hasDrawable(drawable!!)
                     }

@@ -59,11 +59,13 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
      *
      * @see ViewBuilder
      */
-    constructor(parent: Matcher<View>, builder: ViewBuilder.() -> Unit,
-                itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) : this({
-        isDescendantOfA { withMatcher(parent) }
-        builder(this)
-    }, itemTypeBuilder)
+    constructor(
+        parent: Matcher<View>, builder: ViewBuilder.() -> Unit,
+        itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit
+    ) : this({
+                 isDescendantOfA { withMatcher(parent) }
+                 builder(this)
+             }, itemTypeBuilder)
 
     /**
      * Constructs view class with parent and view interaction from given ViewBuilder
@@ -75,8 +77,10 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
      * @see ViewBuilder
      */
     @Suppress("UNCHECKED_CAST")
-    constructor(parent: DataInteraction, builder: ViewBuilder.() -> Unit,
-                itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit) {
+    constructor(
+        parent: DataInteraction, builder: ViewBuilder.() -> Unit,
+        itemTypeBuilder: KRecyclerItemTypeBuilder.() -> Unit
+    ) {
         val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
         val parentMatcher = makeTargetMatcher.invoke(parent)
 
@@ -104,7 +108,8 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
 
         try {
             scrollTo(position)
-        } catch (error: Throwable) {}
+        } catch (error: Throwable) {
+        }
 
         function((provideItem(PositionMatcher(matcher, position)) as T).also { inRoot { withMatcher(this@KRecyclerView.root) } })
     }
@@ -155,10 +160,15 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
 
         try {
             scrollTo(childMatcher)
-        } catch (error: Throwable) {}
+        } catch (error: Throwable) {
+        }
 
-        return (provideItem(ItemMatcher(matcher,
-                ViewBuilder().apply(childMatcher).getViewMatcher())) as T).also { inRoot { withMatcher(this@KRecyclerView.root) } }
+        return (provideItem(
+            ItemMatcher(
+                matcher,
+                ViewBuilder().apply(childMatcher).getViewMatcher()
+            )
+        ) as T).also { inRoot { withMatcher(this@KRecyclerView.root) } }
     }
 
     /**
@@ -172,8 +182,8 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
         scrollTo(childMatcher)
 
         ViewInteractionDelegate(Espresso.onView(match))
-                .inRoot(root)
-                .check(ViewAssertions.matches(Matchers.anything()))
+            .inRoot(root)
+            .check(ViewAssertions.matches(Matchers.anything()))
 
         return match.position
     }

@@ -44,8 +44,10 @@ class KIntent(builder: IntentBuilder.() -> Unit) {
 
         chosen?.let {
             Intents.intending(matcher).respondWith(it)
-        } ?: throw IllegalStateException("Cannot mock intent with empty result! Please set it" +
-                " at declaration site or pass as parameter!")
+        } ?: throw IllegalStateException(
+            "Cannot mock intent with empty result! Please set it" +
+                    " at declaration site or pass as parameter!"
+        )
     }
 
     /**

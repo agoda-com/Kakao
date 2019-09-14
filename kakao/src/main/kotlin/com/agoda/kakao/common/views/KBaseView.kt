@@ -3,7 +3,11 @@
 package com.agoda.kakao.common.views
 
 import android.view.View
-import androidx.test.espresso.*
+import androidx.test.espresso.DataInteraction
+import androidx.test.espresso.Root
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.ViewAssertion
+import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.KakaoDslMarker
@@ -50,10 +54,11 @@ open class KBaseView<out T> : BaseActions, BaseAssertions, Interceptable<ViewInt
      *
      * @see ViewBuilder
      */
-    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : this({
-        isDescendantOfA { withMatcher(parent) }
-        function(this)
-    })
+    constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) :
+            this({
+                     isDescendantOfA { withMatcher(parent) }
+                     function(this)
+                 })
 
     /**
      * Constructs view class with parent and view interaction from given ViewBuilder
@@ -65,8 +70,8 @@ open class KBaseView<out T> : BaseActions, BaseAssertions, Interceptable<ViewInt
      */
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) {
         view = DataInteractionDelegate(parent)
-                .onChildView(ViewBuilder().apply(function).getViewMatcher())
-                .check(ViewAssertions.matches(Matchers.anything()))
+            .onChildView(ViewBuilder().apply(function).getViewMatcher())
+            .check(ViewAssertions.matches(Matchers.anything()))
     }
 
     /**

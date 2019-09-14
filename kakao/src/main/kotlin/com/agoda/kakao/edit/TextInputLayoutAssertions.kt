@@ -23,8 +23,10 @@ interface TextInputLayoutAssertions : BaseAssertions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (hint != view.hint) {
-                    throw AssertionError("Expected hint is $hint," +
-                            " but actual is ${view.hint}")
+                    throw AssertionError(
+                        "Expected hint is $hint," +
+                                " but actual is ${view.hint}"
+                    )
                 }
             } else {
                 notFoundException?.let { throw AssertionError(it) }
@@ -44,8 +46,10 @@ interface TextInputLayoutAssertions : BaseAssertions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (error != view.error) {
-                    throw AssertionError("Expected error is $error," +
-                            " but actual is ${view.error}")
+                    throw AssertionError(
+                        "Expected error is $error," +
+                                " but actual is ${view.error}"
+                    )
                 }
             } else {
                 notFoundException?.let { throw AssertionError(it) }
@@ -65,8 +69,10 @@ interface TextInputLayoutAssertions : BaseAssertions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
                 if (length != view.counterMaxLength) {
-                    throw AssertionError("Expected counter max length is $length," +
-                            " but actual is ${view.counterMaxLength}")
+                    throw AssertionError(
+                        "Expected counter max length is $length," +
+                                " but actual is ${view.counterMaxLength}"
+                    )
                 }
             } else {
                 notFoundException?.let { throw AssertionError(it) }

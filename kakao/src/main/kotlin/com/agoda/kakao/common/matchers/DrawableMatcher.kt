@@ -23,9 +23,10 @@ import org.hamcrest.TypeSafeMatcher
  * @param drawable Drawable instance to be matched (default is null)
  * @param toBitmap Lambda with custom Drawable -> Bitmap converter (default is null)
  */
-class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val drawable: Drawable? = null,
-                      private val toBitmap: ((drawable: Drawable) -> Bitmap)? = null)
-    : TypeSafeMatcher<View>(View::class.java) {
+class DrawableMatcher(
+    @DrawableRes private val resId: Int = -1, private val drawable: Drawable? = null,
+    private val toBitmap: ((drawable: Drawable) -> Bitmap)? = null
+) : TypeSafeMatcher<View>(View::class.java) {
 
     override fun describeTo(desc: Description) {
         desc.appendText("with drawable id $resId or provided instance")
@@ -54,7 +55,7 @@ class DrawableMatcher(@DrawableRes private val resId: Int = -1, private val draw
             val convertDrawable = (it as ImageView).drawable
             val bitmap = toBitmap?.invoke(convertDrawable) ?: drawableToBitmap(convertDrawable)
             val otherBitmap = toBitmap?.invoke(expectedDrawable)
-                    ?: drawableToBitmap(expectedDrawable)
+                ?: drawableToBitmap(expectedDrawable)
 
             return bitmap.sameAs(otherBitmap)
         } ?: false

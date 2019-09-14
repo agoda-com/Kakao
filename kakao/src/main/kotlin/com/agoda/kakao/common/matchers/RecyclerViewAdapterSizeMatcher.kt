@@ -23,9 +23,9 @@ class RecyclerViewAdapterSizeMatcher(private val size: Int) : BoundedMatcher<Vie
 
     override fun describeTo(description: Description) {
         description
-                .appendText("RecyclerView with ")
-                .appendValue(size)
-                .appendText(" item(s), but got with ")
-                .appendValue(itemCount)
+            .appendText("RecyclerView with ")
+            .appendValue(size)
+            .appendText(" item(s), but got with ")
+            .appendValue(itemCount)
     }
 }

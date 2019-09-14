@@ -33,137 +33,189 @@ interface BaseAssertions {
      * Checks if the view is displayed
      */
     fun isDisplayed() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isDisplayed()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isDisplayed()
+            )
+        )
     }
 
     /**
      * Checks if the view is not displayed
      */
     fun isNotDisplayed() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.isDisplayed())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.isDisplayed())
+            )
+        )
     }
 
     /**
      * Checks if the view is completely displayed
      */
     fun isCompletelyDisplayed() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isCompletelyDisplayed()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isCompletelyDisplayed()
+            )
+        )
     }
 
     /**
      * Checks if the view is not completely displayed
      */
     fun isNotCompletelyDisplayed() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.isCompletelyDisplayed())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.isCompletelyDisplayed())
+            )
+        )
     }
 
     /**
      * Checks if the view has VISIBLE visibility
      */
     fun isVisible() {
-        view.check(ViewAssertions.matches(
+        view.check(
+            ViewAssertions.matches(
                 ViewMatchers.withEffectiveVisibility(
-                        ViewMatchers.Visibility.VISIBLE)))
+                    ViewMatchers.Visibility.VISIBLE
+                )
+            )
+        )
     }
 
     /**
      * Checks if the view has INVISIBLE visibility
      */
     fun isInvisible() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.INVISIBLE)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.INVISIBLE)
+            )
+        )
     }
 
     /**
      * Checks if the view has GONE visibility
      */
     fun isGone() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.GONE)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.GONE)
+            )
+        )
     }
 
     /**
      * Checks if the view is selected
      */
     fun isSelected() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isSelected()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isSelected()
+            )
+        )
     }
 
     /**
      * Checks if the view is not selected
      */
     fun isNotSelected() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.isSelected())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.isSelected())
+            )
+        )
     }
 
     /**
      * Checks if the view is focused
      */
     fun isFocused() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.hasFocus()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.hasFocus()
+            )
+        )
     }
 
     /**
      * Checks if the view is not focused
      */
     fun isNotFocused() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.hasFocus())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.hasFocus())
+            )
+        )
     }
 
     /**
      * Checks if the view is focusable
      */
     fun isFocusable() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isFocusable()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isFocusable()
+            )
+        )
     }
 
     /**
      * Checks if the view is not focusable
      */
     fun isNotFocusable() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.isFocusable())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.isFocusable())
+            )
+        )
     }
 
     /**
      * Checks if the view is clickable
      */
     fun isClickable() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isClickable()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isClickable()
+            )
+        )
     }
 
     /**
      * Checks if the view is not clickable
      */
     fun isNotClickable() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.isClickable())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.isClickable())
+            )
+        )
     }
 
     /**
      * Checks if the view is enabled
      */
     fun isEnabled() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.isEnabled()))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.isEnabled()
+            )
+        )
     }
 
     /**
      * Checks if the view is disabled
      */
     fun isDisabled() {
-        view.check(ViewAssertions.matches(
-                Matchers.not(ViewMatchers.isEnabled())))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(ViewMatchers.isEnabled())
+            )
+        )
     }
 
     /**
@@ -172,8 +224,11 @@ interface BaseAssertions {
      * @param tag Tag that view must have
      */
     fun hasTag(tag: String) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withTagValue(Matchers.`is`(tag))))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withTagValue(Matchers.`is`(tag))
+            )
+        )
     }
 
     /**
@@ -188,8 +243,11 @@ interface BaseAssertions {
             matchers.add(Matchers.`is`(it))
         }
 
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withTagValue(Matchers.anyOf(matchers))))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withTagValue(Matchers.anyOf(matchers))
+            )
+        )
     }
 
     /**
@@ -207,8 +265,12 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasDescendant(function: ViewBuilder.() -> Unit) {
-        view.check(ViewAssertions.matches(ViewMatchers
-                .hasDescendant(ViewBuilder().apply(function).getViewMatcher())))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers
+                    .hasDescendant(ViewBuilder().apply(function).getViewMatcher())
+            )
+        )
     }
 
     /**
@@ -219,8 +281,14 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasNotDescendant(function: ViewBuilder.() -> Unit) {
-        view.check(ViewAssertions.matches(Matchers.not(ViewMatchers
-                .hasDescendant(ViewBuilder().apply(function).getViewMatcher()))))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(
+                    ViewMatchers
+                        .hasDescendant(ViewBuilder().apply(function).getViewMatcher())
+                )
+            )
+        )
     }
 
     /**
@@ -231,8 +299,12 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasSibling(function: ViewBuilder.() -> Unit) {
-        view.check(ViewAssertions.matches(ViewMatchers
-                .hasSibling(ViewBuilder().apply(function).getViewMatcher())))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers
+                    .hasSibling(ViewBuilder().apply(function).getViewMatcher())
+            )
+        )
     }
 
     /**
@@ -243,8 +315,14 @@ interface BaseAssertions {
      * @see ViewBuilder
      */
     fun hasNotSibling(function: ViewBuilder.() -> Unit) {
-        view.check(ViewAssertions.matches(Matchers.not(ViewMatchers
-                .hasSibling(ViewBuilder().apply(function).getViewMatcher()))))
+        view.check(
+            ViewAssertions.matches(
+                Matchers.not(
+                    ViewMatchers
+                        .hasSibling(ViewBuilder().apply(function).getViewMatcher())
+                )
+            )
+        )
     }
 
     /**

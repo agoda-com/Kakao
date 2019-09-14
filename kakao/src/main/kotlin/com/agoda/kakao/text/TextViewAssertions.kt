@@ -20,16 +20,22 @@ interface TextViewAssertions : BaseAssertions {
      * Checks if the view have not any text
      */
     fun hasEmptyText() {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withText("")))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withText("")
+            )
+        )
     }
 
     /**
      * Checks if the view has any text
      */
     fun hasAnyText() {
-        view.check(ViewAssertions.matches(
-                AnyTextMatcher()))
+        view.check(
+            ViewAssertions.matches(
+                AnyTextMatcher()
+            )
+        )
     }
 
     /**
@@ -38,8 +44,11 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be matched
      */
     fun hasText(text: String) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withText(text)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withText(text)
+            )
+        )
     }
 
     /**
@@ -48,16 +57,22 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId String resource to be matched
      */
     fun hasText(@StringRes resId: Int) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withText(resId)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withText(resId)
+            )
+        )
     }
 
     /**
      * Checks if the view has text that matches given matcher
      */
     fun hasText(matcher: Matcher<String>) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withText(matcher)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withText(matcher)
+            )
+        )
     }
 
     /**
@@ -66,8 +81,11 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId Color resource to be matched
      */
     fun hasTextColor(@ColorRes resId: Int) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.hasTextColor(resId)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.hasTextColor(resId)
+            )
+        )
     }
 
     /**
@@ -76,8 +94,13 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be matched
      */
     fun hasNoText(text: String) {
-        view.check(ViewAssertions.matches(CoreMatchers.not(
-                ViewMatchers.withText(text))))
+        view.check(
+            ViewAssertions.matches(
+                CoreMatchers.not(
+                    ViewMatchers.withText(text)
+                )
+            )
+        )
     }
 
     /**
@@ -86,8 +109,13 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId String resource to be matched
      */
     fun hasNoText(@StringRes resId: Int) {
-        view.check(ViewAssertions.matches(CoreMatchers.not(
-                ViewMatchers.withText(resId))))
+        view.check(
+            ViewAssertions.matches(
+                CoreMatchers.not(
+                    ViewMatchers.withText(resId)
+                )
+            )
+        )
     }
 
     /**
@@ -105,8 +133,11 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be searched
      */
     fun containsText(text: String) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withText(Matchers.containsString(text))))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withText(Matchers.containsString(text))
+            )
+        )
     }
 
     /**
@@ -115,8 +146,11 @@ interface TextViewAssertions : BaseAssertions {
      * @param text Text to be searched
      */
     fun startsWithText(text: String) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withText(Matchers.startsWith(text))))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withText(Matchers.startsWith(text))
+            )
+        )
     }
 
     /**
@@ -125,8 +159,11 @@ interface TextViewAssertions : BaseAssertions {
      * @param hint Text to be matched
      */
     fun hasHint(hint: String) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withHint(hint)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withHint(hint)
+            )
+        )
     }
 
     /**
@@ -135,7 +172,10 @@ interface TextViewAssertions : BaseAssertions {
      * @param resId String resource to be matched
      */
     fun hasHint(@StringRes resId: Int) {
-        view.check(ViewAssertions.matches(
-                ViewMatchers.withHint(resId)))
+        view.check(
+            ViewAssertions.matches(
+                ViewMatchers.withHint(resId)
+            )
+        )
     }
 }

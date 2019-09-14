@@ -15,11 +15,11 @@ import com.agoda.kakao.delegate.WebInteractionDelegate
 @KakaoDslMarker
 open class KWebView(matcher: (ViewBuilder.() -> Unit)? = null) {
     private val web = WebInteractionDelegate(
-            if (matcher != null) {
-                Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())
-            } else {
-                Web.onWebView()
-            }
+        if (matcher != null) {
+            Web.onWebView(ViewBuilder().apply(matcher).getViewMatcher())
+        } else {
+            Web.onWebView()
+        }
     )
 
     /**

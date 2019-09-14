@@ -32,8 +32,10 @@ interface DatePickerAssertion : BaseActions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is DatePicker) {
                 if (day != view.dayOfMonth) {
-                    throw AssertionError("Expected day is $day," +
-                            " but actual is ${view.dayOfMonth}")
+                    throw AssertionError(
+                        "Expected day is $day," +
+                                " but actual is ${view.dayOfMonth}"
+                    )
                 }
             } else {
                 notFoundException?.let { throw AssertionError(it) }
@@ -51,8 +53,10 @@ interface DatePickerAssertion : BaseActions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is DatePicker) {
                 if (normalizedMonthOfYear != view.month) {
-                    throw AssertionError("Expected month is $normalizedMonthOfYear," +
-                            " but actual is ${view.month}")
+                    throw AssertionError(
+                        "Expected month is $normalizedMonthOfYear," +
+                                " but actual is ${view.month}"
+                    )
                 }
             } else {
                 notFoundException?.let { throw AssertionError(it) }
@@ -69,8 +73,10 @@ interface DatePickerAssertion : BaseActions {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is DatePicker) {
                 if (year != view.year) {
-                    throw AssertionError("Expected year is $year," +
-                            " but actual is ${view.year}")
+                    throw AssertionError(
+                        "Expected year is $year," +
+                                " but actual is ${view.year}"
+                    )
                 }
             } else {
                 notFoundException?.let { throw AssertionError(it) }

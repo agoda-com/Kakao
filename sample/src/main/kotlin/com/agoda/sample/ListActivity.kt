@@ -9,8 +9,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ListActivity : AppCompatActivity() {
-    val items = listOf("Title 1", "Title 2", "Title 3", "Title 4", "Title 5",
-                       "Title 6", "Title 7", "Title 8", "Title 9", "Title 10")
+    val items = listOf(
+        "Title 1", "Title 2", "Title 3", "Title 4", "Title 5",
+        "Title 6", "Title 7", "Title 8", "Title 9", "Title 10"
+    )
 
     val list: ListView by lazy { findViewById<ListView>(R.id.list) }
 
@@ -22,7 +24,7 @@ class ListActivity : AppCompatActivity() {
             override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
                 val view: View
 
-                val vh =  if (convertView != null) {
+                val vh = if (convertView != null) {
                     view = convertView
                     convertView.tag as ViewHolder
                 } else {

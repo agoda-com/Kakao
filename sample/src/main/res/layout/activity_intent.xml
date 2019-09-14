@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/result_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No result" />
+  <TextView
+      android:id="@+id/result_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No result" />
 
-    <Button
-        android:id="@+id/intent_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INTENT" />
+  <Button
+      android:id="@+id/intent_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="INTENT" />
 
-    <Button
-        android:id="@+id/intent_result_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INTENT WITH RESULT" />
+  <Button
+      android:id="@+id/intent_result_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="INTENT WITH RESULT" />
 
 </LinearLayout>

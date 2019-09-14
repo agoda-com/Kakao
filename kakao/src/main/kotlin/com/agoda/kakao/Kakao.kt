@@ -32,8 +32,7 @@ object Kakao {
      * @see Interceptor
      */
     fun intercept(configurator: Interceptor.Configurator.() -> Unit) {
-        Interceptor.Configurator().apply(configurator).configure().also {
-            (viewInterceptor,dataInterceptor,webInterceptor) ->
+        Interceptor.Configurator().apply(configurator).configure().also { (viewInterceptor, dataInterceptor, webInterceptor) ->
             this.viewInterceptor = viewInterceptor
             this.dataInterceptor = dataInterceptor
             this.webInterceptor = webInterceptor

@@ -19,20 +19,20 @@ class KAlertDialog : KBaseView<KAlertDialog>({ isRoot() }) {
     }
 
     val positiveButton = KButton { withId(android.R.id.button1) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 
     val negativeButton = KButton { withId(android.R.id.button2) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 
     val neutralButton = KButton { withId(android.R.id.button3) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 
     val title = KTextView { withId(R.id.alertTitle) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 
     val message = KTextView { withId(android.R.id.message) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 
     val icon = KImageView { withId(android.R.id.icon) }
-            .also { it.inRoot { isDialog() } }
+        .also { it.inRoot { isDialog() } }
 }

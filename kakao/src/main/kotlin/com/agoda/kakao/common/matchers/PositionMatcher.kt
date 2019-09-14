@@ -14,12 +14,11 @@ import org.hamcrest.Matcher
  * @param parent Matcher of the recycler view
  * @param position Position of item in adapter
  */
-class PositionMatcher(private val parent: Matcher<View>, private val position: Int)
-    : BoundedMatcher<View, View>(View::class.java) {
+class PositionMatcher(private val parent: Matcher<View>, private val position: Int) : BoundedMatcher<View, View>(View::class.java) {
 
     override fun describeTo(desc: Description) {
         desc.appendText("view holder at $position position of recycler view: ")
-                .appendDescriptionOf(parent)
+            .appendDescriptionOf(parent)
     }
 
     override fun matchesSafely(view: View?): Boolean {
