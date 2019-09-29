@@ -22,6 +22,13 @@
         android:theme="@style/AppTheme" />
 
     <activity
+        android:exported="true"
+        android:name=".RecyclerComplexActivity"
+        android:label="Recycler Root Activity"
+        android:theme="@style/AppTheme" >
+    </activity>
+
+    <activity
         android:name=".NestedRecyclerActivity"
         android:label="Nested Recycler Activity"
         android:theme="@style/AppTheme" />

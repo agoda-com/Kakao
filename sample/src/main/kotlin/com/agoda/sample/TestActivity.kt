@@ -23,6 +23,10 @@ class TestActivity : AppCompatActivity() {
             startActivity(Intent(this, RecyclerActivity::class.java))
         }
 
+        findViewById<Button>(R.id.recycler_complex).setOnClickListener {
+            startActivity(Intent(this, RecyclerComplexActivity::class.java))
+        }
+
         findViewById<Button>(R.id.auto_complete).setOnClickListener {
             startActivity(Intent(this, AutoCompleteActivity::class.java))
         }
