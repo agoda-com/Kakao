@@ -383,6 +383,15 @@ class ViewBuilder {
     }
 
     /**
+     * Matches views based on instance or subclass of the provided class.
+     *
+     * @param clazz Class to match
+     */
+    fun isAssignableFrom(clazz: Class<out View>) {
+        viewMatchers.add(ViewMatchers.isAssignableFrom(clazz))
+    }
+
+    /**
      * Matches the view with given custom matcher
      *
      * @param matcher Matcher that needs to be added
