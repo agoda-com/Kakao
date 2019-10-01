@@ -36,7 +36,7 @@ class NestedRecyclerTest {
                             title { hasText("Final Title") }
                         }
 
-                        children<NestedItem> {
+                        onAllChildren<NestedItem> {
                             subtitle { hasText("This is a test subtitle character sequence") }
                             button { click() }
                         }

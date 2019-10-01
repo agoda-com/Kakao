@@ -140,7 +140,18 @@ class KRecyclerView : RecyclerActions, BaseAssertions, RecyclerAdapterAssertions
      * @param T Type of all items. Must be registered via constructor.
      * @param function Tail lambda which receiver will be matched item with given type T
      */
+    @Deprecated("Use onAllChildren instead of", ReplaceWith("onAllChildren(function)"))
     inline fun <reified T : KRecyclerItem<*>> children(function: T.() -> Unit) {
+        onAllChildren(function)
+    }
+
+    /**
+     * Performs given actions/assertion on all children in adapter
+     *
+     * @param T Type of all items. Must be registered via constructor.
+     * @param function Tail lambda which receiver will be matched item with given type T
+     */
+    inline fun <reified T : KRecyclerItem<*>> onAllChildren(function: T.() -> Unit) {
         for (i in 0 until getSize()) {
             childAt(i, function)
         }

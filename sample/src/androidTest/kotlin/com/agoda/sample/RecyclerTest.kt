@@ -31,7 +31,7 @@ class RecyclerTest {
                     title { hasText("Final Title") }
                 }
 
-                children<TestRecyclerScreen.Item> {
+                onAllChildren<TestRecyclerScreen.Item> {
                     subtitle { hasText("This is a test subtitle character sequence") }
                 }
 
