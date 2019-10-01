@@ -19,33 +19,41 @@ class RecyclerTest {
         onScreen<TestRecyclerScreen> {
             recycler {
                 isVisible()
-                hasSize(10)
+                hasSize(9)
 
-                firstChild<TestRecyclerScreen.Item> {
+                firstChild<TestRecyclerScreen.MainItem> {
                     isVisible()
-                    title { hasText("Title 1") }
+                    title { hasText("Title 0") }
                 }
 
-                lastChild<TestRecyclerScreen.Item> {
+                lastChild<TestRecyclerScreen.MainItem> {
                     isVisible()
                     title { hasText("Final Title") }
                 }
 
-                children<TestRecyclerScreen.Item> {
+                children<TestRecyclerScreen.ItemWithSubtitle> {
                     subtitle { hasText("This is a test subtitle character sequence") }
                 }
 
-                childWith<TestRecyclerScreen.Item> { withDescendant { withText("Final Title") } } perform {
+                childWith<TestRecyclerScreen.MainItem> { withDescendant { withText("Title 2") } } perform {
                     title {
                         isDisplayed()
-                        hasText("Final Title")
+                        hasText("Title 2")
                     }
                 }
 
-                childWith<TestRecyclerScreen.Item> { withDescendant { withText("Title 1") } } perform {
+                childWith<TestRecyclerScreen.MainItem> { withDescendant { withText("Title 2") } } perform {
                     title {
                         isDisplayed()
-                        hasText("Title 1")
+                        hasText("Title 2")
+                    }
+                }
+
+                childWith<TestRecyclerScreen.CheckBoxItem> { withDescendant { withText("CheckBox 2") } } perform {
+                    checkbox {
+                        isNotChecked()
+                        click()
+                        isChecked()
                     }
                 }
             }

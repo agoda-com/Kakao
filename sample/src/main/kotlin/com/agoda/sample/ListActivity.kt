@@ -28,7 +28,7 @@ class ListActivity : AppCompatActivity() {
                     view = convertView
                     convertView.tag as ViewHolder
                 } else {
-                    view = layoutInflater.inflate(R.layout.item_recycler, null)
+                    view = layoutInflater.inflate(R.layout.text_item_recycler, null)
                     ViewHolder(view.findViewById(R.id.title)).apply { view.tag = this }
                 }
 
@@ -41,7 +41,6 @@ class ListActivity : AppCompatActivity() {
             override fun getItem(position: Int) = items[position]
 
             override fun getCount() = items.size
-
         }
     }
 
