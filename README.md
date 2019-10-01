@@ -49,6 +49,7 @@ Kakao provides different types depending on the type of view:
 * KCheckbox
 * KViewPager
 * KSeekBar
+* KSwitch
 * <b>and more</b>
 
 

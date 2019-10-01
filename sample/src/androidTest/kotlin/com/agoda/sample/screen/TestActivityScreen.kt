@@ -4,6 +4,7 @@ import com.agoda.kakao.common.views.KView
 import com.agoda.kakao.progress.KSeekBar
 import com.agoda.kakao.rating.KRatingBar
 import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.switch.KSwitch
 import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KSnackbar
 import com.agoda.kakao.text.KTextView
@@ -38,6 +39,8 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
 
     val ratingbar: KRatingBar = KRatingBar { withId(R.id.rating_bar) }
     val seekbar: KSeekBar = KSeekBar { withId(R.id.seek_bar) }
+    val switch: KSwitch = KSwitch { withId(R.id.switch_view) }
+    val switchCompat: KSwitch = KSwitch { withId(R.id.switch_compat) }
 
     val snackbar: KSnackbar = KSnackbar()
 }
