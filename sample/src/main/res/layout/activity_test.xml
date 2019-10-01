@@ -44,8 +44,8 @@
 
   <ImageView
       android:id="@+id/map"
-      android:layout_width="100dp"
-      android:layout_height="100dp" />
+      android:layout_width="48dp"
+      android:layout_height="48dp" />
 
   <Button
       android:id="@+id/recycler"
