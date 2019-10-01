@@ -15,7 +15,7 @@ class MultiTypeRecyclerTest {
     val rule = ActivityTestRule(MultitypeRecyclerActivity::class.java)
 
     @Test
-    fun testContentItemsRecyclerView() {
+    fun testMultipleItemTypeRecyclerView() {
         onScreen<TestRecyclerScreen> {
             recycler {
                 isVisible()
