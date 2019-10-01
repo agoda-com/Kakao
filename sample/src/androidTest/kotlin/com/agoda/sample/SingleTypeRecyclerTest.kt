@@ -9,17 +9,17 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class RecyclerTest {
+class SingleTypeRecyclerTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(RecyclerActivity::class.java)
+    val rule = ActivityTestRule(SingleTypeRecyclerActivity::class.java)
 
     @Test
     fun testContentItemsRecyclerView() {
         onScreen<TestRecyclerScreen> {
             recycler {
                 isVisible()
-                hasSize(9)
+                hasSize(5)
 
                 firstChild<TestRecyclerScreen.MainItem> {
                     isVisible()
@@ -31,14 +31,14 @@ class RecyclerTest {
                     title { hasText("Final Title") }
                 }
 
-                children<TestRecyclerScreen.ItemWithSubtitle> {
+                children<TestRecyclerScreen.MainItem> {
                     subtitle { hasText("This is a test subtitle character sequence") }
                 }
 
-                childWith<TestRecyclerScreen.MainItem> { withDescendant { withText("Title 2") } } perform {
+                childWith<TestRecyclerScreen.MainItem> { withDescendant { withText("Title 1") } } perform {
                     title {
                         isDisplayed()
-                        hasText("Title 2")
+                        hasText("Title 1")
                     }
                 }
 
@@ -46,14 +46,6 @@ class RecyclerTest {
                     title {
                         isDisplayed()
                         hasText("Title 2")
-                    }
-                }
-
-                childWith<TestRecyclerScreen.CheckBoxItem> { withDescendant { withText("CheckBox 2") } } perform {
-                    checkbox {
-                        isNotChecked()
-                        click()
-                        isChecked()
                     }
                 }
             }

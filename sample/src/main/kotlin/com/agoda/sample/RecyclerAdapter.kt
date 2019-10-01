@@ -13,14 +13,11 @@ import com.agoda.sample.multitypeAdapter.ItemDelegate
 class RecyclerAdapter : BaseDelegatesAdapter<RecyclerAdapter.ListItem>(MainItemDelegate(), CheckBoxItemDelegate()) {
 
     companion object {
-        private val finalItem = ListItem.TextItem("Final Title")
-        private val textItems = (0..3).map { ListItem.TextItem("Title $it") }
-        private val checkBoxItems = (0..3).map { ListItem.CheckBoxItem("CheckBox $it") }
+        val finalItem = ListItem.TextItem("Final Title")
+        val textItems = (0..3).map { ListItem.TextItem("Title $it") }
+        val checkBoxItems = (0..3).map { ListItem.CheckBoxItem("CheckBox $it") }
     }
 
-    init {
-        items = textItems + checkBoxItems + finalItem
-    }
 
     sealed class ListItem {
         data class TextItem(val text: String) : ListItem()
@@ -57,7 +54,7 @@ class RecyclerAdapter : BaseDelegatesAdapter<RecyclerAdapter.ListItem>(MainItemD
         }
 
         class Holder(view: View) : RecyclerView.ViewHolder(view) {
-            val checkbox: CheckBox = view.findViewById(R.id.checkbox)
+            val checkbox: CheckBox = view as CheckBox
         }
     }
 }

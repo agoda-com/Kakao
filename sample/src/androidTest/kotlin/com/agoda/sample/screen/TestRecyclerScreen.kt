@@ -15,18 +15,14 @@ open class TestRecyclerScreen : Screen<TestRecyclerScreen>() {
                                                 }, itemTypeBuilder = {
         itemType(::MainItem)
         itemType(::CheckBoxItem)
-        itemType(::ItemWithSubtitle)
     })
 
     class MainItem(parent: Matcher<View>) : KRecyclerItem<MainItem>(parent) {
         val title: KTextView = KTextView(parent) { withId(R.id.title) }
+        val subtitle: KTextView = KTextView(parent) { withId(R.id.subtitle) }
     }
 
     class CheckBoxItem(parent: Matcher<View>) : KRecyclerItem<CheckBoxItem>(parent) {
-        val checkbox: KCheckBox = KCheckBox(parent) { withId(R.id.checkbox) }
-    }
-
-    class ItemWithSubtitle(parent: Matcher<View>) : KRecyclerItem<ItemWithSubtitle>(parent) {
-        val subtitle: KTextView = KTextView(parent) { withId(R.id.subtitle) }
+        val checkbox: KCheckBox = KCheckBox { withMatcher(parent)  }
     }
 }
