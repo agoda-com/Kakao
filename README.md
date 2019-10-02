@@ -40,26 +40,26 @@ class FormScreen : Screen<FormScreen>() {
 }
 ```
 Kakao provides different types depending on the type of view:
-* KView
-* KEditText
-* KTextView
-* KButton
-* KImageView
-* KWebView
-* KCheckbox
-* KViewPager
-* KSeekBar
+* `KView`
+* `KEditText`
+* `KTextView`
+* `KButton`
+* `KImageView`
+* `KWebView`
+* `KCheckbox`
+* `KViewPager`
+* `KSeekBar`
 * <b>and more</b>
 
 
-Every KView contains matchers to retrieve the view involved in the ViewInteraction. Some examples of matchers provided
+Every KView contains matchers to retrieve the view involved in the `ViewInteraction`. Some examples of matchers provided
 by Kakao:
 
-* withId
-* withText
-* withContentDescription
-* withDrawable
-* withBackgroundColor
+* `withId`
+* `withText`
+* `withContentDescription`
+* `withDrawable`
+* `withBackgroundColor`
 * <b>and more</b>
 
 Like in Espresso you can combine different matchers:
@@ -110,7 +110,7 @@ onScreen<FormScreen> {
 
 ##### ListViews/RecyclersViews
 
-Kakao offers an easy way to interact with your RecyclerViews and ListViews
+Kakao offers an easy way to interact with your `RecyclerView`s and `ListView`s
 
 ###### Create the KListView/KRecyclerView 
 Inside your `Screen` create the KView matching with your view:
@@ -173,14 +173,14 @@ onScreen<RecyclerScreen> {
 }
 ```
 Kakao provides different accessors in the adapter:
-* childAt
-* firstChild
-* lastChild
-* childWith
+* `childAt`
+* `firstChild`
+* `lastChild`
+* `childWith`
 
 ##### Custom KViews
 
-If you have custom Views in your tests and you want to create your own `KView`, we have KBaseView. Just extend 
+If you have custom Views in your tests and you want to create your own `KView`, we have `KBaseView`. Just extend 
 this class and implement as much additional Action/Assertion interfaces as you want. 
 You also need to override constructors that you need.
 
