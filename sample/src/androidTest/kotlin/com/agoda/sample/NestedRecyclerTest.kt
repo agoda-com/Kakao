@@ -17,7 +17,7 @@ class NestedRecyclerTest {
     val rule = ActivityTestRule(NestedRecyclerActivity::class.java)
 
     @Test
-    fun testContentItemsRecyclerView() {
+    fun testSingleItemTypeRecyclerView() {
         onScreen<TestNestedRecyclerScreen> {
             recycler {
                 isVisible()
@@ -28,7 +28,7 @@ class NestedRecyclerTest {
                     nested {
                         firstChild<NestedItem> {
                             isVisible()
-                            title { hasText("Title 1") }
+                            title { hasText("Title 0") }
                         }
 
                         lastChild<NestedItem> {

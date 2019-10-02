@@ -17,7 +17,12 @@
     </activity>
 
     <activity
-        android:name=".RecyclerActivity"
+        android:name=".MultitypeRecyclerActivity"
+        android:label="Recycler Activity"
+        android:theme="@style/AppTheme" />
+
+    <activity
+        android:name=".SingleTypeRecyclerActivity"
         android:label="Recycler Activity"
         android:theme="@style/AppTheme" />
 

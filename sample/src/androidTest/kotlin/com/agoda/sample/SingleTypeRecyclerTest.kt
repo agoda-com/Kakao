@@ -9,43 +9,43 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class RecyclerTest {
+class SingleTypeRecyclerTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(RecyclerActivity::class.java)
+    val rule = ActivityTestRule(SingleTypeRecyclerActivity::class.java)
 
     @Test
     fun testContentItemsRecyclerView() {
         onScreen<TestRecyclerScreen> {
             recycler {
                 isVisible()
-                hasSize(10)
+                hasSize(5)
 
-                firstChild<TestRecyclerScreen.Item> {
+                firstChild<TestRecyclerScreen.MainItem> {
                     isVisible()
-                    title { hasText("Title 1") }
+                    title { hasText("Title 0") }
                 }
 
-                lastChild<TestRecyclerScreen.Item> {
+                lastChild<TestRecyclerScreen.MainItem> {
                     isVisible()
                     title { hasText("Final Title") }
                 }
 
-                children<TestRecyclerScreen.Item> {
+                children<TestRecyclerScreen.MainItem> {
                     subtitle { hasText("This is a test subtitle character sequence") }
                 }
 
-                childWith<TestRecyclerScreen.Item> { withDescendant { withText("Final Title") } } perform {
-                    title {
-                        isDisplayed()
-                        hasText("Final Title")
-                    }
-                }
-
-                childWith<TestRecyclerScreen.Item> { withDescendant { withText("Title 1") } } perform {
+                childWith<TestRecyclerScreen.MainItem> { withDescendant { withText("Title 1") } } perform {
                     title {
                         isDisplayed()
                         hasText("Title 1")
+                    }
+                }
+
+                childWith<TestRecyclerScreen.MainItem> { withDescendant { withText("Title 2") } } perform {
+                    title {
+                        isDisplayed()
+                        hasText("Title 2")
                     }
                 }
             }

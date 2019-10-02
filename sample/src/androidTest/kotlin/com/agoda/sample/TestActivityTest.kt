@@ -72,8 +72,12 @@ class TestActivityTest {
                 hasAnyTag("test_tag", "non_test_tag")
             }
 
-            recycler {
-                hasText("RECYCLER")
+            multiTypeRecycler {
+                hasText("MULTI TYPE RECYCLER")
+            }
+
+            singleTypeRecycler {
+                hasText("SINGLE TYPE RECYCLER")
             }
 
             autoComplete {
