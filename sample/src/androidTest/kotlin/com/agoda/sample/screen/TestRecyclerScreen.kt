@@ -23,6 +23,6 @@ open class TestRecyclerScreen : Screen<TestRecyclerScreen>() {
     }
 
     class CheckBoxItem(parent: Matcher<View>) : KRecyclerItem<CheckBoxItem>(parent) {
-        val checkbox: KCheckBox = KCheckBox { withMatcher(parent)  }
+        val checkbox: KCheckBox = KCheckBox { withMatcher(parent) }
     }
 }

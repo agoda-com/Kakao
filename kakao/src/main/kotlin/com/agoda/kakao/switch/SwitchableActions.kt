@@ -89,7 +89,11 @@ interface SwitchableActions : BaseActions {
             )
         }
 
-        val horizontalMove = if (direction == Direction.RIGHT) trackWidth else -trackWidth
+        val horizontalMove = when (direction) {
+            Direction.RIGHT -> trackWidth
+            else -> -trackWidth
+        }
+
         val endMoveCoordinateProvider = CoordinatesProvider {
             floatArrayOf(
                 (position[0] + thumbBounds.left + thumbMiddleX + horizontalMove).toFloat(),
