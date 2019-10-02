@@ -91,7 +91,7 @@ interface SwitchableActions : BaseActions {
 
         val horizontalMove = when (direction) {
             Direction.RIGHT -> trackWidth
-            else -> -trackWidth
+            Direction.LEFT -> -trackWidth
         }
 
         val endMoveCoordinateProvider = CoordinatesProvider {
