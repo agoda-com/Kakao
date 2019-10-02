@@ -30,8 +30,8 @@ class FormScreen : Screen<FormScreen>()
  `Screen` can represent the whole user interface or a portion of UI.
 If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject.html) you can put the interactions of Kakao inside the Page Objects.
 
-#### Create KViews
-`Screen` contains `KViews`, these are the Android Framework views where you want to do the interactions:
+#### Create KView
+`Screen` contains `KView`, these are the Android Framework views where you want to do the interactions:
 ```Kotlin
 class FormScreen : Screen<FormScreen>() {
     val phone = KView { withId(R.id.phone) }
@@ -52,7 +52,7 @@ Kakao provides different types depending on the type of view:
 * <b>and more</b>
 
 
-Every KView contains matchers to retrieve the view involved in the `ViewInteraction`. Some examples of matchers provided
+Every `KView` contains matchers to retrieve the view involved in the `ViewInteraction`. Some examples of matchers provided
 by Kakao:
 
 * `withId`
@@ -81,7 +81,7 @@ val email = KEditText {
 
 #### Write the interaction. 
 
-The syntax of the test with Kakao is very easy, once you have the `Screen` and the `KViews` defined, you only have to apply 
+The syntax of the test with Kakao is very easy, once you have the `Screen` and the `KView` defined, you only have to apply 
 the actions or assertions like in Espresso: 
 ```Kotlin
 onScreen<FormScreen> {
@@ -178,7 +178,7 @@ Kakao provides different accessors in the adapter:
 * `lastChild`
 * `childWith`
 
-##### Custom KViews
+##### Custom KView
 
 If you have custom Views in your tests and you want to create your own `KView`, we have `KBaseView`. Just extend 
 this class and implement as much additional Action/Assertion interfaces as you want. 
