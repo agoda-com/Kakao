@@ -108,9 +108,9 @@ onScreen<FormScreen> {
 
 #### Advanced 
 
-##### ListViews/RecyclersViews
+##### ListView/RecyclersView
 
-Kakao offers an easy way to interact with your `RecyclerView`s and `ListView`s
+Kakao offers an easy way to interact with your `RecyclerView` and `ListView`
 
 ###### Create the KListView/KRecyclerView 
 Inside your `Screen` create the KView matching with your view:
