@@ -3,7 +3,7 @@ package com.agoda.sample.multitypeAdapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseDelegatesAdapter<I : Any>(vararg delegates: ItemDelegate<*, *>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+abstract class BaseDelegatesAdapter<I : Any>(vararg delegates: ItemDelegate<*, *>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val delegatesIndexMap: Map<Class<*>, Int>
     private val delegatesList: List<ItemDelegate<I, RecyclerView.ViewHolder>>

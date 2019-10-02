@@ -13,6 +13,6 @@ class SingleTypeRecyclerActivity : AppCompatActivity() {
         val recycler: RecyclerView = findViewById(R.id.recycler_view)
         recycler.setHasFixedSize(true)
         recycler.layoutManager = LinearLayoutManager(this)
-        recycler.adapter = RecyclerAdapter().apply { items = RecyclerAdapter.textItems + RecyclerAdapter.finalItem  }
+        recycler.adapter = RecyclerAdapter().apply { items = RecyclerAdapter.textItems + RecyclerAdapter.finalItem }
     }
 }

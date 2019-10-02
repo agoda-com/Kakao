@@ -44,8 +44,8 @@
 
   <ImageView
       android:id="@+id/map"
-      android:layout_width="100dp"
-      android:layout_height="100dp" />
+      android:layout_width="48dp"
+      android:layout_height="48dp" />
 
   <LinearLayout
       android:layout_width="match_parent"
@@ -112,5 +112,23 @@
       android:paddingLeft="32dp"
       android:paddingRight="32dp"
       android:progress="70" />
+
+  <Switch
+      android:id="@+id/switch_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checked="true"
+      android:paddingLeft="32dp"
+      android:paddingRight="32dp"
+      android:text="Switch" />
+
+  <androidx.appcompat.widget.SwitchCompat
+      android:id="@+id/switch_compat"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checked="true"
+      android:paddingLeft="32dp"
+      android:paddingRight="32dp"
+      android:text="Switch compat" />
 
 </LinearLayout>

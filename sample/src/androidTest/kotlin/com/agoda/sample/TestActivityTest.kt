@@ -4,6 +4,8 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.idle
 import com.agoda.kakao.screen.Screen.Companion.onScreen
+import com.agoda.kakao.switch.SwitchableActions.Direction.LEFT
+import com.agoda.kakao.switch.SwitchableActions.Direction.RIGHT
 import com.agoda.sample.screen.TestActivityScreen
 import org.junit.Rule
 import org.junit.Test
@@ -111,6 +113,34 @@ class TestActivityTest {
                 hasProgress(70)
                 dragProgressTo(30)
                 hasProgress(30)
+            }
+
+            switch {
+                isChecked()
+                click()
+                isNotChecked()
+                click()
+                isChecked()
+                swipeSwitchThumb(LEFT)
+                swipeSwitchThumb(LEFT)
+                isNotChecked()
+                swipeSwitchThumb(RIGHT)
+                swipeSwitchThumb(RIGHT)
+                isChecked()
+            }
+
+            switchCompat {
+                isChecked()
+                click()
+                isNotChecked()
+                click()
+                isChecked()
+                swipeSwitchThumb(LEFT)
+                swipeSwitchThumb(LEFT)
+                isNotChecked()
+                swipeSwitchThumb(RIGHT)
+                swipeSwitchThumb(RIGHT)
+                isChecked()
             }
         }
     }
