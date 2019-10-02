@@ -19,8 +19,12 @@ class TestActivity : AppCompatActivity() {
         super.onResume()
         findViewById<ImageView>(R.id.map).tag = "test_tag"
 
-        findViewById<Button>(R.id.recycler).setOnClickListener {
-            startActivity(Intent(this, RecyclerActivity::class.java))
+        findViewById<Button>(R.id.multi_type_recycler).setOnClickListener {
+            startActivity(Intent(this, MultitypeRecyclerActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.single_type_recycler).setOnClickListener {
+            startActivity(Intent(this, SingleTypeRecyclerActivity::class.java))
         }
 
         findViewById<Button>(R.id.auto_complete).setOnClickListener {

@@ -21,7 +21,7 @@ class NestedRecyclerAdapter : RecyclerView.Adapter<NestedRecyclerAdapter.ViewHol
         init {
             itemView.findViewById<RecyclerView>(R.id.nested_recycler_view).run {
                 layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
-                adapter = RecyclerAdapter()
+                adapter = RecyclerAdapter().apply { items = RecyclerAdapter.textItems + RecyclerAdapter.finalItem }
             }
         }
     }

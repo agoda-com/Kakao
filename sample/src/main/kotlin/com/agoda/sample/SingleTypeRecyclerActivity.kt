@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerActivity : AppCompatActivity() {
+class SingleTypeRecyclerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
@@ -13,6 +13,6 @@ class RecyclerActivity : AppCompatActivity() {
         val recycler: RecyclerView = findViewById(R.id.recycler_view)
         recycler.setHasFixedSize(true)
         recycler.layoutManager = LinearLayoutManager(this)
-        recycler.adapter = RecyclerAdapter()
+        recycler.adapter = RecyclerAdapter().apply { items = RecyclerAdapter.textItems + RecyclerAdapter.finalItem  }
     }
 }

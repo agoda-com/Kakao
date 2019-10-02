@@ -13,7 +13,8 @@ import com.agoda.sample.R
 open class TestActivityScreen : Screen<TestActivityScreen>() {
     val content: KView = KView { withId(R.id.content) }
     val map: KView = KView { withId(R.id.map) }
-    val recycler: KButton = KButton { withId(R.id.recycler) }
+    val multiTypeRecycler: KButton = KButton { withId(R.id.multi_type_recycler) }
+    val singleTypeRecycler: KButton = KButton { withId(R.id.single_type_recycler) }
     val autoComplete: KButton = KButton { withId(R.id.auto_complete) }
     val snackbarButton: KButton = KButton { withId(R.id.snackbar_button) }
 
