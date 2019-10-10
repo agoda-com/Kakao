@@ -55,6 +55,7 @@ Provides a lot of basic action methods, such as click(), scrollTo(), etc.
 | [RatingBarActions](../../com.agoda.kakao.rating/-rating-bar-actions/index.md) | `interface RatingBarActions : `[`BaseActions`](./index.md)<br>Provides action for RatingBar |
 | [ScrollableActions](../-scrollable-actions/index.md) | `interface ScrollableActions : `[`BaseActions`](./index.md)<br>Provides scrolling actions for view |
 | [SwipeableActions](../-swipeable-actions/index.md) | `interface SwipeableActions : `[`BaseActions`](./index.md)<br>Provides swipe actions for views |
+| [SwitchableActions](../../com.agoda.kakao.switch/-switchable-actions/index.md) | `interface SwitchableActions : `[`BaseActions`](./index.md)<br>Provides action for actions on Switch |
 | [TabLayoutActions](../../com.agoda.kakao.tabs/-tab-layout-actions/index.md) | `interface TabLayoutActions : `[`BaseActions`](./index.md)<br>Provides action for TabLayout |
 | [TextViewActions](../../com.agoda.kakao.text/-text-view-actions/index.md) | `interface TextViewActions : `[`BaseActions`](./index.md)<br>Provides actions for TextViews |
 | [TimePickerAction](../../com.agoda.kakao.picker.time/-time-picker-action/index.md) | `interface TimePickerAction : `[`BaseActions`](./index.md)<br>Provides actions for time picker |
