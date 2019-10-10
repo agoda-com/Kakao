@@ -41,6 +41,7 @@
 | [com.agoda.kakao.list.KAdapterItemTypeBuilder](../com.agoda.kakao.list/-k-adapter-item-type-builder/index.md) | Class that maps types to providing functions |
 | [com.agoda.kakao.Kakao](../com.agoda.kakao/-kakao/index.md) |  |
 | [com.agoda.kakao.common.KakaoDslMarker](../com.agoda.kakao.common/-kakao-dsl-marker/index.md) |  |
+| [com.agoda.kakao.dialog.KAlertDialog](../com.agoda.kakao.dialog/-k-alert-dialog/index.md) | View for interact with default alert dialog |
 | [com.agoda.kakao.common.views.KBaseView](../com.agoda.kakao.common.views/-k-base-view/index.md) | Base class for all Kakao views |
 | [com.agoda.kakao.bottomnav.KBottomNavigationView](../com.agoda.kakao.bottomnav/-k-bottom-navigation-view/index.md) | View for acting and asserting on BottomNavigationView |
 | [com.agoda.kakao.text.KButton](../com.agoda.kakao.text/-k-button/index.md) | View with BaseActions and TextViewAssertions |
@@ -65,6 +66,7 @@
 | [com.agoda.kakao.text.KSnackbar](../com.agoda.kakao.text/-k-snackbar/index.md) | View with internal TextView and a Button |
 | [com.agoda.kakao.swiperefresh.KSwipeRefreshLayout](../com.agoda.kakao.swiperefresh/-k-swipe-refresh-layout/index.md) | View with SwipeRefreshLayoutActions and SwipeRefreshLayoutAssertions |
 | [com.agoda.kakao.common.views.KSwipeView](../com.agoda.kakao.common.views/-k-swipe-view/index.md) | View with SwipeableActions and BaseAssertions |
+| [com.agoda.kakao.switch.KSwitch](../com.agoda.kakao.switch/-k-switch/index.md) | View with SwitchableActions, CheckableAssertions and TextViewAssertions |
 | [com.agoda.kakao.tabs.KTabLayout](../com.agoda.kakao.tabs/-k-tab-layout/index.md) | View with TabLayoutActions and TabLayoutAssertions |
 | [com.agoda.kakao.edit.KTextInputLayout](../com.agoda.kakao.edit/-k-text-input-layout/index.md) | View with TextInputLayoutAssertions |
 | [com.agoda.kakao.text.KTextView](../com.agoda.kakao.text/-k-text-view/index.md) | View with BaseActions and TextViewAssertions |
@@ -98,6 +100,7 @@
 | [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutActions](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-actions/index.md) | Provides actions for SwipeRefreshLayout |
 | [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutAssertions](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-assertions/index.md) | Provides assertion for SwipeRefreshLayout |
 | [com.agoda.kakao.common.matchers.SwipeRefreshLayoutMatcher](../com.agoda.kakao.common.matchers/-swipe-refresh-layout-matcher/index.md) |  |
+| [com.agoda.kakao.switch.SwitchableActions](../com.agoda.kakao.switch/-switchable-actions/index.md) | Provides action for actions on Switch |
 | [com.agoda.kakao.tabs.TabLayoutActions](../com.agoda.kakao.tabs/-tab-layout-actions/index.md) | Provides action for TabLayout |
 | [com.agoda.kakao.tabs.TabLayoutAssertions](../com.agoda.kakao.tabs/-tab-layout-assertions/index.md) | Provides assertions for TabLayout |
 | [com.agoda.kakao.edit.TextInputLayoutAssertions](../com.agoda.kakao.edit/-text-input-layout-assertions/index.md) | Provides assertions for TextInputLayout |

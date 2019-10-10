@@ -11,6 +11,7 @@ com.agoda.kakao.common.builders
 com.agoda.kakao.common.matchers
 com.agoda.kakao.common.views
 com.agoda.kakao.delegate
+com.agoda.kakao.dialog
 com.agoda.kakao.drawer
 com.agoda.kakao.edit
 com.agoda.kakao.image
@@ -27,6 +28,7 @@ com.agoda.kakao.recycler
 com.agoda.kakao.screen
 com.agoda.kakao.scroll
 com.agoda.kakao.swiperefresh
+com.agoda.kakao.switch
 com.agoda.kakao.tabs
 com.agoda.kakao.text
 com.agoda.kakao.web
