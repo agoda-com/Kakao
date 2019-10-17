@@ -6,10 +6,14 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ListView
+import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 class DrawableListActivity : AppCompatActivity() {
-    val drawableIds = listOf(R.drawable.ic_android_black_24dp, R.drawable.ic_sentiment_very_satisfied_black_24dp)
+    val drawableIds = listOf(DrawableResource(R.drawable.ic_android_black_24dp),
+                             DrawableResource(R.drawable.ic_sentiment_very_satisfied_black_24dp),
+                             DrawableResource(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark))
 
     val list: ListView by lazy { findViewById<ListView>(R.id.drawableList) }
 
@@ -29,7 +33,15 @@ class DrawableListActivity : AppCompatActivity() {
                     ViewHolder(view.findViewById(R.id.imgView)).apply { view.tag = this }
                 }
 
-                vh.imageView.setImageResource(drawableIds[position])
+                drawableIds[position].run {
+                    vh.imageView.setImageResource(resId)
+                    tint?.let {
+                        vh.imageView.setColorFilter(
+                            ContextCompat.getColor(vh.imageView.context,  it),
+                            android.graphics.PorterDuff.Mode.SRC_IN)
+                    }
+                }
+
                 return view
             }
 
@@ -42,4 +54,6 @@ class DrawableListActivity : AppCompatActivity() {
     }
 
     class ViewHolder(val imageView: ImageView)
+
+    data class DrawableResource(@DrawableRes val resId: Int, val tint: Int? = null)
 }

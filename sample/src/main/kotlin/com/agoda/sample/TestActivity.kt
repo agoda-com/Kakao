@@ -31,6 +31,10 @@ class TestActivity : AppCompatActivity() {
             startActivity(Intent(this, AutoCompleteActivity::class.java))
         }
 
+        findViewById<Button>(R.id.drawableList).setOnClickListener {
+            startActivity(Intent(this, DrawableListActivity::class.java))
+        }
+
         findViewById<Button>(R.id.web_button).setOnClickListener {
             startActivity(Intent(this, WebAcitivty::class.java))
         }

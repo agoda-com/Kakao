@@ -1,134 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-  <TextView
-      android:id="@+id/text_view_large"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="LARGE" />
-
-  <TextView
-      android:id="@+id/text_view_small"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="small" />
+    android:layout_height="match_parent">
 
   <LinearLayout
+      android:id="@+id/content"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
+      android:layout_height="match_parent"
+      android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_view_left"
+    <TextView
+        android:id="@+id/text_view_large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="left" />
+        android:text="LARGE" />
 
-    <Button
-        android:id="@+id/button_view_right"
+    <TextView
+        android:id="@+id/text_view_small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="right" />
+        android:text="small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <Button
+          android:id="@+id/button_view_left"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="left" />
+
+      <Button
+          android:id="@+id/button_view_right"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="right" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view_colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="colored"
+        android:textColor="@color/background_color" />
+
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <Button
+          android:id="@+id/single_type_recycler"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="SINGLE TYPE RECYCLER" />
+
+      <Button
+          android:id="@+id/multi_type_recycler"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="MULTI TYPE RECYCLER" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/auto_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AUTO_COMPLETE" />
+
+
+    <Button
+        android:id="@+id/drawableList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DRAWABLE LIST" />
+
+    <Button
+        android:id="@+id/web_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEB_BUTTON" />
+
+    <Button
+        android:id="@+id/snackbar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SNACKBAR" />
+
+    <Button
+        android:id="@+id/picker_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PICKERS" />
+
+    <Button
+        android:id="@+id/alert_dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALERT DIALOG" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:progress="70" />
+
+    <Switch
+        android:id="@+id/switch_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Switch" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_compat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Switch compat" />
+
   </LinearLayout>
-
-  <TextView
-      android:id="@+id/text_view_colored"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="colored"
-      android:textColor="@color/background_color" />
-
-  <ImageView
-      android:id="@+id/map"
-      android:layout_width="48dp"
-      android:layout_height="48dp" />
-
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-
-    <Button
-        android:id="@+id/single_type_recycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SINGLE TYPE RECYCLER" />
-
-    <Button
-        android:id="@+id/multi_type_recycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MULTI TYPE RECYCLER" />
-  </LinearLayout>
-
-
-  <Button
-      android:id="@+id/auto_complete"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="AUTO_COMPLETE" />
-
-  <Button
-      android:id="@+id/web_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="WEB_BUTTON" />
-
-  <Button
-      android:id="@+id/snackbar_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="SNACKBAR" />
-
-  <Button
-      android:id="@+id/picker_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="PICKERS" />
-
-  <Button
-      android:id="@+id/alert_dialog_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="ALERT DIALOG" />
-
-  <RatingBar
-      android:id="@+id/rating_bar"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:numStars="5"
-      android:rating="0"
-      android:stepSize="1" />
-
-  <SeekBar
-      android:id="@+id/seek_bar"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:max="100"
-      android:paddingLeft="32dp"
-      android:paddingRight="32dp"
-      android:progress="70" />
-
-  <Switch
-      android:id="@+id/switch_view"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:checked="true"
-      android:paddingLeft="32dp"
-      android:paddingRight="32dp"
-      android:text="Switch" />
-
-  <androidx.appcompat.widget.SwitchCompat
-      android:id="@+id/switch_compat"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:checked="true"
-      android:paddingLeft="32dp"
-      android:paddingRight="32dp"
-      android:text="Switch compat" />
-
-</LinearLayout>
+</ScrollView>

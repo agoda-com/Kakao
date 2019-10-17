@@ -22,7 +22,7 @@ class DrawableListTest {
         onScreen<DrawableListScreen> {
             list {
                 isVisible()
-                hasSize(2)
+                hasSize(3)
 
                 firstChild<DrawableListScreen.Item> {
                     isVisible()
@@ -39,6 +39,13 @@ class DrawableListTest {
                             appContext.theme
                         )
                         hasDrawable(drawable!!)
+                    }
+                }
+
+                childAt<DrawableListScreen.Item>(2) {
+                    imageView {
+                        isVisible()
+                        hasDrawableWithTint(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark)
                     }
                 }
             }
