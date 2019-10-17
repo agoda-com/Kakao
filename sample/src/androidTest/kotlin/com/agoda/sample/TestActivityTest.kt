@@ -130,6 +130,7 @@ class TestActivityTest {
             }
 
             switchCompat {
+                scrollTo()
                 isChecked()
                 click()
                 isNotChecked()
