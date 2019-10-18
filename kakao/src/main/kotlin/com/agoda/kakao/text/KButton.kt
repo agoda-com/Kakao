@@ -11,7 +11,7 @@ import org.hamcrest.Matcher
 /**
  * View with BaseActions and TextViewAssertions
  *
- * @see BaseActions
+ * @see com.agoda.kakao.common.actions.BaseActions
  * @see TextViewAssertions
  */
 class KButton : KBaseView<KButton>, TextViewAssertions {

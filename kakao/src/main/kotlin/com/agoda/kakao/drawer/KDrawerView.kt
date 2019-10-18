@@ -12,7 +12,7 @@ import org.hamcrest.Matcher
  * View with DrawerActions and BaseAssertions
  *
  * @see DrawerActions
- * @see BaseAssertions
+ * @see com.agoda.kakao.common.assertions.BaseAssertions
  */
 class KDrawerView : KBaseView<KDrawerView>, DrawerActions {
     constructor(function: ViewBuilder.() -> Unit) : super(function)
