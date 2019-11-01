@@ -25,7 +25,7 @@ interface SpinnerAdapterAssertions : AdapterAssertions {
      *
      * @param text expected selected text in Spinner
      */
-    fun withText(text: String) {
+    fun hasText(text: String) {
         view.check(ViewAssertions.matches(withSpinnerText(containsString(text))))
     }
 }

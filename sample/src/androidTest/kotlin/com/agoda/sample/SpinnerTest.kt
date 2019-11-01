@@ -50,7 +50,7 @@ class SpinnerTest {
                     click()
                 }
 
-                withText("Title 5")
+                hasText("Title 5")
             }
         }
     }

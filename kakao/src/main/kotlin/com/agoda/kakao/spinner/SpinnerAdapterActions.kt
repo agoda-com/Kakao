@@ -23,10 +23,11 @@ interface SpinnerAdapterActions {
     fun getSize(): Int {
         var size = 0
 
-        popupView?.perform(object: ViewAction {
+        popupView?.perform(object : ViewAction {
             override fun getDescription() = "Get AdapterView adapter size"
 
-            override fun getConstraints() = Matchers.allOf(ViewMatchers.isAssignableFrom(AdapterView::class.java), ViewMatchers.isDisplayed())
+            override fun getConstraints() =
+                Matchers.allOf(ViewMatchers.isAssignableFrom(AdapterView::class.java), ViewMatchers.isDisplayed())
 
             override fun perform(uiController: UiController?, view: View?) {
                 if (view is AdapterView<*>) {
