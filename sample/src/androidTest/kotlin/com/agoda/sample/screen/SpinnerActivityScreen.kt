@@ -10,5 +10,4 @@ class SpinnerActivityScreen : Screen<SpinnerActivityScreen>() {
         builder = { withId(R.id.spinner) },
         itemTypeBuilder = { itemType(::KSpinnerItem) }
     )
-
 }
