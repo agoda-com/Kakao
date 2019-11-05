@@ -12,6 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.common.matchers.SpinnerPopupMatcher
 import com.agoda.kakao.delegate.ViewInteractionDelegate
 import com.agoda.kakao.list.DataBuilder
 import com.agoda.kakao.list.KAdapterItem
@@ -103,7 +104,7 @@ class KSpinner : SpinnerAdapterActions, SpinnerAdapterAssertions, BaseAssertions
         }.provideItem
 
         val interaction = Espresso.onData(Matchers.anything())
-            .inRoot(isSpinnerPopup())
+            .inRoot(SpinnerPopupMatcher())
 //            .inAdapterView(matcher)
             .atPosition(position)
 
@@ -235,7 +236,8 @@ class KSpinner : SpinnerAdapterActions, SpinnerAdapterAssertions, BaseAssertions
 
     override fun open() {
         view.perform(click())
-        popupView = ViewInteractionDelegate(onView(allOf(ViewMatchers.isAssignableFrom(AdapterView::class.java))).inRoot(isSpinnerPopup()))
+        popupView =
+            ViewInteractionDelegate(onView(allOf(ViewMatchers.isAssignableFrom(AdapterView::class.java))).inRoot(SpinnerPopupMatcher()))
     }
 
     override fun close() {
