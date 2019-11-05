@@ -34,12 +34,10 @@ interface SpinnerAdapterActions {
                     size = view.count
                 }
             }
-
         })
 
         return size
     }
-
 
     /**
      * Opens the spinner to display it's items
