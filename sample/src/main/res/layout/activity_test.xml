@@ -69,19 +69,23 @@
           android:text="MULTI TYPE RECYCLER" />
     </LinearLayout>
 
-
     <Button
         android:id="@+id/auto_complete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AUTO_COMPLETE" />
 
-
     <Button
         android:id="@+id/drawableList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DRAWABLE LIST" />
+
+    <Button
+        android:id="@+id/spinner_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SPINNER" />
 
     <Button
         android:id="@+id/web_button"
