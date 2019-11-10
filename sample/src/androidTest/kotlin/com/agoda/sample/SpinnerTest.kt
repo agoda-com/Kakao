@@ -24,14 +24,19 @@ class SpinnerTest {
 
                 open()
 
-                childAt<KSpinnerItem>(0) {
+                emptyFirstChild {
                     isVisible()
                     hasText("Title 0")
                 }
 
+                childAt<KSpinnerItem>(1) {
+                    isVisible()
+                    hasText("Title 1")
+                }
+
                 emptyLastChild {
                     isVisible()
-                    hasText("Title 10")
+                    hasText("Title 9")
                 }
 
                 emptyChildWith {
@@ -41,11 +46,11 @@ class SpinnerTest {
 
                 emptyChildAt(4) {
                     isDisplayed()
-                    hasText("Title 5")
+                    hasText("Title 4")
                     click()
                 }
 
-                hasText("Title 5")
+                hasText("Title 4")
             }
         }
     }
