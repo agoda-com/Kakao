@@ -64,7 +64,7 @@ jobs:
           name: Upload snapshot artifact
           command: ./gradlew clean install artifactoryPublish
 
-  automation-tests-assemble:
+  automation-assemble:
     executor: android-executor
     steps:
       - checkout
@@ -95,7 +95,7 @@ jobs:
             - sample-debug-androidTest.apk
             - sample-debug.apk
 
-  automation-tests-21:
+  automation-21api:
     executor: android-executor
     steps:
       - attach_workspace:
@@ -125,7 +125,7 @@ jobs:
           name: Run AT
           command:  sudo gcloud firebase test android run --type instrumentation --app /tmp/artifacts/sample-debug.apk --test /tmp/artifacts/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
 
-  automation-tests-24:
+  automation-24api:
     executor: android-executor
     steps:
       - attach_workspace:
@@ -155,7 +155,7 @@ jobs:
           name: Run AT
           command:  sudo gcloud firebase test android run --type instrumentation --app /tmp/artifacts/sample-debug.apk --test /tmp/artifacts/sample-debug-androidTest.apk --device model=Nexus6P,version=24,locale=en,orientation=portrait
 
-  automation-tests-28:
+  automation-28api:
     executor: android-executor
     steps:
       - attach_workspace:
@@ -192,23 +192,23 @@ workflows:
       - build-job
       - run-at-approval:
           type: approval
-      - automation-tests-assemble:
+      - automation-assemble:
           requires:
             - build-job
           filters:
             branches:
               ignore: master
-      - automation-tests-21:
+      - automation-21api:
           requires:
-            - automation-tests-assemble
+            - automation-assemble
             - run-at-approval
-      - automation-tests-24:
+      - automation-24api:
           requires:
-            - automation-tests-assemble
+            - automation-assemble
             - run-at-approval
-      - automation-tests-28:
+      - automation-28api:
           requires:
-            - automation-tests-assemble
+            - automation-assemble
             - run-at-approval
       - deploy-job:
           requires:
