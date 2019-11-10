@@ -110,12 +110,14 @@ class TestActivityTest {
             }
 
             seekbar {
+                scrollTo()
                 hasProgress(70)
                 dragProgressTo(30)
                 hasProgress(30)
             }
 
             switch {
+                scrollTo()
                 isChecked()
                 click()
                 isNotChecked()
