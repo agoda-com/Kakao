@@ -1,4 +1,13 @@
-version: 2
+version: 2.1
+
+executors:
+  android-executor:
+    docker:
+      - image: circleci/android:api-28
+    working_directory: ~/code
+    environment:
+      JVM_OPTS: -Xmx3200m
+
 jobs:
   build-job:
     working_directory: ~/code
@@ -27,78 +36,154 @@ jobs:
           path: app/build/test-results
 
   deploy-job:
-      working_directory: ~/code
-      docker:
-        - image: circleci/android:api-28
-      environment:
-        JVM_OPTS: -Xmx3200m
-      steps:
-        - checkout
-        - restore_cache:
-            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
-        - run:
-            name: Download Dependencies
-            command: ./gradlew androidDependencies
-        - save_cache:
-            paths:
-              - ~/.gradle
-            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
-        - run:
-            name: Run Tests
-            command: ./gradlew test
-        - store_artifacts:
-            path: app/build/reports
-            destination: reports
-        - store_test_results:
-            path: app/build/test-results
-        - run:
-            name: Upload snapshot artifact
-            command: ./gradlew clean install artifactoryPublish
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-28
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+      - run:
+          name: Run Tests
+          command: ./gradlew test
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+      - store_test_results:
+          path: app/build/test-results
+      - run:
+          name: Upload snapshot artifact
+          command: ./gradlew clean install artifactoryPublish
 
-  automation-tests-job:
-      working_directory: ~/code
-      docker:
-        - image: circleci/android:api-28
-      environment:
-                JVM_OPTS: -Xmx3200m
-      steps:
-        - checkout
-        - restore_cache:
-            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
-        - run:
-            name: Download Dependencies
-            command: ./gradlew androidDependencies
-        - save_cache:
-            paths:
-              - ~/.gradle
-            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
-        - run:
-            name: Prepare files
-            command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
-        - run:
-            name: Setup project ID
-            command:  sudo gcloud config set project $PROJECT_ID
-        - run:
-            name: Update apt-get
-            command:  sudo apt-get update
-        - run:
-            name: Install kubernetes
-            command:  sudo apt-get install kubectl
-        - run:
-            name: Install Google cloud sdk
-            command:  sudo apt-get install google-cloud-sdk
-        - run:
-            name: Auth in GCS
-            command:  sudo gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
-        - run:
-            name: Build assembleDebug
-            command: ./gradlew :sample:assembleDebug -PdisablePreDex
-        - run:
-            name: Build assembleAndroidTest
-            command: ./gradlew :sample:assembleAndroidTest
-        - run:
-            name: Run AT
-            command:  sudo gcloud firebase test android run --type instrumentation --app sample/build/outputs/apk/debug/sample-debug.apk --test sample/build/outputs/apk/androidTest/debug/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
+  automation-tests-assemble:
+    executor: android-executor
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
+      - run:
+          name: Build assembleDebug
+          command: ./gradlew :sample:assembleDebug -PdisablePreDex
+      - run:
+          name: Build assembleAndroidTest
+          command: ./gradlew :sample:assembleAndroidTest
+      - run:
+          name: Copy artifacts to artifacts directory
+          command: mkdir -p /tmp/artifacts && mv sample/build/outputs/apk/debug/sample-debug.apk /tmp/artifacts/sample-debug.apk && mv sample/build/outputs/apk/androidTest/debug/sample-debug-androidTest.apk /tmp/artifacts/sample-debug-androidTest.apk
+      - run:
+          name: Verify copied files
+          command: ls -lh /tmp/artifacts
+      - persist_to_workspace:
+          root: /tmp/artifacts
+          paths:
+            - sample-debug-androidTest.apk
+            - sample-debug.apk
+
+  automation-tests-21:
+    executor: android-executor
+    steps:
+      - attach_workspace:
+            at: /tmp/artifacts
+      - run:
+          name: Verify copied files
+          command: ls -lh /tmp/artifacts
+      - run:
+          name: Prepare files
+          command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
+      - run:
+          name: Setup project ID
+          command:  sudo gcloud config set project $PROJECT_ID
+      - run:
+          name: Update apt-get
+          command:  sudo apt-get update
+      - run:
+          name: Install kubernetes
+          command:  sudo apt-get install kubectl
+      - run:
+          name: Install Google cloud sdk
+          command:  sudo apt-get install google-cloud-sdk
+      - run:
+          name: Auth in GCS
+          command:  sudo gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
+      - run:
+          name: Run AT
+          command:  sudo gcloud firebase test android run --type instrumentation --app /tmp/artifacts/sample-debug.apk --test /tmp/artifacts/sample-debug-androidTest.apk --device model=Nexus6,version=21,locale=en,orientation=portrait
+
+  automation-tests-24:
+    executor: android-executor
+    steps:
+      - attach_workspace:
+          at: /tmp/artifacts
+      - run:
+          name: Verify copied files
+          command: ls -lh /tmp/artifacts
+      - run:
+          name: Prepare files
+          command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
+      - run:
+          name: Setup project ID
+          command:  sudo gcloud config set project $PROJECT_ID
+      - run:
+          name: Update apt-get
+          command:  sudo apt-get update
+      - run:
+          name: Install kubernetes
+          command:  sudo apt-get install kubectl
+      - run:
+          name: Install Google cloud sdk
+          command:  sudo apt-get install google-cloud-sdk
+      - run:
+          name: Auth in GCS
+          command:  sudo gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
+      - run:
+          name: Run AT
+          command:  sudo gcloud firebase test android run --type instrumentation --app /tmp/artifacts/sample-debug.apk --test /tmp/artifacts/sample-debug-androidTest.apk --device model=Nexus6P,version=24,locale=en,orientation=portrait
+
+  automation-tests-28:
+    executor: android-executor
+    steps:
+      - attach_workspace:
+          at: /tmp/artifacts
+      - run:
+          name: Verify copied files
+          command: ls -lh /tmp/artifacts
+      - run:
+          name: Prepare files
+          command:  echo $CLIENT_SECRET | base64 --decode > ${HOME}/client-secret.json
+      - run:
+          name: Setup project ID
+          command:  sudo gcloud config set project $PROJECT_ID
+      - run:
+          name: Update apt-get
+          command:  sudo apt-get update
+      - run:
+          name: Install kubernetes
+          command:  sudo apt-get install kubectl
+      - run:
+          name: Install Google cloud sdk
+          command:  sudo apt-get install google-cloud-sdk
+      - run:
+          name: Auth in GCS
+          command:  sudo gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
+      - run:
+          name: Run AT
+          command:  sudo gcloud firebase test android run --type instrumentation --app /tmp/artifacts/sample-debug.apk --test /tmp/artifacts/sample-debug-androidTest.apk --device model=Pixel2,version=28,locale=en,orientation=portrait
 
 workflows:
   version: 2
@@ -107,13 +192,24 @@ workflows:
       - build-job
       - run-at-approval:
           type: approval
-      - automation-tests-job:
+      - automation-tests-assemble:
           requires:
             - build-job
-            - run-at-approval
           filters:
             branches:
               ignore: master
+      - automation-tests-21:
+          requires:
+            - automation-tests-assemble
+            - run-at-approval
+      - automation-tests-24:
+          requires:
+            - automation-tests-assemble
+            - run-at-approval
+      - automation-tests-28:
+          requires:
+            - automation-tests-assemble
+            - run-at-approval
       - deploy-job:
           requires:
             - build-job
