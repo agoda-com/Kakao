@@ -3,74 +3,64 @@
     package="com.agoda.sample">
 
   <application android:label="TEST">
-
+    <activity
+        android:name=".SpinnerActivity"
+        android:label="Spinner Activity"
+        android:theme="@style/AppTheme" />
     <activity
         android:name=".TestActivity"
         android:label="Test Activity"
         android:theme="@style/AppTheme">
-
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
+
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
-
     </activity>
-
     <activity
         android:name=".MultitypeRecyclerActivity"
         android:label="Recycler Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".SingleTypeRecyclerActivity"
         android:label="Recycler Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".NestedRecyclerActivity"
         android:label="Nested Recycler Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".WebAcitivty"
         android:label="Web Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".ListActivity"
         android:label="List Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".TextInputLayoutActivity"
         android:label="TextInputLayout Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".IntentActivity"
         android:label="Intent Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".AutoCompleteActivity"
         android:label="Autocomplete Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".DrawableListActivity"
         android:label="Drawable Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".PickersActivity"
         android:label="Pickers Activity"
         android:theme="@style/AppTheme" />
-
     <activity
         android:name=".AlertDialogActivity"
         android:label="Alert Dialog Activity"
         android:theme="@style/AppTheme" />
-
   </application>
 
 </manifest>
