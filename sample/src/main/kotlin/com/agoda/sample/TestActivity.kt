@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
@@ -19,33 +20,14 @@ class TestActivity : AppCompatActivity() {
         super.onResume()
         findViewById<ImageView>(R.id.map).tag = "test_tag"
 
-        findViewById<Button>(R.id.multi_type_recycler).setOnClickListener {
-            startActivity(Intent(this, MultitypeRecyclerActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.single_type_recycler).setOnClickListener {
-            startActivity(Intent(this, SingleTypeRecyclerActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.auto_complete).setOnClickListener {
-            startActivity(Intent(this, AutoCompleteActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.drawableList).setOnClickListener {
-            startActivity(Intent(this, DrawableListActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.web_button).setOnClickListener {
-            startActivity(Intent(this, WebAcitivty::class.java))
-        }
-
-        findViewById<Button>(R.id.picker_button).setOnClickListener {
-            startActivity(Intent(this, PickersActivity::class.java))
-        }
-
-        findViewById<Button>(R.id.alert_dialog_button).setOnClickListener {
-            startActivity(Intent(this, AlertDialogActivity::class.java))
-        }
+        addRoute(R.id.multi_type_recycler, MultitypeRecyclerActivity::class.java)
+        addRoute(R.id.single_type_recycler, SingleTypeRecyclerActivity::class.java)
+        addRoute(R.id.auto_complete, AutoCompleteActivity::class.java)
+        addRoute(R.id.drawableList, DrawableListActivity::class.java)
+        addRoute(R.id.web_button, WebAcitivty::class.java)
+        addRoute(R.id.picker_button, PickersActivity::class.java)
+        addRoute(R.id.spinner_button, SpinnerActivity::class.java)
+        addRoute(R.id.alert_dialog_button, AlertDialogActivity::class.java)
 
         findViewById<Button>(R.id.snackbar_button).setOnClickListener {
             val snackbar = Snackbar.make(
@@ -68,5 +50,11 @@ class TestActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+    }
+
+    private fun addRoute(@IdRes id: Int, activity: Class<*>){
+        findViewById<Button>(id).setOnClickListener {
+            startActivity(Intent(this, activity))
+        }
     }
 }
