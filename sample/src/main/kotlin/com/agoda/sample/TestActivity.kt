@@ -3,6 +3,7 @@ package com.agoda.sample
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
@@ -18,6 +19,12 @@ class TestActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        supportActionBar?.apply {
+            subtitle = "Subtitle"
+            setDisplayHomeAsUpEnabled(true)
+        }
+
         findViewById<ImageView>(R.id.map).tag = "test_tag"
 
         addRoute(R.id.multi_type_recycler, MultitypeRecyclerActivity::class.java)
@@ -50,6 +57,11 @@ class TestActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun addRoute(@IdRes id: Int, activity: Class<*>){
