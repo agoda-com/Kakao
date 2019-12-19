@@ -2,4 +2,5 @@
 <resources>
 
   <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+  <style name="MaterialAppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar" />
 </resources>
