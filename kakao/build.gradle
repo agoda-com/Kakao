@@ -34,6 +34,7 @@ dependencies {
     implementation libraries.espresso_web
     implementation libraries.espresso_intents
     implementation libraries.espresso_contrib
+    implementation libraries.viewpager2
 }
 
 apply plugin: 'com.github.dcendents.android-maven'

@@ -16,7 +16,7 @@ class ViewPager2Activity : FragmentActivity() {
         setContentView(R.layout.activity_view_pager2)
 
         val pager = findViewById<ViewPager2>(R.id.pager)
-        val adapter = ScreenSlidePagerAdapter(this, (1..5).map { SimpleFragment(it) })
+        val adapter = ScreenSlidePagerAdapter(this, (0..5).map { SimpleFragment(it) })
 
         pager.adapter = adapter
 
