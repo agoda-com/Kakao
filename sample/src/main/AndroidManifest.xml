@@ -65,6 +65,10 @@
         android:name=".AlertDialogActivity"
         android:label="Alert Dialog Activity"
         android:theme="@style/AppTheme" />
+    <activity
+        android:name=".ViewPager2Activity"
+        android:label="Alert Dialog Activity"
+        android:theme="@style/AppTheme" />
   </application>
 
 </manifest>

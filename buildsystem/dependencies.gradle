@@ -12,7 +12,8 @@ ext.versions = [
         espresso       : '3.1.1',
         espresso_rules : '1.1.1',
         espresso_runner: '1.1.1',
-        junit          : '4.12'
+        junit          : '4.12',
+        viewpager2     : '1.0.0'
 ]
 
 ext.libraries = [
@@ -33,7 +34,8 @@ ext.libraries = [
         espresso_web    : "androidx.test.espresso:espresso-web:$versions.espresso",
         espresso_contrib: "androidx.test.espresso:espresso-contrib:$versions.espresso",
         espresso_intents: "androidx.test.espresso:espresso-intents:$versions.espresso",
-        junit           : "junit:junit:$versions.junit"
+        junit           : "junit:junit:$versions.junit",
+        viewpager2      : "androidx.viewpager2:viewpager2:$versions.viewpager2"
 ]
 
 def alias = System.getenv('BINTRAY_ALIAS')
