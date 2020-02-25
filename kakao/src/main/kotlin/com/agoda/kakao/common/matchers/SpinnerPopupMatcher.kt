@@ -1,10 +1,12 @@
 package com.agoda.kakao.common.matchers
 
-import android.os.Build
 import androidx.test.espresso.Root
-import androidx.test.espresso.matcher.RootMatchers
-import androidx.test.espresso.matcher.ViewMatchers
-import org.hamcrest.CoreMatchers
+import androidx.test.espresso.matcher.RootMatchers.withDecorView
+import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
+import androidx.test.espresso.matcher.ViewMatchers.withClassName
+import org.hamcrest.CoreMatchers.allOf
+import org.hamcrest.CoreMatchers.anyOf
+import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
@@ -13,34 +15,37 @@ import org.hamcrest.TypeSafeMatcher
  *
  */
 class SpinnerPopupMatcher : TypeSafeMatcher<Root>() {
+    var popupClassName = arrayOf(
+        "android.widget.PopupWindow\$PopupViewContainer",
+        "android.widget.PopupWindow\$PopupDecorView"
+    )
 
-    var popupClassName = ""
-    var dropdownClassName = ""
+    var dropdownClassName = arrayOf(
+        "androidx.appcompat.widget.DropDownListView",
+        "android.widget.ListPopupWindow\$DropDownListView",
+        "android.widget.DropDownListView"
+    )
 
     override fun describeTo(description: Description?) {
         description?.appendText(
-            "with decor view of type $popupClassName and Descendant $dropdownClassName"
+            "with decor view of any type in $popupClassName and descendant of any type in $dropdownClassName"
         )
     }
 
     override fun matchesSafely(item: Root?): Boolean {
-        val sdkVersion = Build.VERSION.SDK_INT
-
-        popupClassName = when (sdkVersion) {
-            in 17..21 -> "android.widget.PopupWindow\$PopupViewContainer"
-            else -> "android.widget.PopupWindow\$PopupDecorView"
-        }
-
-        dropdownClassName = when (sdkVersion) {
-            in 17..21 -> "androidx.appcompat.widget.DropDownListView"
-            in 22..23 -> "android.widget.ListPopupWindow\$DropDownListView"
-            else -> "android.widget.DropDownListView"
-        }
-
-        return RootMatchers.withDecorView(
-            CoreMatchers.allOf(
-                ViewMatchers.withClassName(CoreMatchers.`is`<String>(popupClassName)),
-                ViewMatchers.hasDescendant(ViewMatchers.withClassName(CoreMatchers.`is`<String>(dropdownClassName)))
+        return withDecorView(
+            allOf(
+                withClassName(anyOf(
+                    equalTo(popupClassName[0]),
+                    equalTo(popupClassName[1])
+                )),
+                hasDescendant(withClassName(
+                    anyOf(
+                        equalTo(dropdownClassName[0]),
+                        equalTo(dropdownClassName[1]),
+                        equalTo(dropdownClassName[2])
+                    )
+                ))
             )
         ).matches(item)
     }

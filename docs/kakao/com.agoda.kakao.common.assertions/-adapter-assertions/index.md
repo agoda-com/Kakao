@@ -24,3 +24,5 @@ Provides assertions for view with adapters
 |---|---|
 | [AbsListViewAdapterAssertions](../../com.agoda.kakao.list/-abs-list-view-adapter-assertions/index.md) | `interface AbsListViewAdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for AbsListView adapter |
 | [RecyclerAdapterAssertions](../../com.agoda.kakao.recycler/-recycler-adapter-assertions/index.md) | `interface RecyclerAdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for recyclerView adapter |
+| [SpinnerAdapterAssertions](../../com.agoda.kakao.spinner/-spinner-adapter-assertions/index.md) | `interface SpinnerAdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for Spinner adapter |
+| [ViewPager2AdapterAssertions](../../com.agoda.kakao.pager2/-view-pager2-adapter-assertions/index.md) | `interface ViewPager2AdapterAssertions : `[`AdapterAssertions`](./index.md)<br>Provides assertions for viewpager2 adapter |

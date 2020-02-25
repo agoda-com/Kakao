@@ -18,6 +18,9 @@
 | [com.agoda.kakao.intent.BundleBuilder](../com.agoda.kakao.intent/-bundle-builder/index.md) | Class for building Bundle matchers |
 | [com.agoda.kakao.check.CheckableActions](../com.agoda.kakao.check/-checkable-actions/index.md) | Provides action for checking views |
 | [com.agoda.kakao.check.CheckableAssertions](../com.agoda.kakao.check/-checkable-assertions/index.md) | Provides checkable based assertions for views |
+| [com.agoda.kakao.common.matchers.ChildCountMatcher](../com.agoda.kakao.common.matchers/-child-count-matcher/index.md) | Matches view with size no of children |
+| [com.agoda.kakao.chipgroup.ChipGroupActions](../com.agoda.kakao.chipgroup/-chip-group-actions/index.md) |  |
+| [com.agoda.kakao.chipgroup.ChipGroupAssertions](../com.agoda.kakao.chipgroup/-chip-group-assertions/index.md) | Provides assertions for a ChipGroup |
 | [com.agoda.kakao.intent.ComponentNameBuilder](../com.agoda.kakao.intent/-component-name-builder/index.md) | Class for building ComponentName matchers |
 | [com.agoda.kakao.list.DataBuilder](../com.agoda.kakao.list/-data-builder/index.md) | Class for building data matchers |
 | [com.agoda.kakao.delegate.DataInteractionDelegate](../com.agoda.kakao.delegate/-data-interaction-delegate/index.md) | Delegation class for [DataInteraction](#). Wraps all available public calls and intercepts [check](../com.agoda.kakao.delegate/-data-interaction-delegate/check.md) and [perform](../com.agoda.kakao.delegate/-data-interaction-delegate/perform.md). |
@@ -46,12 +49,14 @@
 | [com.agoda.kakao.bottomnav.KBottomNavigationView](../com.agoda.kakao.bottomnav/-k-bottom-navigation-view/index.md) | View for acting and asserting on BottomNavigationView |
 | [com.agoda.kakao.text.KButton](../com.agoda.kakao.text/-k-button/index.md) | View with BaseActions and TextViewAssertions |
 | [com.agoda.kakao.check.KCheckBox](../com.agoda.kakao.check/-k-check-box/index.md) | View with CheckableActions, CheckableAssertions and TextViewAssertions |
+| [com.agoda.kakao.chipgroup.KChipGroup](../com.agoda.kakao.chipgroup/-k-chip-group/index.md) | View with ChipGroupActions and ChipGroupAssertions |
 | [com.agoda.kakao.picker.date.KDatePicker](../com.agoda.kakao.picker.date/-k-date-picker/index.md) | View for interact with default date picker |
 | [com.agoda.kakao.picker.date.KDatePickerDialog](../com.agoda.kakao.picker.date/-k-date-picker-dialog/index.md) | View for interact with default date picker dialog |
 | [com.agoda.kakao.drawer.KDrawerView](../com.agoda.kakao.drawer/-k-drawer-view/index.md) | View with DrawerActions and BaseAssertions |
 | [com.agoda.kakao.edit.KEditText](../com.agoda.kakao.edit/-k-edit-text/index.md) | View with EditableActions and TextViewAssertions |
 | [com.agoda.kakao.list.KEmptyAdapterItem](../com.agoda.kakao.list/-k-empty-adapter-item/index.md) | Empty implementation of KAdapterItem |
 | [com.agoda.kakao.recycler.KEmptyRecyclerItem](../com.agoda.kakao.recycler/-k-empty-recycler-item/index.md) | Empty implementation of KRecyclerItem |
+| [com.agoda.kakao.pager2.KEmptyViewPagerItem](../com.agoda.kakao.pager2/-k-empty-view-pager-item/index.md) | Empty implementation of KViewPagerItem |
 | [com.agoda.kakao.image.KImageView](../com.agoda.kakao.image/-k-image-view/index.md) | View with BaseActions and ImageViewAssertions |
 | [com.agoda.kakao.intent.KIntent](../com.agoda.kakao.intent/-k-intent/index.md) | This class is intended to be used when you need to check if some intent has been sent or to mock specific intent with result |
 | [com.agoda.kakao.navigation.KNavigationView](../com.agoda.kakao.navigation/-k-navigation-view/index.md) | View with NavigationViewActions and NavigationViewAssertions |
@@ -64,6 +69,8 @@
 | [com.agoda.kakao.scroll.KScrollView](../com.agoda.kakao.scroll/-k-scroll-view/index.md) | View with ScrollViewActions and BaseAssertions |
 | [com.agoda.kakao.progress.KSeekBar](../com.agoda.kakao.progress/-k-seek-bar/index.md) | View with SeekBarActions and ProgressBarAssertions |
 | [com.agoda.kakao.text.KSnackbar](../com.agoda.kakao.text/-k-snackbar/index.md) | View with internal TextView and a Button |
+| [com.agoda.kakao.spinner.KSpinner](../com.agoda.kakao.spinner/-k-spinner/index.md) |  |
+| [com.agoda.kakao.spinner.KSpinnerItem](../com.agoda.kakao.spinner/-k-spinner-item/index.md) | KTextView implementation of KAdapterItem |
 | [com.agoda.kakao.swiperefresh.KSwipeRefreshLayout](../com.agoda.kakao.swiperefresh/-k-swipe-refresh-layout/index.md) | View with SwipeRefreshLayoutActions and SwipeRefreshLayoutAssertions |
 | [com.agoda.kakao.common.views.KSwipeView](../com.agoda.kakao.common.views/-k-swipe-view/index.md) | View with SwipeableActions and BaseAssertions |
 | [com.agoda.kakao.switch.KSwitch](../com.agoda.kakao.switch/-k-switch/index.md) | View with SwitchableActions, CheckableAssertions and TextViewAssertions |
@@ -74,6 +81,10 @@
 | [com.agoda.kakao.picker.time.KTimePickerDialog](../com.agoda.kakao.picker.time/-k-time-picker-dialog/index.md) | View for interact with default date picker dialog |
 | [com.agoda.kakao.common.views.KView](../com.agoda.kakao.common.views/-k-view/index.md) | Simple view with BaseActions and BaseAssertions |
 | [com.agoda.kakao.pager.KViewPager](../com.agoda.kakao.pager/-k-view-pager/index.md) | View with SwipeableActions and ViewPagerAssertions |
+| [com.agoda.kakao.pager2.KViewPager2](../com.agoda.kakao.pager2/-k-view-pager2/index.md) | View with SwipeableActions and ViewPager2Assertions |
+| [com.agoda.kakao.pager2.KViewPagerItem](../com.agoda.kakao.pager2/-k-view-pager-item/index.md) | Base class for KViewPager2 adapter items |
+| [com.agoda.kakao.pager2.KViewPagerItemType](../com.agoda.kakao.pager2/-k-view-pager-item-type/index.md) | For internal use. Don't use manually. |
+| [com.agoda.kakao.pager2.KViewPagerItemTypeBuilder](../com.agoda.kakao.pager2/-k-view-pager-item-type-builder/index.md) | Class that maps types to providing functions |
 | [com.agoda.kakao.web.KWebView](../com.agoda.kakao.web/-k-web-view/index.md) | Class for interacting with WebViews |
 | [com.agoda.kakao.common.matchers.NavigationItemMatcher](../com.agoda.kakao.common.matchers/-navigation-item-matcher/index.md) | Matches NavigationView with given item id checked |
 | [com.agoda.kakao.navigation.NavigationViewActions](../com.agoda.kakao.navigation/-navigation-view-actions/index.md) | Provides actions for navigation view |
@@ -96,6 +107,11 @@
 | [com.agoda.kakao.common.actions.ScrollableActions](../com.agoda.kakao.common.actions/-scrollable-actions/index.md) | Provides scrolling actions for view |
 | [com.agoda.kakao.scroll.ScrollViewActions](../com.agoda.kakao.scroll/-scroll-view-actions/index.md) | Provides ScrollableActions implementation for ScrollView |
 | [com.agoda.kakao.progress.SeekBarActions](../com.agoda.kakao.progress/-seek-bar-actions/index.md) | Provides action for SeekBar |
+| [com.agoda.kakao.common.matchers.SelectedChipMatcher](../com.agoda.kakao.common.matchers/-selected-chip-matcher/index.md) | Matches checked chip |
+| [com.agoda.kakao.spinner.SpinnerAdapterActions](../com.agoda.kakao.spinner/-spinner-adapter-actions/index.md) |  |
+| [com.agoda.kakao.spinner.SpinnerAdapterAssertions](../com.agoda.kakao.spinner/-spinner-adapter-assertions/index.md) | Provides assertions for Spinner adapter |
+| [com.agoda.kakao.common.matchers.SpinnerAdapterSizeMatcher](../com.agoda.kakao.common.matchers/-spinner-adapter-size-matcher/index.md) | Matches Spinner with count of children |
+| [com.agoda.kakao.common.matchers.SpinnerPopupMatcher](../com.agoda.kakao.common.matchers/-spinner-popup-matcher/index.md) | Matches Root View is popup window and contains DropDownView |
 | [com.agoda.kakao.common.actions.SwipeableActions](../com.agoda.kakao.common.actions/-swipeable-actions/index.md) | Provides swipe actions for views |
 | [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutActions](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-actions/index.md) | Provides actions for SwipeRefreshLayout |
 | [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutAssertions](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-assertions/index.md) | Provides assertion for SwipeRefreshLayout |
@@ -114,6 +130,9 @@
 | [com.agoda.kakao.intent.UriBuilder](../com.agoda.kakao.intent/-uri-builder/index.md) | Class for building Uri matchers |
 | [com.agoda.kakao.common.builders.ViewBuilder](../com.agoda.kakao.common.builders/-view-builder/index.md) | Class for building view matchers and interactions |
 | [com.agoda.kakao.delegate.ViewInteractionDelegate](../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) | Delegation class for [ViewInteraction](#). Wraps all available public calls and intercepts [check](../com.agoda.kakao.delegate/-view-interaction-delegate/check.md) and [perform](../com.agoda.kakao.delegate/-view-interaction-delegate/perform.md). |
+| [com.agoda.kakao.pager2.ViewPager2Actions](../com.agoda.kakao.pager2/-view-pager2-actions/index.md) | Provides ScrollableActions implementation for ViewPager2 |
+| [com.agoda.kakao.pager2.ViewPager2AdapterAssertions](../com.agoda.kakao.pager2/-view-pager2-adapter-assertions/index.md) | Provides assertions for viewpager2 adapter |
+| [com.agoda.kakao.common.matchers.ViewPager2AdapterSizeMatcher](../com.agoda.kakao.common.matchers/-view-pager2-adapter-size-matcher/index.md) | Matches ViewPager2 with count of children |
 | [com.agoda.kakao.pager.ViewPagerAssertions](../com.agoda.kakao.pager/-view-pager-assertions/index.md) | Provides assertions for view pagers |
 | [com.agoda.kakao.web.WebActions](../com.agoda.kakao.web/-web-actions/index.md) | Provides action for interacting with WebViews |
 | [com.agoda.kakao.web.WebAssertions](../com.agoda.kakao.web/-web-assertions/index.md) | Interface that provides assertions for WebViews |
