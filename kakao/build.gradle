@@ -29,12 +29,13 @@ dependencies {
     implementation libraries.kotlin_stdlib
     implementation libraries.appcompat
     implementation libraries.recyclerview
+    implementation libraries.viewpager2
+    implementation libraries.swiperefresh
     implementation libraries.design
     implementation libraries.espresso_core
     implementation libraries.espresso_web
     implementation libraries.espresso_intents
     implementation libraries.espresso_contrib
-    implementation libraries.viewpager2
 }
 
 apply plugin: 'com.github.dcendents.android-maven'

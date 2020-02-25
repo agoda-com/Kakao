@@ -91,3 +91,4 @@ Please extend this class to provide custom recycler view item types
 | Name | Summary |
 |---|---|
 | [KEmptyAdapterItem](../-k-empty-adapter-item/index.md) | `class KEmptyAdapterItem : `[`KAdapterItem`](./index.md)`<`[`KEmptyAdapterItem`](../-k-empty-adapter-item/index.md)`>`<br>Empty implementation of KAdapterItem |
+| [KSpinnerItem](../../com.agoda.kakao.spinner/-k-spinner-item/index.md) | `class KSpinnerItem : `[`KAdapterItem`](./index.md)`<`[`KTextView`](../../com.agoda.kakao.text/-k-text-view/index.md)`>, `[`TextViewAssertions`](../../com.agoda.kakao.text/-text-view-assertions/index.md)<br>KTextView implementation of KAdapterItem |
