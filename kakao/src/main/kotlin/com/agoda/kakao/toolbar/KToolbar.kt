@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.agoda.kakao.actionbar
+package com.agoda.kakao.toolbar
 
 import android.view.View
 import androidx.test.espresso.DataInteraction
@@ -9,13 +9,13 @@ import com.agoda.kakao.common.views.KBaseView
 import org.hamcrest.Matcher
 
 /**
- * View for acting and asserting on BottomNavigationView
+ * View for acting and asserting on Toolbar
  *
- * @see ActionBarViewActions
- * @see ActionBarViewAssertions
+ * @see ToolbarViewActions
+ * @see ToolbarViewAssertions
  */
-class KActionBar : KBaseView<KActionBar>,
-    ActionBarViewActions, ActionBarViewAssertions {
+class KToolbar : KBaseView<KToolbar>,
+    ToolbarViewActions, ToolbarViewAssertions {
     constructor(function: ViewBuilder.() -> Unit) : super(function)
     constructor(parent: Matcher<View>, function: ViewBuilder.() -> Unit) : super(parent, function)
     constructor(parent: DataInteraction, function: ViewBuilder.() -> Unit) : super(parent, function)
