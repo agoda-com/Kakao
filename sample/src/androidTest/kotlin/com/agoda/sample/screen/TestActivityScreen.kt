@@ -8,6 +8,7 @@ import com.agoda.kakao.switch.KSwitch
 import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KSnackbar
 import com.agoda.kakao.text.KTextView
+import com.agoda.kakao.toolbar.KToolbar
 import com.agoda.sample.R
 
 open class TestActivityScreen : Screen<TestActivityScreen>() {
@@ -17,6 +18,7 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
     val singleTypeRecycler: KButton = KButton { withId(R.id.single_type_recycler) }
     val autoComplete: KButton = KButton { withId(R.id.auto_complete) }
     val snackbarButton: KButton = KButton { withId(R.id.snackbar_button) }
+    val toolbar: KToolbar = KToolbar { withId(R.id.action_bar) }
 
     val textViewLarge: KTextView = KTextView {
         withId(R.id.text_view_large)

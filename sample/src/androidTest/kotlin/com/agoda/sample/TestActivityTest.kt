@@ -24,6 +24,11 @@ class TestActivityTest {
                 isVisible()
             }
 
+            toolbar {
+                hasTitle("Test Activity")
+                hasSubtitle("Subtitle")
+            }
+
             textViewLarge {
                 click()
                 isVisible()
