@@ -31,6 +31,7 @@ dependencies {
     implementation libraries.appcompat
     implementation libraries.recyclerview
     implementation libraries.design
+    implementation libraries.viewpager2
 
     testImplementation libraries.junit
 

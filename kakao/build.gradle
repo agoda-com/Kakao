@@ -29,6 +29,8 @@ dependencies {
     implementation libraries.kotlin_stdlib
     implementation libraries.appcompat
     implementation libraries.recyclerview
+    implementation libraries.viewpager2
+    implementation libraries.swiperefresh
     implementation libraries.design
     implementation libraries.espresso_core
     implementation libraries.espresso_web

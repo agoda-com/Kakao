@@ -100,6 +100,18 @@
           android:text="WEB_BUTTON" />
 
       <Button
+        android:id="@+id/spinner_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SPINNER" />
+
+      <Button
+          android:id="@+id/view_pager_2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="VIEW PAGER 2" />
+
+      <Button
           android:id="@+id/snackbar_button"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"

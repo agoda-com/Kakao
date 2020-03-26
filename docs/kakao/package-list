@@ -4,6 +4,7 @@ $dokka.linkExtension:md
 com.agoda.kakao
 com.agoda.kakao.bottomnav
 com.agoda.kakao.check
+com.agoda.kakao.chipgroup
 com.agoda.kakao.common
 com.agoda.kakao.common.actions
 com.agoda.kakao.common.assertions
@@ -20,6 +21,7 @@ com.agoda.kakao.intercept
 com.agoda.kakao.list
 com.agoda.kakao.navigation
 com.agoda.kakao.pager
+com.agoda.kakao.pager2
 com.agoda.kakao.picker.date
 com.agoda.kakao.picker.time
 com.agoda.kakao.progress
@@ -27,6 +29,7 @@ com.agoda.kakao.rating
 com.agoda.kakao.recycler
 com.agoda.kakao.screen
 com.agoda.kakao.scroll
+com.agoda.kakao.spinner
 com.agoda.kakao.swiperefresh
 com.agoda.kakao.switch
 com.agoda.kakao.tabs

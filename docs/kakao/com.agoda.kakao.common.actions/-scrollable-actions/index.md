@@ -47,3 +47,4 @@ Important: does not hold any implementation
 |---|---|
 | [RecyclerActions](../../com.agoda.kakao.recycler/-recycler-actions/index.md) | `interface RecyclerActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for RecyclerView |
 | [ScrollViewActions](../../com.agoda.kakao.scroll/-scroll-view-actions/index.md) | `interface ScrollViewActions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for ScrollView |
+| [ViewPager2Actions](../../com.agoda.kakao.pager2/-view-pager2-actions/index.md) | `interface ViewPager2Actions : `[`ScrollableActions`](./index.md)`, `[`SwipeableActions`](../-swipeable-actions/index.md)<br>Provides ScrollableActions implementation for ViewPager2 |
