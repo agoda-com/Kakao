@@ -1,7 +1,6 @@
 package com.agoda.kakao.dialog
 
 import android.app.AlertDialog
-import com.agoda.kakao.R
 import com.agoda.kakao.common.views.KBaseView
 import com.agoda.kakao.image.KImageView
 import com.agoda.kakao.text.KButton
@@ -27,7 +26,7 @@ class KAlertDialog : KBaseView<KAlertDialog>({ isRoot() }) {
     val neutralButton = KButton { withId(android.R.id.button3) }
         .also { it.inRoot { isDialog() } }
 
-    val title = KTextView { withId(R.id.alertTitle) }
+    val title = KTextView { withResourceName("alertTitle")}
         .also { it.inRoot { isDialog() } }
 
     val message = KTextView { withId(android.R.id.message) }
