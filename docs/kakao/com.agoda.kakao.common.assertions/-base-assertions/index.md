@@ -87,4 +87,5 @@ Provides basic assertions that can be performed on any view
 | [TabLayoutAssertions](../../com.agoda.kakao.tabs/-tab-layout-assertions/index.md) | `interface TabLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for TabLayout |
 | [TextInputLayoutAssertions](../../com.agoda.kakao.edit/-text-input-layout-assertions/index.md) | `interface TextInputLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for TextInputLayout |
 | [TextViewAssertions](../../com.agoda.kakao.text/-text-view-assertions/index.md) | `interface TextViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides text based assertions for views |
+| [ToolbarViewAssertions](../../com.agoda.kakao.toolbar/-toolbar-view-assertions/index.md) | `interface ToolbarViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for Toolbar |
 | [ViewPagerAssertions](../../com.agoda.kakao.pager/-view-pager-assertions/index.md) | `interface ViewPagerAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for view pagers |

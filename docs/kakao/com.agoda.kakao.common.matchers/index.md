@@ -27,4 +27,6 @@
 | [TextInputLayoutCounterEnabledMatcher](-text-input-layout-counter-enabled-matcher/index.md) | `class TextInputLayoutCounterEnabledMatcher : TypeSafeMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
 | [TextInputLayoutErrorEnabledMatcher](-text-input-layout-error-enabled-matcher/index.md) | `class TextInputLayoutErrorEnabledMatcher : TypeSafeMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
 | [TextInputLayoutHintEnabledMatcher](-text-input-layout-hint-enabled-matcher/index.md) | `class TextInputLayoutHintEnabledMatcher : TypeSafeMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
+| [ToolbarSubtitleMatcher](-toolbar-subtitle-matcher/index.md) | `class ToolbarSubtitleMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, Toolbar>` |
+| [ToolbarTitleMatcher](-toolbar-title-matcher/index.md) | `class ToolbarTitleMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, Toolbar>` |
 | [ViewPager2AdapterSizeMatcher](-view-pager2-adapter-size-matcher/index.md) | `class ViewPager2AdapterSizeMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, ViewPager2>`<br>Matches ViewPager2 with count of children |

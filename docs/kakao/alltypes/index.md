@@ -79,6 +79,7 @@
 | [com.agoda.kakao.text.KTextView](../com.agoda.kakao.text/-k-text-view/index.md) | View with BaseActions and TextViewAssertions |
 | [com.agoda.kakao.picker.time.KTimePicker](../com.agoda.kakao.picker.time/-k-time-picker/index.md) | View for interact with default time picker |
 | [com.agoda.kakao.picker.time.KTimePickerDialog](../com.agoda.kakao.picker.time/-k-time-picker-dialog/index.md) | View for interact with default date picker dialog |
+| [com.agoda.kakao.toolbar.KToolbar](../com.agoda.kakao.toolbar/-k-toolbar/index.md) | View for acting and asserting on Toolbar |
 | [com.agoda.kakao.common.views.KView](../com.agoda.kakao.common.views/-k-view/index.md) | Simple view with BaseActions and BaseAssertions |
 | [com.agoda.kakao.pager.KViewPager](../com.agoda.kakao.pager/-k-view-pager/index.md) | View with SwipeableActions and ViewPagerAssertions |
 | [com.agoda.kakao.pager2.KViewPager2](../com.agoda.kakao.pager2/-k-view-pager2/index.md) | View with SwipeableActions and ViewPager2Assertions |
@@ -127,6 +128,10 @@
 | [com.agoda.kakao.text.TextViewAssertions](../com.agoda.kakao.text/-text-view-assertions/index.md) | Provides text based assertions for views |
 | [com.agoda.kakao.picker.time.TimePickerAction](../com.agoda.kakao.picker.time/-time-picker-action/index.md) | Provides actions for time picker |
 | [com.agoda.kakao.picker.time.TimePickerAssertion](../com.agoda.kakao.picker.time/-time-picker-assertion/index.md) | Provides assertions for time picker |
+| [com.agoda.kakao.common.matchers.ToolbarSubtitleMatcher](../com.agoda.kakao.common.matchers/-toolbar-subtitle-matcher/index.md) |  |
+| [com.agoda.kakao.common.matchers.ToolbarTitleMatcher](../com.agoda.kakao.common.matchers/-toolbar-title-matcher/index.md) |  |
+| [com.agoda.kakao.toolbar.ToolbarViewActions](../com.agoda.kakao.toolbar/-toolbar-view-actions.md) | Provides actions for Toolbar |
+| [com.agoda.kakao.toolbar.ToolbarViewAssertions](../com.agoda.kakao.toolbar/-toolbar-view-assertions/index.md) | Provides assertion for Toolbar |
 | [com.agoda.kakao.intent.UriBuilder](../com.agoda.kakao.intent/-uri-builder/index.md) | Class for building Uri matchers |
 | [com.agoda.kakao.common.builders.ViewBuilder](../com.agoda.kakao.common.builders/-view-builder/index.md) | Class for building view matchers and interactions |
 | [com.agoda.kakao.delegate.ViewInteractionDelegate](../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) | Delegation class for [ViewInteraction](#). Wraps all available public calls and intercepts [check](../com.agoda.kakao.delegate/-view-interaction-delegate/check.md) and [perform](../com.agoda.kakao.delegate/-view-interaction-delegate/perform.md). |

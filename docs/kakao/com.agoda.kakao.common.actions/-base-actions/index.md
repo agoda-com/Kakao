@@ -62,3 +62,4 @@ Provides a lot of basic action methods, such as click(), scrollTo(), etc.
 | [TextViewActions](../../com.agoda.kakao.text/-text-view-actions/index.md) | `interface TextViewActions : `[`BaseActions`](./index.md)<br>Provides actions for TextViews |
 | [TimePickerAction](../../com.agoda.kakao.picker.time/-time-picker-action/index.md) | `interface TimePickerAction : `[`BaseActions`](./index.md)<br>Provides actions for time picker |
 | [TimePickerAssertion](../../com.agoda.kakao.picker.time/-time-picker-assertion/index.md) | `interface TimePickerAssertion : `[`BaseActions`](./index.md)<br>Provides assertions for time picker |
+| [ToolbarViewActions](../../com.agoda.kakao.toolbar/-toolbar-view-actions.md) | `interface ToolbarViewActions : `[`BaseActions`](./index.md)<br>Provides actions for Toolbar |

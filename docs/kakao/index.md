@@ -37,6 +37,7 @@
 | [com.agoda.kakao.switch](com.agoda.kakao.switch/index.md) |  |
 | [com.agoda.kakao.tabs](com.agoda.kakao.tabs/index.md) |  |
 | [com.agoda.kakao.text](com.agoda.kakao.text/index.md) |  |
+| [com.agoda.kakao.toolbar](com.agoda.kakao.toolbar/index.md) |  |
 | [com.agoda.kakao.web](com.agoda.kakao.web/index.md) |  |
 
 ### Index

@@ -16,8 +16,8 @@ Matches Root View is popup window and contains DropDownView
 
 | Name | Summary |
 |---|---|
-| [dropdownClassName](dropdown-class-name.md) | `var dropdownClassName: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [popupClassName](popup-class-name.md) | `var popupClassName: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [dropdownClassName](dropdown-class-name.md) | `var dropdownClassName: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>` |
+| [popupClassName](popup-class-name.md) | `var popupClassName: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>` |
 
 ### Functions
 
