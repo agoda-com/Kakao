@@ -65,6 +65,20 @@ class RootBuilder {
     }
 
     /**
+     * Matches root that is system alert window
+     */
+    fun isSystemAlertWindow() {
+        rootMatchers.add(RootMatchers.isSystemAlertWindow())
+    }
+
+    /**
+     * Matches root that is not system alert window
+     */
+    fun isNotSystemAlertWindow() {
+        rootMatchers.add(Matchers.not(RootMatchers.isSystemAlertWindow()))
+    }
+
+    /**
      * Matches root that is touchable
      */
     fun isTouchable() {
