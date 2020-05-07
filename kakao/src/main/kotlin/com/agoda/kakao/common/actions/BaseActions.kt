@@ -82,7 +82,7 @@ interface BaseActions {
      * Scrolls to the view, if possible
      */
     fun scrollTo() {
-        view.perform(ViewActions.scrollTo())
+        view.perform(NestedScrollToAction())
     }
 
     /**

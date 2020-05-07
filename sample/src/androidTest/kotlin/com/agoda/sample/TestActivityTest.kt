@@ -150,6 +150,10 @@ class TestActivityTest {
                 swipeSwitchThumb(RIGHT)
                 isChecked()
             }
+
+            nestedTextView {
+                scrollTo()
+            }
         }
     }
 }

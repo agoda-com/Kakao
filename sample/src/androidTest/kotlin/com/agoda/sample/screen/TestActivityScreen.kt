@@ -44,6 +44,7 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
     val seekbar: KSeekBar = KSeekBar { withId(R.id.seek_bar) }
     val switch: KSwitch = KSwitch { withId(R.id.switch_view) }
     val switchCompat: KSwitch = KSwitch { withId(R.id.switch_compat) }
+    val nestedTextView: KTextView = KTextView { withId(R.id.nested_scroll_text_view) }
 
     val snackbar: KSnackbar = KSnackbar()
 }
