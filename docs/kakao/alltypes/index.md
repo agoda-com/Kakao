@@ -90,6 +90,7 @@
 | [com.agoda.kakao.common.matchers.NavigationItemMatcher](../com.agoda.kakao.common.matchers/-navigation-item-matcher/index.md) | Matches NavigationView with given item id checked |
 | [com.agoda.kakao.navigation.NavigationViewActions](../com.agoda.kakao.navigation/-navigation-view-actions/index.md) | Provides actions for navigation view |
 | [com.agoda.kakao.navigation.NavigationViewAssertions](../com.agoda.kakao.navigation/-navigation-view-assertions/index.md) | Provides assertions for NavigationView |
+| [com.agoda.kakao.common.actions.NestedScrollToAction](../com.agoda.kakao.common.actions/-nested-scroll-to-action/index.md) | Scrolls to a given view with [NestedScrollView](#) support. |
 | [com.agoda.kakao.common.matchers.PageMatcher](../com.agoda.kakao.common.matchers/-page-matcher/index.md) | Matches ViewPager which page index equals given |
 | [com.agoda.kakao.common.matchers.PositionMatcher](../com.agoda.kakao.common.matchers/-position-matcher/index.md) | Matches RecyclerView descendant at given position in adapter |
 | [com.agoda.kakao.progress.PreciseSwipe](../com.agoda.kakao.progress/-precise-swipe/index.md) |  |

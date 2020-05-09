@@ -30,8 +30,10 @@ and after that all of them will be combined with help of AllOf.allOf()
 | [isNotDialog](is-not-dialog.md) | `fun isNotDialog(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is not dialog |
 | [isNotFocusable](is-not-focusable.md) | `fun isNotFocusable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is not focusable |
 | [isNotPlatformPopup](is-not-platform-popup.md) | `fun isNotPlatformPopup(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is not platform popup |
+| [isNotSystemAlertWindow](is-not-system-alert-window.md) | `fun isNotSystemAlertWindow(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is not system alert window |
 | [isNotTouchable](is-not-touchable.md) | `fun isNotTouchable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is not touchable |
 | [isPlatformPopup](is-platform-popup.md) | `fun isPlatformPopup(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is platform popup |
+| [isSystemAlertWindow](is-system-alert-window.md) | `fun isSystemAlertWindow(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is system alert window |
 | [isTouchable](is-touchable.md) | `fun isTouchable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that is touchable |
 | [withDecorView](with-decor-view.md) | `fun withDecorView(function: `[`ViewBuilder`](../-view-builder/index.md)`.() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root that has decor view matching given matcher |
 | [withMatcher](with-matcher.md) | `fun withMatcher(matcher: Matcher<Root>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Matches root with given custom matcher |
