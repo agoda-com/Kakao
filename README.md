@@ -263,7 +263,7 @@ Maven
 <dependency>
   <groupId>com.agoda.kakao</groupId>
   <artifactId>kakao</artifactId>
-  <version>2.3.1</version>
+  <version>2.3.2</version>
   <type>pom</type>
 </dependency>
 ```
@@ -274,7 +274,7 @@ repositories {
 }
 
 dependencies {
-    androidTestImplementation 'com.agoda.kakao:kakao:2.3.1'
+    androidTestImplementation 'com.agoda.kakao:kakao:2.3.2'
 }
 ```
 
