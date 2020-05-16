@@ -27,6 +27,7 @@ class TestActivityTest {
             toolbar {
                 hasTitle("Test Activity")
                 hasSubtitle("Subtitle")
+                hasNavigationDrawable(R.drawable.ic_arrow_back_24)
             }
 
             textViewLarge {
