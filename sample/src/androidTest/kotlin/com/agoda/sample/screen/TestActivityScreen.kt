@@ -19,7 +19,7 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
     val singleTypeRecycler: KButton = KButton { withId(R.id.single_type_recycler) }
     val autoComplete: KButton = KButton { withId(R.id.auto_complete) }
     val snackbarButton: KButton = KButton { withId(R.id.snackbar_button) }
-    val toolbar: KToolbar = KToolbar(rootBuilder = { withId(R.id.action_bar) }, navigationIconBuilder = { withContentDescription("Navigate up")})
+    val toolbar: KToolbar = KToolbar(rootBuilder = { withId(R.id.action_bar) }, navigateUpBuilder = { withContentDescription("Navigate up")})
 
     val textViewLarge: KTextView = KTextView {
         withId(R.id.text_view_large)

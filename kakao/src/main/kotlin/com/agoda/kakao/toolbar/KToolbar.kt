@@ -3,13 +3,11 @@
 package com.agoda.kakao.toolbar
 
 import android.view.View
-import androidx.test.espresso.DataInteraction
 import androidx.test.espresso.Root
 import androidx.test.espresso.matcher.RootMatchers
 import com.agoda.kakao.common.builders.ViewBuilder
 import com.agoda.kakao.delegate.ViewInteractionDelegate
 import com.agoda.kakao.image.KImageView
-import com.agoda.kakao.pager2.KViewPager2
 import org.hamcrest.Matcher
 
 class KToolbar : ToolbarViewActions, ToolbarViewAssertions {
@@ -23,15 +21,15 @@ class KToolbar : ToolbarViewActions, ToolbarViewAssertions {
      * Constructs view class with view interaction from given ViewBuilder
      *
      * @param rootBuilder ViewBuilder which will result in view's interaction
-     * @param navigationIconBuilder ViewBuilder which will be used to locate the navigation icon
+     * @param navigateUpBuilder ViewBuilder which will be used to locate the navigation icon
      *
      * @see ViewBuilder
      */
-    constructor(rootBuilder: ViewBuilder.() -> Unit, navigationIconBuilder: (ViewBuilder.() -> Unit)? = null) {
+    constructor(rootBuilder: ViewBuilder.() -> Unit, navigateUpBuilder: (ViewBuilder.() -> Unit)? = null) {
         val vb = ViewBuilder().apply(rootBuilder)
         matcher = vb.getViewMatcher()
         view = vb.getViewInteractionDelegate()
-        navigationIcon = navigationIconBuilder?.let { KImageView(it) }
+        navigationIcon = navigateUpBuilder?.let { KImageView(it) }
     }
 
     /**
@@ -39,44 +37,17 @@ class KToolbar : ToolbarViewActions, ToolbarViewAssertions {
      *
      * @param parent Matcher that will be used as parent in isDescendantOfA() matcher
      * @param rootBuilder ViewBuilder which will result in view's interaction
-     * @param navigationIconBuilder ViewBuilder which will be used to locate the navigation icon
+     * @param navigateUpBuilder ViewBuilder which will be used to locate the navigation icon
      *
      * @see ViewBuilder
      */
     constructor(
         parent: Matcher<View>, rootBuilder: ViewBuilder.() -> Unit,
-        navigationIconBuilder: (ViewBuilder.() -> Unit)?
+        navigateUpBuilder: (ViewBuilder.() -> Unit)?
     ) : this({
                  isDescendantOfA { withMatcher(parent) }
                  rootBuilder(this)
-             }, navigationIconBuilder)
-
-    /**
-     * Constructs view class with parent and view interaction from given ViewBuilder
-     *
-     * @param parent DataInteraction that will be used as parent to ViewBuilder
-     * @param rootBuilder ViewBuilder which will result in view's interaction
-     * @param navigationIconBuilder ViewBuilder which will be used to locate the navigation icon
-     *
-     * @see ViewBuilder
-     */
-    @Suppress("UNCHECKED_CAST")
-    constructor(
-        parent: DataInteraction, rootBuilder: ViewBuilder.() -> Unit,
-        navigationIconBuilder: (ViewBuilder.() -> Unit)?
-    ) {
-        val makeTargetMatcher = DataInteraction::class.java.getDeclaredMethod("makeTargetMatcher")
-        val parentMatcher = makeTargetMatcher.invoke(parent)
-
-        val vb = ViewBuilder().apply {
-            isDescendantOfA { withMatcher(parentMatcher as Matcher<View>) }
-            rootBuilder(this)
-        }
-
-        matcher = vb.getViewMatcher()
-        view = vb.getViewInteractionDelegate()
-        navigationIcon = navigationIconBuilder?.let { KImageView(it) }
-    }
+             }, navigateUpBuilder)
 
     /**
      * Operator that allows usage of DSL style
