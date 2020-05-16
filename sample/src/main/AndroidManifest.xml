@@ -21,6 +21,11 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+
+    <activity
+        android:name=".TestActivityNoToolbarDrawable"
+        android:label="Test Activity"
+        android:theme="@style/AppTheme" />
     <activity
         android:name=".MultitypeRecyclerActivity"
         android:label="Recycler Activity"

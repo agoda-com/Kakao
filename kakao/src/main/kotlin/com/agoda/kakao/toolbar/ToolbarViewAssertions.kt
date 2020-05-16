@@ -62,7 +62,7 @@ interface ToolbarViewAssertions : BaseAssertions, ImageViewAssertions {
      */
     fun hasNavigationIconDrawable(@DrawableRes resId: Int, toBitmap: ((drawable: Drawable) -> Bitmap)? = null) {
         navigationIcon?.hasDrawable(resId = resId, toBitmap = toBitmap) ?: throw AssertionError(
-            "Unable to match navigationDrawable, did you forget to provide its builder?"
+            "Unable to match navigationIconDrawable, did you forget to provide its view builder?"
         )
     }
 }
