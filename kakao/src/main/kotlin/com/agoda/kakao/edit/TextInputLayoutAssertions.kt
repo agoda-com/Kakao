@@ -2,8 +2,11 @@
 
 package com.agoda.kakao.edit
 
+import android.content.Context
+import androidx.annotation.StringRes
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.platform.app.InstrumentationRegistry
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.TextInputLayoutCounterEnabledMatcher
 import com.agoda.kakao.common.matchers.TextInputLayoutErrorEnabledMatcher
@@ -32,6 +35,15 @@ interface TextInputLayoutAssertions : BaseAssertions {
                 notFoundException?.let { throw AssertionError(it) }
             }
         })
+    }
+
+    fun hasHint(@StringRes resId: Int) {
+        hasHint(getResourceString(resId))
+    }
+
+    private fun getResourceString(@StringRes resId: Int): String {
+        val targetContext: Context = InstrumentationRegistry.getInstrumentation().targetContext
+        return targetContext.resources.getString(resId)
     }
 
     fun isHintEnabled() {

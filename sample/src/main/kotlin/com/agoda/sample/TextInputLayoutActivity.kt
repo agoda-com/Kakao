@@ -15,7 +15,7 @@ class TextInputLayoutActivity : AppCompatActivity() {
             isHintEnabled = true
             isErrorEnabled = true
             counterMaxLength = 50
-            hint = "This is the HINT!"
+            hint = resources.getString(R.string.hint)
             error = "This is the ERROR!"
         }
 
