@@ -19,7 +19,9 @@ class TextInputLayoutTest {
         onScreen<TextInputLayoutScreen> {
             inputLayout {
                 hasCounterMaxLength(50)
-                hasHint("This is the HINT!")
+                edit {
+                    hasHint("This is the HINT!")
+                }
                 hasError("This is the ERROR!")
                 isCounterEnabled()
                 isHintEnabled()

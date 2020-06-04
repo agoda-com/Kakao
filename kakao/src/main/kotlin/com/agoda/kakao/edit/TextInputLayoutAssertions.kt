@@ -14,26 +14,6 @@ import com.google.android.material.textfield.TextInputLayout
  * Provides assertions for TextInputLayout
  */
 interface TextInputLayoutAssertions : BaseAssertions {
-    /**
-     * Checks if this input layout has given hint
-     *
-     * @param hint - hint text to be checked
-     */
-    fun hasHint(hint: String) {
-        view.check(ViewAssertion { view, notFoundException ->
-            if (view is TextInputLayout) {
-                if (hint != view.hint) {
-                    throw AssertionError(
-                        "Expected hint is $hint," +
-                                " but actual is ${view.hint}"
-                    )
-                }
-            } else {
-                notFoundException?.let { throw AssertionError(it) }
-            }
-        })
-    }
-
     fun isHintEnabled() {
         view.check(ViewAssertions.matches(TextInputLayoutHintEnabledMatcher(true)))
     }
