@@ -54,6 +54,10 @@ interface TextInputLayoutAssertions : BaseAssertions {
         view.check(ViewAssertions.matches(TextInputLayoutHintEnabledMatcher(false)))
     }
 
+    fun hasError(@StringRes resId: Int) {
+        hasError(getResourceString(resId))
+    }
+
     fun hasError(error: String) {
         view.check(ViewAssertion { view, notFoundException ->
             if (view is TextInputLayout) {
