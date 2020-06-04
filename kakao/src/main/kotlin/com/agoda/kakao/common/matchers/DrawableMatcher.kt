@@ -16,6 +16,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import com.agoda.kakao.common.extentions.toBitmap
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
@@ -69,40 +70,11 @@ class DrawableMatcher(
             }
 
             val convertDrawable = (imageView as ImageView).drawable
-            val bitmap = toBitmap?.invoke(convertDrawable) ?: drawableToBitmap(convertDrawable)
+            val bitmap = toBitmap?.invoke(convertDrawable) ?: convertDrawable.toBitmap()
 
-            val otherBitmap = toBitmap?.invoke(expectedDrawable)
-                ?: drawableToBitmap(expectedDrawable)
+            val otherBitmap = toBitmap?.invoke(expectedDrawable) ?: expectedDrawable.toBitmap()
 
             return bitmap.sameAs(otherBitmap)
         } ?: false
-    }
-
-    private fun drawableToBitmap(drawable: Drawable): Bitmap {
-        if (drawable is BitmapDrawable) {
-            if (drawable.bitmap != null) {
-                return drawable.bitmap
-            }
-        }
-
-        if (drawable is StateListDrawable) {
-            if (drawable.getCurrent() is BitmapDrawable) {
-                val bitmapDrawable = drawable.getCurrent() as BitmapDrawable
-                if (bitmapDrawable.bitmap != null) {
-                    return bitmapDrawable.bitmap
-                }
-            }
-        }
-
-        val bitmap = if (drawable.intrinsicWidth <= 0 || drawable.intrinsicHeight <= 0) {
-            Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888) // Single color bitmap will be created of 1x1 pixel
-        } else {
-            Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
-        }
-
-        val canvas = Canvas(bitmap)
-        drawable.setBounds(0, 0, canvas.width, canvas.height)
-        drawable.draw(canvas)
-        return bitmap
     }
 }
