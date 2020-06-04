@@ -22,6 +22,7 @@ class TextInputLayoutTest {
                 hasHint("This is the HINT!")
                 hasHint(R.string.hint)
                 hasError("This is the ERROR!")
+                hasError(R.string.error)
                 isCounterEnabled()
                 isHintEnabled()
                 isErrorEnabled()
