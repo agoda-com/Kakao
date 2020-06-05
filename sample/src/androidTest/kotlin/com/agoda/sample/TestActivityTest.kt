@@ -27,6 +27,7 @@ class TestActivityTest {
             toolbar {
                 hasTitle("Test Activity")
                 hasSubtitle("Subtitle")
+                hasHomeAsUpIndicatorDrawable(R.drawable.ic_android_black_24dp)
             }
 
             textViewLarge {

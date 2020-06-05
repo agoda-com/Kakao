@@ -2,8 +2,11 @@
 
 package com.agoda.kakao.toolbar
 
+import android.graphics.drawable.Drawable
+import androidx.annotation.DrawableRes
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
+import com.agoda.kakao.common.matchers.ToolbarNavigationMatcher
 import com.agoda.kakao.common.matchers.ToolbarSubtitleMatcher
 import com.agoda.kakao.common.matchers.ToolbarTitleMatcher
 
@@ -46,5 +49,23 @@ interface ToolbarViewAssertions : BaseAssertions {
      */
     fun hasSubtitle(resId: Int) {
         view.check(ViewAssertions.matches(ToolbarSubtitleMatcher(resId)))
+    }
+
+    /**
+     * Checks if Toolbar has navigation icon
+     *
+     * @param resId expected drawable resource id
+     */
+    fun hasHomeAsUpIndicatorDrawable(@DrawableRes resId: Int) {
+        view.check(ViewAssertions.matches(ToolbarNavigationMatcher(resId)))
+    }
+
+    /**
+     * Checks if Toolbar has navigation icon
+     *
+     * @param drawable expected drawable
+     */
+    fun hasHomeAsUpIndicatorDrawable(drawable: Drawable) {
+        view.check(ViewAssertions.matches(ToolbarNavigationMatcher(drawable)))
     }
 }
