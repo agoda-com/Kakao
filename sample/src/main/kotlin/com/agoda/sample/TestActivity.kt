@@ -23,6 +23,7 @@ class TestActivity : AppCompatActivity() {
         supportActionBar?.apply {
             subtitle = "Subtitle"
             setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_android_black_24dp)
         }
 
         findViewById<ImageView>(R.id.map).tag = "test_tag"
