@@ -11,6 +11,7 @@ import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.matchers.TextInputLayoutCounterEnabledMatcher
 import com.agoda.kakao.common.matchers.TextInputLayoutErrorEnabledMatcher
 import com.agoda.kakao.common.matchers.TextInputLayoutHintEnabledMatcher
+import com.agoda.kakao.common.utilities.getResourceString
 import com.google.android.material.textfield.TextInputLayout
 
 /**
@@ -39,11 +40,6 @@ interface TextInputLayoutAssertions : BaseAssertions {
 
     fun hasHint(@StringRes resId: Int) {
         hasHint(getResourceString(resId))
-    }
-
-    private fun getResourceString(@StringRes resId: Int): String {
-        val targetContext: Context = InstrumentationRegistry.getInstrumentation().targetContext
-        return targetContext.resources.getString(resId)
     }
 
     fun isHintEnabled() {
