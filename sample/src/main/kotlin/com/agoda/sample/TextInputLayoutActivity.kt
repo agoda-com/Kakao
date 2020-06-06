@@ -15,8 +15,8 @@ class TextInputLayoutActivity : AppCompatActivity() {
             isHintEnabled = true
             isErrorEnabled = true
             counterMaxLength = 50
-            hint = "This is the HINT!"
-            error = "This is the ERROR!"
+            hint = resources.getString(R.string.hint)
+            error = resources.getString(R.string.error)
         }
 
         findViewById<Button>(R.id.toggle_counter).setOnClickListener {
