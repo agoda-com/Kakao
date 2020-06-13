@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.View
 import androidx.annotation.ColorRes
-import androidx.core.content.ContextCompat
+import com.agoda.kakao.common.utilities.getResourceColor
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
@@ -28,7 +28,7 @@ class BackgroundColorMatcher(
 
         return item?.let {
             val expectedColor = if (resId != -1) {
-                ContextCompat.getColor(it.context, resId)
+                getResourceColor(resId)
             } else {
                 Color.parseColor(colorCode)
             }

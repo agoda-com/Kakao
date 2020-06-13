@@ -10,6 +10,7 @@ com.agoda.kakao.common.actions
 com.agoda.kakao.common.assertions
 com.agoda.kakao.common.builders
 com.agoda.kakao.common.matchers
+com.agoda.kakao.common.utilities
 com.agoda.kakao.common.views
 com.agoda.kakao.delegate
 com.agoda.kakao.dialog
