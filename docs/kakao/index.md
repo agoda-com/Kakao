@@ -13,6 +13,7 @@
 | [com.agoda.kakao.common.assertions](com.agoda.kakao.common.assertions/index.md) |  |
 | [com.agoda.kakao.common.builders](com.agoda.kakao.common.builders/index.md) |  |
 | [com.agoda.kakao.common.matchers](com.agoda.kakao.common.matchers/index.md) |  |
+| [com.agoda.kakao.common.utilities](com.agoda.kakao.common.utilities/index.md) |  |
 | [com.agoda.kakao.common.views](com.agoda.kakao.common.views/index.md) |  |
 | [com.agoda.kakao.delegate](com.agoda.kakao.delegate/index.md) |  |
 | [com.agoda.kakao.dialog](com.agoda.kakao.dialog/index.md) |  |

@@ -129,6 +129,7 @@
 | [com.agoda.kakao.text.TextViewAssertions](../com.agoda.kakao.text/-text-view-assertions/index.md) | Provides text based assertions for views |
 | [com.agoda.kakao.picker.time.TimePickerAction](../com.agoda.kakao.picker.time/-time-picker-action/index.md) | Provides actions for time picker |
 | [com.agoda.kakao.picker.time.TimePickerAssertion](../com.agoda.kakao.picker.time/-time-picker-assertion/index.md) | Provides assertions for time picker |
+| [com.agoda.kakao.common.matchers.ToolbarNavigationMatcher](../com.agoda.kakao.common.matchers/-toolbar-navigation-matcher/index.md) |  |
 | [com.agoda.kakao.common.matchers.ToolbarSubtitleMatcher](../com.agoda.kakao.common.matchers/-toolbar-subtitle-matcher/index.md) |  |
 | [com.agoda.kakao.common.matchers.ToolbarTitleMatcher](../com.agoda.kakao.common.matchers/-toolbar-title-matcher/index.md) |  |
 | [com.agoda.kakao.toolbar.ToolbarViewActions](../com.agoda.kakao.toolbar/-toolbar-view-actions.md) | Provides actions for Toolbar |
