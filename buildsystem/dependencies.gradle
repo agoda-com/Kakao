@@ -40,11 +40,7 @@ ext.libraries = [
 ]
 
 
-def alias = System.getenv('BINTRAY_ALIAS')
-
-if (alias == null) {
-    alias = ''
-}
+def alias = System.getenv('BINTRAY_ALIAS') ?: ''
 
 def kakaoVersion = new File('buildsystem/version').text.trim() + alias
 
