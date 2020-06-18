@@ -209,7 +209,7 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy:
+  pull-request:
     jobs:
       - build-job
       - run-at-approval:
@@ -250,7 +250,11 @@ workflows:
           filters:
             branches:
               only: master
+  release:
+    jobs:
       - release-job:
           filters:
+            tags:
+              only: /^\d\.\d\.\d$/
             branches:
-              only: /^release/.+$/
+              ignore: /.*/
