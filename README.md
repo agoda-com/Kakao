@@ -34,7 +34,7 @@ If you are using [Page Object pattern](https://martinfowler.com/bliki/PageObject
 `Screen` contains `KView`, these are the Android Framework views where you want to do the interactions:
 ```Kotlin
 class FormScreen : Screen<FormScreen>() {
-    val phone = KView { withId(R.id.phone) }
+    val phone = KEditText { withId(R.id.phone) }
     val email = KEditText { withId(R.id.email) }
     val submit = KButton { withId(R.id.submit) }
 }
