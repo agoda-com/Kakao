@@ -18,7 +18,7 @@ class DrawableRecyclerTest {
     private val appContext get() = rule.activity.applicationContext
 
     @Test
-    fun matchDrawablesInList() {
+    fun matchDrawablesInRecyclerView() {
         onScreen<DrawableRecyclerScreen> {
             list {
                 isVisible()

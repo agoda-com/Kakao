@@ -18,7 +18,7 @@ class DrawableListTest {
     private val appContext get() = rule.activity.applicationContext
 
     @Test
-    fun matchDrawablesInList() {
+    fun matchDrawablesInListView() {
         onScreen<DrawableListScreen> {
             list {
                 isVisible()
