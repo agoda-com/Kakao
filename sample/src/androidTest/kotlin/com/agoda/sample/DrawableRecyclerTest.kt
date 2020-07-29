@@ -4,34 +4,34 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
-import com.agoda.sample.screen.DrawableListScreen
+import com.agoda.sample.screen.DrawableRecyclerScreen
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class DrawableListTest {
+class DrawableRecyclerTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(DrawableListActivity::class.java)
+    val rule = ActivityTestRule(DrawableRecyclerActivity::class.java)
 
     private val appContext get() = rule.activity.applicationContext
 
     @Test
-    fun matchDrawablesInListView() {
-        onScreen<DrawableListScreen> {
+    fun matchDrawablesInRecyclerView() {
+        onScreen<DrawableRecyclerScreen> {
             list {
                 isVisible()
                 hasSize(3)
 
-                firstChild<DrawableListScreen.Item> {
+                firstChild<DrawableRecyclerScreen.Item> {
                     isVisible()
                     imageView {
                         hasDrawable(R.drawable.ic_android_black_24dp)
                     }
                 }
 
-                childAt<DrawableListScreen.Item>(1) {
+                childAt<DrawableRecyclerScreen.Item>(1) {
                     imageView {
                         val drawable = ResourcesCompat.getDrawable(
                             appContext.resources,
@@ -42,7 +42,7 @@ class DrawableListTest {
                     }
                 }
 
-                childAt<DrawableListScreen.Item>(2) {
+                childAt<DrawableRecyclerScreen.Item>(2) {
                     imageView {
                         isVisible()
                         hasDrawableWithTint(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark)
