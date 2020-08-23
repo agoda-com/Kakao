@@ -13,7 +13,8 @@ import androidx.core.content.ContextCompat
 class DrawableListActivity : AppCompatActivity() {
     val drawableIds = listOf(DrawableResource(R.drawable.ic_android_black_24dp),
                              DrawableResource(R.drawable.ic_sentiment_very_satisfied_black_24dp),
-                             DrawableResource(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark))
+                             DrawableResource(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark),
+                             DrawableResource(R.drawable.ic_android_black_24dp, scaleType = ImageView.ScaleType.FIT_XY))
 
     val list: ListView by lazy { findViewById<ListView>(R.id.drawableList) }
 
@@ -40,6 +41,9 @@ class DrawableListActivity : AppCompatActivity() {
                             ContextCompat.getColor(vh.imageView.context,  it),
                             android.graphics.PorterDuff.Mode.SRC_IN)
                     }
+                    scaleType?.let {
+                        vh.imageView.scaleType = it
+                    }
                 }
 
                 return view
@@ -55,5 +59,5 @@ class DrawableListActivity : AppCompatActivity() {
 
     class ViewHolder(val imageView: ImageView)
 
-    data class DrawableResource(@DrawableRes val resId: Int, val tint: Int? = null)
+    data class DrawableResource(@DrawableRes val resId: Int, val tint: Int? = null, val scaleType: ImageView.ScaleType? = null)
 }

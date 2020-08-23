@@ -72,6 +72,7 @@ class DrawableMatcher(
 
             val otherBitmap = toBitmap?.invoke(expectedDrawable) ?: expectedDrawable.toBitmap()
 
+
             return bitmap.sameAs(otherBitmap)
         } ?: false
     }
