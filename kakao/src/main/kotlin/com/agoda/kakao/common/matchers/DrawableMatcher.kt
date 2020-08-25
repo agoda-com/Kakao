@@ -68,6 +68,9 @@ class DrawableMatcher(
             }
 
             val convertDrawable = (imageView as ImageView).drawable.mutate()
+
+            expectedDrawable.bounds = convertDrawable.bounds
+
             val bitmap = toBitmap?.invoke(convertDrawable) ?: convertDrawable.toBitmap()
 
             val otherBitmap = toBitmap?.invoke(expectedDrawable) ?: expectedDrawable.toBitmap()

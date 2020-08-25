@@ -8,6 +8,7 @@
       android:id="@+id/imgView"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:scaleType="fitXY"
       tools:ignore="ContentDescription" />
 
 </FrameLayout>
