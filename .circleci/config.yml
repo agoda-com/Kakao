@@ -205,7 +205,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}
       - run:
           name: Publish release
-          command: ./gradlew build install bintrayUpload
+          command: ./gradlew kakao:build kakao:install kakao:bintrayUpload
 
 workflows:
   version: 2
