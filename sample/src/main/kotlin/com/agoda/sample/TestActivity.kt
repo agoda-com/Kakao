@@ -32,7 +32,7 @@ class TestActivity : AppCompatActivity() {
         addRoute(R.id.single_type_recycler, SingleTypeRecyclerActivity::class.java)
         addRoute(R.id.auto_complete, AutoCompleteActivity::class.java)
         addRoute(R.id.drawableList, DrawableListActivity::class.java)
-        addRoute(R.id.web_button, WebAcitivty::class.java)
+        addRoute(R.id.web_button, WebActivity::class.java)
         addRoute(R.id.picker_button, PickersActivity::class.java)
         addRoute(R.id.spinner_button, SpinnerActivity::class.java)
         addRoute(R.id.alert_dialog_button, AlertDialogActivity::class.java)
