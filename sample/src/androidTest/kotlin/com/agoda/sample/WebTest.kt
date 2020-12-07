@@ -13,7 +13,7 @@ import org.junit.runner.RunWith
 class WebTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(WebAcitivty::class.java)
+    val rule = ActivityTestRule(WebActivity::class.java)
 
     @Test
     fun testWebViewHasTextHelloAndClickLink() {

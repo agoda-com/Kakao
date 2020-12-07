@@ -34,7 +34,7 @@
         android:label="Nested Recycler Activity"
         android:theme="@style/AppTheme" />
     <activity
-        android:name=".WebAcitivty"
+        android:name=".WebActivity"
         android:label="Web Activity"
         android:theme="@style/AppTheme" />
     <activity
