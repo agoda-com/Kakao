@@ -4,6 +4,7 @@ import com.agoda.kakao.common.views.KView
 import com.agoda.kakao.progress.KSeekBar
 import com.agoda.kakao.rating.KRatingBar
 import com.agoda.kakao.screen.Screen
+import com.agoda.kakao.searchview.KSearchView
 import com.agoda.kakao.switch.KSwitch
 import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KSnackbar
@@ -47,4 +48,6 @@ open class TestActivityScreen : Screen<TestActivityScreen>() {
     val nestedTextView: KTextView = KTextView { withId(R.id.nested_scroll_text_view) }
 
     val snackbar: KSnackbar = KSnackbar()
+
+    val searchView: KSearchView = KSearchView { withId(R.id.search_view) }
 }
