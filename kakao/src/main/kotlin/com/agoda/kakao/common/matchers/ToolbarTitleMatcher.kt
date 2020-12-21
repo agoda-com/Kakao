@@ -27,6 +27,6 @@ class ToolbarTitleMatcher() : BoundedMatcher<View, Toolbar>(Toolbar::class.java)
         if (title == null && resId != null) {
             title = resId?.let { view?.context?.getString(it) }
         }
-        return view?.title?.toString().equals(title)
+        return view?.title?.toString() == title
     }
 }
