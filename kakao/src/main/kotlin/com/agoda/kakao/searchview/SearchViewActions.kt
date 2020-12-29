@@ -11,25 +11,31 @@ import org.hamcrest.Matchers
 
 interface SearchViewActions : BaseActions {
 
-	fun typeQuery(query: String, append: Boolean = false) {
+	fun typeQuery(query: String) {
 		view.perform(object : ViewAction {
 			override fun getConstraints(): Matcher<View> = Matchers.allOf(ViewMatchers.isDisplayed(), ViewMatchers.isAssignableFrom(SearchView::class.java))
 
 			override fun getDescription(): String {
-				val action = if (append) {
-					"append"
-				} else {
-					"type"
-				}
-				return "$action search query $query"
+				return "type search query $query"
 			}
 
 			override fun perform(uiController: UiController?, view: View) {
-				var finalQuery = query
+				(view as SearchView).setQuery(query, false)
+			}
+		})
+	}
+
+	fun appendQuery(query: String) {
+		view.perform(object : ViewAction {
+			override fun getConstraints(): Matcher<View> = Matchers.allOf(ViewMatchers.isDisplayed(), ViewMatchers.isAssignableFrom(SearchView::class.java))
+
+			override fun getDescription(): String {
+				return "append search query $query"
+			}
+
+			override fun perform(uiController: UiController?, view: View) {
 				val searchView = (view as SearchView)
-				if (append) {
-					finalQuery = searchView.query?.toString() + finalQuery
-				}
+				val finalQuery = searchView.query?.toString() + query
 				searchView.setQuery(finalQuery, false)
 			}
 		})

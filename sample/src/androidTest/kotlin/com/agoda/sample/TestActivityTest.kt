@@ -162,7 +162,7 @@ class TestActivityTest {
                 hasHint(R.string.hint)
                 typeQuery("Hello")
                 hasQuery("Hello")
-                typeQuery(", World!")
+                appendQuery(", World!")
                 hasQuery("Hello, World!")
             }
         }
