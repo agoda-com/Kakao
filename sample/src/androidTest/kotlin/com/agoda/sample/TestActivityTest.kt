@@ -155,6 +155,16 @@ class TestActivityTest {
             nestedTextView {
                 scrollTo()
             }
+
+            searchView {
+                scrollTo()
+                hasHint("This is the HINT!")
+                hasHint(R.string.hint)
+                typeQuery("Hello")
+                hasQuery("Hello")
+                appendQuery(", World!")
+                hasQuery("Hello, World!")
+            }
         }
     }
 }
