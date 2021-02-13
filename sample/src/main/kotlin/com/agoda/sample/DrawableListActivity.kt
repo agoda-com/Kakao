@@ -13,7 +13,8 @@ import androidx.core.content.ContextCompat
 class DrawableListActivity : AppCompatActivity() {
     val drawableIds = listOf(DrawableResource(R.drawable.ic_android_black_24dp),
                              DrawableResource(R.drawable.ic_sentiment_very_satisfied_black_24dp),
-                             DrawableResource(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark))
+                             DrawableResource(R.drawable.ic_android_black_24dp, android.R.color.holo_red_dark),
+                             DrawableResource(R.drawable.ic_menu))
 
     val list: ListView by lazy { findViewById<ListView>(R.id.drawableList) }
 

@@ -73,6 +73,12 @@
         android:name=".ViewPager2Activity"
         android:label="Alert Dialog Activity"
         android:theme="@style/AppTheme" />
+
+    <activity
+        android:name=".DrawableMatcherIssueActivity"
+        android:label="Drawable issue reproduction activity"
+        android:theme="@style/AppTheme"
+        />
   </application>
 
 </manifest>

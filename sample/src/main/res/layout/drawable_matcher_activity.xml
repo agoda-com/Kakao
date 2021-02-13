@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".DrawableMatcherIssueActivity">
+
+
+  <ImageView
+      android:id="@+id/image"
+      android:layout_width="27dp"
+      android:layout_height="27dp"
+      android:layout_gravity="center"
+      android:layout_marginTop="4dp"
+      android:layout_marginBottom="4dp"
+      android:contentDescription="@null"
+      tools:src="@drawable/ic_menu" />
+
+
+</FrameLayout>
