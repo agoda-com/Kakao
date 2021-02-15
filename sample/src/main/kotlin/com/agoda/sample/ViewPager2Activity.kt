@@ -18,6 +18,7 @@ class ViewPager2Activity : FragmentActivity() {
         val pager = findViewById<ViewPager2>(R.id.pager)
         val adapter = ScreenSlidePagerAdapter(this, (0..5).map { SimpleFragment(it) })
 
+        pager.offscreenPageLimit = 1
         pager.adapter = adapter
 
     }
