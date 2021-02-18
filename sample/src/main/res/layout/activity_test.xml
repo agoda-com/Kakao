@@ -123,6 +123,12 @@
           android:layout_height="wrap_content"
           android:text="ALERT DIALOG" />
 
+      <Button
+          android:id="@+id/slider_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="SLIDER" />
+
       <RatingBar
           android:id="@+id/rating_bar"
           android:layout_width="wrap_content"

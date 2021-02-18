@@ -37,6 +37,7 @@ class TestActivity : AppCompatActivity() {
         addRoute(R.id.spinner_button, SpinnerActivity::class.java)
         addRoute(R.id.alert_dialog_button, AlertDialogActivity::class.java)
         addRoute(R.id.view_pager_2, ViewPager2Activity::class.java)
+        addRoute(R.id.slider_button, SliderActivity::class.java)
 
         findViewById<Button>(R.id.snackbar_button).setOnClickListener {
             val snackbar = Snackbar.make(

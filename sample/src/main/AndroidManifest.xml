@@ -73,6 +73,10 @@
         android:name=".ViewPager2Activity"
         android:label="Alert Dialog Activity"
         android:theme="@style/AppTheme" />
+    <activity
+        android:name=".SliderActivity"
+        android:label="Slider Activity"
+        android:theme="@style/MaterialAppTheme" />
   </application>
 
 </manifest>
