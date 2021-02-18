@@ -15,7 +15,7 @@ class MultitypeRecyclerActivity : AppCompatActivity() {
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = RecyclerAdapter()
             .apply {
-                items = RecyclerAdapter.textItems + RecyclerAdapter.checkBoxItems + RecyclerAdapter.finalItem
+                items = RecyclerAdapter.textItems + RecyclerAdapter.checkBoxItems + RecyclerAdapter.longTextItem + RecyclerAdapter.finalItem
             }
     }
 }

@@ -19,7 +19,7 @@ class MultiTypeRecyclerTest {
         onScreen<TestRecyclerScreen> {
             recycler {
                 isVisible()
-                hasSize(9)
+                hasSize(10)
 
                 firstChild<TestRecyclerScreen.MainItem> {
                     isVisible()
@@ -29,6 +29,15 @@ class MultiTypeRecyclerTest {
                 lastChild<TestRecyclerScreen.MainItem> {
                     isVisible()
                     title { hasText("Final Title") }
+                }
+
+                childAt<TestRecyclerScreen.MainItem>(9) {
+                    scrollTo()
+                    title { containsText("What is Lorem Ipsum?") }
+                    button {
+                        scrollTo()
+                        click()
+                    }
                 }
 
                 childWith<TestRecyclerScreen.CheckBoxItem> { withText("CheckBox 2") } perform {
