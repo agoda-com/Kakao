@@ -6,7 +6,7 @@
 |---|---|
 | [com.agoda.kakao.list.AbsListViewAdapterActions](../com.agoda.kakao.list/-abs-list-view-adapter-actions/index.md) |  |
 | [com.agoda.kakao.list.AbsListViewAdapterAssertions](../com.agoda.kakao.list/-abs-list-view-adapter-assertions/index.md) | Provides assertions for AbsListView adapter |
-| [com.agoda.kakao.common.matchers.AbsListViewAdapterSizeMatcher](../com.agoda.kakao.common.matchers/-abs-list-view-adapter-size-matcher/index.md) | Matches AbsListView with count of children |
+| [com.agoda.kakao.list.AbsListViewAdapterSizeMatcher](../com.agoda.kakao.list/-abs-list-view-adapter-size-matcher/index.md) | Matches AbsListView with count of children |
 | [com.agoda.kakao.intent.ActivityResultBuilder](../com.agoda.kakao.intent/-activity-result-builder/index.md) | Class for building ActivityResult |
 | [com.agoda.kakao.common.assertions.AdapterAssertions](../com.agoda.kakao.common.assertions/-adapter-assertions/index.md) | Provides assertions for view with adapters |
 | [com.agoda.kakao.common.matchers.AnyTextMatcher](../com.agoda.kakao.common.matchers/-any-text-matcher/index.md) | Matches TextView views which contains any text |
@@ -67,6 +67,7 @@
 | [com.agoda.kakao.recycler.KRecyclerItemTypeBuilder](../com.agoda.kakao.recycler/-k-recycler-item-type-builder/index.md) | Class that maps types to providing functions |
 | [com.agoda.kakao.recycler.KRecyclerView](../com.agoda.kakao.recycler/-k-recycler-view/index.md) | View with RecyclerActions, BaseAssertions and RecyclerAdapterAssertions. Gives access to it's children |
 | [com.agoda.kakao.scroll.KScrollView](../com.agoda.kakao.scroll/-k-scroll-view/index.md) | View with ScrollViewActions and BaseAssertions |
+| [com.agoda.kakao.searchview.KSearchView](../com.agoda.kakao.searchview/-k-search-view/index.md) |  |
 | [com.agoda.kakao.progress.KSeekBar](../com.agoda.kakao.progress/-k-seek-bar/index.md) | View with SeekBarActions and ProgressBarAssertions |
 | [com.agoda.kakao.text.KSnackbar](../com.agoda.kakao.text/-k-snackbar/index.md) | View with internal TextView and a Button |
 | [com.agoda.kakao.spinner.KSpinner](../com.agoda.kakao.spinner/-k-spinner/index.md) |  |
@@ -87,51 +88,53 @@
 | [com.agoda.kakao.pager2.KViewPagerItemType](../com.agoda.kakao.pager2/-k-view-pager-item-type/index.md) | For internal use. Don't use manually. |
 | [com.agoda.kakao.pager2.KViewPagerItemTypeBuilder](../com.agoda.kakao.pager2/-k-view-pager-item-type-builder/index.md) | Class that maps types to providing functions |
 | [com.agoda.kakao.web.KWebView](../com.agoda.kakao.web/-k-web-view/index.md) | Class for interacting with WebViews |
-| [com.agoda.kakao.common.matchers.NavigationItemMatcher](../com.agoda.kakao.common.matchers/-navigation-item-matcher/index.md) | Matches NavigationView with given item id checked |
+| [com.agoda.kakao.navigation.NavigationItemMatcher](../com.agoda.kakao.navigation/-navigation-item-matcher/index.md) | Matches NavigationView with given item id checked |
 | [com.agoda.kakao.navigation.NavigationViewActions](../com.agoda.kakao.navigation/-navigation-view-actions/index.md) | Provides actions for navigation view |
 | [com.agoda.kakao.navigation.NavigationViewAssertions](../com.agoda.kakao.navigation/-navigation-view-assertions/index.md) | Provides assertions for NavigationView |
 | [com.agoda.kakao.common.actions.NestedScrollToAction](../com.agoda.kakao.common.actions/-nested-scroll-to-action/index.md) | Scrolls to a given view with [NestedScrollView](#) support. |
-| [com.agoda.kakao.common.matchers.PageMatcher](../com.agoda.kakao.common.matchers/-page-matcher/index.md) | Matches ViewPager which page index equals given |
+| [com.agoda.kakao.pager.PageMatcher](../com.agoda.kakao.pager/-page-matcher/index.md) | Matches ViewPager which page index equals given |
 | [com.agoda.kakao.common.matchers.PositionMatcher](../com.agoda.kakao.common.matchers/-position-matcher/index.md) | Matches RecyclerView descendant at given position in adapter |
 | [com.agoda.kakao.progress.PreciseSwipe](../com.agoda.kakao.progress/-precise-swipe/index.md) |  |
 | [com.agoda.kakao.progress.ProgressBarActions](../com.agoda.kakao.progress/-progress-bar-actions/index.md) | Provides action for ProgressBar |
 | [com.agoda.kakao.progress.ProgressBarAssertions](../com.agoda.kakao.progress/-progress-bar-assertions/index.md) | Provides assertions for progress bar |
-| [com.agoda.kakao.common.matchers.ProgressMatcher](../com.agoda.kakao.common.matchers/-progress-matcher/index.md) | Matcher of value progress of given matcher |
+| [com.agoda.kakao.progress.ProgressMatcher](../com.agoda.kakao.progress/-progress-matcher/index.md) | Matcher of value progress of given matcher |
 | [com.agoda.kakao.rating.RatingBarActions](../com.agoda.kakao.rating/-rating-bar-actions/index.md) | Provides action for RatingBar |
 | [com.agoda.kakao.rating.RatingBarAssertions](../com.agoda.kakao.rating/-rating-bar-assertions/index.md) | Provides assertions for RatingBar |
 | [com.agoda.kakao.common.matchers.RatingBarMatcher](../com.agoda.kakao.common.matchers/-rating-bar-matcher/index.md) | Matcher of value rating of given matcher |
 | [com.agoda.kakao.recycler.RecyclerActions](../com.agoda.kakao.recycler/-recycler-actions/index.md) | Provides ScrollableActions implementation for RecyclerView |
 | [com.agoda.kakao.recycler.RecyclerAdapterAssertions](../com.agoda.kakao.recycler/-recycler-adapter-assertions/index.md) | Provides assertions for recyclerView adapter |
-| [com.agoda.kakao.common.matchers.RecyclerViewAdapterSizeMatcher](../com.agoda.kakao.common.matchers/-recycler-view-adapter-size-matcher/index.md) | Matches RecyclerView with count of children |
+| [com.agoda.kakao.recycler.RecyclerViewAdapterSizeMatcher](../com.agoda.kakao.recycler/-recycler-view-adapter-size-matcher/index.md) | Matches RecyclerView with count of children |
 | [com.agoda.kakao.common.builders.RootBuilder](../com.agoda.kakao.common.builders/-root-builder/index.md) | Class for building root matchers |
 | [com.agoda.kakao.screen.Screen](../com.agoda.kakao.screen/-screen/index.md) | Container class for UI elements. |
 | [com.agoda.kakao.screen.ScreenActions](../com.agoda.kakao.screen/-screen-actions/index.md) | Interface with common actions for all screens |
 | [com.agoda.kakao.common.actions.ScrollableActions](../com.agoda.kakao.common.actions/-scrollable-actions/index.md) | Provides scrolling actions for view |
 | [com.agoda.kakao.scroll.ScrollViewActions](../com.agoda.kakao.scroll/-scroll-view-actions/index.md) | Provides ScrollableActions implementation for ScrollView |
+| [com.agoda.kakao.searchview.SearchViewActions](../com.agoda.kakao.searchview/-search-view-actions/index.md) |  |
+| [com.agoda.kakao.searchview.SearchViewAssertions](../com.agoda.kakao.searchview/-search-view-assertions/index.md) |  |
 | [com.agoda.kakao.progress.SeekBarActions](../com.agoda.kakao.progress/-seek-bar-actions/index.md) | Provides action for SeekBar |
-| [com.agoda.kakao.common.matchers.SelectedChipMatcher](../com.agoda.kakao.common.matchers/-selected-chip-matcher/index.md) | Matches checked chip |
+| [com.agoda.kakao.chipgroup.SelectedChipMatcher](../com.agoda.kakao.chipgroup/-selected-chip-matcher/index.md) | Matches checked chip |
 | [com.agoda.kakao.spinner.SpinnerAdapterActions](../com.agoda.kakao.spinner/-spinner-adapter-actions/index.md) |  |
 | [com.agoda.kakao.spinner.SpinnerAdapterAssertions](../com.agoda.kakao.spinner/-spinner-adapter-assertions/index.md) | Provides assertions for Spinner adapter |
-| [com.agoda.kakao.common.matchers.SpinnerAdapterSizeMatcher](../com.agoda.kakao.common.matchers/-spinner-adapter-size-matcher/index.md) | Matches Spinner with count of children |
-| [com.agoda.kakao.common.matchers.SpinnerPopupMatcher](../com.agoda.kakao.common.matchers/-spinner-popup-matcher/index.md) | Matches Root View is popup window and contains DropDownView |
+| [com.agoda.kakao.spinner.SpinnerAdapterSizeMatcher](../com.agoda.kakao.spinner/-spinner-adapter-size-matcher/index.md) | Matches Spinner with count of children |
+| [com.agoda.kakao.spinner.SpinnerPopupMatcher](../com.agoda.kakao.spinner/-spinner-popup-matcher/index.md) | Matches Root View is popup window and contains DropDownView |
 | [com.agoda.kakao.common.actions.SwipeableActions](../com.agoda.kakao.common.actions/-swipeable-actions/index.md) | Provides swipe actions for views |
 | [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutActions](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-actions/index.md) | Provides actions for SwipeRefreshLayout |
 | [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutAssertions](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-assertions/index.md) | Provides assertion for SwipeRefreshLayout |
-| [com.agoda.kakao.common.matchers.SwipeRefreshLayoutMatcher](../com.agoda.kakao.common.matchers/-swipe-refresh-layout-matcher/index.md) |  |
+| [com.agoda.kakao.swiperefresh.SwipeRefreshLayoutMatcher](../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-matcher/index.md) |  |
 | [com.agoda.kakao.switch.SwitchableActions](../com.agoda.kakao.switch/-switchable-actions/index.md) | Provides action for actions on Switch |
 | [com.agoda.kakao.tabs.TabLayoutActions](../com.agoda.kakao.tabs/-tab-layout-actions/index.md) | Provides action for TabLayout |
 | [com.agoda.kakao.tabs.TabLayoutAssertions](../com.agoda.kakao.tabs/-tab-layout-assertions/index.md) | Provides assertions for TabLayout |
 | [com.agoda.kakao.edit.TextInputLayoutAssertions](../com.agoda.kakao.edit/-text-input-layout-assertions/index.md) | Provides assertions for TextInputLayout |
-| [com.agoda.kakao.common.matchers.TextInputLayoutCounterEnabledMatcher](../com.agoda.kakao.common.matchers/-text-input-layout-counter-enabled-matcher/index.md) |  |
-| [com.agoda.kakao.common.matchers.TextInputLayoutErrorEnabledMatcher](../com.agoda.kakao.common.matchers/-text-input-layout-error-enabled-matcher/index.md) |  |
-| [com.agoda.kakao.common.matchers.TextInputLayoutHintEnabledMatcher](../com.agoda.kakao.common.matchers/-text-input-layout-hint-enabled-matcher/index.md) |  |
+| [com.agoda.kakao.edit.TextInputLayoutCounterEnabledMatcher](../com.agoda.kakao.edit/-text-input-layout-counter-enabled-matcher/index.md) |  |
+| [com.agoda.kakao.edit.TextInputLayoutErrorEnabledMatcher](../com.agoda.kakao.edit/-text-input-layout-error-enabled-matcher/index.md) |  |
+| [com.agoda.kakao.edit.TextInputLayoutHintEnabledMatcher](../com.agoda.kakao.edit/-text-input-layout-hint-enabled-matcher/index.md) |  |
 | [com.agoda.kakao.text.TextViewActions](../com.agoda.kakao.text/-text-view-actions/index.md) | Provides actions for TextViews |
 | [com.agoda.kakao.text.TextViewAssertions](../com.agoda.kakao.text/-text-view-assertions/index.md) | Provides text based assertions for views |
 | [com.agoda.kakao.picker.time.TimePickerAction](../com.agoda.kakao.picker.time/-time-picker-action/index.md) | Provides actions for time picker |
 | [com.agoda.kakao.picker.time.TimePickerAssertion](../com.agoda.kakao.picker.time/-time-picker-assertion/index.md) | Provides assertions for time picker |
-| [com.agoda.kakao.common.matchers.ToolbarNavigationMatcher](../com.agoda.kakao.common.matchers/-toolbar-navigation-matcher/index.md) |  |
-| [com.agoda.kakao.common.matchers.ToolbarSubtitleMatcher](../com.agoda.kakao.common.matchers/-toolbar-subtitle-matcher/index.md) |  |
-| [com.agoda.kakao.common.matchers.ToolbarTitleMatcher](../com.agoda.kakao.common.matchers/-toolbar-title-matcher/index.md) |  |
+| [com.agoda.kakao.toolbar.ToolbarNavigationMatcher](../com.agoda.kakao.toolbar/-toolbar-navigation-matcher/index.md) |  |
+| [com.agoda.kakao.toolbar.ToolbarSubtitleMatcher](../com.agoda.kakao.toolbar/-toolbar-subtitle-matcher/index.md) |  |
+| [com.agoda.kakao.toolbar.ToolbarTitleMatcher](../com.agoda.kakao.toolbar/-toolbar-title-matcher/index.md) |  |
 | [com.agoda.kakao.toolbar.ToolbarViewActions](../com.agoda.kakao.toolbar/-toolbar-view-actions.md) | Provides actions for Toolbar |
 | [com.agoda.kakao.toolbar.ToolbarViewAssertions](../com.agoda.kakao.toolbar/-toolbar-view-assertions/index.md) | Provides assertion for Toolbar |
 | [com.agoda.kakao.intent.UriBuilder](../com.agoda.kakao.intent/-uri-builder/index.md) | Class for building Uri matchers |
@@ -139,7 +142,7 @@
 | [com.agoda.kakao.delegate.ViewInteractionDelegate](../com.agoda.kakao.delegate/-view-interaction-delegate/index.md) | Delegation class for [ViewInteraction](#). Wraps all available public calls and intercepts [check](../com.agoda.kakao.delegate/-view-interaction-delegate/check.md) and [perform](../com.agoda.kakao.delegate/-view-interaction-delegate/perform.md). |
 | [com.agoda.kakao.pager2.ViewPager2Actions](../com.agoda.kakao.pager2/-view-pager2-actions/index.md) | Provides ScrollableActions implementation for ViewPager2 |
 | [com.agoda.kakao.pager2.ViewPager2AdapterAssertions](../com.agoda.kakao.pager2/-view-pager2-adapter-assertions/index.md) | Provides assertions for viewpager2 adapter |
-| [com.agoda.kakao.common.matchers.ViewPager2AdapterSizeMatcher](../com.agoda.kakao.common.matchers/-view-pager2-adapter-size-matcher/index.md) | Matches ViewPager2 with count of children |
+| [com.agoda.kakao.pager2.ViewPager2AdapterSizeMatcher](../com.agoda.kakao.pager2/-view-pager2-adapter-size-matcher/index.md) | Matches ViewPager2 with count of children |
 | [com.agoda.kakao.pager.ViewPagerAssertions](../com.agoda.kakao.pager/-view-pager-assertions/index.md) | Provides assertions for view pagers |
 | [com.agoda.kakao.web.WebActions](../com.agoda.kakao.web/-web-actions/index.md) | Provides action for interacting with WebViews |
 | [com.agoda.kakao.web.WebAssertions](../com.agoda.kakao.web/-web-assertions/index.md) | Interface that provides assertions for WebViews |

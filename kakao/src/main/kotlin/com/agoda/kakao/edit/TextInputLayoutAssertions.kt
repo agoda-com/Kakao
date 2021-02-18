@@ -2,15 +2,10 @@
 
 package com.agoda.kakao.edit
 
-import android.content.Context
 import androidx.annotation.StringRes
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.platform.app.InstrumentationRegistry
 import com.agoda.kakao.common.assertions.BaseAssertions
-import com.agoda.kakao.common.matchers.TextInputLayoutCounterEnabledMatcher
-import com.agoda.kakao.common.matchers.TextInputLayoutErrorEnabledMatcher
-import com.agoda.kakao.common.matchers.TextInputLayoutHintEnabledMatcher
 import com.agoda.kakao.common.utilities.getResourceString
 import com.google.android.material.textfield.TextInputLayout
 

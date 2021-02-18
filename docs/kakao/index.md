@@ -33,6 +33,7 @@
 | [com.agoda.kakao.recycler](com.agoda.kakao.recycler/index.md) |  |
 | [com.agoda.kakao.screen](com.agoda.kakao.screen/index.md) |  |
 | [com.agoda.kakao.scroll](com.agoda.kakao.scroll/index.md) |  |
+| [com.agoda.kakao.searchview](com.agoda.kakao.searchview/index.md) |  |
 | [com.agoda.kakao.spinner](com.agoda.kakao.spinner/index.md) |  |
 | [com.agoda.kakao.swiperefresh](com.agoda.kakao.swiperefresh/index.md) |  |
 | [com.agoda.kakao.switch](com.agoda.kakao.switch/index.md) |  |

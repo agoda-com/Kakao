@@ -11,4 +11,5 @@
 | [PreciseSwipe](-precise-swipe/index.md) | `object PreciseSwipe : Swiper` |
 | [ProgressBarActions](-progress-bar-actions/index.md) | `interface ProgressBarActions : `[`BaseActions`](../com.agoda.kakao.common.actions/-base-actions/index.md)<br>Provides action for ProgressBar |
 | [ProgressBarAssertions](-progress-bar-assertions/index.md) | `interface ProgressBarAssertions : `[`BaseAssertions`](../com.agoda.kakao.common.assertions/-base-assertions/index.md)<br>Provides assertions for progress bar |
+| [ProgressMatcher](-progress-matcher/index.md) | `class ProgressMatcher : BoundedMatcher<`[`View`](https://developer.android.com/reference/android/view/View.html)`, `[`ProgressBar`](https://developer.android.com/reference/android/widget/ProgressBar.html)`>`<br>Matcher of value progress of given matcher |
 | [SeekBarActions](-seek-bar-actions/index.md) | `interface SeekBarActions : `[`ProgressBarActions`](-progress-bar-actions/index.md)<br>Provides action for SeekBar |

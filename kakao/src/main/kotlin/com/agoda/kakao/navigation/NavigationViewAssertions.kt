@@ -4,7 +4,6 @@ package com.agoda.kakao.navigation
 
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
-import com.agoda.kakao.common.matchers.NavigationItemMatcher
 
 /**
  * Provides assertions for NavigationView

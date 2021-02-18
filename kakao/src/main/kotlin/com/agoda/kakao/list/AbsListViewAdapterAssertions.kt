@@ -4,7 +4,6 @@ package com.agoda.kakao.list
 
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.AdapterAssertions
-import com.agoda.kakao.common.matchers.AbsListViewAdapterSizeMatcher
 
 /**
  * Provides assertions for AbsListView adapter

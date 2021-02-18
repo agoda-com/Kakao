@@ -30,6 +30,7 @@ com.agoda.kakao.rating
 com.agoda.kakao.recycler
 com.agoda.kakao.screen
 com.agoda.kakao.scroll
+com.agoda.kakao.searchview
 com.agoda.kakao.spinner
 com.agoda.kakao.swiperefresh
 com.agoda.kakao.switch

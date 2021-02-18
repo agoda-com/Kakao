@@ -4,7 +4,6 @@ package com.agoda.kakao.recycler
 
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.AdapterAssertions
-import com.agoda.kakao.common.matchers.RecyclerViewAdapterSizeMatcher
 
 /**
  * Provides assertions for recyclerView adapter

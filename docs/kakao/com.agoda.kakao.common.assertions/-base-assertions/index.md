@@ -83,6 +83,7 @@ Provides basic assertions that can be performed on any view
 | [NavigationViewAssertions](../../com.agoda.kakao.navigation/-navigation-view-assertions/index.md) | `interface NavigationViewAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for NavigationView |
 | [ProgressBarAssertions](../../com.agoda.kakao.progress/-progress-bar-assertions/index.md) | `interface ProgressBarAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for progress bar |
 | [RatingBarAssertions](../../com.agoda.kakao.rating/-rating-bar-assertions/index.md) | `interface RatingBarAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for RatingBar |
+| [SearchViewAssertions](../../com.agoda.kakao.searchview/-search-view-assertions/index.md) | `interface SearchViewAssertions : `[`BaseAssertions`](./index.md) |
 | [SwipeRefreshLayoutAssertions](../../com.agoda.kakao.swiperefresh/-swipe-refresh-layout-assertions/index.md) | `interface SwipeRefreshLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertion for SwipeRefreshLayout |
 | [TabLayoutAssertions](../../com.agoda.kakao.tabs/-tab-layout-assertions/index.md) | `interface TabLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for TabLayout |
 | [TextInputLayoutAssertions](../../com.agoda.kakao.edit/-text-input-layout-assertions/index.md) | `interface TextInputLayoutAssertions : `[`BaseAssertions`](./index.md)<br>Provides assertions for TextInputLayout |

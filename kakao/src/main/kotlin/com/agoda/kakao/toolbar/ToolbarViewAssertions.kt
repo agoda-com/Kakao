@@ -6,9 +6,6 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.DrawableRes
 import androidx.test.espresso.assertion.ViewAssertions
 import com.agoda.kakao.common.assertions.BaseAssertions
-import com.agoda.kakao.common.matchers.ToolbarNavigationMatcher
-import com.agoda.kakao.common.matchers.ToolbarSubtitleMatcher
-import com.agoda.kakao.common.matchers.ToolbarTitleMatcher
 
 /**
  * Provides assertion for Toolbar
