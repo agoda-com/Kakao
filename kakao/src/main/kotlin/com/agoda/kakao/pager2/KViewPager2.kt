@@ -3,6 +3,7 @@
 package com.agoda.kakao.pager2
 
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.DataInteraction
 import androidx.test.espresso.Root
 import androidx.test.espresso.matcher.RootMatchers
@@ -10,6 +11,7 @@ import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.actions.SwipeableActions
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.common.matchers.PositionMatcher
 import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import kotlin.reflect.KClass
@@ -103,7 +105,13 @@ class KViewPager2 : ViewPager2Actions, ViewPager2AdapterAssertions, SwipeableAct
         } catch (error: Throwable) {
         }
 
-        function(provideItem(matcher) as T).also { inRoot { withMatcher(this@KViewPager2.root) } }
+        val vb = ViewBuilder().apply {
+            isDescendantOfA { withMatcher(this@KViewPager2.matcher) }
+            isInstanceOf(RecyclerView::class.java)
+        }
+
+        function(provideItem(PositionMatcher(vb.getViewMatcher(), position)) as T)
+            .also { inRoot { withMatcher(this@KViewPager2.root) } }
     }
 
     /**

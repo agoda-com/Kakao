@@ -16,6 +16,6 @@ open class Pager2Screen : Screen<Pager2Screen>() {
     })
 
     class SimpleItem(parent: Matcher<View>) : KViewPagerItem<SimpleItem>(parent) {
-        val text: KTextView = KTextView { withId(R.id.text) }
+        val text: KTextView = KTextView(parent) { withId(R.id.text) }
     }
 }
