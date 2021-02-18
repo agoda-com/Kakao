@@ -1,7 +1,7 @@
 ext.versions = [
-        kotlin         : '1.4.10',
+        kotlin         : '1.4.30',
         dokka          : '0.9.18',
-        android_gradle : '4.0.0',
+        android_gradle : '4.1.0',
         bintray        : '1.8.5',
         maven          : '1.5',
         oss            : '4.5.4',
