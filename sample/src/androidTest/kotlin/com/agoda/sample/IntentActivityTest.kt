@@ -1,6 +1,8 @@
 package com.agoda.sample
 
+import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.rule.IntentsTestRule
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.IntentActivityScreen
@@ -12,10 +14,11 @@ import org.junit.runner.RunWith
 class IntentActivityTest {
     @Rule
     @JvmField
-    val rule = IntentsTestRule(IntentActivity::class.java)
+    val rule = ActivityScenarioRule(IntentActivity::class.java)
 
     @Test
     fun testContentScreen() {
+        Intents.init()
         onScreen<IntentActivityScreen> {
             resultText { hasText("No result") }
 

@@ -1,8 +1,10 @@
 package com.agoda.sample
 
+import android.app.Activity
+import android.content.Context
 import androidx.core.content.res.ResourcesCompat
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.DrawableListScreen
 import org.junit.Rule
@@ -13,9 +15,15 @@ import org.junit.runner.RunWith
 class DrawableListTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(DrawableListActivity::class.java)
+    val rule = ActivityScenarioRule(DrawableListActivity::class.java)
 
-    private val appContext get() = rule.activity.applicationContext
+    private val appContext : Context get() {
+        var activity: Activity? = null
+        rule.scenario.onActivity {
+            activity = it
+        }
+        return activity!!.applicationContext
+    }
 
     @Test
     fun matchDrawablesInListView() {

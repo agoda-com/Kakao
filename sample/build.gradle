@@ -42,4 +42,5 @@ dependencies {
     androidTestImplementation libraries.espresso_intents
     androidTestImplementation libraries.espresso_core
     androidTestImplementation libraries.espresso_web
+    androidTestImplementation libraries.junit_ext
 }
