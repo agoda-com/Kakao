@@ -1,7 +1,7 @@
 package com.agoda.sample
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.kakao.spinner.KSpinnerItem
 import com.agoda.sample.screen.SpinnerActivityScreen
@@ -13,7 +13,7 @@ import org.junit.runner.RunWith
 class SpinnerTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(SpinnerActivity::class.java)
+    val rule = ActivityScenarioRule(SpinnerActivity::class.java)
 
     @Test
     fun testContentItemsSpinner() {

@@ -1,7 +1,7 @@
 package com.agoda.sample
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.idle
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.kakao.switch.SwitchableActions.Direction.LEFT
@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 class TestActivityTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(TestActivity::class.java)
+    val rule = ActivityScenarioRule(TestActivity::class.java)
 
     @Test
     fun testContentScreen() {

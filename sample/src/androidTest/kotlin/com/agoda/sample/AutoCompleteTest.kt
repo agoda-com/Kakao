@@ -1,7 +1,7 @@
 package com.agoda.sample
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.AutoCompleteActivityScreen
 import org.junit.Rule
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
 class AutoCompleteTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(AutoCompleteActivity::class.java)
+    val rule = ActivityScenarioRule(AutoCompleteActivity::class.java)
 
     @Test
     fun testContentItemsListView() {

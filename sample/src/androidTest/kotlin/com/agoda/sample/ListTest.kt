@@ -1,7 +1,7 @@
 package com.agoda.sample
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.TestListScreen
 import org.junit.Rule
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
 class ListTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(ListActivity::class.java)
+    val rule = ActivityScenarioRule(ListActivity::class.java)
 
     @Test
     fun testContentItemsListView() {

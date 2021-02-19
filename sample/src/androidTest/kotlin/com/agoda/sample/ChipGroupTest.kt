@@ -1,7 +1,7 @@
 package com.agoda.sample
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
 import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.agoda.sample.screen.ChipGroupActivityScreen
 import org.hamcrest.CoreMatchers.`is`
@@ -13,7 +13,7 @@ import org.junit.runner.RunWith
 class ChipGroupTest {
     @Rule
     @JvmField
-    val rule = ActivityTestRule(ChipGroupActivity::class.java)
+    val rule = ActivityScenarioRule(ChipGroupActivity::class.java)
 
     @Test
     fun testChipGroupInteraction() {
