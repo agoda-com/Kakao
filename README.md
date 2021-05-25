@@ -1,4 +1,9 @@
-# This repo is no longer supported. Please visit a [KakaoAndroid/Kakao](https://github.com/KakaoAndroid/Kakao)
+# Kakao project is now being developed here: [KakaoAndroid/Kakao](https://github.com/KakaoAndroid/Kakao).
+### Kudos to all contributors and maintainers!
+
+### This repo is no longer supported.
+### Archived versions are available in maven central, for new releases please follow a new repo.
+
 # Kakao
 [ ![Download](https://api.bintray.com/packages/agoda/maven/kakao/images/download.svg) ](https://bintray.com/agoda/maven/kakao/_latestVersion)
 [![CircleCI](https://circleci.com/gh/agoda-com/Kakao/tree/master.svg?style=shield&circle-token=0d0ed659625be4efe54fe706c16894cd54213690)](https://circleci.com/gh/agoda-com/Kakao/tree/master)
@@ -259,6 +264,14 @@ class SomeTest {
 For more detailed info please refer to the documentation.
 
 ### Setup
+Following archived versions are available in maven central:
+- 2.4.0
+- 2.3.4
+- 2.2.0
+- 2.1.0
+- 2.1.0-support
+- 1.4.0-androidx
+
 Maven
 ```xml
 <dependency>
