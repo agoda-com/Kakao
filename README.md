@@ -1,4 +1,4 @@
-# This repo is no longer supported. Please visit a [new](https://github.com/KakaoAndroid/Kakao)
+# This repo is no longer supported. Please visit a [KakaoAndroid/Kakao](https://github.com/KakaoAndroid/Kakao)
 # Kakao
 [ ![Download](https://api.bintray.com/packages/agoda/maven/kakao/images/download.svg) ](https://bintray.com/agoda/maven/kakao/_latestVersion)
 [![CircleCI](https://circleci.com/gh/agoda-com/Kakao/tree/master.svg?style=shield&circle-token=0d0ed659625be4efe54fe706c16894cd54213690)](https://circleci.com/gh/agoda-com/Kakao/tree/master)
