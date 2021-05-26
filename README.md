@@ -1,4 +1,4 @@
-# Kakao project is now being developed here: [KakaoAndroid/Kakao](https://github.com/KakaoAndroid/Kakao).
+# Kakao project is now being developed here: [KakaoCup/Kakao](https://github.com/KakaoCup/Kakao).
 ### Kudos to all contributors and maintainers!
 
 ### This repo is no longer supported.
